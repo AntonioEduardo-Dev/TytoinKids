@@ -59,9 +59,9 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li><a href="about.html">Sobre</a></li>
-								<li><a href="contact.html">Contato</a></li>
-								<li><a href="shop.php">Produtos</a>
+								<li><a class="cool-hover" href="about.html">Sobre</a></li>
+								<li><a class="cool-hover" href="contact.html">Contato</a></li>
+								<li><a class="cool-hover" href="shop.php">Produtos</a>
 									<ul class="sub-menu">
 										<li><a href="shop.php">Produtos</a></li>
 										<li><a href="cart.php">Carrinho</a></li>
@@ -69,8 +69,8 @@
 								</li>
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart" href="cart.php"><i class="fas fa-shopping-cart"></i></a>
-										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+										<a class="shopping-cart cool-hover" href="cart.php"><i class="fas fa-shopping-cart"></i></a>
+										<a class="mobile-hide search-bar-icon cool-hover" href="#"><i class="fas fa-search"></i></a>
 									</div>
 								</li>
 							</ul>

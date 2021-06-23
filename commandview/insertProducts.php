@@ -60,9 +60,9 @@
 						
 						<nav class="main-menu">
 							<ul>
-								<li><a href="about.html">Sobre</a></li>
-								<li><a href="contact.html">Contato</a></li>
-								<li><a href="shop.php">Produtos</a>
+								<li><a class="cool-hover" href="about.html">Sobre</a></li>
+								<li><a class="cool-hover" href="contact.html">Contato</a></li>
+								<li><a class="cool-hover" href="shop.php">Produtos</a>
 									<ul class="sub-menu">
 										<li><a href="shop.php">Produtos</a></li>
 										<li><a href="cart.php">Carrinho</a></li>
@@ -70,8 +70,8 @@
 								</li>
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart" href="cart.php"><i class="fas fa-shopping-cart"></i></a>
-										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+										<a class="shopping-cart cool-hover" href="cart.php"><i class="fas fa-shopping-cart"></i></a>
+										<a class="mobile-hide search-bar-icon cool-hover" href="#"><i class="fas fa-search"></i></a>
 									</div>
 								</li>
 							</ul>
@@ -121,7 +121,7 @@
 	<!-- end breadcrumb section -->
 
 	<!-- check out section -->
-	<div class="checkout-section mt-150 mb-150">
+	<div class="checkout-section mt-80 mb-80">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg ml-5 mr-5">
@@ -129,7 +129,7 @@
 						<div class="accordion" id="accordionExample">
 						  <div class="card single-accordion">
 						    <div class="card-header" id="headingOne">
-						      <h5 class="mb-0">
+						      <h5>
 						        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 						          Cadastrar Produto
 						        </button>
@@ -163,6 +163,11 @@
 											</div>
 										</div>
 									</p>
+									<div class="form-group">
+										<div class="col-md-4 offset-md-4">
+											<input type="submit" name="cadastrar" value="Cadastrar">
+										</div>
+									</div>
 								</div>
 						    </div>
 						  </div>

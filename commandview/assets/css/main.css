@@ -697,8 +697,21 @@ nav.main-menu ul li.current-list-item > a {
 nav.main-menu li:hover > a {
   color: #ffffff;
   -webkit-text-stroke-width: 0.5px;
-  -webkit-text-stroke-color: #ffffff;
-  font-size: 17px;
+  -webkit-text-stroke-color: #ff5882;
+}
+
+.cool-hover::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: #ffffff;
+  transition: width .3s;
+}
+
+.cool-hover:hover::after {
+  width: 100%;
+  transition: width .3s;
 }
 
 nav.main-menu li a {
@@ -717,7 +730,6 @@ nav.main-menu li a {
   color: #ff5882;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #ffffff;
-  font-size: 16px;
 }
 
 .sticky-wrapper {
@@ -871,7 +883,7 @@ a.mobile-show {
 .footer-area {
   background-color: #402b65;
   color: #ffffff;
-  padding: 150px 0;
+  padding: 165px 0;
 }
 
 h2.widget-title {
@@ -1178,9 +1190,9 @@ ul.social-link-team li a:hover {
 input {
   padding: 15px;
   width: 100%;
-  border-radius: 3px;
-  border: 4px solid #eeeeee;
-  margin: 10px;
+  border: 2px groove #ff5882;
+  border-radius: 4px;
+  margin: 3px;
 }
 
 input[type="submit"] {
@@ -1480,7 +1492,6 @@ input[type="submit"] {
   font-weight: 700;
   text-transform: uppercase;
   font-size: 15px;
-  border: none !important;
   cursor: pointer;
   padding: 15px 25px;
   border-radius: 3px;
@@ -2501,7 +2512,6 @@ p.single-product-pricing span {
 }
 
 input[type="number"] {
-  border: 1px solid #ffffff;
   border-radius: 5px;
   padding: 10px;
   width: 100px;
@@ -2644,8 +2654,9 @@ tr.total-data td strong {
 
 .card.single-accordion .card-header {
   background-color: #ffffff;
-  border: none;
   padding: 0;
+  border: 2px groove #ff5882;
+  border-radius: 1%;
 }
 
 .card.single-accordion:last-child {
@@ -2669,6 +2680,10 @@ tr.total-data td strong {
 
 .card.single-accordion {
   border: 1px solid #F9F9F9;
+}
+
+.card-body {
+  border: 2px groove #ff5882;
 }
 
 .billing-address-form {

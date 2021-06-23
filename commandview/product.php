@@ -74,9 +74,9 @@
 						
 						<nav class="main-menu">
 							<ul>
-								<li><a href="about.html">Sobre</a></li>
-								<li><a href="contact.html">Contato</a></li>
-								<li><a href="shop.php">Produtos</a>
+								<li><a class="cool-hover" href="about.html">Sobre</a></li>
+								<li><a class="cool-hover" href="contact.html">Contato</a></li>
+								<li><a class="cool-hover" href="shop.php">Produtos</a>
 									<ul class="sub-menu">
 										<li><a href="shop.php">Produtos</a></li>
 										<li><a href="cart.php">Carrinho</a></li>
