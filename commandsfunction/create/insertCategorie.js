@@ -7,7 +7,7 @@ $(function() {
             categ_nome      : $("#id_nome").val()
         }
 
-        $.post('../../commandscontrol/Categorias.php', dados, function(response) {
+        $.post('../commandscontrol/Categorias.php', dados, function(response) {
             console.log("Response: "+response);
             
             var tipo = response.indexOf("alert_notification_error");

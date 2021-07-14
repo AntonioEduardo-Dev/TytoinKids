@@ -75,7 +75,7 @@
     }
 
     if (isset($_POST['listarProduto'])) {
-        $objProduto->listarProduto($_POST['id_produto']);
+        $objProduto->listarProduto(intval($_POST['id_produto']));
     }
 
     if (isset($_POST['editarProdutos'])) {

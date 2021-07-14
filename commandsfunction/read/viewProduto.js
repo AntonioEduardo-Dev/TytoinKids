@@ -1,3 +1,4 @@
+// Exibir dados do produto
 
 $(function() {
     $(document).on('click', '#single-product-item', function() {
@@ -19,10 +20,4 @@ $(function() {
         });
         console.log(data); 
     }
-    // id_produto = $("this").val();
-    // listarProduto = {listarProduto : true, id_produto}
-
-    // $.post('../commandscontrol/Produtos.php', listarProdutos, function(retorna) {
-    //     $(".product-lists").html(retorna);
-    // });
 });

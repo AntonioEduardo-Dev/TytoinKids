@@ -10,7 +10,7 @@
 	<title>Tytoin Kids</title>
 
 	<!-- favicon -->
-	<link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
+	<link rel="shortcut icon" type="image/png" href="commandview/assets/img/favicon.png">
 	<!-- google font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
@@ -50,7 +50,7 @@
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div class="site-logo">
-							<a href="index.html">
+							<a href="index">
 								<img src="commandview/assets/img/logo-copie-01.png" alt="">
 							</a>
 						</div>
@@ -59,29 +59,29 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li><a class="cool-hover" href="commandview/about.html">Sobre</a></li>
+								<li><a class="cool-hover" href="about">Sobre</a></li>
 								<!-- <li><a href="#">Páginas</a>
 									<ul class="sub-menu">
-										<li><a href="commandview/404.html">404 page</a></li>
-										<li><a class="cool-hover" href="commandview/about.html">Sobre</a></li>
-										<li><a href="commandview/cart.php">Cart</a></li>
-										<li><a href="commandview/checkout.php">Verificação de saída</a></li>
-										<li><a href="commandview/contact.html">Contact</a></li>
-										<li><a href="commandview/news.html">News</a></li>
-										<li><a href="commandview/shop.php">Produtos</a></li>
+										<li><a href="404">404 page</a></li>
+										<li><a class="cool-hover" href="about">Sobre</a></li>
+										<li><a href="cart">Cart</a></li>
+										<li><a href="checkout">Verificação de saída</a></li>
+										<li><a href="contact">Contact</a></li>
+										<li><a href="news">News</a></li>
+										<li><a href="shop">Produtos</a></li>
 									</ul>
 								</li> -->
-								<li><a class="cool-hover" href="commandview/contact.html">Contato</a></li>
-								<li><a class="cool-hover" href="commandview/shop.php">Produtos</a>
+								<li><a class="cool-hover" href="contact">Contato</a></li>
+								<li><a class="cool-hover" href="shop">Produtos</a>
 									<ul class="sub-menu">
-										<li><a href="commandview/shop.php">Produtos</a></li>
-										<li><a href="commandview/cart.php">Carrinho</a></li>
+										<li><a href="shop">Produtos</a></li>
+										<li><a href="cart">Carrinho</a></li>
 									</ul>
 								</li>
-								<li><a class="cool-hover" href="commandview/menu/menu.php">MENU</a></li>
+								<li><a class="cool-hover" href="menu/menu">MENU</a></li>
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart cool-hover" href="commandview/cart.php"><i class="fas fa-shopping-cart"></i></a>
+										<a class="shopping-cart cool-hover" href="cart"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon cool-hover" href="#"><i class="fas fa-search"></i></a>
 									</div>
 								</li>
@@ -128,7 +128,7 @@
 								<p class="subtitle">Moda Infantil</p>
 								<h1>Conheça nossos produtos</h1>
 								<div class="hero-btns">
-									<a href="commandview/shop.php" class="boxed-btn">Visualizar Produtos</a>
+									<a href="shop" class="boxed-btn">Visualizar Produtos</a>
 								</div>
 							</div>
 						</div>
@@ -184,7 +184,7 @@
 	<!-- end features list section -->
 
 	<!-- product section -->
-	<div class="product-section mt-150 mb-150">
+	<div class="product-section mt-5 mb-5">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
@@ -199,31 +199,31 @@
 				<div class="col-lg-4 col-md-6 text-center">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="product.php"><img src="commandview/assets/img/products/product-img-1.jpg" alt=""></a>
+							<a href="product"><img src="commandview/assets/img/products/product-img-1.jpg" alt=""></a>
 						</div>
 						<h3>Vestido 1</h3>
 						<p class="product-price"><span>Por Kg</span> 85$ </p>
-						<a href="commandview/cart.php" class="cart-btn"><i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho</a>
+						<a href="cart" class="cart-btn"><i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho</a>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6 text-center">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="commandview/product.php"><img src="commandview/assets/img/products/product-img-2.jpg" alt=""></a>
+							<a href="product"><img src="commandview/assets/img/products/product-img-2.jpg" alt=""></a>
 						</div>
 						<h3>Vestido 2</h3>
 						<p class="product-price"><span>Por Kg</span> 70$ </p>
-						<a href="commandview/cart.php" class="cart-btn"><i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho</a>
+						<a href="cart" class="cart-btn"><i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho</a>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="commandview/product.php"><img src="commandview/assets/img/products/product-img-3.jpg" alt=""></a>
+							<a href="product"><img src="commandview/assets/img/products/product-img-3.jpg" alt=""></a>
 						</div>
 						<h3>Vestido 3</h3>
 						<p class="product-price"><span>Por Kg</span> 35$ </p>
-						<a href="commandview/cart.php" class="cart-btn"><i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho</a>
+						<a href="cart" class="cart-btn"><i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho</a>
 					</div>
 				</div>
 			</div>
@@ -255,7 +255,7 @@
                     <div class="text">Quisquam minus maiores repudiandae nobis, minima saepe id, fugit ullam similique! Beatae, minima quisquam molestias facere ea. Perspiciatis unde omnis iste natus error sit voluptatem accusant</div>
                     <!--Countdown Timer-->
                     <div class="time-counter"><div class="time-countdown clearfix" data-countdown="2020/2/01"><div class="counter-column"><div class="inner"><span class="count">00</span>Days</div></div> <div class="counter-column"><div class="inner"><span class="count">00</span>Hours</div></div>  <div class="counter-column"><div class="inner"><span class="count">00</span>Mins</div></div>  <div class="counter-column"><div class="inner"><span class="count">00</span>Secs</div></div></div></div>
-                	<a href="commandview/cart.php" class="cart-btn mt-3"><i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho</a>
+                	<a href="cart" class="cart-btn mt-3"><i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho</a>
                 </div>
             </div>
         </div>
@@ -318,7 +318,7 @@
 						<h2>Nós somos <span class="orange-text">Tytoin Kids</span></h2>
 						<p>Etiam vulputate ut augue vel sodales. In sollicitudin neque et massa porttitor vestibulum ac vel nisi. Vestibulum placerat eget dolor sit amet posuere. In ut dolor aliquet, aliquet sapien sed, interdum velit. Nam eu molestie lorem.</p>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente facilis illo repellat veritatis minus, et labore minima mollitia qui ducimus.</p>
-						<a href="commandview/about.html" class="boxed-btn mt-4">Saber mais</a>
+						<a href="about" class="boxed-btn mt-4">Saber mais</a>
 					</div>
 				</div>
 			</div>
@@ -331,7 +331,7 @@
     	<div class="container">
         	<h3>Promoção de dezembro! <br> com grande <span class="orange-text">Desconto...</span></h3>
             <div class="sale-percent"><span>Oferta! <br> Até</span>50% <span>off</span></div>
-            <a href="commandview/shop.php" class="cart-btn btn-lg">Produtos</a>
+            <a href="shop" class="cart-btn btn-lg">Produtos</a>
         </div>
     </section>
 	<!-- end shop banner -->
@@ -370,9 +370,9 @@
 					<div class="footer-box pages">
 						<h2 class="widget-title">Páginas</h2>
 						<ul>
-							<li><a href="index.html">Início</a></li>
-							<li><a class="cool-hover" href="commandview/about.html">Sobre</a></li>
-							<li><a href="commandview/services.html">Produtos</a></li>
+							<li><a class="cool-hover" href="index">Início</a></li>
+							<li><a class="cool-hover" href="about">Sobre</a></li>
+							<li><a class="cool-hover" href="services">Produtos</a></li>
 						</ul>
 					</div>
 				</div>

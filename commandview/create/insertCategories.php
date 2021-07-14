@@ -10,26 +10,26 @@
 	<title>Inserir Categoria</title>
 
 	<!-- favicon -->
-	<link rel="shortcut icon" type="image/png" href="../assets/img/favicon.png">
+	<link rel="shortcut icon" type="image/png" href="../commandview/assets/img/favicon.png">
 	<!-- google font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
 	<!-- fontawesome -->
-	<link rel="stylesheet" href="../assets/css/all.min.css">
+	<link rel="stylesheet" href="../commandview/assets/css/all.min.css">
 	<!-- bootstrap -->
-	<link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../commandview/assets/bootstrap/css/bootstrap.min.css">
 	<!-- owl carousel -->
-	<link rel="stylesheet" href="../assets/css/owl.carousel.css">
+	<link rel="stylesheet" href="../commandview/assets/css/owl.carousel.css">
 	<!-- magnific popup -->
-	<link rel="stylesheet" href="../assets/css/magnific-popup.css">
+	<link rel="stylesheet" href="../commandview/assets/css/magnific-popup.css">
 	<!-- animate css -->
-	<link rel="stylesheet" href="../assets/css/animate.css">
+	<link rel="stylesheet" href="../commandview/assets/css/animate.css">
 	<!-- mean menu css -->
-	<link rel="stylesheet" href="../assets/css/meanmenu.min.css">
+	<link rel="stylesheet" href="../commandview/assets/css/meanmenu.min.css">
 	<!-- main style -->
-	<link rel="stylesheet" href="../assets/css/main.css">
+	<link rel="stylesheet" href="../commandview/assets/css/main.css">
 	<!-- responsive -->
-	<link rel="stylesheet" href="../assets/css/responsive.css">
+	<link rel="stylesheet" href="../commandview/assets/css/responsive.css">
 
 </head>
 <body>
@@ -50,8 +50,8 @@
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div class="site-logo">
-							<a href="../../index.html">
-								<img src="../assets/img/logo-copie-01.png" alt="">
+							<a href="../index">
+								<img src="../commandview/assets/img/logo-copie-01.png" alt="">
 							</a>
 						</div>
 						<!-- logo -->
@@ -60,17 +60,17 @@
 						
 						<nav class="main-menu">
 							<ul>
-								<li><a class="cool-hover" href="../about.html">Sobre</a></li>
-								<li><a class="cool-hover" href="../contact.html">Contato</a></li>
-								<li><a class="cool-hover" href="../shop.php">Produtos</a>
+								<li><a class="cool-hover" href="../about">Sobre</a></li>
+								<li><a class="cool-hover" href="../contact">Contato</a></li>
+								<li><a class="cool-hover" href="../shop">Produtos</a>
 									<ul class="sub-menu">
-										<li><a href="../shop.php">Produtos</a></li>
-										<li><a href="../cart.php">Carrinho</a></li>
+										<li><a href="../shop">Produtos</a></li>
+										<li><a href="../cart">Carrinho</a></li>
 									</ul>
 								</li>
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart cool-hover" href="../cart.php"><i class="fas fa-shopping-cart"></i></a>
+										<a class="shopping-cart cool-hover" href="../cart"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon cool-hover" href="#"><i class="fas fa-search"></i></a>
 									</div>
 								</li>
@@ -121,10 +121,10 @@
 	<!-- end breadcrumb section -->
 
 	<!-- check out section -->
-	<div class="checkout-section mt-80 mb-80">
+	<div class="checkout-section mt-5 mb-5">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg ml-5 mr-5">
+				<div class="col-lg ml-4 mr-4 mt-5 mb-5">
 					<div class="checkout-accordion-wrap">
 						<div class="accordion" id="accordionExample">
 						  <div class="card single-accordion">
@@ -187,7 +187,7 @@
 						<h2 class="widget-title">Como nos encontrar</h2>
 						<ul>
 							<li>34/8, East Hukupara, Gifirtok, Sadan.</li>
-							<li>support@fruitkha.com</li>
+							<li>support@tkids.com</li>
 							<li>+00 111 222 3333</li>
 						</ul>
 					</div>
@@ -197,7 +197,7 @@
 						<h2 class="widget-title">Serviços</h2>
 						<ul>
 							<li>34/8, East Hukupara, Gifirtok, Sadan.</li>
-							<li>support@fruitkha.com</li>
+							<li>support@tkids.com</li>
 							<li>+00 111 222 3333</li>
 						</ul>
 					</div>
@@ -206,9 +206,9 @@
 					<div class="footer-box pages">
 						<h2 class="widget-title">Páginas</h2>
 						<ul>
-							<li><a href="../../index.html">Início</a></li>
-							<li><a href="../about.html">Sobre</a></li>
-							<li><a href="../services.html">Categorias</a></li>
+							<li><a href="../index">Início</a></li>
+							<li><a href="../about">Sobre</a></li>
+							<li><a href="../services">Categorias</a></li>
 						</ul>
 					</div>
 				</div>
@@ -242,28 +242,28 @@
 	<!-- end copyright -->
 	
 	<!-- jquery -->
-	<script src="../assets/js/jquery-1.11.3.min.js"></script>
+	<script src="../commandview/assets/js/jquery-1.11.3.min.js"></script>
 	<!-- bootstrap -->
-	<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../commandview/assets/bootstrap/js/bootstrap.min.js"></script>
 	<!-- count down -->
-	<script src="../assets/js/jquery.countdown.js"></script>
+	<script src="../commandview/assets/js/jquery.countdown.js"></script>
 	<!-- isotope -->
-	<script src="../assets/js/jquery.isotope-3.0.6.min.js"></script>
+	<script src="../commandview/assets/js/jquery.isotope-3.0.6.min.js"></script>
 	<!-- waypoints -->
-	<script src="../assets/js/waypoints.js"></script>
+	<script src="../commandview/assets/js/waypoints.js"></script>
 	<!-- owl carousel -->
-	<script src="../assets/js/owl.carousel.min.js"></script>
+	<script src="../commandview/assets/js/owl.carousel.min.js"></script>
 	<!-- magnific popup -->
-	<script src="../assets/js/jquery.magnific-popup.min.js"></script>
+	<script src="../commandview/assets/js/jquery.magnific-popup.min.js"></script>
 	<!-- mean menu -->
-	<script src="../assets/js/jquery.meanmenu.min.js"></script>
+	<script src="../commandview/assets/js/jquery.meanmenu.min.js"></script>
 	<!-- sticker js -->
-	<script src="../assets/js/sticker.js"></script>
+	<script src="../commandview/assets/js/sticker.js"></script>
 	<!-- main js -->
-	<script src="../assets/js/main.js"></script>
+	<script src="../commandview/assets/js/main.js"></script>
 	
 	<!-- inserir Categorias js -->
-	<script src="../../commandsfunction/create/insertCategorie.js"></script>
+	<script src="../commandsfunction/create/insertCategorie.js"></script>
 
 </body>
 </html>

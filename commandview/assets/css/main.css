@@ -1,5 +1,5 @@
 /*
-Template Name: Fruitkha - Responsive Bootstrap4 Shop Template
+Template Name: tkids - Responsive Bootstrap4 Shop Template
 Template URI: 
 Description: Bootstrap template for fruits or any other kind of shop
 Author: Imran Hossain
@@ -1190,7 +1190,7 @@ ul.social-link-team li a:hover {
 input {
   padding: 15px;
   width: 100%;
-  border: 2px outset #ffffff;
+  border: 2px outset #eee;
   border-radius: 5px;
   border-top: outset;
   border-left: outset;
@@ -1199,6 +1199,16 @@ input {
 
 /* All select elements on page */
 select {
+  padding: 15px;
+  width: 100%;
+  border: 2px outset #ffffff;
+  border-radius: 5px;
+  border-top: outset;
+  border-left: outset;
+  margin: 1px;
+}
+
+textarea {
   padding: 15px;
   width: 100%;
   border: 2px outset #ffffff;
@@ -2197,7 +2207,7 @@ a.video-play-btn {
 ----------------------------------------------------------------------------- */
 .feature-bg {
   position: relative;
-  margin: 150px 0;
+  margin: 100px 0;
 }
 
 .feature-bg:after {
@@ -2304,22 +2314,6 @@ ul.social-link-team li a {
   line-height: 1.8;
 }
 
-.contact-form form p input[type=text], .contact-form form p input[type=tel], .contact-form form p input[type=email] {
-  width: 49%;
-  padding: 15px;
-  border: 1px solid #ffffff;
-  border-radius: 3px;
-}
-
-.contact-form form p textarea {
-  border: 1px solid #ffffff;
-  padding: 15px;
-  height: 200px;
-  border-radius: 3px;
-  width: 100%;
-  resize: none;
-}
-
 .contact-form-wrap {
   background-color: #FBFBFB;
   padding: 45px 30px;
@@ -2327,8 +2321,14 @@ ul.social-link-team li a {
 }
 
 .contact-form-box {
+  margin: 20px;
   padding-left: 40px;
-  margin-bottom: 30px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border: 2px solid #eee;
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
 }
 
 .contact-form-box h4 {
@@ -2562,8 +2562,8 @@ ul.product-share li a {
 }
 
 table.cart-table {
-  border: 1px solid #f9f9f9;
   width: 100%;
+  border: 2px solid #eee;
 }
 
 thead {
@@ -2593,7 +2593,7 @@ td.product-image img {
 }
 
 .cart-table-wrap tbody tr td {
-  border: 1px solid #ffffff;
+  border: 2px solid #eee;
   padding: 20px 0;
   color: #402b65;
 }
@@ -2626,8 +2626,10 @@ tr.table-total-row th {
 }
 
 table.total-table tbody tr.total-data td {
-  border: 1px solid #ffffff;
   padding: 19px 15px;
+  border: 2px solid #eee;
+  border-left: 0px;
+  border-right: 0px;
 }
 
 tr.total-data td strong {
@@ -2643,7 +2645,10 @@ tr.total-data td strong {
 }
 
 .coupon-section {
+  padding: 5%;
   margin-top: 50px;
+  border: 2px solid #eee;
+  border-radius: 7px;
 }
 
 .coupon-section h3 {
@@ -2668,7 +2673,7 @@ tr.total-data td strong {
 .card.single-accordion .card-header {
   background-color: #ffffff;
   padding: 0;
-  border: 2px solid #ff5882;
+  border: 2px solid #eee;
 }
 
 .card.single-accordion:last-child {
@@ -2695,7 +2700,7 @@ tr.total-data td strong {
 }
 
 .card-body {
-  border: 2px solid #ff5882;
+  border: 2px solid #eee;
 }
 
 .billing-address-form {
@@ -2755,6 +2760,12 @@ table.order-details thead tr th {
 table.order-details tbody td {
   border: 1px solid #ffffff;
   padding: 15px;
+}
+
+table.order-details tbody tr {
+  border: 2px solid #eee;
+  border-left: 0px;
+  border-right: 0px;
 }
 
 .order-details-wrap > a {

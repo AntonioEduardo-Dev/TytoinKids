@@ -46,11 +46,11 @@
                         echo '<div class="col-lg-4 col-md-6 text-center '.$dado['nome_categoria'].'">
                                 <div class="single-product-item">
                                     <div class="product-image">
-                                        <a href="product.php?id='.$dado['id_produto'].'" id="single-product-item" data-id="'.$dado['id_produto'].'"><img src="assets/img/newImages/'.$dado['imagem_produto'].'" alt="'.$dado['nome_produto'].'"></a>
+                                        <a href="product&id='.$dado['id_produto'].'" id="single-product-item" data-id="'.$dado['id_produto'].'"><img src="commandview/assets/img/newImages/'.$dado['imagem_produto'].'" alt="'.$dado['nome_produto'].'"></a>
                                     </div>
                                     <h3>'.$dado['nome_produto'].'</h3>
                                     <p class="product-price"><span>P/Quantidade</span> R$'.$dado['preco_produto'].' </p>
-                                    <a href="cart.php data-id="'.$dado['id_produto'].'"" class="cart-btn"><i class="fas fa-shopping-cart"></i> Adicionar ao carrinho</a>
+                                    <a href="cart" data-id="'.$dado['id_produto'].'"" class="cart-btn"><i class="fas fa-shopping-cart"></i> Adicionar ao carrinho</a>
                                 </div>
                             </div>';
                     }
@@ -59,7 +59,7 @@
                             <div class="col-lg-4 col-md-6 text-center indisponível">
                                 <div class="single-product-item">
                                     <div class="product-image">
-                                        <a href="#"><img src="assets/img/products/productind.jpg" alt="Produtos Indisponíveis"></a>
+                                        <a href="#"><img src="commandview/assets/img/products/productind.jpg" alt="Produtos Indisponíveis"></a>
                                     </div>
                                     <h3>Produtos Indisponíveis</h3>
                                     <p class="product-price"><span>P/Quantidade</span> R$00.00 </p>

@@ -8,7 +8,7 @@ $(function() {
             data.append('nm_imageUpload', $('#id_imageUpload')[0].files[0]);
 
             $.ajax({
-                url: '../../commandscontrol/Produtos.php',
+                url: '../commandscontrol/Produtos.php',
                 data: data,
                 processData: false,
                 contentType: false,
@@ -38,7 +38,7 @@ $(function() {
                     prod_imagem     : prod_imagem
                 }
         
-                $.post('../../commandscontrol/Produtos.php', dados, function(response) {
+                $.post('../commandscontrol/Produtos.php', dados, function(response) {
                     console.log("Response: "+response);
                     
                     var tipo = response.indexOf("alert_notification_error");

@@ -1,14 +1,13 @@
 <?php
 	session_start();
-
 	if(empty($_GET['id'])){
 		echo '<script>alert("Erro");</script>';
-		echo '<script>window.location="shop.php"</script>';
+		echo '<script>window.location="shop"</script>';
 		exit;
 	}
 	if($_GET['id'] < 1 || $_GET['id'] == null || is_int($_GET['id'])){
 		echo '<script>alert("Erro");</script>';
-		echo '<script>window.location="shop.php"</script>';
+		echo '<script>window.location="shop"</script>';
 		exit;
 	}
 ?>
@@ -24,26 +23,26 @@
 	<title>Produto</title>
 
 	<!-- favicon -->
-	<link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
+	<link rel="shortcut icon" type="image/png" href="commandview/assets/img/favicon.png">
 	<!-- google font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
 	<!-- fontawesome -->
-	<link rel="stylesheet" href="assets/css/all.min.css">
+	<link rel="stylesheet" href="commandview/assets/css/all.min.css">
 	<!-- bootstrap -->
-	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="commandview/assets/bootstrap/css/bootstrap.min.css">
 	<!-- owl carousel -->
-	<link rel="stylesheet" href="assets/css/owl.carousel.css">
+	<link rel="stylesheet" href="commandview/assets/css/owl.carousel.css">
 	<!-- magnific popup -->
-	<link rel="stylesheet" href="assets/css/magnific-popup.css">
+	<link rel="stylesheet" href="commandview/assets/css/magnific-popup.css">
 	<!-- animate css -->
-	<link rel="stylesheet" href="assets/css/animate.css">
+	<link rel="stylesheet" href="commandview/assets/css/animate.css">
 	<!-- mean menu css -->
-	<link rel="stylesheet" href="assets/css/meanmenu.min.css">
+	<link rel="stylesheet" href="commandview/assets/css/meanmenu.min.css">
 	<!-- main style -->
-	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="commandview/assets/css/main.css">
 	<!-- responsive -->
-	<link rel="stylesheet" href="assets/css/responsive.css">
+	<link rel="stylesheet" href="commandview/assets/css/responsive.css">
 
 </head>
 <body>
@@ -64,8 +63,8 @@
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div class="site-logo">
-							<a href="../index.html">
-								<img src="assets/img/logo-copie-01.png" alt="">
+							<a href="index">
+								<img src="commandview/assets/img/logo-copie-01.png" alt="">
 							</a>
 						</div>
 						<!-- logo -->
@@ -74,17 +73,17 @@
 						
 						<nav class="main-menu">
 							<ul>
-								<li><a class="cool-hover" href="about.html">Sobre</a></li>
-								<li><a class="cool-hover" href="contact.html">Contato</a></li>
-								<li><a class="cool-hover" href="shop.php">Produtos</a>
+								<li><a class="cool-hover" href="about">Sobre</a></li>
+								<li><a class="cool-hover" href="contact">Contato</a></li>
+								<li><a class="cool-hover" href="shop">Produtos</a>
 									<ul class="sub-menu">
-										<li><a href="shop.php">Produtos</a></li>
-										<li><a href="cart.php">Carrinho</a></li>
+										<li><a href="shop">Produtos</a></li>
+										<li><a href="cart">Carrinho</a></li>
 									</ul>
 								</li>
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart" href="cart.php"><i class="fas fa-shopping-cart"></i></a>
+										<a class="shopping-cart" href="cart"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 									</div>
 								</li>
@@ -135,25 +134,39 @@
 	<!-- end breadcrumb section -->
 
 	<!-- Produto -->
-	<div class="single-product mt-150 mb-150">
+	<div class="single-product mt-5 mb-5">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-5">
+				<div class="col-md-5 mt-5 mb-5">
 					<div class="single-product-img">
-						<img id="imagem_produto" src="assets/img/products/product-img-5.jpg" alt="">
+						<img id="imagem_produto" src="commandview/assets/img/products/product-img-5.jpg" alt="">
 					</div>
 				</div>
-				<div class="col-md-7">
+				<div class="col-md-7 mt-5 mb-5">
 					<div class="single-product-content">
 						<h3 id="id_nome_produto"></h3>
 						<p class="single-product-pricing"><span>P/Quantidade</span> R$ <a id="id_preco_produto"></a></p>
-						<p>Disponiveis: <a id="id_qtd_produto"></a></p>
 						<div class="single-product-form">
-							<form action="../index.html">
-								<input type="number" placeholder="0">
-							</form>
-							<a href="cart.php" class="cart-btn"><i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho</a>
-							<a href="cart.php" class="boxed-btn">Encomendar</a>
+							<div class="row">
+								<div class="col">
+									Disponiveis: <a id="id_qtd_produto"> </a>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col mt-1">
+									<input type="number" placeholder="0">
+								</div>
+							</div>
+							<div class="form-group row">
+								<div class="col">
+									<a href="cart" class="cart-btn"><i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho</a>
+								</div>
+							</div>
+							<div class="form-group row">
+								<div class="col">
+									<a href="cart" class="boxed-btn">Encomendar</a>
+								</div>
+							</div>
 							<p><strong>Categoria: </strong><a id="id_categoria_produto"></a></p>
 						</div>
 						<h4>Compartilhe:</h4>
@@ -171,7 +184,7 @@
 	<!-- end Produto -->
 
 	<!-- more products -->
-	<div class="more-products mb-150">
+	<div class="more-products mb-5">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
@@ -185,31 +198,31 @@
 				<div class="col-lg-4 col-md-6 text-center">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="product.php"><img src="assets/img/products/product-img-1.jpg" alt=""></a>
+							<a href="product"><img src="commandview/assets/img/products/product-img-1.jpg" alt=""></a>
 						</div>
 						<h3>Strawberry</h3>
 						<p class="product-price"><span>P/Quantidade</span> R$85 </p>
-						<a href="cart.php" class="cart-btn"><i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho</a>
+						<a href="cart" class="cart-btn"><i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho</a>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6 text-center">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="product.php"><img src="assets/img/products/product-img-2.jpg" alt=""></a>
+							<a href="product"><img src="commandview/assets/img/products/product-img-2.jpg" alt=""></a>
 						</div>
 						<h3>Berry</h3>
 						<p class="product-price"><span>P/Quantidade</span> R$85 </p>
-						<a href="cart.php" class="cart-btn"><i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho</a>
+						<a href="cart" class="cart-btn"><i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho</a>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3 text-center">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="product.php"><img src="assets/img/products/product-img-3.jpg" alt=""></a>
+							<a href="product"><img src="commandview/assets/img/products/product-img-3.jpg" alt=""></a>
 						</div>
 						<h3>Lemon</h3>
 						<p class="product-price"><span>P/Quantidade</span> R$85 </p>
-						<a href="cart.php" class="cart-btn"><i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho</a>
+						<a href="cart" class="cart-btn"><i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho</a>
 					</div>
 				</div>
 			</div>
@@ -233,7 +246,7 @@
 						<h2 class="widget-title">Como nos encontrar</h2>
 						<ul>
 							<li>34/8, East Hukupara, Gifirtok, Sadan.</li>
-							<li>support@fruitkha.com</li>
+							<li>support@tkids.com</li>
 							<li>+00 111 222 3333</li>
 						</ul>
 					</div>
@@ -243,7 +256,7 @@
 						<h2 class="widget-title">Serviços</h2>
 						<ul>
 							<li>34/8, East Hukupara, Gifirtok, Sadan.</li>
-							<li>support@fruitkha.com</li>
+							<li>support@tkids.com</li>
 							<li>+00 111 222 3333</li>
 						</ul>
 					</div>
@@ -252,9 +265,9 @@
 					<div class="footer-box pages">
 						<h2 class="widget-title">Páginas</h2>
 						<ul>
-							<li><a href="../index.html">Início</a></li>
-							<li><a href="about.html">Sobre</a></li>
-							<li><a href="services.html">Produtos</a></li>
+							<li><a class="cool-hover" href="index">Início</a></li>
+							<li><a class="cool-hover" href="about">Sobre</a></li>
+							<li><a class="cool-hover" href="services">Produtos</a></li>
 						</ul>
 					</div>
 				</div>
@@ -288,27 +301,27 @@
 	<!-- end copyright -->
 	
 	<!-- jquery -->
-	<script src="assets/js/jquery-1.11.3.min.js"></script>
+	<script src="commandview/assets/js/jquery-1.11.3.min.js"></script>
 	<!-- bootstrap -->
-	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<script src="commandview/assets/bootstrap/js/bootstrap.min.js"></script>
 	<!-- count down -->
-	<script src="assets/js/jquery.countdown.js"></script>
+	<script src="commandview/assets/js/jquery.countdown.js"></script>
 	<!-- isotope -->
-	<script src="assets/js/jquery.isotope-3.0.6.min.js"></script>
+	<script src="commandview/assets/js/jquery.isotope-3.0.6.min.js"></script>
 	<!-- waypoints -->
-	<script src="assets/js/waypoints.js"></script>
+	<script src="commandview/assets/js/waypoints.js"></script>
 	<!-- owl carousel -->
-	<script src="assets/js/owl.carousel.min.js"></script>
+	<script src="commandview/assets/js/owl.carousel.min.js"></script>
 	<!-- magnific popup -->
-	<script src="assets/js/jquery.magnific-popup.min.js"></script>
+	<script src="commandview/assets/js/jquery.magnific-popup.min.js"></script>
 	<!-- mean menu -->
-	<script src="assets/js/jquery.meanmenu.min.js"></script>
+	<script src="commandview/assets/js/jquery.meanmenu.min.js"></script>
 	<!-- sticker js -->
-	<script src="assets/js/sticker.js"></script>
+	<script src="commandview/assets/js/sticker.js"></script>
 	<!-- main js -->
-	<script src="assets/js/main.js"></script>
+	<script src="commandview/assets/js/main.js"></script>
 	<!-- listar produtos js -->
-	<script src="../commandsfunction/read/produto.js"></script>
+	<script src="commandsfunction/read/produto.js"></script>
 
 </body>
 </html>
