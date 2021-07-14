@@ -1,4 +1,4 @@
-/*==============================Buscar Alunos==============================*/
+/* lISTAR CATEGORIAS E PRODUTOS*/
 $(function() {
     listarCategorias = {listarCategorias : true}
 

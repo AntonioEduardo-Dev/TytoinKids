@@ -1190,9 +1190,22 @@ ul.social-link-team li a:hover {
 input {
   padding: 15px;
   width: 100%;
-  border: 2px groove #ff5882;
-  border-radius: 4px;
-  margin: 3px;
+  border: 2px outset #ffffff;
+  border-radius: 5px;
+  border-top: outset;
+  border-left: outset;
+  margin: 1px;
+}
+
+/* All select elements on page */
+select {
+  padding: 15px;
+  width: 100%;
+  border: 2px outset #ffffff;
+  border-radius: 5px;
+  border-top: outset;
+  border-left: outset;
+  margin: 1px;
 }
 
 input[type="submit"] {
@@ -2655,8 +2668,7 @@ tr.total-data td strong {
 .card.single-accordion .card-header {
   background-color: #ffffff;
   padding: 0;
-  border: 2px groove #ff5882;
-  border-radius: 1%;
+  border: 2px solid #ff5882;
 }
 
 .card.single-accordion:last-child {
@@ -2683,7 +2695,7 @@ tr.total-data td strong {
 }
 
 .card-body {
-  border: 2px groove #ff5882;
+  border: 2px solid #ff5882;
 }
 
 .billing-address-form {

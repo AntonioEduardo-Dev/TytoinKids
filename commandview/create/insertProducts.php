@@ -7,29 +7,29 @@
 	<meta name="description" content="Responsive Bootstrap4 - Tytoin_kids">
 
 	<!-- title -->
-	<title>Produtos</title>
+	<title>Inserir Produto</title>
 
 	<!-- favicon -->
-	<link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
+	<link rel="shortcut icon" type="image/png" href="../assets/img/favicon.png">
 	<!-- google font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
 	<!-- fontawesome -->
-	<link rel="stylesheet" href="assets/css/all.min.css">
+	<link rel="stylesheet" href="../assets/css/all.min.css">
 	<!-- bootstrap -->
-	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
 	<!-- owl carousel -->
-	<link rel="stylesheet" href="assets/css/owl.carousel.css">
+	<link rel="stylesheet" href="../assets/css/owl.carousel.css">
 	<!-- magnific popup -->
-	<link rel="stylesheet" href="assets/css/magnific-popup.css">
+	<link rel="stylesheet" href="../assets/css/magnific-popup.css">
 	<!-- animate css -->
-	<link rel="stylesheet" href="assets/css/animate.css">
+	<link rel="stylesheet" href="../assets/css/animate.css">
 	<!-- mean menu css -->
-	<link rel="stylesheet" href="assets/css/meanmenu.min.css">
+	<link rel="stylesheet" href="../assets/css/meanmenu.min.css">
 	<!-- main style -->
-	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="../assets/css/main.css">
 	<!-- responsive -->
-	<link rel="stylesheet" href="assets/css/responsive.css">
+	<link rel="stylesheet" href="../assets/css/responsive.css">
 
 </head>
 <body>
@@ -50,26 +50,27 @@
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div class="site-logo">
-							<a href="../index.html">
-								<img src="assets/img/logo-copie-01.png" alt="">
+							<a href="../../index.html">
+								<img src="../assets/img/logo-copie-01.png" alt="">
 							</a>
 						</div>
 						<!-- logo -->
 
 						<!-- menu start -->
+						
 						<nav class="main-menu">
 							<ul>
-								<li><a class="cool-hover" href="about.html">Sobre</a></li>
-								<li><a class="cool-hover" href="contact.html">Contato</a></li>
-								<li><a class="cool-hover" href="shop.php">Produtos</a>
+								<li><a class="cool-hover" href="../about.html">Sobre</a></li>
+								<li><a class="cool-hover" href="../contact.html">Contato</a></li>
+								<li><a class="cool-hover" href="../shop.php">Produtos</a>
 									<ul class="sub-menu">
-										<li><a href="shop.php">Produtos</a></li>
-										<li><a href="cart.php">Carrinho</a></li>
+										<li><a href="../shop.php">Produtos</a></li>
+										<li><a href="../cart.php">Carrinho</a></li>
 									</ul>
 								</li>
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart cool-hover" href="cart.php"><i class="fas fa-shopping-cart"></i></a>
+										<a class="shopping-cart cool-hover" href="../cart.php"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon cool-hover" href="#"><i class="fas fa-search"></i></a>
 									</div>
 								</li>
@@ -110,8 +111,8 @@
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="breadcrumb-text">
-						<p>Mais belos</p>
-						<h1>Produtos</h1>
+						<p>Os melhores produtos</p>
+						<h1>Inserir Produto</h1>
 					</div>
 				</div>
 			</div>
@@ -119,37 +120,78 @@
 	</div>
 	<!-- end breadcrumb section -->
 
-	<!-- products -->
-	<div class="product-section mt-150 mb-150">
+	<!-- check out section -->
+	<div class="checkout-section mt-80 mb-80">
 		<div class="container">
-
 			<div class="row">
-                <div class="col-md-12">
-                    <div class="product-filters">
-                    </div>
-                </div>
-            </div>
+				<div class="col-lg ml-5 mr-5">
+					<div class="checkout-accordion-wrap">
+						<div class="accordion" id="accordionExample">
+						  <div class="card single-accordion">
+						    <div class="card-header" id="headingOne">
+						      <h5>
+						        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+						          Cadastrar Produto
+						        </button>
+						      </h5>
+						    </div>
 
-			<div class="row product-lists">
-			</div>
-			<!--  
-			<div class="row">
-				<div class="col text-center">
-					<div class="pagination-wrap">
-						<ul>
-							<li><a href="#">Anterior</a></li>
-							<li><a class="active" href="#">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">Próximo</a></li>
-						</ul>
+						    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+								<div class="card-body">
+									<div class="mt-4 ml-3 mr-3 mb-2">
+										<div class="col pl">
+											<div class="row">
+												<div class="col-lg">
+													<select name="nm_categ" id="id_categ">
+														<option value="1" selected style="display: none;">Categoria do produto*</option>
+														<option value="1">Infantil</option>
+													</select>
+												</div>
+											</div>
+											<div class="row mt-2">
+												<div class="col-lg">
+													<input type="text" placeholder="Nome do produto*" id="id_nome">
+												</div>
+											</div>
+											<div class="row mt-2">
+												<div class="col-lg-6">
+													<input type="text" placeholder="Quantidade disponível*" id="id_qtd">
+												</div>
+												<div class="col-lg-6">
+													<input type="text" placeholder="Preço por unidade*" id="id_preco">
+												</div>
+											</div>
+											<div class="row mt-2">
+												<div class="col-lg">
+													<input type="file" placeholder="Imagem do produto*" id="id_imageUpload" name="nm_imageUpload" accept=".png">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-lg">
+													<div class="col-lg mt-1">
+														<h6 class="">Itens com * são obrigatórios</h6>
+													</div>
+												</div>
+											</div>											
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-md-4 offset-md-4">
+											<input type="submit" name="cadastrar" value="Cadastrar" id="id_cad">
+										</div>
+									</div>
+								</div>
+						    </div>
+						  </div>
+						</div>
+
 					</div>
 				</div>
 			</div>
-			-->
 		</div>
 	</div>
-	<!-- end products -->
+	<!-- end check out section -->
+
 
 	<!-- footer -->
 	<div class="footer-area">
@@ -185,9 +227,9 @@
 					<div class="footer-box pages">
 						<h2 class="widget-title">Páginas</h2>
 						<ul>
-							<li><a href="../index.html">Início</a></li>
-							<li><a href="about.html">Sobre</a></li>
-							<li><a href="services.html">Produtos</a></li>
+							<li><a href="../../index.html">Início</a></li>
+							<li><a href="../about.html">Sobre</a></li>
+							<li><a href="../services.html">Produtos</a></li>
 						</ul>
 					</div>
 				</div>
@@ -202,7 +244,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-12">
-					<p>Copyrights &copy; 2021 - <a href="tytoin_kids_link_copyright">Tytoin</a>,  Todos os direitos reservados.</p>
+					<p>Copyrights &copy; 2021 - <a href="../tytoin_kids_link_copyright">Tytoin</a>,  Todos os direitos reservados.</p>
 				</div>
 				<div class="col-lg-6 text-right col-md-12">
 					<div class="social-icons">
@@ -221,28 +263,28 @@
 	<!-- end copyright -->
 	
 	<!-- jquery -->
-	<script src="assets/js/jquery-1.11.3.min.js"></script>
+	<script src="../assets/js/jquery-1.11.3.min.js"></script>
 	<!-- bootstrap -->
-	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
 	<!-- count down -->
-	<script src="assets/js/jquery.countdown.js"></script>
+	<script src="../assets/js/jquery.countdown.js"></script>
 	<!-- isotope -->
-	<script src="assets/js/jquery.isotope-3.0.6.min.js"></script>
+	<script src="../assets/js/jquery.isotope-3.0.6.min.js"></script>
 	<!-- waypoints -->
-	<script src="assets/js/waypoints.js"></script>
+	<script src="../assets/js/waypoints.js"></script>
 	<!-- owl carousel -->
-	<script src="assets/js/owl.carousel.min.js"></script>
+	<script src="../assets/js/owl.carousel.min.js"></script>
 	<!-- magnific popup -->
-	<script src="assets/js/jquery.magnific-popup.min.js"></script>
+	<script src="../assets/js/jquery.magnific-popup.min.js"></script>
 	<!-- mean menu -->
-	<script src="assets/js/jquery.meanmenu.min.js"></script>
+	<script src="../assets/js/jquery.meanmenu.min.js"></script>
 	<!-- sticker js -->
-	<script src="assets/js/sticker.js"></script>
+	<script src="../assets/js/sticker.js"></script>
 	<!-- main js -->
-	<script src="assets/js/main.js"></script>
-
-	<!-- listar produtos js -->
-	<script src="../commandsfunction/read/shop.js"></script>
+	<script src="../assets/js/main.js"></script>
+	
+	<!-- inserir produtos js -->
+	<script src="../../commandsfunction/create/insertProduct.js"></script>
 
 </body>
 </html>

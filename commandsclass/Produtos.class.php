@@ -2,14 +2,15 @@
     require_once "Connection.class.php";
 
     class Produtos{
-        public function cadastrar($nome,$preco,$quantidade,$imagem){
+        public function cadastrar($categoria, $nome, $preco,$quantidade,$imagem){
             $objConexao = new Connection();
             $connection = $objConexao->conectar();
 
             try {
-                $sql = "INSERT INTO produtos(id_produto, nome_produto, preco_produto, quatidade_disponivel, imagem_produto) VALUES (NULL, :nome, :preco, :quantidade, :imagem)";
+                $sql = "INSERT INTO produtos(id_produto, id_categoria_fk, nome_produto, preco_produto, quatidade_disponivel, imagem_produto) VALUES (NULL, :categoria, :nome, :preco, :quantidade, :imagem)";
 
                 $cadastrar = $connection->prepare($sql);
+                $cadastrar->bindValue(":categoria", $categoria);
                 $cadastrar->bindValue(":nome", $nome);
                 $cadastrar->bindValue(":preco", $preco);
                 $cadastrar->bindValue(":quantidade", $quantidade);
@@ -45,7 +46,7 @@
                         echo '<div class="col-lg-4 col-md-6 text-center '.$dado['nome_categoria'].'">
                                 <div class="single-product-item">
                                     <div class="product-image">
-                                        <a href="product.php?id='.$dado['id_produto'].'" id="single-product-item" data-id="'.$dado['id_produto'].'"><img src="assets/img/products/'.$dado['imagem_produto'].'" alt="'.$dado['nome_produto'].'"></a>
+                                        <a href="product.php?id='.$dado['id_produto'].'" id="single-product-item" data-id="'.$dado['id_produto'].'"><img src="assets/img/newImages/'.$dado['imagem_produto'].'" alt="'.$dado['nome_produto'].'"></a>
                                     </div>
                                     <h3>'.$dado['nome_produto'].'</h3>
                                     <p class="product-price"><span>P/Quantidade</span> R$'.$dado['preco_produto'].' </p>
