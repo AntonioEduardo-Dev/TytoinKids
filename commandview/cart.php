@@ -57,7 +57,7 @@
 						<!-- logo -->
 						<div class="site-logo">
 							<a href="index">
-								<img src="commandview/assets/img/logo-copie-01.png" alt="">
+								<img src="commandview/assets/img/logo_defined.png" alt="">
 							</a>
 						</div>
 						<!-- logo -->
@@ -146,7 +146,7 @@
 							<tbody>
 								<tr class="table-body-row">
 									<td class="product-remove"><a href="#"><i class="far fa-window-close"></i></a></td>
-									<td class="product-image"><img src="commandview/assets/img/products/product-img-1.jpg" alt=""></td>
+									<td class="product-image"><img src="commandview/assets/img/images/productind.jpg" alt=""></td>
 									<td class="product-name">Strawberry</td>
 									<td class="product-price">$85</td>
 									<td class="product-quantity"><input type="number" placeholder="0"></td>
@@ -154,7 +154,7 @@
 								</tr>
 								<tr class="table-body-row">
 									<td class="product-remove"><a href="#"><i class="far fa-window-close"></i></a></td>
-									<td class="product-image"><img src="commandview/assets/img/products/product-img-2.jpg" alt=""></td>
+									<td class="product-image"><img src="commandview/assets/img/images/productind.jpg" alt=""></td>
 									<td class="product-name">Berry</td>
 									<td class="product-price">$70</td>
 									<td class="product-quantity"><input type="number" placeholder="0"></td>
@@ -162,7 +162,7 @@
 								</tr>
 								<tr class="table-body-row">
 									<td class="product-remove"><a href="#"><i class="far fa-window-close"></i></a></td>
-									<td class="product-image"><img src="commandview/assets/img/products/product-img-3.jpg" alt=""></td>
+									<td class="product-image"><img src="commandview/assets/img/images/productind.jpg" alt=""></td>
 									<td class="product-name">Lemon</td>
 									<td class="product-price">$35</td>
 									<td class="product-quantity"><input type="number" placeholder="0"></td>
@@ -206,8 +206,8 @@
 					<div class="coupon-section">
 						<h3>Adicionar Cupom</h3>
 						<div class="coupon-form-wrap">
-							<p><input type="text" placeholder="Cupom"></p>
-							<p><input type="submit" value="Aplicar"></p>
+							<p><input type="text" class="btn_nm_cupom" name="Cupom" placeholder="Cupom" required></p>
+							<p><input type="submit" class="modal_system_open" value="Aplicar"></p>
 						</div>
 					</div>
 				</div>
@@ -216,6 +216,18 @@
 	</div>
 	<!-- end cart -->
 
+	<!-- Large modal -->
+	<div class="modal fade modal_system_open_class" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="conteudo">
+				
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<!-- End Large modal -->
 
 	<!-- footer -->
 	<div class="footer-area">
@@ -253,7 +265,7 @@
 						<ul>
 							<li><a class="cool-hover" href="index">Início</a></li>
 							<li><a class="cool-hover" href="about">Sobre</a></li>
-							<li><a class="cool-hover" href="services">Produtos</a></li>
+							<li><a class="cool-hover" href="shop">Produtos</a></li>
 						</ul>
 					</div>
 				</div>
@@ -306,6 +318,9 @@
 	<script src="commandview/assets/js/sticker.js"></script>
 	<!-- main js -->
 	<script src="commandview/assets/js/main.js"></script>
+
+	<!-- conteudo modal js -->
+	<script src="commandsfunction/content/conteudoCart.js"></script>
 
 </body>
 </html>

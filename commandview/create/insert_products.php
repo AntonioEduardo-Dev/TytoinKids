@@ -7,7 +7,7 @@
 	<meta name="description" content="Responsive Bootstrap4 - Tytoin_kids">
 
 	<!-- title -->
-	<title>Menu</title>
+	<title>Inserir Produto</title>
 
 	<!-- favicon -->
 	<link rel="shortcut icon" type="image/png" href="../commandview/assets/img/favicon.png">
@@ -57,6 +57,7 @@
 						<!-- logo -->
 
 						<!-- menu start -->
+						
 						<nav class="main-menu">
 							<ul>
 								<li><a class="cool-hover" href="../about">Sobre</a></li>
@@ -110,7 +111,8 @@
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="breadcrumb-text">
-						<h1>MENU ADMINISTRADOR</h1>
+						<p>Os melhores produtos</p>
+						<h1>Inserir Produto</h1>
 					</div>
 				</div>
 			</div>
@@ -118,70 +120,77 @@
 	</div>
 	<!-- end breadcrumb section -->
 
-	<!-- products -->
-	<div class="product-section mt-5 mb-5">
+	<!-- check out section -->
+	<div class="checkout-section mt-5 mb-5">
 		<div class="container">
-			<div class="row menu-list">
-				<div class="container mt-5 mb-5">
-					<div class="row">
-						<div class="col-lg-4 col-md-6 text-center">
-							<div class="single-product-item">
-								<div class="product-image">
-									<a href="#" class="modal_system_open" name="btn_nm_categoria"><img src="../commandview/assets/img/menu/image_menu.png" alt=""></a>
+			<div class="row">
+				<div class="col-lg ml-4 mr-4 mt-5 mb-5">
+					<div class="checkout-accordion-wrap">
+						<div class="accordion" id="accordionExample">
+						  <div class="card single-accordion">
+						    <div class="card-header" id="headingOne">
+						      <h5>
+						        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+						          Cadastrar Produto
+						        </button>
+						      </h5>
+						    </div>
+
+						    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+								<div class="card-body">
+									<div class="mt-4 ml-3 mr-3 mb-2">
+										<div class="col pl">
+											<div class="row">
+												<div class="col-lg">
+													<select name="nm_categ" id="id_categ">
+														<option value="1" selected style="display: none;">Categoria do produto*</option>
+														<option value="1">Infantil</option>
+													</select>
+												</div>
+											</div>
+											<div class="row mt-2">
+												<div class="col-lg">
+													<input type="text" placeholder="Nome do produto*" id="id_nome" required>
+												</div>
+											</div>
+											<div class="row mt-2">
+												<div class="col-lg-6">
+													<input type="text" placeholder="Quantidade disponível*" id="id_qtd" required>
+												</div>
+												<div class="col-lg-6">
+													<input type="text" placeholder="Preço por unidade*" id="id_preco" required>
+												</div>
+											</div>
+											<div class="row mt-2">
+												<div class="col-lg">
+													<input type="file" placeholder="Imagem do produto*" id="id_imageUpload" name="nm_imageUpload" accept=".png">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-lg">
+													<div class="col-lg mt-1">
+														<h6 class="">Itens com * são obrigatórios</h6>
+													</div>
+												</div>
+											</div>											
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-md-4 offset-md-4">
+											<input type="submit" name="cadastrar" value="Cadastrar" id="id_cad">
+										</div>
+									</div>
 								</div>
-								<a href="#" class="modal_system_open" name="btn_nm_categoria"><h3>Categorias</h3></a>
-							</div>
+						    </div>
+						  </div>
 						</div>
-						<div class="col-lg-4 col-md-6 text-center">
-							<div class="single-product-item">
-								<div class="product-image">
-									<a href="#" class="modal_system_open" name="btn_nm_produto"><img src="../commandview/assets/img/menu/image_menu.png" alt=""></a>
-								</div>
-								<a href="#" class="modal_system_open" name="btn_nm_produto"><h3>Produtos</h3></a>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
-							<div class="single-product-item">
-								<div class="product-image">
-									<a href="#" class="modal_system_open" name="btn_nm_encomenda"><img src="../commandview/assets/img/menu/image_menu.png" alt=""></a>
-								</div>
-								<a href="#" class="modal_system_open" name="btn_nm_encomenda"><h3>Encomendas</h3></a>
-							</div>
-						</div>
-					</div>
-					<hr>
-					<div class="row">
-						<div class="col-lg-4 col-md-6 text-center">
-							<div class="single-product-item">
-								<div class="product-image">
-									<a href="#" class="modal_system_open" name="btn_nm_categoria"><img src="../commandview/assets/img/menu/image_menu.png" alt=""></a>
-								</div>
-								<a href="#" class="modal_system_open" name="btn_nm_categoria"><h3>Categorias</h3></a>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-6 text-center">
-							<div class="single-product-item">
-								<div class="product-image">
-									<a href="#" class="modal_system_open" name="btn_nm_produto"><img src="../commandview/assets/img/menu/image_menu.png" alt=""></a>
-								</div>
-								<a href="#" class="modal_system_open" name="btn_nm_produto"><h3>Produtos</h3></a>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
-							<div class="single-product-item">
-								<div class="product-image">
-									<a href="#" class="modal_system_open" name="btn_nm_encomenda"><img src="../commandview/assets/img/menu/image_menu.png" alt=""></a>
-								</div>
-								<a href="#" class="modal_system_open" name="btn_nm_encomenda"><h3>Encomendas</h3></a>
-							</div>
-						</div>
+
 					</div>
 				</div>
 			</div>
-
 		</div>
 	</div>
-	<!-- end products -->
+	<!-- end check out section -->
 
 	<!-- Large modal -->
 	<div class="modal fade modal_system_open_class" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -195,7 +204,7 @@
 	</div>
 
 	<!-- End Large modal -->
-
+	
 	<!-- footer -->
 	<div class="footer-area">
 		<div class="container">
@@ -286,9 +295,8 @@
 	<!-- main js -->
 	<script src="../commandview/assets/js/main.js"></script>
 	
-	<!-- conteudo js -->
-	<script src="../commandsfunction/content/conteudoMenu.js"></script>
-
+	<!-- inserir produtos js -->
+	<script src="../commandsfunction/create/insertProduct.js"></script>
 
 </body>
 </html>

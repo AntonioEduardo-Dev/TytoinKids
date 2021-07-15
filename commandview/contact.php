@@ -51,7 +51,7 @@
 						<!-- logo -->
 						<div class="site-logo">
 							<a href="index">
-								<img src="commandview/assets/img/logo-copie-01.png" alt="">
+								<img src="commandview/assets/img/logo_defined.png" alt="">
 							</a>
 						</div>
 						<!-- logo -->
@@ -132,18 +132,18 @@
 					<div class="contact-form">
 						<div class="row mt-3">
 							<div class="col-lg-6">
-								<input type="text" placeholder="Name" name="name" id="name">
+								<input type="text" placeholder="Name*" name="name" id="name" required>
 							</div>
 							<div class="col-lg-6">
-								<input type="email" placeholder="Email" name="email" id="email">
+								<input type="email" placeholder="Email*" name="email" id="email" required>
 							</div>
 						</div>
 						<div class="row mt-3">
 							<div class="col-lg-6">
-								<input type="tel" placeholder="Phone" name="phone" id="phone">
+								<input type="tel" placeholder="Phone*" name="phone" id="phone" required>
 							</div>
 							<div class="col-lg-6">
-								<input type="text" placeholder="Subject" name="subject" id="subject">
+								<input type="text" placeholder="Subject*" name="subject" id="subject" required>
 							</div>
 						</div>
 						<div class="row mt-3">
@@ -232,7 +232,7 @@
 						<h2 class="widget-title">Páginas</h2>
 						<ul><li><a class="cool-hover" href="index">Início</a></li>
 							<li><a class="cool-hover" href="about">Sobre</a></li>
-							<li><a class="cool-hover" href="services">Produtos</a></li>
+							<li><a class="cool-hover" href="shop">Produtos</a></li>
 						</ul>
 					</div>
 				</div>

@@ -1190,32 +1190,42 @@ ul.social-link-team li a:hover {
 input {
   padding: 15px;
   width: 100%;
-  border: 2px outset #eee;
+  border: 2px solid #eee;
   border-radius: 5px;
-  border-top: outset;
-  border-left: outset;
   margin: 1px;
+  font-family: 'Poppins', sans-serif;
+  display: inline-block;
+  padding: 15px 20px;
 }
 
 /* All select elements on page */
 select {
-  padding: 15px;
   width: 100%;
   border: 2px outset #ffffff;
   border-radius: 5px;
-  border-top: outset;
-  border-left: outset;
+  border-top: 1px outset;
+  border-left: 1px outset;
+  border-right: 2px outset;
+  border-bottom: 2px outset;
   margin: 1px;
+  font-family: 'Poppins', sans-serif;
+  display: inline-block;
+  padding: 15px 20px;
 }
 
 textarea {
-  padding: 15px;
   width: 100%;
   border: 2px outset #ffffff;
   border-radius: 5px;
-  border-top: outset;
-  border-left: outset;
+  border-top: 1px outset;
+  border-left: 1px outset;
+  border-right: 2px outset;
+  border-bottom: 2px outset;
   margin: 1px;
+  margin-top: 15px;
+  font-family: 'Poppins', sans-serif;
+  display: inline-block;
+  padding: 15px 20px;
 }
 
 input[type="submit"] {

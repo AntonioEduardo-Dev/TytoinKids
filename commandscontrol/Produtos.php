@@ -49,7 +49,7 @@
 
             if ($verifica > 0) {
                 $novoNome = md5(time()).$ext; // definir novo nome
-                $dir = "../commandview/assets/img/newImages/"; // definir diretorio para upload da imagem
+                $dir = "../commandview/assets/img/images/"; // definir diretorio para upload da imagem
     
                 // upload imagem
                 if (move_uploaded_file($_FILES['nm_imageUpload']['tmp_name'], $dir.$novoNome)) {

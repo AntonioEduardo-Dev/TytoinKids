@@ -1,8 +1,5 @@
 <?php
     require_once "Connection.class.php";
-    
-    $objConexao = new Connection();
-    $connection = $objConexao->conectar();
 
     class Encomendas{
         public function cadastrar(){

@@ -51,7 +51,7 @@
 						<!-- logo -->
 						<div class="site-logo">
 							<a href="index">
-								<img src="commandview/assets/img/logo-copie-01.png" alt="">
+								<img src="commandview/assets/img/logo_defined.png" alt="">
 							</a>
 						</div>
 						<!-- logo -->
@@ -243,12 +243,12 @@
 	<!-- testimonail-section -->
 	<div class="testimonail-section">
 		<div class="container">
-			<div class="row">
+			<div class="row mt-5 mb-5">
 				<div class="col-lg-10 offset-lg-1 text-center">
 					<div class="testimonial-sliders">
 						<div class="single-testimonial-slider">
 							<div class="client-avater">
-								<img src="commandview/assets/img/avaters/avatar1.png" alt="">
+								<img src="commandview/assets/img/team/avatar1.png" alt="">
 							</div>
 							<div class="client-meta">
 								<h3>Saira Hakim <span>Local shop owner</span></h3>
@@ -262,7 +262,7 @@
 						</div>
 						<div class="single-testimonial-slider">
 							<div class="client-avater">
-								<img src="commandview/assets/img/avaters/avatar2.png" alt="">
+								<img src="commandview/assets/img/team/avatar2.png" alt="">
 							</div>
 							<div class="client-meta">
 								<h3>David Niph <span>Local shop owner</span></h3>
@@ -276,7 +276,7 @@
 						</div>
 						<div class="single-testimonial-slider">
 							<div class="client-avater">
-								<img src="commandview/assets/img/avaters/avatar3.png" alt="">
+								<img src="commandview/assets/img/team/avatar3.png" alt="">
 							</div>
 							<div class="client-meta">
 								<h3>Jacob Sikim <span>Local shop owner</span></h3>
@@ -332,7 +332,7 @@
 						<ul>
 							<li><a class="cool-hover" href="index">Início</a></li>
 							<li><a class="cool-hover" href="about">Sobre</a></li>
-							<li><a class="cool-hover" href="services">Produtos</a></li>
+							<li><a class="cool-hover" href="shop">Produtos</a></li>
 						</ul>
 					</div>
 				</div>

@@ -10,26 +10,26 @@
 	<title>Produtos</title>
 
 	<!-- favicon -->
-	<link rel="shortcut icon" type="image/png" href="commandview/assets/img/favicon.png">
+	<link rel="shortcut icon" type="image/png" href="../commandview/assets/img/favicon.png">
 	<!-- google font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
 	<!-- fontawesome -->
-	<link rel="stylesheet" href="commandview/assets/css/all.min.css">
+	<link rel="stylesheet" href="../commandview/assets/css/all.min.css">
 	<!-- bootstrap -->
-	<link rel="stylesheet" href="commandview/assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../commandview/assets/bootstrap/css/bootstrap.min.css">
 	<!-- owl carousel -->
-	<link rel="stylesheet" href="commandview/assets/css/owl.carousel.css">
+	<link rel="stylesheet" href="../commandview/assets/css/owl.carousel.css">
 	<!-- magnific popup -->
-	<link rel="stylesheet" href="commandview/assets/css/magnific-popup.css">
+	<link rel="stylesheet" href="../commandview/assets/css/magnific-popup.css">
 	<!-- animate css -->
-	<link rel="stylesheet" href="commandview/assets/css/animate.css">
+	<link rel="stylesheet" href="../commandview/assets/css/animate.css">
 	<!-- mean menu css -->
-	<link rel="stylesheet" href="commandview/assets/css/meanmenu.min.css">
+	<link rel="stylesheet" href="../commandview/assets/css/meanmenu.min.css">
 	<!-- main style -->
-	<link rel="stylesheet" href="commandview/assets/css/main.css">
+	<link rel="stylesheet" href="../commandview/assets/css/main.css">
 	<!-- responsive -->
-	<link rel="stylesheet" href="commandview/assets/css/responsive.css">
+	<link rel="stylesheet" href="../commandview/assets/css/responsive.css">
 
 </head>
 <body>
@@ -50,26 +50,27 @@
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div class="site-logo">
-							<a href="index">
-								<img src="commandview/assets/img/logo_defined.png" alt="">
+							<a href="../index">
+								<img src="../commandview/assets/img/logo_defined.png" alt="">
 							</a>
 						</div>
 						<!-- logo -->
 
 						<!-- menu start -->
+						
 						<nav class="main-menu">
 							<ul>
-								<li><a class="cool-hover" href="about">Sobre</a></li>
-								<li><a class="cool-hover" href="contact">Contato</a></li>
-								<li><a class="cool-hover" href="shop">Produtos</a>
+								<li><a class="cool-hover" href="../about">Sobre</a></li>
+								<li><a class="cool-hover" href="../contact">Contato</a></li>
+								<li><a class="cool-hover" href="../shop">Produtos</a>
 									<ul class="sub-menu">
-										<li><a href="shop">Produtos</a></li>
-										<li><a href="cart">Carrinho</a></li>
+										<li><a href="../shop">Produtos</a></li>
+										<li><a href="../cart">Carrinho</a></li>
 									</ul>
 								</li>
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart cool-hover" href="cart"><i class="fas fa-shopping-cart"></i></a>
+										<a class="shopping-cart cool-hover" href="../cart"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon cool-hover" href="#"><i class="fas fa-search"></i></a>
 									</div>
 								</li>
@@ -110,47 +111,71 @@
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="breadcrumb-text">
-						<p>Mais belos</p>
-						<h1>Produtos</h1>
+						<p>Os melhores produtos</p>
+						<h1>Inserir Produto</h1>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- end breadcrumb section -->
-
-	<!-- products -->
-	<div class="product-section mt-5 mb-5">
+	
+	<!-- content page -->
+	<div class="table-section mt-5 mb-5">
 		<div class="container">
-
-			<div class="row">
-                <div class="col-md-12">
-                    <div class="product-filters">
-                    </div>
-                </div>
-            </div>
-
-			<div class="row product-lists">
-			</div>
-			<!--  
-			<div class="row">
-				<div class="col text-center">
-					<div class="pagination-wrap">
-						<ul>
-							<li><a href="#">Anterior</a></li>
-							<li><a class="active" href="#">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">Próximo</a></li>
-						</ul>
+			<div class="card">
+				<div class="card-header">
+					<h4>Produtos</h4>
+				</div>
+				<div class="card-body">
+					<div class="row">
+						<div class="col col-md-12">
+							<h5 class="card-title">Special title treatment</h5>
+							<div class="cart-table-wrap">
+								<table class="cart-table">
+									<thead class="cart-table-head">
+										<tr class="table-head-row">
+											<th class="product-image"><h6>Produto</h6></th>
+											<th class="product-name"><h6>Nome</h6></th>
+											<th class="product-price"><h6>Preço</h6></th>
+											<th class="product-quantity"><h6>Quantidade</h6></th>
+											<th class="product-edit"><h6>Editar</h6></th>
+											<th class="product-remove"><h6>Remover</h6></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr class="table-body-row">
+											<td class="product-image"><img src="../commandview/assets/img/images/productind.jpg" alt=""></td>
+											<td class="product-name">Strawberry</td>
+											<td class="product-price">$85</td>
+											<td class="product-quantity"><input type="number" placeholder="0" disabled></td>
+											<td class="product-edit"><a href="#" class="modal_system_open" name="btn_nm_edit"><i class="fas fa-edit"></i></a></td>
+											<td class="product-remove"><a href="#" class="modal_system_open" name="btn_nm_remov"><i class="far fa-window-close"></i></a></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-			-->
 		</div>
 	</div>
-	<!-- end products -->
+	<!-- end content page -->
 
+	<!-- Large modal -->
+	<div class="modal fade modal_system_open_class" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="conteudo">
+				
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<!-- End Large modal -->
+	
 	<!-- footer -->
 	<div class="footer-area">
 		<div class="container">
@@ -185,9 +210,9 @@
 					<div class="footer-box pages">
 						<h2 class="widget-title">Páginas</h2>
 						<ul>
-							<li><a class="cool-hover" href="index">Início</a></li>
-							<li><a class="cool-hover" href="about">Sobre</a></li>
-							<li><a class="cool-hover" href="shop">Produtos</a></li>
+							<li><a class="cool-hover" href="../index">Início</a></li>
+							<li><a class="cool-hover" href="../about">Sobre</a></li>
+							<li><a class="cool-hover" href="../shop">Produtos</a></li>
 						</ul>
 					</div>
 				</div>
@@ -202,7 +227,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-12">
-					<p>Copyrights &copy; 2021 - <a href="tytoin_kids_link_copyright">Tytoin</a>,  Todos os direitos reservados.</p>
+					<p>Copyrights &copy; 2021 - <a href="../tytoin_kids_link_copyright">Tytoin</a>,  Todos os direitos reservados.</p>
 				</div>
 				<div class="col-lg-6 text-right col-md-12">
 					<div class="social-icons">
@@ -221,28 +246,28 @@
 	<!-- end copyright -->
 	
 	<!-- jquery -->
-	<script src="commandview/assets/js/jquery-1.11.3.min.js"></script>
+	<script src="../commandview/assets/js/jquery-1.11.3.min.js"></script>
 	<!-- bootstrap -->
-	<script src="commandview/assets/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../commandview/assets/bootstrap/js/bootstrap.min.js"></script>
 	<!-- count down -->
-	<script src="commandview/assets/js/jquery.countdown.js"></script>
+	<script src="../commandview/assets/js/jquery.countdown.js"></script>
 	<!-- isotope -->
-	<script src="commandview/assets/js/jquery.isotope-3.0.6.min.js"></script>
+	<script src="../commandview/assets/js/jquery.isotope-3.0.6.min.js"></script>
 	<!-- waypoints -->
-	<script src="commandview/assets/js/waypoints.js"></script>
+	<script src="../commandview/assets/js/waypoints.js"></script>
 	<!-- owl carousel -->
-	<script src="commandview/assets/js/owl.carousel.min.js"></script>
+	<script src="../commandview/assets/js/owl.carousel.min.js"></script>
 	<!-- magnific popup -->
-	<script src="commandview/assets/js/jquery.magnific-popup.min.js"></script>
+	<script src="../commandview/assets/js/jquery.magnific-popup.min.js"></script>
 	<!-- mean menu -->
-	<script src="commandview/assets/js/jquery.meanmenu.min.js"></script>
+	<script src="../commandview/assets/js/jquery.meanmenu.min.js"></script>
 	<!-- sticker js -->
-	<script src="commandview/assets/js/sticker.js"></script>
+	<script src="../commandview/assets/js/sticker.js"></script>
 	<!-- main js -->
-	<script src="commandview/assets/js/main.js"></script>
-
-	<!-- listar produtos js -->
-	<script src="commandsfunction/read/shop.js"></script>
+	<script src="../commandview/assets/js/main.js"></script>
+	
+	<!-- inserir produtos js -->
+	<script src="../commandsfunction/read/listProduct.js"></script>
 
 </body>
 </html>

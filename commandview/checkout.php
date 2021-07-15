@@ -51,7 +51,7 @@
 						<!-- logo -->
 						<div class="site-logo">
 							<a href="index">
-								<img src="commandview/assets/img/logo-copie-01.png" alt="">
+								<img src="commandview/assets/img/logo_defined.png" alt="">
 							</a>
 						</div>
 						<!-- logo -->
@@ -141,7 +141,7 @@
 						        <div class="billing-address-form">
 									<div class="form-group row">
 										<div class="col">
-											<input type="text" placeholder="Nome*">
+											<input type="text" placeholder="Nome*" required>
 										</div>
 									</div>
 									<div class="form-group row">
@@ -151,10 +151,10 @@
 									</div>
 									<div class="form-group row">
 										<div class="col-md-6">
-											<input type="cpf" placeholder="Cadastro de pessoa física*">
+											<input type="cpf" placeholder="Cadastro de pessoa física*" required>
 										</div>
 										<div class="col-md-6">
-											<input type="tel" placeholder="Telefone*">
+											<input type="tel" placeholder="Telefone*" required>
 										</div>
 									</div>
 									<div class="form-group row">
@@ -293,7 +293,7 @@
 						<ul>
 							<li><a class="cool-hover" href="index">Início</a></li>
 							<li><a class="cool-hover" href="about">Sobre</a></li>
-							<li><a class="cool-hover" href="services">Produtos</a></li>
+							<li><a class="cool-hover" href="shop">Produtos</a></li>
 						</ul>
 					</div>
 				</div>

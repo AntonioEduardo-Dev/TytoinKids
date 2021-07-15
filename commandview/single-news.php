@@ -51,7 +51,7 @@
 						<!-- logo -->
 						<div class="site-logo">
 							<a href="index">
-								<img src="commandview/assets/img/logo-copie-01.png" alt="">
+								<img src="commandview/assets/img/logo_defined.png" alt="">
 							</a>
 						</div>
 						<!-- logo -->
@@ -144,7 +144,7 @@
 							<div class="comment-list">
 								<div class="single-comment-body">
 									<div class="comment-user-avater">
-										<img src="assets/img/avaters/avatar1.png" alt="">
+										<img src="assets/img/team/avatar1.png" alt="">
 									</div>
 									<div class="comment-text-body">
 										<h4>Jenny Joe <span class="comment-date">Aprl 26, 2020</span> <a href="#">reply</a></h4>
@@ -152,7 +152,7 @@
 									</div>
 									<div class="single-comment-body child">
 										<div class="comment-user-avater">
-											<img src="assets/img/avaters/avatar3.png" alt="">
+											<img src="assets/img/team/avatar3.png" alt="">
 										</div>
 										<div class="comment-text-body">
 											<h4>Simon Soe <span class="comment-date">Aprl 27, 2020</span> <a href="#">reply</a></h4>
@@ -162,7 +162,7 @@
 								</div>
 								<div class="single-comment-body">
 									<div class="comment-user-avater">
-										<img src="assets/img/avaters/avatar2.png" alt="">
+										<img src="assets/img/team/avatar2.png" alt="">
 									</div>
 									<div class="comment-text-body">
 										<h4>Addy Aoe <span class="comment-date">May 12, 2020</span> <a href="#">reply</a></h4>
@@ -176,8 +176,8 @@
 							<h4>Leave a comment</h4>
 							<p>If you have a comment dont feel hesitate to send us your opinion.</p>
 							<p>
-								<input type="text" placeholder="Your Name">
-								<input type="email" placeholder="Your Email">
+								<input type="text" placeholder="Your Name*" required>
+								<input type="email" placeholder="Your Email*" required>
 							</p>
 							<p><textarea name="comment" id="comment" cols="30" rows="10" placeholder="Your Message"></textarea></p>
 							<p><input type="submit" value="Submit"></p>
@@ -261,7 +261,7 @@
 						<ul>
 							<li><a class="cool-hover" href="index">Início</a></li>
 							<li><a class="cool-hover" href="about">Sobre</a></li>
-							<li><a class="cool-hover" href="services">Produtos</a></li>
+							<li><a class="cool-hover" href="shop">Produtos</a></li>
 						</ul>
 					</div>
 				</div>

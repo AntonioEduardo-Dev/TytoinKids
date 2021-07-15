@@ -4,10 +4,10 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Responsive Bootstrap4 - Tytoin_kids">
+	<meta name="description" content="Responsive - Tytoin_kids">
 
 	<!-- title -->
-	<title>Inserir Produto</title>
+	<title>Inserir Categoria</title>
 
 	<!-- favicon -->
 	<link rel="shortcut icon" type="image/png" href="../commandview/assets/img/favicon.png">
@@ -51,7 +51,7 @@
 						<!-- logo -->
 						<div class="site-logo">
 							<a href="../index">
-								<img src="../commandview/assets/img/logo-copie-01.png" alt="">
+								<img src="../commandview/assets/img/logo_defined.png" alt="">
 							</a>
 						</div>
 						<!-- logo -->
@@ -111,8 +111,8 @@
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="breadcrumb-text">
-						<p>Os melhores produtos</p>
-						<h1>Inserir Produto</h1>
+						<p>Os melhores Categorias</p>
+						<h1>Inserir Categoria</h1>
 					</div>
 				</div>
 			</div>
@@ -131,7 +131,7 @@
 						    <div class="card-header" id="headingOne">
 						      <h5>
 						        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-						          Cadastrar Produto
+						          Cadastrar Categoria
 						        </button>
 						      </h5>
 						    </div>
@@ -139,31 +139,10 @@
 						    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
 								<div class="card-body">
 									<div class="mt-4 ml-3 mr-3 mb-2">
-										<div class="col pl">
+										<div class="col">
 											<div class="row">
 												<div class="col-lg">
-													<select name="nm_categ" id="id_categ">
-														<option value="1" selected style="display: none;">Categoria do produto*</option>
-														<option value="1">Infantil</option>
-													</select>
-												</div>
-											</div>
-											<div class="row mt-2">
-												<div class="col-lg">
-													<input type="text" placeholder="Nome do produto*" id="id_nome">
-												</div>
-											</div>
-											<div class="row mt-2">
-												<div class="col-lg-6">
-													<input type="text" placeholder="Quantidade disponível*" id="id_qtd">
-												</div>
-												<div class="col-lg-6">
-													<input type="text" placeholder="Preço por unidade*" id="id_preco">
-												</div>
-											</div>
-											<div class="row mt-2">
-												<div class="col-lg">
-													<input type="file" placeholder="Imagem do produto*" id="id_imageUpload" name="nm_imageUpload" accept=".png">
+													<input type="text" placeholder="Nome da Categoria*" id="id_nome" required>
 												</div>
 											</div>
 											<div class="row">
@@ -191,7 +170,19 @@
 		</div>
 	</div>
 	<!-- end check out section -->
+	
+	<!-- Large modal -->
+	<div class="modal fade modal_system_open_class" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="conteudo">
+				
+			</div>
+		</div>
+	</div>
+	</div>
 
+	<!-- End Large modal -->
 
 	<!-- footer -->
 	<div class="footer-area">
@@ -227,9 +218,9 @@
 					<div class="footer-box pages">
 						<h2 class="widget-title">Páginas</h2>
 						<ul>
-							<li><a class="cool-hover" href="../index">Início</a></li>
-							<li><a class="cool-hover" href="../about">Sobre</a></li>
-							<li><a class="cool-hover" href="../services">Produtos</a></li>
+							<li><a href="../index">Início</a></li>
+							<li><a href="../about">Sobre</a></li>
+							<li><a href="../shop">Categorias</a></li>
 						</ul>
 					</div>
 				</div>
@@ -283,8 +274,8 @@
 	<!-- main js -->
 	<script src="../commandview/assets/js/main.js"></script>
 	
-	<!-- inserir produtos js -->
-	<script src="../commandsfunction/create/insertProduct.js"></script>
+	<!-- inserir Categorias js -->
+	<script src="../commandsfunction/create/insertCategorie.js"></script>
 
 </body>
 </html>

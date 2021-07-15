@@ -51,7 +51,7 @@
 						<!-- logo -->
 						<div class="site-logo">
 							<a href="index">
-								<img src="commandview/assets/img/logo-copie-01.png" alt="">
+								<img src="commandview/assets/img/logo_defined.png" alt="">
 							</a>
 						</div>
 						<!-- logo -->
@@ -78,7 +78,12 @@
 										<li><a href="cart">Carrinho</a></li>
 									</ul>
 								</li>
-								<li><a class="cool-hover" href="menu/menu">MENU</a></li>
+								<li><a class="cool-hover" href="menu/menu">MENU</a>
+									<ul class="sub-menu">
+										<li><a href="menu/menu">Menu</a></li>
+										<li><a href="menu/menu_status">Manutenção</a></li>
+									</ul>
+								</li>
 								<li>
 									<div class="header-icons">
 										<a class="shopping-cart cool-hover" href="cart"><i class="fas fa-shopping-cart"></i></a>
@@ -199,7 +204,7 @@
 				<div class="col-lg-4 col-md-6 text-center">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="product"><img src="commandview/assets/img/products/product-img-1.jpg" alt=""></a>
+							<a href="product"><img src="commandview/assets/img/images/productind.jpg" alt=""></a>
 						</div>
 						<h3>Vestido 1</h3>
 						<p class="product-price"><span>Por Kg</span> 85$ </p>
@@ -209,7 +214,7 @@
 				<div class="col-lg-4 col-md-6 text-center">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="product"><img src="commandview/assets/img/products/product-img-2.jpg" alt=""></a>
+							<a href="product"><img src="commandview/assets/img/images/productind.jpg" alt=""></a>
 						</div>
 						<h3>Vestido 2</h3>
 						<p class="product-price"><span>Por Kg</span> 70$ </p>
@@ -219,7 +224,7 @@
 				<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="product"><img src="commandview/assets/img/products/product-img-3.jpg" alt=""></a>
+							<a href="product"><img src="commandview/assets/img/images/productind.jpg" alt=""></a>
 						</div>
 						<h3>Vestido 3</h3>
 						<p class="product-price"><span>Por Kg</span> 35$ </p>
@@ -270,7 +275,7 @@
 					<div class="testimonial-sliders">
 						<div class="single-testimonial-slider">
 							<div class="client-avater">
-								<img src="commandview/assets/img/avaters/avatar1.png" alt="">
+								<img src="commandview/assets/img/team/avatar1.png" alt="">
 							</div>
 							<div class="client-meta">
 								<h3>Rosilane Andrade <span>Dono da Produtos local</span></h3>
@@ -284,7 +289,7 @@
 						</div>
 						<div class="single-testimonial-slider">
 							<div class="client-avater">
-								<img src="commandview/assets/img/avaters/avatar2.png" alt="">
+								<img src="commandview/assets/img/team/avatar2.png" alt="">
 							</div>
 							<div class="client-meta">
 								<h3>Antonio Eduardo <span>Desenvolvedor do sistema</span></h3>
@@ -372,7 +377,7 @@
 						<ul>
 							<li><a class="cool-hover" href="index">Início</a></li>
 							<li><a class="cool-hover" href="about">Sobre</a></li>
-							<li><a class="cool-hover" href="services">Produtos</a></li>
+							<li><a class="cool-hover" href="shop">Produtos</a></li>
 						</ul>
 					</div>
 				</div>

@@ -1,12 +1,10 @@
 <?php
 	session_start();
 	if(empty($_GET['id'])){
-		echo '<script>alert("Erro");</script>';
 		echo '<script>window.location="shop"</script>';
 		exit;
 	}
 	if($_GET['id'] < 1 || $_GET['id'] == null || is_int($_GET['id'])){
-		echo '<script>alert("Erro");</script>';
 		echo '<script>window.location="shop"</script>';
 		exit;
 	}
@@ -64,7 +62,7 @@
 						<!-- logo -->
 						<div class="site-logo">
 							<a href="index">
-								<img src="commandview/assets/img/logo-copie-01.png" alt="">
+								<img src="commandview/assets/img/logo_defined.png" alt="">
 							</a>
 						</div>
 						<!-- logo -->
@@ -139,7 +137,7 @@
 			<div class="row">
 				<div class="col-md-5 mt-5 mb-5">
 					<div class="single-product-img">
-						<img id="imagem_produto" src="commandview/assets/img/products/product-img-5.jpg" alt="">
+						<img id="imagem_produto" src="commandview/assets/img/images/productind.jpg" alt="">
 					</div>
 				</div>
 				<div class="col-md-7 mt-5 mb-5">
@@ -198,7 +196,7 @@
 				<div class="col-lg-4 col-md-6 text-center">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="product"><img src="commandview/assets/img/products/product-img-1.jpg" alt=""></a>
+							<a href="product"><img src="commandview/assets/img/images/productind.jpg" alt=""></a>
 						</div>
 						<h3>Strawberry</h3>
 						<p class="product-price"><span>P/Quantidade</span> R$85 </p>
@@ -208,7 +206,7 @@
 				<div class="col-lg-4 col-md-6 text-center">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="product"><img src="commandview/assets/img/products/product-img-2.jpg" alt=""></a>
+							<a href="product"><img src="commandview/assets/img/images/productind.jpg" alt=""></a>
 						</div>
 						<h3>Berry</h3>
 						<p class="product-price"><span>P/Quantidade</span> R$85 </p>
@@ -218,7 +216,7 @@
 				<div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3 text-center">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="product"><img src="commandview/assets/img/products/product-img-3.jpg" alt=""></a>
+							<a href="product"><img src="commandview/assets/img/images/productind.jpg" alt=""></a>
 						</div>
 						<h3>Lemon</h3>
 						<p class="product-price"><span>P/Quantidade</span> R$85 </p>
@@ -267,7 +265,7 @@
 						<ul>
 							<li><a class="cool-hover" href="index">Início</a></li>
 							<li><a class="cool-hover" href="about">Sobre</a></li>
-							<li><a class="cool-hover" href="services">Produtos</a></li>
+							<li><a class="cool-hover" href="shop">Produtos</a></li>
 						</ul>
 					</div>
 				</div>

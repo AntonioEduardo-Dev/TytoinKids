@@ -7,7 +7,7 @@
 	<meta name="description" content="Responsive - Tytoin_kids">
 
 	<!-- title -->
-	<title>Inserir Categoria</title>
+	<title>Categorias</title>
 
 	<!-- favicon -->
 	<link rel="shortcut icon" type="image/png" href="../commandview/assets/img/favicon.png">
@@ -51,7 +51,7 @@
 						<!-- logo -->
 						<div class="site-logo">
 							<a href="../index">
-								<img src="../commandview/assets/img/logo-copie-01.png" alt="">
+								<img src="../commandview/assets/img/logo_defined.png" alt="">
 							</a>
 						</div>
 						<!-- logo -->
@@ -119,58 +119,22 @@
 		</div>
 	</div>
 	<!-- end breadcrumb section -->
+	
+	<!-- content page -->
+	<!-- end content page -->
 
-	<!-- check out section -->
-	<div class="checkout-section mt-5 mb-5">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg ml-4 mr-4 mt-5 mb-5">
-					<div class="checkout-accordion-wrap">
-						<div class="accordion" id="accordionExample">
-						  <div class="card single-accordion">
-						    <div class="card-header" id="headingOne">
-						      <h5>
-						        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-						          Cadastrar Categoria
-						        </button>
-						      </h5>
-						    </div>
-
-						    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-								<div class="card-body">
-									<div class="mt-4 ml-3 mr-3 mb-2">
-										<div class="col">
-											<div class="row">
-												<div class="col-lg">
-													<input type="text" placeholder="Nome da Categoria*" id="id_nome">
-												</div>
-											</div>
-											<div class="row">
-												<div class="col-lg">
-													<div class="col-lg mt-1">
-														<h6 class="">Itens com * são obrigatórios</h6>
-													</div>
-												</div>
-											</div>											
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="col-md-4 offset-md-4">
-											<input type="submit" name="cadastrar" value="Cadastrar" id="id_cad">
-										</div>
-									</div>
-								</div>
-						    </div>
-						  </div>
-						</div>
-
-					</div>
-				</div>
+	<!-- Large modal -->
+	<div class="modal fade modal_system_open_class" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="conteudo">
+				
 			</div>
 		</div>
 	</div>
-	<!-- end check out section -->
+	</div>
 
+	<!-- End Large modal -->
 
 	<!-- footer -->
 	<div class="footer-area">
@@ -208,7 +172,7 @@
 						<ul>
 							<li><a href="../index">Início</a></li>
 							<li><a href="../about">Sobre</a></li>
-							<li><a href="../services">Categorias</a></li>
+							<li><a href="../shop">Categorias</a></li>
 						</ul>
 					</div>
 				</div>
@@ -263,7 +227,7 @@
 	<script src="../commandview/assets/js/main.js"></script>
 	
 	<!-- inserir Categorias js -->
-	<script src="../commandsfunction/create/insertCategorie.js"></script>
+	<script src="../commandsfunction/read/listCategorie.js"></script>
 
 </body>
 </html>

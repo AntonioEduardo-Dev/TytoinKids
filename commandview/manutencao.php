@@ -7,7 +7,7 @@
 	<meta name="description" content="Responsive Bootstrap4 - Tytoin_kids">
 
 	<!-- title -->
-	<title>404!</title>
+	<title>Manutenção!</title>
 
 	<!-- favicon -->
 	<link rel="shortcut icon" type="image/png" href="commandview/assets/img/favicon.png">
@@ -62,44 +62,37 @@
 	</div>
 	<!-- end header -->
 
-		
-	<!-- search area -->
-	<div class="search-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<span class="close-btn"><i class="fas fa-window-close"></i></span>
-					<div class="search-bar">
-						<div class="search-bar-tablecell">
-							<h3>Pesquisar:</h3>
-							<input type="text" placeholder="Digite aqui">
-							<button type="submit">Pesquisar <i class="fas fa-search"></i></button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end search area -->
-
-	<!-- error section -->
-	<div class="full-height-section error-section">
-		<div class="full-height-tablecell">
+		<!-- breadcrumb-section -->
+		<div class="breadcrumb-section breadcrumb-bg">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-8 offset-lg-2 text-center">
-						<div class="error-text">
-							<i class="far fa-sad-cry"></i>
-							<h1>Oops! Não encontrado.</h1>
-							<p>A página solicitada não foi encontrada.</p>
-							<a href="index" class="boxed-btn">Voltar ao Início</a>
+						<div class="breadcrumb-text">
+							<p>Descupe!</p>
+							<h1>Manutenção</h1>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<!-- end error section -->
+		<!-- end breadcrumb section -->
+		<!-- error section -->
+		<div class="full-height-section error-section">
+			<div class="full-height-tablecell">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-8 offset-lg-2 text-center">
+							<div class="error-text">
+								<i class="far fa-sad-cry"></i>
+								<h1>Oops! Manutenção.</h1>
+								<p>A página solicitada encontra-se em manutenção.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end error section -->
 		
 	<!-- footer -->
 	<div class="footer-area">
@@ -135,9 +128,9 @@
 					<div class="footer-box pages">
 						<h2 class="widget-title">Páginas</h2>
 						<ul>
-							<li><a class="cool-hover" href="index">Início</a></li>
-							<li><a class="cool-hover" href="about">Sobre</a></li>
-							<li><a class="cool-hover" href="shop">Produtos</a></li>
+							<li><a class="cool-hover" href="#">Início</a></li>
+							<li><a class="cool-hover" href="#">Sobre</a></li>
+							<li><a class="cool-hover" href="#">Produtos</a></li>
 						</ul>
 					</div>
 				</div>
@@ -152,7 +145,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-12">
-					<p>Copyrights &copy; 2021 - <a href="tytoin_kids_link_copyright">Tytoin</a>,  Todos os direitos reservados.</p>
+					<p>Copyrights &copy; 2021 - <a href="#">Tytoin</a>,  Todos os direitos reservados.</p>
 				</div>
 				<div class="col-lg-6 text-right col-md-12">
 					<div class="social-icons">
