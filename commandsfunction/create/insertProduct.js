@@ -1,6 +1,12 @@
 /* INSERIR PRODUTOS */
 $(function() {
 
+    listarCategorias = {listarCategorias : true}
+
+    $.post('../commandscontrol/Categorias.php', listarCategorias, function(retorna) {
+        $("#id_categ").html(retorna);
+    }); 
+
     $(document).on('click', '#id_cad', function() {
 
         if($('#id_imageUpload')[0].files[0]) {
@@ -20,13 +26,14 @@ $(function() {
                     if (resultado[0] == "true") {
                         prod_imagem = resultado[1];
                     }else {
-                        erroMsg(resultado[1]);
+                        returnMsg(resultado[1]);
                     }
                 }
             });
         }else{
             prod_imagem = "productind.jpg";
         }
+
         setTimeout(function() {
             if(typeof prod_imagem != 'undefined'){
                 var dados = {
@@ -38,16 +45,43 @@ $(function() {
                     prod_imagem     : prod_imagem
                 }
         
-                $.post('../commandscontrol/Produtos.php', dados, function(response) {
-                    console.log("Response: "+response);
+                $.post('../commandscontrol/Produtos.php', dados, function(idRetorno) {
                     
-                    var tipo = response.indexOf("alert_notification_error");
+                    var tipo = idRetorno.indexOf("alert_notification_error");
+
                     if (tipo === -1) {
-                        // console.log('Status Ok');
-                        alert("Status Ok");
+                        var coresSelecionados       = [ $('#btn_id_check_cor_vermelho').prop("checked") == true ? 1 : 0,
+                                                        $('#btn_id_check_cor_verde').prop("checked")    == true ? 1 : 0,
+                                                        $('#btn_id_check_cor_azul').prop("checked")     == true ? 1 : 0,
+                                                        $('#btn_id_check_cor_amarelo').prop("checked")  == true ? 1 : 0
+                                                    ]
+                        var tamanhosSelecionados    = [ $('#btn_id_check_tam_p').prop("checked")    == true ? 1 : 0,
+                                                        $('#btn_id_check_tam_m').prop("checked")    == true ? 1 : 0,
+                                                        $('#btn_id_check_tam_g').prop("checked")    == true ? 1 : 0,
+                                                        $('#btn_id_check_tam_gg').prop("checked")   == true ? 1 : 0,
+                                                        $('#btn_id_check_tam_1').prop("checked")    == true ? 1 : 0,
+                                                        $('#btn_id_check_tam_2').prop("checked")    == true ? 1 : 0,
+                                                        $('#btn_id_check_tam_3').prop("checked")    == true ? 1 : 0,
+                                                        $('#btn_id_check_tam_4').prop("checked")    == true ? 1 : 0
+                                                    ];
+
+                        var dados = {
+                            btn_cadastrar_cores     : idRetorno,
+                            cores                   : coresSelecionados,
+                            tamanhos                : tamanhosSelecionados,
+                        }
+
+                        $.post('../commandscontrol/Produtos.php', dados, function(response) {
+                            var tipo = response.indexOf("alert_notification_error");
+                            if (tipo === -1) {
+                                returnMsg(response);
+                            } else if (tipo > -1) {
+                                returnMsg(response);
+                            }
+                        });
+
                     } else if (tipo > -1) {
-                        // console.log('Ocorreu um erro');
-                        alert("Ocorreu um erro");
+                        returnMsg(idRetorno);
                     }
                 });
             }
@@ -55,6 +89,6 @@ $(function() {
     });
 });
 
-function erroMsg(msg) {
-    alert(msg);
+function returnMsg(msg) {
+    console.log(msg);
 }

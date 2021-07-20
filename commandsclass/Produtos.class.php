@@ -2,33 +2,6 @@
     require_once "Connection.class.php";
 
     class Produtos{
-        public function cadastrar($categoria, $nome, $preco,$quantidade,$imagem){
-            $objConexao = new Connection();
-            $connection = $objConexao->conectar();
-
-            try {
-                $sql = "INSERT INTO produtos(id_produto, id_categoria_fk, nome_produto, preco_produto, quatidade_disponivel, imagem_produto) VALUES (NULL, :categoria, :nome, :preco, :quantidade, :imagem)";
-
-                $cadastrar = $connection->prepare($sql);
-                $cadastrar->bindValue(":categoria", $categoria);
-                $cadastrar->bindValue(":nome", $nome);
-                $cadastrar->bindValue(":preco", $preco);
-                $cadastrar->bindValue(":quantidade", $quantidade);
-                $cadastrar->bindValue(":imagem", $imagem);
-
-                if ($cadastrar->execute()) {
-                    return true;
-                }else{
-                    return false;
-                }
-
-            } catch (PDOException $e) {
-                echo "Erro de cadastrar: " . $e->getMessage();
-            } catch (Exception $e) {
-                echo "Erro: " . $e->getMessage();
-            }
-        }
-
         public function listar(){
             $objConexao = new Connection();
             $connection = $objConexao->conectar();
@@ -78,7 +51,7 @@
             $objConexao = new Connection();
             $connection = $objConexao->conectar();
             try {
-                $sql = "SELECT * FROM categorias WHERE 1";
+                $sql = "SELECT * FROM categorias WHERE 1 LIMIT 5";
             
                 $consulta = $connection->prepare($sql);
                 $consulta->execute();
@@ -126,6 +99,101 @@
                 echo "Erro: " . $e->getMessage();
             }
         }
+        
+        public function quantidadeProdutos(){
+            $objConexao = new Connection();
+            $connection = $objConexao->conectar();
+            try {
+                $sql = "SELECT * FROM produtos";
+            
+                $consulta = $connection->prepare($sql);
+                $consulta->execute();
+
+                $vl = $consulta->rowCount();
+
+                return $vl;
+
+            } catch (PDOException $e) {
+                echo "Erro de cadastrar: " . $e->getMessage();
+            } catch (Exception $e) {
+                echo "Erro: " . $e->getMessage();
+            }
+        }
+
+        public function cadastrar($categoria, $nome, $preco, $quantidade, $imagem){
+            $objConexao = new Connection();
+            $connection = $objConexao->conectar();
+
+            try {
+                $sql = "INSERT INTO produtos(id_produto, id_categoria_fk, nome_produto, preco_produto, quatidade_disponivel, imagem_produto) VALUES (NULL, :categoria, :nome, :preco, :quantidade, :imagem)";
+
+                $cadastrar = $connection->prepare($sql);
+                $cadastrar->bindValue(":categoria", $categoria);
+                $cadastrar->bindValue(":nome", $nome);
+                $cadastrar->bindValue(":preco", $preco);
+                $cadastrar->bindValue(":quantidade", $quantidade);
+                $cadastrar->bindValue(":imagem", $imagem);
+
+                if ($cadastrar->execute()) {
+                    return $connection->lastInsertId();
+                }else{
+                    return "alert_notification_error_id!";
+                }
+
+            } catch (PDOException $e) {
+                echo "Erro de cadastrar: " . $e->getMessage();
+            } catch (Exception $e) {
+                echo "Erro: " . $e->getMessage();
+            }
+        }
+        
+        public function cadastrarCorProduto($id_produto, $cor){
+            $objConexao = new Connection();
+            $connection = $objConexao->conectar();
+
+            try {
+                $sql = "INSERT INTO cor_produto (id_cor_produto, id_produto_fk, cor) VALUES (NULL, :id_produto, :cor)";
+
+                $cadastrar = $connection->prepare($sql);
+                $cadastrar->bindValue(":id_produto", $id_produto);
+                $cadastrar->bindValue(":cor", $cor);
+                
+                if ($cadastrar->execute()) {
+                    return true;
+                }else{
+                    return false;
+                }
+
+            } catch (PDOException $e) {
+                echo "Erro de cadastrar: " . $e->getMessage();
+            } catch (Exception $e) {
+                echo "Erro: " . $e->getMessage();
+            }
+        }
+
+        public function cadastrarTamProduto($id_produto, $tamanho){
+            $objConexao = new Connection();
+            $connection = $objConexao->conectar();
+
+            try {
+                $sql = "INSERT INTO tamanho_produto (id_tamanho_produto, id_produto_fk, tamanho) VALUES (NULL, :id_produto, :tamanho)";
+
+                $cadastrar = $connection->prepare($sql);
+                $cadastrar->bindValue(":id_produto", $id_produto);
+                $cadastrar->bindValue(":tamanho", $tamanho);
+
+                if ($cadastrar->execute()) {
+                    return true;
+                }else{
+                    return false;
+                }
+
+            } catch (PDOException $e) {
+                echo "Erro de cadastrar: " . $e->getMessage();
+            } catch (Exception $e) {
+                echo "Erro: " . $e->getMessage();
+            }
+        }
 
         public function editar($id_produto,$nome,$preco,$quantidade,$imagem){
             $objConexao = new Connection();
@@ -153,6 +221,7 @@
                 echo "Erro: " . $e->getMessage();
             }
         }
+
         public function apagar($id_produto){
             $objConexao = new Connection();
             $connection = $objConexao->conectar();

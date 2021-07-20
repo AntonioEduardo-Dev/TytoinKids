@@ -7,11 +7,11 @@
     //execucao de metodos
 
     if (isset($_POST['listar'])) {
-        if($objCategoria->listarCategorias()){
+        $objCategoria->listarCategorias();
+    }
 
-        }else{
-            echo "alert_notification_error!";
-        }
+    if (isset($_POST['listarCategorias'])) {
+        $objCategoria->listarSelectCategorias();
     }
 
     if (isset($_POST['btn_cadastrar'])) {
@@ -20,10 +20,10 @@
         $nome_categ = $_POST['categ_nome'];
 
         if($nome_categ == ""){
-            echo "alert_notification_error_empty!";
+            echo "alert_notification_error_empty!-|-alert-warning";
         }
         elseif($nome_categ == null){
-            echo "alert_notification_error_null!";
+            echo "alert_notification_error_null!-|-alert-warning";
         }
         else{
             if (is_string($nome_categ)) {
@@ -32,10 +32,10 @@
                 if ($objCategoria->cadastrar($nome_categ)) {
                     echo "Success!";
                 }else{
-                    echo "alert_notification_error!";
+                    echo "alert_notification_error!-|-alert-danger";
                 }
             } else {
-                echo "alert_notification_error_data_bite!";
+                echo "alert_notification_error_data_bite!-|-alert-warning";
             }
         }
         
@@ -45,7 +45,7 @@
         if ($objCategoria->apagar($id_categoria)) {
             echo "Apagado!";
         }else{
-            echo "alert_notification_error!";
+            echo "alert_notification_error!-|-alert-danger";
         }
     }
 ?>

@@ -30,6 +30,20 @@
 	<link rel="stylesheet" href="../commandview/assets/css/main.css">
 	<!-- responsive -->
 	<link rel="stylesheet" href="../commandview/assets/css/responsive.css">
+	
+	<!-- jquery -->
+	<script src="../commandview/assets/js/jquery-1.11.3.min.js"></script>
+
+	<!-- scripts table -->
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/responsive.bootstrap4.min.js"></script>
+    <!-- end scripts table -->
+	
+    <!-- end css table -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css">
+    <!-- end css table -->
 
 </head>
 <body>
@@ -111,8 +125,7 @@
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="breadcrumb-text">
-						<p>Os melhores Categorias</p>
-						<h1>Inserir Categoria</h1>
+						<h1>Categorias</h1>
 					</div>
 				</div>
 			</div>
@@ -121,6 +134,35 @@
 	<!-- end breadcrumb section -->
 	
 	<!-- content page -->
+	<div class="table-section mt-5 mb-5">
+		<div class="container">
+			<div class="card">
+				<div class="card-header">
+					<h4>Categorias</h4>
+				</div>
+				<div class="card-body">
+					<div class="row">
+						<div class="col col-md-12">
+							<h5 class="card-title">Dados da listagem</h5>
+							<div class="cart-table-wrap">
+								<table class="cart-table" id="table_dinamic_js">
+									<thead class="cart-table-head">
+										<tr class="table-head-row">
+											<th class="product-image"><h6>Id</h6></th>
+											<th class="product-name"><h6>Categoria</h6></th>
+											<th><h6></h6></th>
+										</tr>
+									</thead>
+									<tbody>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- end content page -->
 
 	<!-- Large modal -->
@@ -135,6 +177,17 @@
 	</div>
 
 	<!-- End Large modal -->
+
+	<!-- Small modal -->
+	<div class="modal fade modal_system_success_class" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="conteudo_modal_sm">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Small modal -->
 
 	<!-- footer -->
 	<div class="footer-area">
@@ -205,8 +258,6 @@
 	</div>
 	<!-- end copyright -->
 	
-	<!-- jquery -->
-	<script src="../commandview/assets/js/jquery-1.11.3.min.js"></script>
 	<!-- bootstrap -->
 	<script src="../commandview/assets/bootstrap/js/bootstrap.min.js"></script>
 	<!-- count down -->
@@ -226,8 +277,14 @@
 	<!-- main js -->
 	<script src="../commandview/assets/js/main.js"></script>
 	
-	<!-- inserir Categorias js -->
-	<script src="../commandsfunction/read/listCategorie.js"></script>
+	<!-- pagina js -->
+	<script src="../commandsfunction/content/conteudoPagina"></script>
+
+	<!-- listar Categorias js -->
+    <script src="../commandsfunction/read/scriptDataTableCategorias.js"></script>
+	
+	<!-- listar Categorias js -->
+    <script src="../commandsfunction/delete/categoria.js"></script>
 
 </body>
 </html>

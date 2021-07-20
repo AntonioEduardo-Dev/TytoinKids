@@ -147,9 +147,13 @@
 											</div>
 											<div class="row">
 												<div class="col-lg">
-													<div class="col-lg mt-1">
+													<div class="col-lg mt-2">
 														<h6 class="">Itens com * são obrigatórios</h6>
 													</div>
+												</div>
+											</div>
+											<div class="row mt-3">
+												<div class="col-lg conteudo_alerta">
 												</div>
 											</div>											
 										</div>
@@ -181,8 +185,18 @@
 		</div>
 	</div>
 	</div>
-
 	<!-- End Large modal -->
+
+	<!-- Small modal -->
+	<div class="modal fade modal_system_success_class" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="conteudo_modal_sm">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Small modal -->
 
 	<!-- footer -->
 	<div class="footer-area">
@@ -276,6 +290,9 @@
 	
 	<!-- inserir Categorias js -->
 	<script src="../commandsfunction/create/insertCategorie.js"></script>
+
+	<!-- funcao Modal js -->
+	<script src="../commandsfunction/content/conteudoAlerta.js"></script>
 
 </body>
 </html>

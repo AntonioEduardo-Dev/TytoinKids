@@ -18,7 +18,7 @@
         if ($user->alterar($valor)) {
             echo "Success!";
         }else{
-            echo "alert_notification_error!";
+            echo "alert_notification_error!-|-alert-danger";
         }
     }
 ?>

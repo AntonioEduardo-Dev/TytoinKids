@@ -8,38 +8,38 @@ $(function() {
 
         switch(tipo) {
             case "btn_nm_categoria":
-                var titulo = "Categorias";
-                var qtdblocks = 2;
-                var imagens = ['image_menu.png', 'image_menu.png'];
-                var links = ['../create/insert_categories', '../list/categorias'];
-                var subTitulos = ['Cadastrar', 'Listar'];
+                var titulo      = "Categorias";
+                var qtdblocks   = 2;
+                var imagens     = ['image_menu.png', 'image_menu.png'];
+                var links       = ['../list/categorias', '../create/insert_categories'];
+                var subTitulos  = ['Listar', 'Cadastrar'];
 
                 var conteudo = bodyModalContent(qtdblocks, imagens, links, subTitulos);
                 break;
             case "btn_nm_produto":
-                var titulo = "Produtos";
-                var qtdblocks = 2;
-                var imagens = ['image_menu.png', 'image_menu.png'];
-                var links = ['../create/insert_products', '../list/produtos'];
-                var subTitulos = ['Cadastrar', 'Listar'];
+                var titulo      = "Produtos";
+                var qtdblocks   = 2;
+                var imagens     = ['image_menu.png', 'image_menu.png'];
+                var links       = ['../list/produtos','../create/insert_products'];
+                var subTitulos  = ['Listar', 'Cadastrar'];
 
                 var conteudo = bodyModalContent(qtdblocks, imagens, links, subTitulos);
                 break;
             case "btn_nm_encomenda":
-                var titulo = "Encomendas";
-                var qtdblocks = 1;
-                var imagens = ['image_menu.png'];
-                var links = ['../create/insert_products'];
-                var subTitulos = ['Cadastrar'];
+                var titulo      = "Encomendas";
+                var qtdblocks   = 2;
+                var imagens     = ['image_menu.png', 'image_menu.png'];
+                var links       = ['../list/encomendas','../create/insert_products'];
+                var subTitulos  = ['Listar', 'Cadastrar'];
 
                 var conteudo = bodyModalContent(qtdblocks, imagens, links, subTitulos);
                 break;
             default:
-                var titulo = "Indefinido";
-                var qtdblocks = 1;
-                var imagens = ['img_undefined.png'];
-                var links = ['menu'];
-                var subTitulos = ['Link Indefinido'];
+                var titulo      = "Indefinido";
+                var qtdblocks   = 1;
+                var imagens     = ['img_undefined.png'];
+                var links       = ['menu'];
+                var subTitulos  = ['Link Indefinido'];
 
                 var conteudo = bodyModalContent(qtdblocks, imagens, links, subTitulos);
                 break;

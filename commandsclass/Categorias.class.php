@@ -6,7 +6,7 @@
             $objConexao = new Connection();
             $connection = $objConexao->conectar();
             try {
-                $sql = "SELECT * FROM categorias WHERE 1";
+                $sql = "SELECT * FROM categorias";
             
                 $consulta = $connection->prepare($sql);
                 $consulta->execute();
@@ -23,6 +23,50 @@
                     }
                     echo "</ul>";
                 }
+            } catch (PDOException $e) {
+                echo "Erro de cadastrar: " . $e->getMessage();
+            } catch (Exception $e) {
+                echo "Erro: " . $e->getMessage();
+            }
+        }
+        
+        public function listarSelectCategorias(){
+            $objConexao = new Connection();
+            $connection = $objConexao->conectar();
+            try {
+                $sql = "SELECT * FROM categorias LIMIT 10";
+            
+                $consulta = $connection->prepare($sql);
+                $consulta->execute();
+
+                $vl = $consulta->rowCount();
+
+                if ($vl > 0) {
+                    $dados = $consulta->fetchAll();
+                    echo '<option value="0" selected style="display: none;">Categoria do produto*</option>';
+                    foreach ($dados as $indice => $dado) {
+                        echo '<option value="'.$dado['id_categoria'].'">'.$dado['nome_categoria'].'</option>';
+                    }
+                }
+            } catch (PDOException $e) {
+                echo "Erro de cadastrar: " . $e->getMessage();
+            } catch (Exception $e) {
+                echo "Erro: " . $e->getMessage();
+            }
+        }
+
+        public function quantidadeCategorias(){
+            $objConexao = new Connection();
+            $connection = $objConexao->conectar();
+            try {
+                $sql = "SELECT * FROM categorias";
+            
+                $consulta = $connection->prepare($sql);
+                $consulta->execute();
+
+                $vl = $consulta->rowCount();
+
+                return $vl;
             } catch (PDOException $e) {
                 echo "Erro de cadastrar: " . $e->getMessage();
             } catch (Exception $e) {
@@ -52,7 +96,7 @@
             }
         }
 
-        public function apagar($id_categoria){
+        public function apagarCategorias($id_categoria){
             $objConexao = new Connection();
             $connection = $objConexao->conectar();
             try {
