@@ -1,4 +1,4 @@
-/* INSERIR PRODUTOS */
+/* INSERIR PRODUTO */
 $(function() {
 
     listarCategorias = {listarCategorias : true}
@@ -26,7 +26,7 @@ $(function() {
                     if (resultado[0] == "true") {
                         prod_imagem = resultado[1];
                     }else {
-                        returnMsg(resultado[1]);
+                        exibirModalAlerta(resultado[1],false,"alert-danger");
                     }
                 }
             });
@@ -48,6 +48,7 @@ $(function() {
                 $.post('../commandscontrol/Produtos.php', dados, function(idRetorno) {
                     
                     var tipo = idRetorno.indexOf("alert_notification_error");
+                    idRetorno = idRetorno.split("-|-");
 
                     if (tipo === -1) {
                         var coresSelecionados       = [ $('#btn_id_check_cor_vermelho').prop("checked") == true ? 1 : 0,
@@ -66,29 +67,27 @@ $(function() {
                                                     ];
 
                         var dados = {
-                            btn_cadastrar_cores     : idRetorno,
+                            btn_cadastrar_cores     : idRetorno[0],
                             cores                   : coresSelecionados,
                             tamanhos                : tamanhosSelecionados,
                         }
 
                         $.post('../commandscontrol/Produtos.php', dados, function(response) {
                             var tipo = response.indexOf("alert_notification_error");
+                            retorno = response.split("-|-");
+
                             if (tipo === -1) {
-                                returnMsg(response);
+                                exibirModalAlerta(retorno[0],true,"alert-success");
                             } else if (tipo > -1) {
-                                returnMsg(response);
+                                exibirModalAlerta(retorno[0],false,retorno[1]);
                             }
                         });
 
                     } else if (tipo > -1) {
-                        returnMsg(idRetorno);
+                        exibirModalAlerta(idRetorno[0],false,idRetorno[1]);
                     }
                 });
             }
         }, 100);
     });
 });
-
-function returnMsg(msg) {
-    console.log(msg);
-}

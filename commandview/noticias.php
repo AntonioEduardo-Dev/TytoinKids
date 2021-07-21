@@ -1,24 +1,13 @@
-<?php
-	session_start();
-	if(empty($_GET['id'])){
-		echo '<script>window.location="shop"</script>';
-		exit;
-	}
-	if($_GET['id'] < 1 || $_GET['id'] == null || is_int($_GET['id'])){
-		echo '<script>window.location="shop"</script>';
-		exit;
-	}
-?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Responsive Bootstrap4 - Tytoin_kids">
+	<meta name="description" content="Tytoin_kids - Seja muito bem vindo, Conheça nossos produtos, encomende algo que o agrade para seu filho ou filha, nós somos a Tytoin kids.">
 
 	<!-- title -->
-	<title>Produto</title>
+	<title>VoçÊ não DeveRia esTar aQui</title>
 
 	<!-- favicon -->
 	<link rel="shortcut icon" type="image/png" href="commandview/assets/img/favicon.png">
@@ -71,17 +60,17 @@
 						
 						<nav class="main-menu">
 							<ul>
-								<li><a class="cool-hover" href="about">Sobre</a></li>
-								<li><a class="cool-hover" href="contact">Contato</a></li>
-								<li><a class="cool-hover" href="shop">Produtos</a>
+								<li><a class="cool-hover" href="sobre">Sobre</a></li>
+								<li><a class="cool-hover" href="contato">Contato</a></li>
+								<li><a class="cool-hover" href="loja">Produtos</a>
 									<ul class="sub-menu">
-										<li><a href="shop">Produtos</a></li>
-										<li><a href="cart">Carrinho</a></li>
+										<li><a href="loja">Produtos</a></li>
+										<li><a href="carrinho">Carrinho</a></li>
 									</ul>
 								</li>
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart" href="cart"><i class="fas fa-shopping-cart"></i></a>
+										<a class="shopping-cart" href="carrinho"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 									</div>
 								</li>
@@ -107,7 +96,7 @@
 						<div class="search-bar-tablecell">
 							<h3>Pesquisar:</h3>
 							<input type="text" placeholder="Digite aqui">
-							<button type="submit">Pesquisar <i class="fas fa-search"></i></button>
+							<button type="submit">Search <i class="fas fa-search"></i></button>
 						</div>
 					</div>
 				</div>
@@ -122,111 +111,118 @@
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="breadcrumb-text">
-						<p>Detalhes do produto</p>
-						<h1>Produto</h1>
+						<p>Read the Details</p>
+						<h1>Single Article</h1>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- end breadcrumb section -->
-
-	<!-- Produto -->
-	<div class="single-product mt-5 mb-5">
+	
+	<!-- single article section -->
+	<div class="mt-150 mb-150">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-5 mt-5 mb-5">
-					<div class="single-product-img">
-						<img id="imagem_produto" src="commandview/assets/img/images/productind.jpg" alt="">
+				<div class="col-lg-8">
+					<div class="single-article-section">
+						<div class="single-article-text">
+							<div class="single-artcile-bg"></div>
+							<p class="blog-meta">
+								<span class="author"><i class="fas fa-user"></i> Admin</span>
+								<span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
+							</p>
+							<h2>Pomegranate can prevent heart disease</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint soluta, similique quidem fuga vel voluptates amet doloremque corrupti. Perferendis totam voluptates eius error fuga cupiditate dolorum? Adipisci mollitia quod labore aut natus nobis. Rerum perferendis, nobis hic adipisci vel inventore facilis rem illo, tenetur ipsa voluptate dolorem, cupiditate temporibus laudantium quidem recusandae expedita dicta cum eum. Quae laborum repellat a ut, voluptatum ipsa eum. Culpa fugiat minus laborum quia nam!</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, praesentium, dicta. Dolorum inventore molestias velit possimus, dolore labore aliquam aperiam architecto quo reprehenderit excepturi ipsum ipsam accusantium nobis ducimus laudantium.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum est aperiam voluptatum id cupiditate quae corporis ex. Molestias modi mollitia neque magni voluptatum, omnis repudiandae aliquam quae veniam error! Eligendi distinctio, ab eius iure atque ducimus id deleniti, vel alias sint similique perspiciatis saepe necessitatibus non eveniet, quo nisi soluta.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt beatae nemo quaerat, doloribus obcaecati odio!</p>
+						</div>
+
+						<div class="comments-list-wrap">
+							<h3 class="comment-count-title">3 Comments</h3>
+							<div class="comment-list">
+								<div class="single-comment-body">
+									<div class="comment-user-avater">
+										<img src="assets/img/team/avatar1.png" alt="">
+									</div>
+									<div class="comment-text-body">
+										<h4>Jenny Joe <span class="comment-date">Aprl 26, 2020</span> <a href="#">reply</a></h4>
+										<p>Nunc risus ex, tempus quis purus ac, tempor consequat ex. Vivamus sem magna, maximus at est id, maximus aliquet nunc. Suspendisse lacinia velit a eros porttitor, in interdum ante faucibus Suspendisse lacinia velit a eros porttitor, in interdum ante faucibus.</p>
+									</div>
+									<div class="single-comment-body child">
+										<div class="comment-user-avater">
+											<img src="assets/img/team/avatar3.png" alt="">
+										</div>
+										<div class="comment-text-body">
+											<h4>Simon Soe <span class="comment-date">Aprl 27, 2020</span> <a href="#">reply</a></h4>
+											<p>Nunc risus ex, tempus quis purus ac, tempor consequat ex. Vivamus sem magna, maximus at est id, maximus aliquet nunc. Suspendisse lacinia velit a eros porttitor, in interdum ante faucibus.</p>
+										</div>
+									</div>
+								</div>
+								<div class="single-comment-body">
+									<div class="comment-user-avater">
+										<img src="assets/img/team/avatar2.png" alt="">
+									</div>
+									<div class="comment-text-body">
+										<h4>Addy Aoe <span class="comment-date">May 12, 2020</span> <a href="#">reply</a></h4>
+										<p>Nunc risus ex, tempus quis purus ac, tempor consequat ex. Vivamus sem magna, maximus at est id, maximus aliquet nunc. Suspendisse lacinia velit a eros porttitor, in interdum ante faucibus Suspendisse lacinia velit a eros porttitor, in interdum ante faucibus.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="comment-template">
+							<h4>Leave a comment</h4>
+							<p>If you have a comment dont feel hesitate to send us your opinion.</p>
+							<p>
+								<input type="text" placeholder="Your Name*" required>
+								<input type="email" placeholder="Your Email*" required>
+							</p>
+							<p><textarea name="comment" id="comment" cols="30" rows="10" placeholder="Your Message"></textarea></p>
+							<p><input type="submit" value="Submit"></p>
+						</div>
 					</div>
 				</div>
-				<div class="col-md-7 mt-5 mb-5">
-					<div class="single-product-content">
-						<h3 id="id_nome_produto"></h3>
-						<p class="single-product-pricing"><span>P/Quantidade</span> R$ <a id="id_preco_produto"></a></p>
-						<div class="single-product-form">
-							<div class="row">
-								<div class="col">
-									Disponiveis: <a id="id_qtd_produto"> </a>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col mt-1">
-									<input type="number" placeholder="0">
-								</div>
-							</div>
-							<div class="form-group row">
-								<div class="col">
-									<a href="cart" class="cart-btn"><i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho</a>
-								</div>
-							</div>
-							<div class="form-group row">
-								<div class="col">
-									<a href="cart" class="boxed-btn">Encomendar</a>
-								</div>
-							</div>
-							<p><strong>Categoria: </strong><a id="id_categoria_produto"></a></p>
+				<div class="col-lg-4">
+					<div class="sidebar-section">
+						<div class="recent-posts">
+							<h4>Recent Posts</h4>
+							<ul>
+								<li><a href="noticias">You will vainly look for fruit on it in autumn.</a></li>
+								<li><a href="noticias">A man's worth has its season, like tomato.</a></li>
+								<li><a href="noticias">Good thoughts bear good fresh juicy fruit.</a></li>
+								<li><a href="noticias">Fall in love with the fresh orange</a></li>
+								<li><a href="noticias">Why the berries always look delecious</a></li>
+							</ul>
 						</div>
-						<h4>Compartilhe:</h4>
-						<ul class="product-share">
-							<li><a href=""><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href=""><i class="fab fa-twitter"></i></a></li>
-							<li><a href=""><i class="fab fa-google-plus-g"></i></a></li>
-							<li><a href=""><i class="fab fa-linkedin"></i></a></li>
-						</ul>
+						<div class="archive-posts">
+							<h4>Archive Posts</h4>
+							<ul>
+								<li><a href="noticias">JAN 2019 (5)</a></li>
+								<li><a href="noticias">FEB 2019 (3)</a></li>
+								<li><a href="noticias">MAY 2019 (4)</a></li>
+								<li><a href="noticias">SEP 2019 (4)</a></li>
+								<li><a href="noticias">DEC 2019 (3)</a></li>
+							</ul>
+						</div>
+						<div class="tag-section">
+							<h4>Tags</h4>
+							<ul>
+								<li><a href="noticias">Apple</a></li>
+								<li><a href="noticias">Strawberry</a></li>
+								<li><a href="noticias">BErry</a></li>
+								<li><a href="noticias">Orange</a></li>
+								<li><a href="noticias">Lemon</a></li>
+								<li><a href="noticias">Banana</a></li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- end Produto -->
-
-	<!-- more products -->
-	<div class="more-products mb-5">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 offset-lg-2 text-center">
-					<div class="section-title">	
-						<h3><span class="orange-text">Mais</span> Procurados</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-4 col-md-6 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="product"><img src="commandview/assets/img/images/productind.jpg" alt=""></a>
-						</div>
-						<h3>Strawberry</h3>
-						<p class="product-price"><span>P/Quantidade</span> R$85 </p>
-						<a href="cart" class="cart-btn"><i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho</a>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="product"><img src="commandview/assets/img/images/productind.jpg" alt=""></a>
-						</div>
-						<h3>Berry</h3>
-						<p class="product-price"><span>P/Quantidade</span> R$85 </p>
-						<a href="cart" class="cart-btn"><i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho</a>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="product"><img src="commandview/assets/img/images/productind.jpg" alt=""></a>
-						</div>
-						<h3>Lemon</h3>
-						<p class="product-price"><span>P/Quantidade</span> R$85 </p>
-						<a href="cart" class="cart-btn"><i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end more products -->
+	<!-- end single article section -->
 
 
 	<!-- footer -->
@@ -264,8 +260,8 @@
 						<h2 class="widget-title">Páginas</h2>
 						<ul>
 							<li><a class="cool-hover" href="index">Início</a></li>
-							<li><a class="cool-hover" href="about">Sobre</a></li>
-							<li><a class="cool-hover" href="shop">Produtos</a></li>
+							<li><a class="cool-hover" href="sobre">Sobre</a></li>
+							<li><a class="cool-hover" href="loja">Produtos</a></li>
 						</ul>
 					</div>
 				</div>
@@ -318,8 +314,6 @@
 	<script src="commandview/assets/js/sticker.js"></script>
 	<!-- main js -->
 	<script src="commandview/assets/js/main.js"></script>
-	<!-- listar produtos js -->
-	<script src="commandsfunction/read/produto.js"></script>
 
 </body>
 </html>

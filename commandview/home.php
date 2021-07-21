@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Responsive Bootstrap4 - Tytoin_kids">
+	<meta name="description" content="Tytoin_kids - Seja muito bem vindo, Conheça nossos produtos, encomende algo que o agrade para seu filho ou filha, nós somos a Tytoin kids.">
 
 	<!-- title -->
 	<title>Tytoin Kids</title>
@@ -59,23 +59,23 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li><a class="cool-hover" href="about">Sobre</a></li>
+								<li><a class="cool-hover" href="sobre">Sobre</a></li>
 								<!-- <li><a href="#">Páginas</a>
 									<ul class="sub-menu">
 										<li><a href="404">404 page</a></li>
-										<li><a class="cool-hover" href="about">Sobre</a></li>
-										<li><a href="cart">Cart</a></li>
-										<li><a href="checkout">Verificação de saída</a></li>
-										<li><a href="contact">Contact</a></li>
+										<li><a class="cool-hover" href="sobre">Sobre</a></li>
+										<li><a href="carrinho">Cart</a></li>
+										<li><a href="encomendar">Verificação de saída</a></li>
+										<li><a href="contato">Contact</a></li>
 										<li><a href="news">News</a></li>
-										<li><a href="shop">Produtos</a></li>
+										<li><a href="loja">Produtos</a></li>
 									</ul>
 								</li> -->
-								<li><a class="cool-hover" href="contact">Contato</a></li>
-								<li><a class="cool-hover" href="shop">Produtos</a>
+								<li><a class="cool-hover" href="contato">Contato</a></li>
+								<li><a class="cool-hover" href="loja">Produtos</a>
 									<ul class="sub-menu">
-										<li><a href="shop">Produtos</a></li>
-										<li><a href="cart">Carrinho</a></li>
+										<li><a href="loja">Produtos</a></li>
+										<li><a href="carrinho">Carrinho</a></li>
 									</ul>
 								</li>
 								<li><a class="cool-hover" href="menu/menu">MENU</a>
@@ -86,7 +86,7 @@
 								</li>
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart cool-hover" href="cart"><i class="fas fa-shopping-cart"></i></a>
+										<a class="shopping-cart cool-hover" href="carrinho"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon cool-hover" href="#"><i class="fas fa-search"></i></a>
 									</div>
 								</li>
@@ -133,7 +133,7 @@
 								<p class="subtitle">Moda Infantil</p>
 								<h1>Conheça nossos produtos</h1>
 								<div class="hero-btns">
-									<a href="shop" class="boxed-btn">Visualizar Produtos</a>
+									<a href="loja" class="boxed-btn">Visualizar Produtos</a>
 								</div>
 							</div>
 						</div>
@@ -204,31 +204,31 @@
 				<div class="col-lg-4 col-md-6 text-center">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="product"><img src="commandview/assets/img/images/productind.jpg" alt=""></a>
+							<a href="produto"><img src="commandview/assets/img/images/productind.jpg" alt=""></a>
 						</div>
 						<h3>Vestido 1</h3>
 						<p class="product-price"><span>Por Kg</span> 85$ </p>
-						<a href="cart" class="cart-btn"><i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho</a>
+						<a href="carrinho" class="cart-btn"><i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho</a>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6 text-center">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="product"><img src="commandview/assets/img/images/productind.jpg" alt=""></a>
+							<a href="produto"><img src="commandview/assets/img/images/productind.jpg" alt=""></a>
 						</div>
 						<h3>Vestido 2</h3>
 						<p class="product-price"><span>Por Kg</span> 70$ </p>
-						<a href="cart" class="cart-btn"><i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho</a>
+						<a href="carrinho" class="cart-btn"><i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho</a>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="product"><img src="commandview/assets/img/images/productind.jpg" alt=""></a>
+							<a href="produto"><img src="commandview/assets/img/images/productind.jpg" alt=""></a>
 						</div>
 						<h3>Vestido 3</h3>
 						<p class="product-price"><span>Por Kg</span> 35$ </p>
-						<a href="cart" class="cart-btn"><i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho</a>
+						<a href="carrinho" class="cart-btn"><i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho</a>
 					</div>
 				</div>
 			</div>
@@ -260,7 +260,7 @@
                     <div class="text">Quisquam minus maiores repudiandae nobis, minima saepe id, fugit ullam similique! Beatae, minima quisquam molestias facere ea. Perspiciatis unde omnis iste natus error sit voluptatem accusant</div>
                     <!--Countdown Timer-->
                     <div class="time-counter"><div class="time-countdown clearfix" data-countdown="2020/2/01"><div class="counter-column"><div class="inner"><span class="count">00</span>Days</div></div> <div class="counter-column"><div class="inner"><span class="count">00</span>Hours</div></div>  <div class="counter-column"><div class="inner"><span class="count">00</span>Mins</div></div>  <div class="counter-column"><div class="inner"><span class="count">00</span>Secs</div></div></div></div>
-                	<a href="cart" class="cart-btn mt-3"><i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho</a>
+                	<a href="carrinho" class="cart-btn mt-3"><i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho</a>
                 </div>
             </div>
         </div>
@@ -323,7 +323,7 @@
 						<h2>Nós somos <span class="orange-text">Tytoin Kids</span></h2>
 						<p>Etiam vulputate ut augue vel sodales. In sollicitudin neque et massa porttitor vestibulum ac vel nisi. Vestibulum placerat eget dolor sit amet posuere. In ut dolor aliquet, aliquet sapien sed, interdum velit. Nam eu molestie lorem.</p>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente facilis illo repellat veritatis minus, et labore minima mollitia qui ducimus.</p>
-						<a href="about" class="boxed-btn mt-4">Saber mais</a>
+						<a href="sobre" class="boxed-btn mt-4">Saber mais</a>
 					</div>
 				</div>
 			</div>
@@ -336,7 +336,7 @@
     	<div class="container">
         	<h3>Promoção de dezembro! <br> com grande <span class="orange-text">Desconto...</span></h3>
             <div class="sale-percent"><span>Oferta! <br> Até</span>50% <span>off</span></div>
-            <a href="shop" class="cart-btn btn-lg">Produtos</a>
+            <a href="loja" class="cart-btn btn-lg">Produtos</a>
         </div>
     </section>
 	<!-- end shop banner -->
@@ -376,8 +376,8 @@
 						<h2 class="widget-title">Páginas</h2>
 						<ul>
 							<li><a class="cool-hover" href="index">Início</a></li>
-							<li><a class="cool-hover" href="about">Sobre</a></li>
-							<li><a class="cool-hover" href="shop">Produtos</a></li>
+							<li><a class="cool-hover" href="sobre">Sobre</a></li>
+							<li><a class="cool-hover" href="loja">Produtos</a></li>
 						</ul>
 					</div>
 				</div>

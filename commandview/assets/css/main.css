@@ -531,6 +531,21 @@ ul.navbar-nav li.nav-item a.nav-link, ul.navbar-nav li.nav-item.active a.nav-lin
   padding: 15px 0;
 }
 
+@media only screen and (min-width: 994px) {
+  .top-header-area-cs {
+    background-color: #ff5882;
+  }
+}
+@media only screen and (max-width: 994px) {
+  .mean-container a.meanmenu-reveal span {
+    background-color: #ffffff;
+  }
+  .top-header-area-cs {
+    background-color: #ff5882;
+    height: 78px;
+  }
+}
+
 .top-header-area.white ul.navbar-nav li.nav-item a.nav-link, .top-header-area.white ul.navbar-nav li.nav-item.active a.nav-link {
   color: #ffffff;
 }
@@ -634,11 +649,11 @@ ul.sub-menu li:last-child {
 }
 
 .mean-container a.meanmenu-reveal {
-  color: #ff5882;
+  color: #ffffff;
 }
 
 .mean-container a.meanmenu-reveal span {
-  background-color: #ff5882;
+  background-color: #ffffff;
 }
 
 .mean-container .mean-nav ul li a {
@@ -1613,6 +1628,18 @@ div.owl-controls, .owl-controls div {
 # List Styles
 
 ----------------------------------------------------------------------------- */
+.list-group-item.active {
+  z-index: 2;
+  color: #fff;
+  background-color: #ff5882;
+  border-color: #ff5882;
+}
+
+.badge-primary-custom {
+  color: #fff;
+  background-color: #ff5882;
+}
+
 .list-section {
   background-color: #f5f5f5;
 }

@@ -27,7 +27,8 @@
         }
         else{
             if (is_string($nome_categ)) {
-                $nome_categ = ucfirst(strtolower($nome_categ));
+                strtolower($nome_categ);
+                $nome_categ = ucfirst(str_replace(" ","_",$nome_categ));
 
                 if ($objCategoria->cadastrar($nome_categ)) {
                     echo "Success!";

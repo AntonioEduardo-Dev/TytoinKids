@@ -7,7 +7,7 @@
 	<meta name="description" content="Tytoin_kids - Seja muito bem vindo, Conheça nossos produtos, encomende algo que o agrade para seu filho ou filha, nós somos a Tytoin kids.">
 
 	<!-- title -->
-	<title>404!</title>
+	<title>Produtos</title>
 
 	<!-- favicon -->
 	<link rel="shortcut icon" type="image/png" href="commandview/assets/img/favicon.png">
@@ -43,7 +43,7 @@
     <!--PreLoader Ends-->
 	
 	<!-- header -->
-	<div class="top-header-area" id="sticker">
+	<div class="top-header-area top-header-area-cs" id="sticker">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 col-sm-12 text-center">
@@ -55,6 +55,29 @@
 							</a>
 						</div>
 						<!-- logo -->
+
+						<!-- menu start -->
+						<nav class="main-menu">
+							<ul>
+								<li><a class="cool-hover" href="sobre">Sobre</a></li>
+								<li><a class="cool-hover" href="contato">Contato</a></li>
+								<li><a class="cool-hover" href="loja">Produtos</a>
+									<ul class="sub-menu">
+										<li><a href="loja">Produtos</a></li>
+										<li><a href="carrinho">Carrinho</a></li>
+									</ul>
+								</li>
+								<li>
+									<div class="header-icons">
+										<a class="shopping-cart cool-hover" href="carrinho"><i class="fas fa-shopping-cart"></i></a>
+										<a class="mobile-hide search-bar-icon cool-hover" href="#"><i class="fas fa-search"></i></a>
+									</div>
+								</li>
+							</ul>
+						</nav>
+						<a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+						<div class="mobile-menu"></div>
+						<!-- menu end -->
 					</div>
 				</div>
 			</div>
@@ -62,7 +85,6 @@
 	</div>
 	<!-- end header -->
 
-		
 	<!-- search area -->
 	<div class="search-area">
 		<div class="container">
@@ -81,26 +103,92 @@
 		</div>
 	</div>
 	<!-- end search area -->
-
-	<!-- error section -->
-	<div class="full-height-section error-section">
-		<div class="full-height-tablecell">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 offset-lg-2 text-center">
-						<div class="error-text">
-							<i class="far fa-sad-cry"></i>
-							<h1>Oops! Não encontrado.</h1>
-							<p>A página solicitada não foi encontrada.</p>
-							<a href="index" class="boxed-btn">Voltar ao Início</a>
+	<div class="row">
+		<div class="col" style="margin-top: 75px;"></div>
+	</div>
+	<!-- products -->
+	<div class="product-section mt-5 mb-5">
+		<div class="container">
+			<!-- 
+			<div class="row">
+				<div class="col">
+					<div class="product-filters">
+					</div>
+				</div>
+			</div>
+			 -->
+			<div class="row">
+				<div class="col-xl-2 mt-3 mb-5">
+					<div class="list-group" id="list-tab" role="tablist">
+						<a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center active" id="list-home-list" data-toggle="list" href="loja" role="tab" aria-controls="home">
+							<i class='fas fa-angle-right'></i>
+							Todos
+    						<span class="badge badge-primary-custom badge-pill">14</span>
+						</a>
+						<a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" id="list-home-list" data-toggle="list" href="loja" role="tab" aria-controls="home">
+							<i class='fas fa-angle-right'></i>
+							Masculino
+    						<span class="badge badge-primary-custom badge-pill">7</span>
+						</a>
+						<a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" id="list-home-list" data-toggle="list" href="loja" role="tab" aria-controls="home">
+							<i class='fas fa-angle-right'></i>
+							Feminino
+    						<span class="badge badge-primary-custom badge-pill">6</span>
+						</a>
+						<a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" id="list-home-list" data-toggle="list" href="loja" role="tab" aria-controls="home">
+							<i class='fas fa-angle-right'></i>
+							Infantil
+    						<span class="badge badge-primary-custom badge-pill">1</span>
+						</a>
+					</div>
+					<div class="list-group mt-3">
+						<select class="form-control" name="" id="">
+							<option value="vermelho" hidden selected>Cor:</option>
+							<option value="vermelho">Vermelho</option>
+							<option value="verde">Verde</option>
+							<option value="azul">Azul</option>
+							<option value="amarelo">Amarelo</option>
+						</select>
+					</div>
+					<div class="list-group mt-3">
+						<select class="form-control" name="" id="">
+							<option value="p" hidden selected>Tamanho:</option>
+							<option value="p">P</option>
+							<option value="m">M</option>
+							<option value="g">G</option>
+							<option value="gg">GG</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="4">4</option>
+							<option value="6">6</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-xl-10 mt-3 mb-5">
+					<div class="row">
+						<div class="col mb-3">
+							<h4>Nossos produtos</h4>
+						</div>
+					</div>
+					<div class="row product-lists">
+					</div>
+					<div class="row">
+						<div class="col text-center">
+							<div class="pagination-wrap">
+								<ul>
+									<li><a href="#">Anterior</a></li>
+									<li><a class="active" href="#">1</a></li>
+									<li><a href="#">Próximo</a></li>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- end error section -->
-		
+	<!-- end products -->
+
 	<!-- footer -->
 	<div class="footer-area">
 		<div class="container">
@@ -190,6 +278,9 @@
 	<script src="commandview/assets/js/sticker.js"></script>
 	<!-- main js -->
 	<script src="commandview/assets/js/main.js"></script>
-	
-	</body>
+
+	<!-- listar produtos js -->
+	<script src="commandsfunction/read/shop.js"></script>
+
+</body>
 </html>

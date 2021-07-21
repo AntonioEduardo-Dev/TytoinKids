@@ -47,17 +47,17 @@
 						require404();
 					}
 	
-				} elseif($url[0] === "create") {
+				} elseif($url[0] === "cadastrar") {
 					if (isset($url[1])) {
-						$pagina = 'commandview/create/'.$url[1].'.php';
+						$pagina = 'commandview/cadastrar/'.$url[1].'.php';
 	
 						ifExistFile($pagina);
 					}else{
 						require404();
 					}
-				}elseif($url[0] === "list") {
+				}elseif($url[0] === "listar") {
 					if (isset($url[1])) {
-						$pagina = 'commandview/list/'.$url[1].'.php';
+						$pagina = 'commandview/listar/'.$url[1].'.php';
 	
 						ifExistFile($pagina);
 					}else{

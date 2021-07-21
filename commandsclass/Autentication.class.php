@@ -29,9 +29,9 @@
         
         public function validar(){
             if ($this->email == "a.edu@gmail.com" && $this->senha == 123) {
-                echo "Logado!";
+                return "Logado!";
             }else{
-                echo "Dados Incorretos!";
+                return "Dados Incorretos!";
             }
         }
     }

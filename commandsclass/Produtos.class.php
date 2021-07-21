@@ -19,11 +19,11 @@
                         echo '<div class="col-lg-4 col-md-6 text-center '.$dado['nome_categoria'].'">
                                 <div class="single-product-item">
                                     <div class="product-image">
-                                        <a href="product&id='.$dado['id_produto'].'" id="single-product-item" data-id="'.$dado['id_produto'].'"><img src="commandview/assets/img/images/'.$dado['imagem_produto'].'" alt="'.$dado['nome_produto'].'"></a>
+                                        <a href="produto&id='.$dado['id_produto'].'" id="single-product-item" data-id="'.$dado['id_produto'].'"><img src="commandview/assets/img/images/'.$dado['imagem_produto'].'" alt="'.$dado['nome_produto'].'"></a>
                                     </div>
                                     <h3>'.$dado['nome_produto'].'</h3>
                                     <p class="product-price"><span>P/Quantidade</span> R$'.$dado['preco_produto'].' </p>
-                                    <a href="cart" data-id="'.$dado['id_produto'].'"" class="cart-btn"><i class="fas fa-shopping-cart"></i> Adicionar ao carrinho</a>
+                                    <a href="carrinho" data-id="'.$dado['id_produto'].'"" class="cart-btn"><i class="fas fa-shopping-cart"></i> Adicionar ao carrinho</a>
                                 </div>
                             </div>';
                     }
@@ -51,7 +51,10 @@
             $objConexao = new Connection();
             $connection = $objConexao->conectar();
             try {
-                $sql = "SELECT * FROM categorias WHERE 1 LIMIT 5";
+                $sql = "SELECT DISTINCT(categorias.nome_categoria) 
+                        FROM categorias INNER JOIN produtos 
+                        ON categorias.id_categoria = produtos.id_categoria_fk 
+                        WHERE 1 = 1 LIMIT 10";
             
                 $consulta = $connection->prepare($sql);
                 $consulta->execute();

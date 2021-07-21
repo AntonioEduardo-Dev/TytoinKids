@@ -1,5 +1,5 @@
-/* Content Modal */
-function exibirModal(msgModal, tipoModal, corModal) {
+/* CONTENT MODAL */
+function exibirModalAlerta(msgModal, tipoModal, corModal) {
     if (tipoModal) {
         $(".conteudo_modal_sm").html('');
 
@@ -8,8 +8,8 @@ function exibirModal(msgModal, tipoModal, corModal) {
                                 <h5>`+msgModal+`</h5>
                             </div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <div class="modal-footer col mt-3 mr-3">
+                            <button type="button" class="close text-danger float-right" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         </div>`;
 
         $(".conteudo_modal_sm").append(conteudo);

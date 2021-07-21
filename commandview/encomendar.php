@@ -4,10 +4,10 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Responsive Bootstrap4 - Tytoin_kids">
+	<meta name="description" content="Tytoin_kids - Seja muito bem vindo, Conheça nossos produtos, encomende algo que o agrade para seu filho ou filha, nós somos a Tytoin kids.">
 
 	<!-- title -->
-	<title>Single News</title>
+	<title>Encomendar</title>
 
 	<!-- favicon -->
 	<link rel="shortcut icon" type="image/png" href="commandview/assets/img/favicon.png">
@@ -60,17 +60,17 @@
 						
 						<nav class="main-menu">
 							<ul>
-								<li><a class="cool-hover" href="about">Sobre</a></li>
-								<li><a class="cool-hover" href="contact">Contato</a></li>
-								<li><a class="cool-hover" href="shop">Produtos</a>
+								<li><a class="cool-hover" href="sobre">Sobre</a></li>
+								<li><a class="cool-hover" href="contato">Contato</a></li>
+								<li><a class="cool-hover" href="loja">Produtos</a>
 									<ul class="sub-menu">
-										<li><a href="shop">Produtos</a></li>
-										<li><a href="cart">Carrinho</a></li>
+										<li><a href="loja">Produtos</a></li>
+										<li><a href="carrinho">Carrinho</a></li>
 									</ul>
 								</li>
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart" href="cart"><i class="fas fa-shopping-cart"></i></a>
+										<a class="shopping-cart" href="carrinho"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 									</div>
 								</li>
@@ -111,118 +111,150 @@
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="breadcrumb-text">
-						<p>Read the Details</p>
-						<h1>Single Article</h1>
+						<p>Os melhores produtos</p>
+						<h1>Confira os produto</h1>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- end breadcrumb section -->
-	
-	<!-- single article section -->
-	<div class="mt-150 mb-150">
+
+	<!-- check out section -->
+	<div class="checkout-section mt-5 mb-5">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8">
-					<div class="single-article-section">
-						<div class="single-article-text">
-							<div class="single-artcile-bg"></div>
-							<p class="blog-meta">
-								<span class="author"><i class="fas fa-user"></i> Admin</span>
-								<span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
-							</p>
-							<h2>Pomegranate can prevent heart disease</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint soluta, similique quidem fuga vel voluptates amet doloremque corrupti. Perferendis totam voluptates eius error fuga cupiditate dolorum? Adipisci mollitia quod labore aut natus nobis. Rerum perferendis, nobis hic adipisci vel inventore facilis rem illo, tenetur ipsa voluptate dolorem, cupiditate temporibus laudantium quidem recusandae expedita dicta cum eum. Quae laborum repellat a ut, voluptatum ipsa eum. Culpa fugiat minus laborum quia nam!</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, praesentium, dicta. Dolorum inventore molestias velit possimus, dolore labore aliquam aperiam architecto quo reprehenderit excepturi ipsum ipsam accusantium nobis ducimus laudantium.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum est aperiam voluptatum id cupiditate quae corporis ex. Molestias modi mollitia neque magni voluptatum, omnis repudiandae aliquam quae veniam error! Eligendi distinctio, ab eius iure atque ducimus id deleniti, vel alias sint similique perspiciatis saepe necessitatibus non eveniet, quo nisi soluta.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt beatae nemo quaerat, doloribus obcaecati odio!</p>
-						</div>
+					<div class="checkout-accordion-wrap">
+						<div class="accordion" id="accordionExample">
+						  <div class="card single-accordion">
+						    <div class="card-header" id="headingOne">
+						      <h5 class="mb-0">
+						        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+						          Endereço de cobrança
+						        </button>
+						      </h5>
+						    </div>
 
-						<div class="comments-list-wrap">
-							<h3 class="comment-count-title">3 Comments</h3>
-							<div class="comment-list">
-								<div class="single-comment-body">
-									<div class="comment-user-avater">
-										<img src="assets/img/team/avatar1.png" alt="">
-									</div>
-									<div class="comment-text-body">
-										<h4>Jenny Joe <span class="comment-date">Aprl 26, 2020</span> <a href="#">reply</a></h4>
-										<p>Nunc risus ex, tempus quis purus ac, tempor consequat ex. Vivamus sem magna, maximus at est id, maximus aliquet nunc. Suspendisse lacinia velit a eros porttitor, in interdum ante faucibus Suspendisse lacinia velit a eros porttitor, in interdum ante faucibus.</p>
-									</div>
-									<div class="single-comment-body child">
-										<div class="comment-user-avater">
-											<img src="assets/img/team/avatar3.png" alt="">
-										</div>
-										<div class="comment-text-body">
-											<h4>Simon Soe <span class="comment-date">Aprl 27, 2020</span> <a href="#">reply</a></h4>
-											<p>Nunc risus ex, tempus quis purus ac, tempor consequat ex. Vivamus sem magna, maximus at est id, maximus aliquet nunc. Suspendisse lacinia velit a eros porttitor, in interdum ante faucibus.</p>
+						    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+						      <div class="card-body">
+						        <div class="billing-address-form">
+									<div class="form-group row">
+										<div class="col">
+											<input type="text" placeholder="Nome*" required>
 										</div>
 									</div>
-								</div>
-								<div class="single-comment-body">
-									<div class="comment-user-avater">
-										<img src="assets/img/team/avatar2.png" alt="">
+									<div class="form-group row">
+										<div class="col">
+											<input type="email" placeholder="Email">
+										</div>
 									</div>
-									<div class="comment-text-body">
-										<h4>Addy Aoe <span class="comment-date">May 12, 2020</span> <a href="#">reply</a></h4>
-										<p>Nunc risus ex, tempus quis purus ac, tempor consequat ex. Vivamus sem magna, maximus at est id, maximus aliquet nunc. Suspendisse lacinia velit a eros porttitor, in interdum ante faucibus Suspendisse lacinia velit a eros porttitor, in interdum ante faucibus.</p>
+									<div class="form-group row">
+										<div class="col-md-6">
+											<input type="cpf" placeholder="Cadastro de pessoa física*" required>
+										</div>
+										<div class="col-md-6">
+											<input type="tel" placeholder="Telefone*" required>
+										</div>
 									</div>
-								</div>
-							</div>
+									<div class="form-group row">
+										<div class="col-lg-12">
+											<input type="text" placeholder="Endereço">
+										</div>
+										<div class="col-lg-12">
+											<textarea name="speak" id="speak" cols="30" rows="3" placeholder="Dizer algo:"></textarea>
+										</div>
+									</div>
+						        </div>
+						      </div>
+						    </div>
+						  </div>
+						  <div class="card single-accordion">
+						    <div class="card-header" id="headingTwo">
+						      <h5 class="mb-0">
+						        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+						          Endereço de entrega
+						        </button>
+						      </h5>
+						    </div>
+						    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+						      <div class="card-body">
+						        <div class="shipping-address-form">
+						        	<p>Seu formulário de endereço de entrega está aqui.</p>
+						        </div>
+						      </div>
+						    </div>
+						  </div>
+						  <div class="card single-accordion">
+						    <div class="card-header" id="headingThree">
+						      <h5 class="mb-0">
+						        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+						          Detalhes do cartão
+						        </button>
+						      </h5>
+						    </div>
+						    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+						      <div class="card-body">
+						        <div class="card-details">
+						        	<p>Os detalhes do seu cartão vão aqui.</p>
+						        </div>
+						      </div>
+						    </div>
+						  </div>
 						</div>
 
-						<div class="comment-template">
-							<h4>Leave a comment</h4>
-							<p>If you have a comment dont feel hesitate to send us your opinion.</p>
-							<p>
-								<input type="text" placeholder="Your Name*" required>
-								<input type="email" placeholder="Your Email*" required>
-							</p>
-							<p><textarea name="comment" id="comment" cols="30" rows="10" placeholder="Your Message"></textarea></p>
-							<p><input type="submit" value="Submit"></p>
-						</div>
 					</div>
 				</div>
+
 				<div class="col-lg-4">
-					<div class="sidebar-section">
-						<div class="recent-posts">
-							<h4>Recent Posts</h4>
-							<ul>
-								<li><a href="single-news">You will vainly look for fruit on it in autumn.</a></li>
-								<li><a href="single-news">A man's worth has its season, like tomato.</a></li>
-								<li><a href="single-news">Good thoughts bear good fresh juicy fruit.</a></li>
-								<li><a href="single-news">Fall in love with the fresh orange</a></li>
-								<li><a href="single-news">Why the berries always look delecious</a></li>
-							</ul>
-						</div>
-						<div class="archive-posts">
-							<h4>Archive Posts</h4>
-							<ul>
-								<li><a href="single-news">JAN 2019 (5)</a></li>
-								<li><a href="single-news">FEB 2019 (3)</a></li>
-								<li><a href="single-news">MAY 2019 (4)</a></li>
-								<li><a href="single-news">SEP 2019 (4)</a></li>
-								<li><a href="single-news">DEC 2019 (3)</a></li>
-							</ul>
-						</div>
-						<div class="tag-section">
-							<h4>Tags</h4>
-							<ul>
-								<li><a href="single-news">Apple</a></li>
-								<li><a href="single-news">Strawberry</a></li>
-								<li><a href="single-news">BErry</a></li>
-								<li><a href="single-news">Orange</a></li>
-								<li><a href="single-news">Lemon</a></li>
-								<li><a href="single-news">Banana</a></li>
-							</ul>
-						</div>
+					<div class="order-details-wrap">
+						<table class="order-details">
+							<thead>
+								<tr>
+									<th>Detalhes do seu pedido</th>
+									<th>Preço</th>
+								</tr>
+							</thead>
+							<tbody class="order-details-body">
+								<tr>
+									<td>Produto</td>
+									<td>Total</td>
+								</tr>
+								<tr>
+									<td>Strawberry</td>
+									<td>$85.00</td>
+								</tr>
+								<tr>
+									<td>Berry</td>
+									<td>$70.00</td>
+								</tr>
+								<tr>
+									<td>Lemon</td>
+									<td>$35.00</td>
+								</tr>
+							</tbody>
+							<tbody class="checkout-details">
+								<tr>
+									<td>Subtotal</td>
+									<td>$190</td>
+								</tr>
+								<tr>
+									<td>Shipping</td>
+									<td>$50</td>
+								</tr>
+								<tr>
+									<td>Total</td>
+									<td>$240</td>
+								</tr>
+							</tbody>
+						</table>
+						<a href="#" class="boxed-btn">Encomendar</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- end single article section -->
+	<!-- end check out section -->
 
 
 	<!-- footer -->
@@ -260,8 +292,8 @@
 						<h2 class="widget-title">Páginas</h2>
 						<ul>
 							<li><a class="cool-hover" href="index">Início</a></li>
-							<li><a class="cool-hover" href="about">Sobre</a></li>
-							<li><a class="cool-hover" href="shop">Produtos</a></li>
+							<li><a class="cool-hover" href="sobre">Sobre</a></li>
+							<li><a class="cool-hover" href="loja">Produtos</a></li>
 						</ul>
 					</div>
 				</div>

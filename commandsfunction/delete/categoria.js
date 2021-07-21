@@ -34,7 +34,7 @@ $(function() {
         
     });
 
-    function exibirModal() {
+    function exibirModalAlerta() {
     }
     
 });

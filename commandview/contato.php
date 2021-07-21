@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Responsive Bootstrap4 - Tytoin_kids">
+	<meta name="description" content="Tytoin_kids - Seja muito bem vindo, Conheça nossos produtos, encomende algo que o agrade para seu filho ou filha, nós somos a Tytoin kids.">
 
 	<!-- title -->
 	<title>Contato</title>
@@ -59,17 +59,17 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li><a class="cool-hover" href="about">Sobre</a></li>
-								<li><a class="cool-hover" href="contact">Contato</a></li>
-								<li><a class="cool-hover" href="shop">Produtos</a>
+								<li><a class="cool-hover" href="sobre">Sobre</a></li>
+								<li><a class="cool-hover" href="contato">Contato</a></li>
+								<li><a class="cool-hover" href="loja">Produtos</a>
 									<ul class="sub-menu">
-										<li><a href="shop">Produtos</a></li>
-										<li><a href="cart">Carrinho</a></li>
+										<li><a href="loja">Produtos</a></li>
+										<li><a href="carrinho">Carrinho</a></li>
 									</ul>
 								</li>
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart" href="cart"><i class="fas fa-shopping-cart"></i></a>
+										<a class="shopping-cart" href="carrinho"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 									</div>
 								</li>
@@ -231,8 +231,8 @@
 					<div class="footer-box pages">
 						<h2 class="widget-title">Páginas</h2>
 						<ul><li><a class="cool-hover" href="index">Início</a></li>
-							<li><a class="cool-hover" href="about">Sobre</a></li>
-							<li><a class="cool-hover" href="shop">Produtos</a></li>
+							<li><a class="cool-hover" href="sobre">Sobre</a></li>
+							<li><a class="cool-hover" href="loja">Produtos</a></li>
 						</ul>
 					</div>
 				</div>

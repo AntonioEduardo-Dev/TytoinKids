@@ -1,13 +1,24 @@
+<?php
+	session_start();
+	if(empty($_GET['id'])){
+		echo '<script>window.location="loja"</script>';
+		exit;
+	}
+	if($_GET['id'] < 1 || $_GET['id'] == null || is_int($_GET['id'])){
+		echo '<script>window.location="loja"</script>';
+		exit;
+	}
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Responsive Bootstrap4 - Tytoin_kids">
+	<meta name="description" content="Tytoin_kids - Seja muito bem vindo, Conheça nossos produtos, encomende algo que o agrade para seu filho ou filha, nós somos a Tytoin kids.">
 
 	<!-- title -->
-	<title>Encomendar</title>
+	<title>Produto</title>
 
 	<!-- favicon -->
 	<link rel="shortcut icon" type="image/png" href="commandview/assets/img/favicon.png">
@@ -60,17 +71,17 @@
 						
 						<nav class="main-menu">
 							<ul>
-								<li><a class="cool-hover" href="about">Sobre</a></li>
-								<li><a class="cool-hover" href="contact">Contato</a></li>
-								<li><a class="cool-hover" href="shop">Produtos</a>
+								<li><a class="cool-hover" href="sobre">Sobre</a></li>
+								<li><a class="cool-hover" href="contato">Contato</a></li>
+								<li><a class="cool-hover" href="loja">Produtos</a>
 									<ul class="sub-menu">
-										<li><a href="shop">Produtos</a></li>
-										<li><a href="cart">Carrinho</a></li>
+										<li><a href="loja">Produtos</a></li>
+										<li><a href="carrinho">Carrinho</a></li>
 									</ul>
 								</li>
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart" href="cart"><i class="fas fa-shopping-cart"></i></a>
+										<a class="shopping-cart" href="carrinho"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 									</div>
 								</li>
@@ -96,7 +107,7 @@
 						<div class="search-bar-tablecell">
 							<h3>Pesquisar:</h3>
 							<input type="text" placeholder="Digite aqui">
-							<button type="submit">Search <i class="fas fa-search"></i></button>
+							<button type="submit">Pesquisar <i class="fas fa-search"></i></button>
 						</div>
 					</div>
 				</div>
@@ -111,8 +122,8 @@
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="breadcrumb-text">
-						<p>Os melhores produtos</p>
-						<h1>Confira os produto</h1>
+						<p>Detalhes do produto</p>
+						<h1>Produto</h1>
 					</div>
 				</div>
 			</div>
@@ -120,141 +131,102 @@
 	</div>
 	<!-- end breadcrumb section -->
 
-	<!-- check out section -->
-	<div class="checkout-section mt-5 mb-5">
+	<!-- Produto -->
+	<div class="single-product mt-5 mb-5">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-8">
-					<div class="checkout-accordion-wrap">
-						<div class="accordion" id="accordionExample">
-						  <div class="card single-accordion">
-						    <div class="card-header" id="headingOne">
-						      <h5 class="mb-0">
-						        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-						          Endereço de cobrança
-						        </button>
-						      </h5>
-						    </div>
-
-						    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-						      <div class="card-body">
-						        <div class="billing-address-form">
-									<div class="form-group row">
-										<div class="col">
-											<input type="text" placeholder="Nome*" required>
-										</div>
-									</div>
-									<div class="form-group row">
-										<div class="col">
-											<input type="email" placeholder="Email">
-										</div>
-									</div>
-									<div class="form-group row">
-										<div class="col-md-6">
-											<input type="cpf" placeholder="Cadastro de pessoa física*" required>
-										</div>
-										<div class="col-md-6">
-											<input type="tel" placeholder="Telefone*" required>
-										</div>
-									</div>
-									<div class="form-group row">
-										<div class="col-lg-12">
-											<input type="text" placeholder="Endereço">
-										</div>
-										<div class="col-lg-12">
-											<textarea name="speak" id="speak" cols="30" rows="3" placeholder="Dizer algo:"></textarea>
-										</div>
-									</div>
-						        </div>
-						      </div>
-						    </div>
-						  </div>
-						  <div class="card single-accordion">
-						    <div class="card-header" id="headingTwo">
-						      <h5 class="mb-0">
-						        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-						          Endereço de entrega
-						        </button>
-						      </h5>
-						    </div>
-						    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-						      <div class="card-body">
-						        <div class="shipping-address-form">
-						        	<p>Seu formulário de endereço de entrega está aqui.</p>
-						        </div>
-						      </div>
-						    </div>
-						  </div>
-						  <div class="card single-accordion">
-						    <div class="card-header" id="headingThree">
-						      <h5 class="mb-0">
-						        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-						          Detalhes do cartão
-						        </button>
-						      </h5>
-						    </div>
-						    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-						      <div class="card-body">
-						        <div class="card-details">
-						        	<p>Os detalhes do seu cartão vão aqui.</p>
-						        </div>
-						      </div>
-						    </div>
-						  </div>
-						</div>
-
+				<div class="col-md-5 mt-5 mb-5">
+					<div class="single-product-img">
+						<img id="imagem_produto" src="commandview/assets/img/images/productind.jpg" alt="">
 					</div>
 				</div>
-
-				<div class="col-lg-4">
-					<div class="order-details-wrap">
-						<table class="order-details">
-							<thead>
-								<tr>
-									<th>Detalhes do seu pedido</th>
-									<th>Preço</th>
-								</tr>
-							</thead>
-							<tbody class="order-details-body">
-								<tr>
-									<td>Produto</td>
-									<td>Total</td>
-								</tr>
-								<tr>
-									<td>Strawberry</td>
-									<td>$85.00</td>
-								</tr>
-								<tr>
-									<td>Berry</td>
-									<td>$70.00</td>
-								</tr>
-								<tr>
-									<td>Lemon</td>
-									<td>$35.00</td>
-								</tr>
-							</tbody>
-							<tbody class="checkout-details">
-								<tr>
-									<td>Subtotal</td>
-									<td>$190</td>
-								</tr>
-								<tr>
-									<td>Shipping</td>
-									<td>$50</td>
-								</tr>
-								<tr>
-									<td>Total</td>
-									<td>$240</td>
-								</tr>
-							</tbody>
-						</table>
-						<a href="#" class="boxed-btn">Encomendar</a>
+				<div class="col-md-7 mt-5 mb-5">
+					<div class="single-product-content">
+						<h3 id="id_nome_produto"></h3>
+						<p class="single-product-pricing"><span>P/Quantidade</span> R$ <a id="id_preco_produto"></a></p>
+						<div class="single-product-form">
+							<div class="row">
+								<div class="col">
+									Disponiveis: <a id="id_qtd_produto"> </a>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col mt-1">
+									<input type="number" placeholder="0">
+								</div>
+							</div>
+							<div class="form-group row">
+								<div class="col">
+									<a href="carrinho" class="cart-btn"><i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho</a>
+								</div>
+							</div>
+							<div class="form-group row">
+								<div class="col">
+									<a href="carrinho" class="boxed-btn">Encomendar</a>
+								</div>
+							</div>
+							<p><strong>Categoria: </strong><a id="id_categoria_produto"></a></p>
+						</div>
+						<h4>Compartilhe:</h4>
+						<ul class="product-share">
+							<li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href=""><i class="fab fa-twitter"></i></a></li>
+							<li><a href=""><i class="fab fa-google-plus-g"></i></a></li>
+							<li><a href=""><i class="fab fa-linkedin"></i></a></li>
+						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- end check out section -->
+	<!-- end Produto -->
+
+	<!-- more products -->
+	<div class="more-products mb-5">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="section-title">	
+						<h3><span class="orange-text">Mais</span> Procurados</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-4 col-md-6 text-center">
+					<div class="single-product-item">
+						<div class="product-image">
+							<a href="produto"><img src="commandview/assets/img/images/productind.jpg" alt=""></a>
+						</div>
+						<h3>Strawberry</h3>
+						<p class="product-price"><span>P/Quantidade</span> R$85 </p>
+						<a href="carrinho" class="cart-btn"><i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho</a>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 text-center">
+					<div class="single-product-item">
+						<div class="product-image">
+							<a href="produto"><img src="commandview/assets/img/images/productind.jpg" alt=""></a>
+						</div>
+						<h3>Berry</h3>
+						<p class="product-price"><span>P/Quantidade</span> R$85 </p>
+						<a href="carrinho" class="cart-btn"><i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho</a>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3 text-center">
+					<div class="single-product-item">
+						<div class="product-image">
+							<a href="produto"><img src="commandview/assets/img/images/productind.jpg" alt=""></a>
+						</div>
+						<h3>Lemon</h3>
+						<p class="product-price"><span>P/Quantidade</span> R$85 </p>
+						<a href="carrinho" class="cart-btn"><i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end more products -->
 
 
 	<!-- footer -->
@@ -292,8 +264,8 @@
 						<h2 class="widget-title">Páginas</h2>
 						<ul>
 							<li><a class="cool-hover" href="index">Início</a></li>
-							<li><a class="cool-hover" href="about">Sobre</a></li>
-							<li><a class="cool-hover" href="shop">Produtos</a></li>
+							<li><a class="cool-hover" href="sobre">Sobre</a></li>
+							<li><a class="cool-hover" href="loja">Produtos</a></li>
 						</ul>
 					</div>
 				</div>
@@ -346,6 +318,8 @@
 	<script src="commandview/assets/js/sticker.js"></script>
 	<!-- main js -->
 	<script src="commandview/assets/js/main.js"></script>
+	<!-- listar produtos js -->
+	<script src="commandsfunction/read/produto.js"></script>
 
 </body>
 </html>

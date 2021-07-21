@@ -4,10 +4,10 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Responsive - Tytoin_kids">
+	<meta name="description" content="Tytoin_kids - Seja muito bem vindo, Conheça nossos produtos, encomende algo que o agrade para seu filho ou filha, nós somos a Tytoin kids.">
 
 	<!-- title -->
-	<title>Categorias</title>
+	<title>Encomendas</title>
 
 	<!-- favicon -->
 	<link rel="shortcut icon" type="image/png" href="../commandview/assets/img/favicon.png">
@@ -30,7 +30,7 @@
 	<link rel="stylesheet" href="../commandview/assets/css/main.css">
 	<!-- responsive -->
 	<link rel="stylesheet" href="../commandview/assets/css/responsive.css">
-	
+
 	<!-- jquery -->
 	<script src="../commandview/assets/js/jquery-1.11.3.min.js"></script>
 
@@ -44,7 +44,7 @@
     <!-- end css table -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css">
     <!-- end css table -->
-
+	
 </head>
 <body>
 	
@@ -74,17 +74,17 @@
 						
 						<nav class="main-menu">
 							<ul>
-								<li><a class="cool-hover" href="../about">Sobre</a></li>
-								<li><a class="cool-hover" href="../contact">Contato</a></li>
-								<li><a class="cool-hover" href="../shop">Produtos</a>
+								<li><a class="cool-hover" href="../sobre">Sobre</a></li>
+								<li><a class="cool-hover" href="../contato">Contato</a></li>
+								<li><a class="cool-hover" href="../loja">Produtos</a>
 									<ul class="sub-menu">
-										<li><a href="../shop">Produtos</a></li>
-										<li><a href="../cart">Carrinho</a></li>
+										<li><a href="../loja">Produtos</a></li>
+										<li><a href="../carrinho">Carrinho</a></li>
 									</ul>
 								</li>
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart cool-hover" href="../cart"><i class="fas fa-shopping-cart"></i></a>
+										<a class="shopping-cart cool-hover" href="../carrinho"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon cool-hover" href="#"><i class="fas fa-search"></i></a>
 									</div>
 								</li>
@@ -125,7 +125,7 @@
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="breadcrumb-text">
-						<h1>Categorias</h1>
+						<h1>Encomendas</h1>
 					</div>
 				</div>
 			</div>
@@ -138,19 +138,19 @@
 		<div class="container">
 			<div class="card">
 				<div class="card-header">
-					<h4>Categorias</h4>
+					<h4>Encomendas</h4>
 				</div>
 				<div class="card-body">
 					<div class="row">
-						<div class="col col-md-12">
-							<h5 class="card-title">Dados da listagem</h5>
+						<div class="col col-md-12"> 
 							<div class="cart-table-wrap">
 								<table class="cart-table" id="table_dinamic_js">
 									<thead class="cart-table-head">
 										<tr class="table-head-row">
 											<th class="product-image"><h6>Id</h6></th>
-											<th class="product-name"><h6>Categoria</h6></th>
-											<th><h6></h6></th>
+											<th class="product-name"><h6>Quantidade</h6></th>
+											<th class="product-price"><h6>Data da encomenda</h6></th>
+											<th class="product-remove"><h6></h6></th>
 										</tr>
 									</thead>
 									<tbody>
@@ -175,7 +175,6 @@
 		</div>
 	</div>
 	</div>
-
 	<!-- End Large modal -->
 
 	<!-- Small modal -->
@@ -188,73 +187,15 @@
 		</div>
 	</div>
 	<!-- End Small modal -->
-
+	
 	<!-- footer -->
-	<div class="footer-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-box about-widget">
-						<h2 class="widget-title">Sobre nós</h2>
-						<p>Ut enim ad minim veniam perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-box get-in-touch">
-						<h2 class="widget-title">Como nos encontrar</h2>
-						<ul>
-							<li>34/8, East Hukupara, Gifirtok, Sadan.</li>
-							<li>support@tkids.com</li>
-							<li>+00 111 222 3333</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-box">
-						<h2 class="widget-title">Serviços</h2>
-						<ul>
-							<li>34/8, East Hukupara, Gifirtok, Sadan.</li>
-							<li>support@tkids.com</li>
-							<li>+00 111 222 3333</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-box pages">
-						<h2 class="widget-title">Páginas</h2>
-						<ul>
-							<li><a href="../index">Início</a></li>
-							<li><a href="../about">Sobre</a></li>
-							<li><a href="../shop">Categorias</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
+	<div class="footer-area footer-copyright">
 	</div>
 	<!-- end footer -->
 	
 	<!-- copyright -->
 	
-	<div class="copyright">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6 col-md-12">
-					<p>Copyrights &copy; 2021 - <a href="../tytoin_kids_link_copyright">Tytoin</a>,  Todos os direitos reservados.</p>
-				</div>
-				<div class="col-lg-6 text-right col-md-12">
-					<div class="social-icons">
-						<ul>
-							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-							<!-- <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li> -->
-							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-							<!-- <li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li> -->
-							<!-- <li><a href="#" target="_blank"><i class="fab fa-dribbble"></i></a></li> -->
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
+	<div class="copyright footer-copyright-party-end">
 	</div>
 	<!-- end copyright -->
 	
@@ -278,13 +219,14 @@
 	<script src="../commandview/assets/js/main.js"></script>
 	
 	<!-- pagina js -->
-	<script src="../commandsfunction/content/conteudoPagina"></script>
+	<script src="../commandsfunction/content/conteudoPagina.js"></script>
 
-	<!-- listar Categorias js -->
-    <script src="../commandsfunction/read/scriptDataTableCategorias.js"></script>
-	
-	<!-- listar Categorias js -->
-    <script src="../commandsfunction/delete/categoria.js"></script>
+	<!-- listar Encomendas js -->
+    <script src="../commandsfunction/read/scriptDataTableEncomendas.js"></script>
+
+	<!-- modal listar Encomendas js -->
+	<script src="../commandsfunction/read/listarEncomenda.js"></script>
+
 
 </body>
 </html>

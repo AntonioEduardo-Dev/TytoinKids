@@ -1,4 +1,4 @@
-/* MENU */
+/* CONTENT MENU */
 $(function() {
 
     $(document).on('click', '.modal_system_open', function() {
@@ -11,7 +11,7 @@ $(function() {
                 var titulo      = "Categorias";
                 var qtdblocks   = 2;
                 var imagens     = ['image_menu.png', 'image_menu.png'];
-                var links       = ['../list/categorias', '../create/insert_categories'];
+                var links       = ['../listar/categorias', '../cadastrar/cadastrar_categoria'];
                 var subTitulos  = ['Listar', 'Cadastrar'];
 
                 var conteudo = bodyModalContent(qtdblocks, imagens, links, subTitulos);
@@ -20,7 +20,7 @@ $(function() {
                 var titulo      = "Produtos";
                 var qtdblocks   = 2;
                 var imagens     = ['image_menu.png', 'image_menu.png'];
-                var links       = ['../list/produtos','../create/insert_products'];
+                var links       = ['../listar/produtos','../cadastrar/cadastrar_produto'];
                 var subTitulos  = ['Listar', 'Cadastrar'];
 
                 var conteudo = bodyModalContent(qtdblocks, imagens, links, subTitulos);
@@ -29,7 +29,7 @@ $(function() {
                 var titulo      = "Encomendas";
                 var qtdblocks   = 2;
                 var imagens     = ['image_menu.png', 'image_menu.png'];
-                var links       = ['../list/encomendas','../create/insert_products'];
+                var links       = ['../listar/encomendas','../cadastrar/cadastrar_produto'];
                 var subTitulos  = ['Listar', 'Cadastrar'];
 
                 var conteudo = bodyModalContent(qtdblocks, imagens, links, subTitulos);
@@ -50,8 +50,8 @@ $(function() {
                                     <div class="col mt-2">
                                         <h3>`+titulo+`</h3>
                                     </div>
-                                    <div class="col mt-2">
-                                        <button type="button" class="btn btn-danger float-right modal_sistem_close">Fechar</button>
+                                    <div class="col mt-3 mr-3">
+                                        <button type="button" class="close text-danger float-right" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                     </div>
                                 </div>
                             </div>

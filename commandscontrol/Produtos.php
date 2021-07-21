@@ -76,14 +76,14 @@
                 if (move_uploaded_file($_FILES['nm_imageUpload']['tmp_name'], $dir.$novoNome)) {
                     echo 'true-|-'.$novoNome;
                 }else{
-                    echo 'false-|-Imagem não enviada';
+                    echo 'false-|-Imagem_nao_enviada!';
                 }
             }else{
-                echo 'false-|-Extensão Inválida';
+                echo 'false-|-Extensao_Invalida!';
             }
 
         }else{
-            echo 'false-|-Ocorreu um erro inesperado';
+            echo 'false-|-erro_inesperado!';
         }
     }
 

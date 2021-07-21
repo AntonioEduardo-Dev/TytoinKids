@@ -1,4 +1,4 @@
-/* INSERIR CATEGORIA */
+/* INSERIR ENCOMENDA */
 $(function() {
 
     $(document).on('click', '#id_cad', function() {
@@ -6,10 +6,9 @@ $(function() {
 
         var dados = {
             btn_cadastrar   : $("#id_cad").val(),
-            categ_nome      : $("#id_nome").val()
         }
 
-        $.post('../commandscontrol/Categorias.php', dados, function(retorno) {
+        $.post('../commandscontrol/Encomendas.php', dados, function(retorno) {
             var tipo = retorno.indexOf("alert_notification_error");
             retorno = retorno.split("-|-");
 

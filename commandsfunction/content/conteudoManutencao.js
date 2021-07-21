@@ -12,8 +12,8 @@ $(function() {
                                     <div class="col">
                                         <h4>Confirmação</h4>
                                     </div>
-                                    <div class="col">
-                                        <button type="button" class="btn btn-danger float-right modal_sistem_close">Fechar</button>
+                                    <div class="col mr-3">
+                                        <button type="button" class="close text-danger float-right" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                     </div>
                                 </div>
                             </div>

@@ -12,7 +12,7 @@ $(function() {
                 $.post('commandscontrol/Produtos.php', listarProduto, function(retorna) {
                     var values = retorna.split("-&-");
                     if (values[1] == null || values[1] == "" || values[1] < 1) {
-                        location.href = 'shop';
+                        location.href = 'loja';
 
                     }else{
                         $("#id_nome_produto").html(values[1] == 0 || values[1] == null ? 'Nome do produto' : values[1]);
