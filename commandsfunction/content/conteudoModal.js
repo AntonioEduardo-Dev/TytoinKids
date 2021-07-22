@@ -5,11 +5,11 @@ function exibirModalAlerta(msgModal, tipoModal, corModal) {
 
         var conteudo = `<div class="modal-body">
                             <div class="form-group">
-                                <h5>`+msgModal+`</h5>
+                                <h4>`+msgModal+`</h4>
                             </div>
                         </div>
                         <div class="modal-footer col mt-3 mr-3">
-                            <button type="button" class="close text-danger float-right" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4><a><i class="fas fa-window-close close-btn float-right" data-dismiss="modal"></i></a></h4>
                         </div>`;
 
         $(".conteudo_modal_sm").append(conteudo);

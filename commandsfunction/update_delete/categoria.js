@@ -8,6 +8,7 @@ $(function() {
         identificador   = value[1];
         
         if (btn_clicked === "btn_nm_edit") {
+            $(".conteudo_modal_sm").html('');
             
         }else if (btn_clicked === "btn_nm_remove") {
             $(".conteudo_modal_sm").html('');

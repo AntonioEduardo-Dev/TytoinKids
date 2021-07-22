@@ -50,7 +50,7 @@
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div class="site-logo">
-							<a href="index">
+							<a href="home">
 								<img src="commandview/assets/img/logo_defined.png" alt="">
 							</a>
 						</div>
@@ -62,106 +62,37 @@
 	</div>
 	<!-- end header -->
 
-		<!-- breadcrumb-section -->
-		<div class="breadcrumb-section breadcrumb-bg">
+	<!-- breadcrumb-section -->
+	<div class="breadcrumb-section breadcrumb-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+						<p>Descupe!</p>
+						<h1>Manutenção</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end breadcrumb section -->
+	<!-- error section -->
+	<div class="full-height-section error-section">
+		<div class="full-height-tablecell">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-8 offset-lg-2 text-center">
-						<div class="breadcrumb-text">
-							<p>Descupe!</p>
-							<h1>Manutenção</h1>
+						<div class="error-text">
+							<i class="far fa-sad-cry"></i>
+							<h1>Oops! Manutenção.</h1>
+							<p>A página solicitada encontra-se em manutenção.</p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!-- end breadcrumb section -->
-		<!-- error section -->
-		<div class="full-height-section error-section">
-			<div class="full-height-tablecell">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-8 offset-lg-2 text-center">
-							<div class="error-text">
-								<i class="far fa-sad-cry"></i>
-								<h1>Oops! Manutenção.</h1>
-								<p>A página solicitada encontra-se em manutenção.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- end error section -->
-		
-	<!-- footer -->
-	<div class="footer-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-box about-widget">
-						<h2 class="widget-title">Sobre nós</h2>
-						<p>Ut enim ad minim veniam perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-box get-in-touch">
-						<h2 class="widget-title">Como nos encontrar</h2>
-						<ul>
-							<li>34/8, East Hukupara, Gifirtok, Sadan.</li>
-							<li>support@tkids.com</li>
-							<li>+00 111 222 3333</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-box">
-						<h2 class="widget-title">Serviços</h2>
-						<ul>
-							<li>34/8, East Hukupara, Gifirtok, Sadan.</li>
-							<li>support@tkids.com</li>
-							<li>+00 111 222 3333</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-box pages">
-						<h2 class="widget-title">Páginas</h2>
-						<ul>
-							<li><a class="cool-hover" href="#">Início</a></li>
-							<li><a class="cool-hover" href="#">Sobre</a></li>
-							<li><a class="cool-hover" href="#">Produtos</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
 	</div>
-	<!-- end footer -->
-	
-	<!-- copyright -->
-	
-	<div class="copyright">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6 col-md-12">
-					<p>Copyrights &copy; 2021 - <a href="#">Tytoin</a>,  Todos os direitos reservados.</p>
-				</div>
-				<div class="col-lg-6 text-right col-md-12">
-					<div class="social-icons">
-						<ul>
-							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-							<!-- <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li> -->
-							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-							<!-- <li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li> -->
-							<!-- <li><a href="#" target="_blank"><i class="fab fa-dribbble"></i></a></li> -->
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end copyright -->
+	<!-- end error section -->
 	
 	<!-- jquery -->
 	<script src="commandview/assets/js/jquery-1.11.3.min.js"></script>

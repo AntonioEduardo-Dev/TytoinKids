@@ -277,6 +277,27 @@ p:last-child {
   }
 }
 
+
+.mt-60 {
+  margin-top: 60px;
+}
+
+@media only screen and (max-width: 767.96px) {
+  .mt-60 {
+    margin-top: 20px;
+  }
+}
+
+.mb-60 {
+  margin-bottom: 60px;
+}
+
+@media only screen and (max-width: 767.96px) {
+  .mb-60 {
+    margin-bottom: 20px;
+  }
+}
+
 .mt-80 {
   margin-top: 80px;
 }
@@ -294,6 +315,26 @@ p:last-child {
 @media only screen and (max-width: 767.96px) {
   .mb-80 {
     margin-bottom: 50px;
+  }
+}
+
+.mt-90 {
+  margin-top: 90px;
+}
+
+@media only screen and (max-width: 767.96px) {
+  .mt-90 {
+    margin-top: 70px;
+  }
+}
+
+.mb-90 {
+  margin-bottom: 90px;
+}
+
+@media only screen and (max-width: 767.96px) {
+  .mb-90 {
+    margin-bottom: 70px;
   }
 }
 
@@ -531,21 +572,6 @@ ul.navbar-nav li.nav-item a.nav-link, ul.navbar-nav li.nav-item.active a.nav-lin
   padding: 15px 0;
 }
 
-@media only screen and (min-width: 994px) {
-  .top-header-area-cs {
-    background-color: #ff5882;
-  }
-}
-@media only screen and (max-width: 994px) {
-  .mean-container a.meanmenu-reveal span {
-    background-color: #ffffff;
-  }
-  .top-header-area-cs {
-    background-color: #ff5882;
-    height: 78px;
-  }
-}
-
 .top-header-area.white ul.navbar-nav li.nav-item a.nav-link, .top-header-area.white ul.navbar-nav li.nav-item.active a.nav-link {
   color: #ffffff;
 }
@@ -649,11 +675,11 @@ ul.sub-menu li:last-child {
 }
 
 .mean-container a.meanmenu-reveal {
-  color: #ffffff;
+  color: #ff5882;
 }
 
 .mean-container a.meanmenu-reveal span {
-  background-color: #ffffff;
+  background-color: #ff5882;
 }
 
 .mean-container .mean-nav ul li a {

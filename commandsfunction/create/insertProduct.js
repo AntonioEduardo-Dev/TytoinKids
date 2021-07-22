@@ -62,8 +62,8 @@ $(function() {
                                                         $('#btn_id_check_tam_gg').prop("checked")   == true ? 1 : 0,
                                                         $('#btn_id_check_tam_1').prop("checked")    == true ? 1 : 0,
                                                         $('#btn_id_check_tam_2').prop("checked")    == true ? 1 : 0,
-                                                        $('#btn_id_check_tam_3').prop("checked")    == true ? 1 : 0,
-                                                        $('#btn_id_check_tam_4').prop("checked")    == true ? 1 : 0
+                                                        $('#btn_id_check_tam_4').prop("checked")    == true ? 1 : 0,
+                                                        $('#btn_id_check_tam_6').prop("checked")    == true ? 1 : 0
                                                     ];
 
                         var dados = {

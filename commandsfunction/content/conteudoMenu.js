@@ -48,10 +48,10 @@ $(function() {
                             <div class="card-header">
                                 <div class="form-group row">
                                     <div class="col mt-2">
-                                        <h3>`+titulo+`</h3>
+                                        <h4>`+titulo+`</h4>
                                     </div>
                                     <div class="col mt-3 mr-3">
-                                        <button type="button" class="close text-danger float-right" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4><a><i class="fas fa-window-close close-btn float-right" data-dismiss="modal"></i></a></h4>
                                     </div>
                                 </div>
                             </div>

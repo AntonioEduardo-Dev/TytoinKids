@@ -13,7 +13,7 @@ $(function() {
                                         <h4>Confirmação</h4>
                                     </div>
                                     <div class="col mr-3">
-                                        <button type="button" class="close text-danger float-right" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4><a><i class="fas fa-window-close close-btn float-right" data-dismiss="modal"></i></a></h4>
                                     </div>
                                 </div>
                             </div>

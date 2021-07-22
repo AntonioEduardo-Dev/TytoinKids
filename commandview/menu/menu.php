@@ -50,7 +50,7 @@
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div class="site-logo">
-							<a href="../index">
+							<a href="../home">
 								<img src="../commandview/assets/img/logo_defined.png" alt="">
 							</a>
 						</div>
@@ -59,6 +59,7 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
+								<li><a class="cool-hover" href="../home">Inicio</a></li>
 								<li><a class="cool-hover" href="../sobre">Sobre</a></li>
 								<li><a class="cool-hover" href="../contato">Contato</a></li>
 								<li><a class="cool-hover" href="../loja">Produtos</a>
@@ -84,25 +85,7 @@
 		</div>
 	</div>
 	<!-- end header -->
-
-	<!-- search area -->
-	<div class="search-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<span class="close-btn"><i class="fas fa-window-close"></i></span>
-					<div class="search-bar">
-						<div class="search-bar-tablecell">
-							<h3>Pesquisar:</h3>
-							<input type="text" placeholder="Digite aqui">
-							<button type="submit">Pesquisar <i class="fas fa-search"></i></button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end search area -->
+ 
 	
 	<!-- breadcrumb-section -->
 	<div class="breadcrumb-section breadcrumb-bg">
@@ -199,7 +182,7 @@
 	<!-- End Large modal -->
 
 	<!-- footer -->
-	<div class="footer-area">
+	<div class="footer-area footer-copyright">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3 col-md-6">
@@ -232,7 +215,7 @@
 					<div class="footer-box pages">
 						<h2 class="widget-title">Páginas</h2>
 						<ul>
-							<li><a class="cool-hover" href="../index">Início</a></li>
+							<li><a class="cool-hover" href="../home">Início</a></li>
 							<li><a class="cool-hover" href="../sobre">Sobre</a></li>
 							<li><a class="cool-hover" href="../loja">Produtos</a></li>
 						</ul>
@@ -245,7 +228,7 @@
 	
 	<!-- copyright -->
 	
-	<div class="copyright">
+	<div class="copyright footer-copyright-party-end">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-12">
@@ -285,11 +268,10 @@
 	<script src="../commandview/assets/js/jquery.meanmenu.min.js"></script>
 	<!-- sticker js -->
 	<script src="../commandview/assets/js/sticker.js"></script>
-	<!-- main js -->
-	<script src="../commandview/assets/js/main.js"></script>
-	
 	<!-- conteudo js -->
 	<script src="../commandsfunction/content/conteudoMenu.js"></script>
+	<!-- main js -->
+	<script src="../commandview/assets/js/main.js"></script>
 
 
 </body>

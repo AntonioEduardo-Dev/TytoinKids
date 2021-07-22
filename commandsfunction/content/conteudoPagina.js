@@ -1,5 +1,33 @@
 /* CONTENT PÁGINA */
 $(function() {
+    var url_atual = (window.location.href).split("/");
+    pageAtual = url_atual[(url_atual.length) - 2];
+
+    switch (pageAtual) {
+        case "TytoinKids":
+            diretorio = "";
+            break;
+
+        case "listar":
+            diretorio = "../";
+            break;
+    
+        case "cadastrar":
+            diretorio = "../";
+            break;
+
+        case "pastaSemNome":
+            diretorio = "../";
+            break;
+
+        case "menu":
+            diretorio = "../";
+            break;
+    
+        default:
+            diretorio = "";
+            break;
+    }
 
     /* Header */
     $('.top-header-area').html('');
@@ -10,8 +38,8 @@ $(function() {
                                     <div class="main-menu-wrap">
                                         <!-- logo -->
                                         <div class="site-logo">
-                                            <a href="../index">
-                                                <img src="../commandview/assets/img/logo_defined.png" alt="">
+                                            <a href="`+diretorio+`index">
+                                                <img src="`+diretorio+`commandview/assets/img/logo_defined.png" alt="">
                                             </a>
                                         </div>
                                         <!-- logo -->
@@ -20,29 +48,29 @@ $(function() {
                                         
                                         <nav class="main-menu">
                                             <ul>
-                                                <li><a class="cool-hover" href="../sobre">Sobre</a></li>
-                                                <li><a class="cool-hover" href="../contato">Contato</a></li>
-                                                <li><a class="cool-hover" href="../loja">Produtos</a>
+                                                <li><a class="cool-hover" href="`+diretorio+`sobre">Sobre</a></li>
+                                                <li><a class="cool-hover" href="`+diretorio+`contato">Contato</a></li>
+                                                <li><a class="cool-hover" href="`+diretorio+`loja">Produtos</a>
                                                     <ul class="sub-menu">
-                                                        <li><a href="../loja">Produtos</a></li>
-                                                        <li><a href="../carrinho">Carrinho</a></li>
+                                                        <li><a href="`+diretorio+`loja">Produtos</a></li>
+                                                        <li><a href="`+diretorio+`carrinho">Carrinho</a></li>
                                                     </ul>
                                                 </li>
-                                                <li><a class="cool-hover" href="../menu/menu">MENU</a>
+                                                <li><a class="cool-hover" href="`+diretorio+`menu/menu">MENU</a>
                                                     <ul class="sub-menu">
-                                                        <li><a href="../menu/menu">Menu</a></li>
-                                                        <li><a href="../menu/menu_status">Manutenção</a></li>
+                                                        <li><a href="`+diretorio+`menu/menu">Menu</a></li>
+                                                        <li><a href="`+diretorio+`menu/menu_status">Manutenção</a></li>
                                                     </ul>
                                                 </li>
                                                 <li>
                                                     <div class="header-icons">
-                                                        <a class="shopping-cart cool-hover" href="../carrinho"><i class="fas fa-shopping-cart"></i></a>
-                                                        <a class="mobile-hide search-bar-icon cool-hover" href="#"><i class="fas fa-search"></i></a>
+                                                        <a class="shopping-cart cool-hover" href="`+diretorio+`carrinho"><i class="fas fa-shopping-cart"></i></a>
+                                                        <a class="mobile-hide search-bar-icon cool-hover" href="#"><i class="fas fa-user"></i></a>
                                                     </div>
                                                 </li>
                                             </ul>
                                         </nav>
-                                        <a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+                                        <a class="mobile-show search-bar-icon" href="#"><i class="fas fa-user"></i></a>
                                         <div class="mobile-menu"></div>
                                         <!-- menu end -->
                                     </div>
@@ -89,9 +117,9 @@ $(function() {
                                 <div class="footer-box pages">
                                     <h2 class="widget-title">Páginas</h2>
                                     <ul>
-                                        <li><a class="cool-hover" href="../index">Início</a></li>
-                                        <li><a class="cool-hover" href="../sobre">Sobre</a></li>
-                                        <li><a class="cool-hover" href="../loja">Produtos</a></li>
+                                        <li><a class="cool-hover" href="`+diretorio+`index">Início</a></li>
+                                        <li><a class="cool-hover" href="`+diretorio+`sobre">Sobre</a></li>
+                                        <li><a class="cool-hover" href="`+diretorio+`loja">Produtos</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -105,7 +133,7 @@ $(function() {
     var contentEnd =   `<div class="container">
                         <div class="row">
                             <div class="col-lg-6 col-md-12">
-                                <p>Copyrights &copy; 2021 - <a href="../tytoin_kids_link_copyright">Tytoin</a>,  Todos os direitos reservados.</p>
+                                <p>Copyrights &copy; 2021 - <a href="`+diretorio+`tytoin_kids_link_copyright">Tytoin</a>,  Todos os direitos reservados.</p>
                             </div>
                             <div class="col-lg-6 text-right col-md-12">
                                 <div class="social-icons">
