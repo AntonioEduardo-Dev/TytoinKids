@@ -24,7 +24,7 @@ function exibirModalAlerta(msgModal, tipoModal, corModal) {
     }else{
         switch (msgModal) {
             case "alert_notification_error!":
-                msgModal = "Ocorreu um erro na operação, se o erro persistir contate a administração!";
+                msgModal = "Ocorreu um erro na operação, se o erro persistir entre em contato com a administração!";
                 break;
 
             case "alert_notification_error_data_bite!":
@@ -52,11 +52,11 @@ function exibirModalAlerta(msgModal, tipoModal, corModal) {
                 break;
 
             case "alert_notification_error_cor!":
-                msgModal = "Ocorreu um erro no modulo de cores, se o erro persistir contate a administração!";
+                msgModal = "Ocorreu um erro no modulo de cores, se o erro persistir entre em contato com a administração!";
                 break;
 
             case "alert_notification_error_tamanho!":
-                msgModal = "Ocorreu um erro no modulo de tamanhos, se o erro persistir contate a administração!";
+                msgModal = "Ocorreu um erro no modulo de tamanhos, se o erro persistir entre em contato com a administração!";
                 break;
             
             case "Imagem_nao_enviada!":

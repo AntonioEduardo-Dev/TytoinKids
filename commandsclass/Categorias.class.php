@@ -13,7 +13,7 @@
 
                 $vl = $consulta->rowCount();
 
-                if ($vl > 0) {
+                if($vl > 0):
                     $dados = $consulta->fetchAll();
                     echo '<ul>
                             <li class="li active" data-filter="*">Todos</li>';
@@ -22,7 +22,8 @@
                         <li class="li" data-filter=".'.$dado['nome_categoria'].'">'.$dado['nome_categoria'].'</li>';
                     }
                     echo "</ul>";
-                }
+                endif;
+
             } catch (PDOException $e) {
                 echo "Erro de cadastrar: " . $e->getMessage();
             } catch (Exception $e) {
@@ -41,13 +42,16 @@
 
                 $vl = $consulta->rowCount();
 
-                if ($vl > 0) {
+                if($vl > 0):
                     $dados = $consulta->fetchAll();
                     echo '<option value="0" selected style="display: none;">Categoria do produto*</option>';
                     foreach ($dados as $indice => $dado) {
                         echo '<option value="'.$dado['id_categoria'].'">'.$dado['nome_categoria'].'</option>';
                     }
-                }
+                else:
+                    echo '<option value="0" selected style="display: none;">Erro, Cadastre uma categoria no sistema!</option>';
+                endif;
+
             } catch (PDOException $e) {
                 echo "Erro de cadastrar: " . $e->getMessage();
             } catch (Exception $e) {
@@ -83,11 +87,11 @@
                 $cadastrar = $connection->prepare($sql);
                 $cadastrar->bindValue(":nome", $nome);
 
-                if ($cadastrar->execute()) {
+                if($cadastrar->execute()):
                     return true;
-                }else{
+                else:
                     return false;
-                }
+                endif;
 
             } catch (PDOException $e) {
                 echo "Erro de cadastrar: " . $e->getMessage();
@@ -100,6 +104,15 @@
             $objConexao = new Connection();
             $connection = $objConexao->conectar();
             try {
+                $sql = "DELETE FROM categorias WHERE categorias.id_categoria = :id_categoria";
+                $apagar = $connection->prepare($sql);
+                $apagar->bindValue(":id_categoria", $id_categoria);
+
+                if($apagar->execute()):
+                    return true;
+                else:
+                    return false;
+                endif;
 
             } catch (PDOException $e) {
                 echo "Erro de cadastrar: " . $e->getMessage();

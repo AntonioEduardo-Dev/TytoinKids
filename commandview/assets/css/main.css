@@ -2746,9 +2746,6 @@ tr.total-data td strong {
 .card.single-accordion .card-header h5 button {
   color: #402b65;
   font-size: 15px;
-  display: block;
-  width: 100%;
-  text-align: left;
   padding: 20px;
   text-decoration: none;
   border: none;

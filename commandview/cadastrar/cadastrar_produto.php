@@ -63,6 +63,14 @@
 	</div>
 	<!-- end breadcrumb section -->
 
+	<!-- link section -->
+	<div class="row mt-5 ">
+		<div class="col-md-2 offset-md-5">
+			<a href="../listar/produtos"><input type="submit" value="Listar"></a>
+		</div>
+	</div>
+	<!-- end link section -->
+
 	<!-- check out section -->
 	<div class="checkout-section mt-5 mb-5">
 		<div class="container">
@@ -271,14 +279,15 @@
 	<script src="../commandview/assets/js/sticker.js"></script>
 	<!-- pagina js -->
 	<script src="../commandsfunction/content/conteudoPagina.js"></script>
-	<!-- main js -->
-	<script src="../commandview/assets/js/main.js"></script>
 	
 	<!-- inserir produtos js -->
 	<script src="../commandsfunction/create/insertProduct.js"></script>
 	
 	<!-- funcao Modal js -->
 	<script src="../commandsfunction/content/conteudoAlerta.js"></script>
+	
+	<!-- main js -->
+	<script src="../commandview/assets/js/main.js"></script>
 
 </body>
 </html>

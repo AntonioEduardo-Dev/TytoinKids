@@ -75,6 +75,14 @@
 	</div>
 	<!-- end breadcrumb section -->
 	
+	<!-- link section -->
+	<div class="row mt-5 ">
+		<div class="col-md-2 offset-md-5">
+			<a href="../cadastrar/cadastrar_produto"><input type="submit" value="Cadastrar"></a>
+		</div>
+	</div>
+	<!-- end link section -->
+
 	<!-- content page -->
 	<div class="table-section mt-5 mb-5">
 		<div class="container">
@@ -161,6 +169,8 @@
 	<script src="../commandsfunction/content/conteudoPagina.js"></script>
 	<!-- listar Produtos js -->
     <script src="../commandsfunction/read/scriptDataTableProdutos.js"></script>
+	<!-- funcao Modal js -->
+	<script src="../commandsfunction/content/conteudoModal.js"></script>
 	<!-- editar/apagar Produtos js -->
     <script src="../commandsfunction/update_delete/produto.js"></script>
 	<!-- main js -->

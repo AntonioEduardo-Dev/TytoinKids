@@ -1,6 +1,5 @@
 /* INSERIR CATEGORIA */
 $(function() {
-
     $(document).on('click', '#id_cad', function() {
         $("#id_cad").prop('disabled', true);
 

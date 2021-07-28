@@ -2,7 +2,7 @@
 $(function() {
 
     $(document).on('click', '.modal_system_open', function() {
-        value = ($(this).attr('name')).split("-&-");
+        value = ($(this).attr('name')).split("-|-");
 
         btn_clicked     = value[0];
         identificador   = value[1];

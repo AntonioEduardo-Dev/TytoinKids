@@ -13,13 +13,13 @@
 
                 $vl = $consulta->rowCount();
 
-                if ($vl > 0) {
+                if ($vl > 0):
                     $dados = $consulta->fetchAll();
                     foreach ($dados as $indice => $dado) {
                         echo '<div class="col-lg-4 col-md-6 text-center '.$dado['nome_categoria'].'">
                                 <div class="single-product-item">
                                     <div class="product-image">
-                                        <a href="produto&id='.$dado['id_produto'].'" id="single-product-item" data-id="'.$dado['id_produto'].'"><img src="commandview/assets/img/images/'.$dado['imagem_produto'].'" alt="'.$dado['nome_produto'].'"></a>
+                                        <a href="produto?id='.$dado['id_produto'].'" id="single-product-item" data-id="'.$dado['id_produto'].'"><img src="commandview/assets/img/images/'.$dado['imagem_produto'].'" alt="'.$dado['nome_produto'].'"></a>
                                     </div>
                                     <h3>'.$dado['nome_produto'].'</h3>
                                     <p class="product-price"><span>P/Quantidade</span> R$'.$dado['preco_produto'].' </p>
@@ -27,7 +27,7 @@
                                 </div>
                             </div>';
                     }
-                } else {
+                else:
                     echo '<div class="col-lg-4 col-md-6 text-center indisponível"></div>
                             <div class="col-lg-4 col-md-6 text-center indisponível">
                                 <div class="single-product-item">
@@ -39,7 +39,8 @@
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-6 text-center indisponível"></div>';
-                }
+                endif;
+
             } catch (PDOException $e) {
                 echo "Erro de cadastrar: " . $e->getMessage();
             } catch (Exception $e) {
@@ -61,7 +62,7 @@
 
                 $vl = $consulta->rowCount();
 
-                if ($vl > 0) {
+                if ($vl > 0):
                     $dados = $consulta->fetchAll();
                     echo '<ul>
                             <li class="li active" data-filter="*">Todos</li>';
@@ -70,7 +71,8 @@
                         <li class="li" data-filter=".'.$dado['nome_categoria'].'">'.$dado['nome_categoria'].'</li>';
                     }
                     echo "</ul>";
-                }
+                endif;
+
             } catch (PDOException $e) {
                 echo "Erro de cadastrar: " . $e->getMessage();
             } catch (Exception $e) {
@@ -90,12 +92,73 @@
 
                 $vl = $consulta->rowCount();
 
-                if ($vl > 0) {
+                if ($vl > 0):
                     $dados = $consulta->fetchAll();
                     foreach ($dados as $dado) {
-                        echo $dado["id_produto"]."-&-".$dado["nome_produto"]."-&-".$dado["preco_produto"]."-&-".$dado["quatidade_disponivel"]."-&-".$dado["imagem_produto"]."-&-".$dado["nome_categoria"];
+                        echo $dado["id_produto"]."-|-".$dado["nome_produto"]."-|-".$dado["preco_produto"]."-|-".$dado["quatidade_disponivel"]."-|-".$dado["imagem_produto"]."-|-".$dado["nome_categoria"];
                     }
-                }
+                endif;
+
+            } catch (PDOException $e) {
+                echo "Erro de cadastrar: " . $e->getMessage();
+            } catch (Exception $e) {
+                echo "Erro: " . $e->getMessage();
+            }
+        }
+
+        public function listarProdutoCores($id_produto){
+            $objConexao = new Connection();
+            $connection = $objConexao->conectar();
+            try {
+                $sql = "SELECT cor FROM cor_produto WHERE cor_produto.id_produto_fk = :id_produto";
+            
+                $consulta = $connection->prepare($sql);
+                $consulta->bindValue(":id_produto", $id_produto);
+                $consulta->execute();
+
+                $vl = $consulta->rowCount();
+
+                if ($vl > 0):
+                    $dados = $consulta->fetchAll();
+                    $resultado = "-|-att".$vl;
+                    $resultado .= "-|-cor";
+                    
+                    for ($i = 0; $i < $vl; $i++) { 
+                        $resultado .= "-|-".$dados[$i]["cor"];
+                    }
+                    echo $resultado;
+                endif;
+
+            } catch (PDOException $e) {
+                echo "Erro de cadastrar: " . $e->getMessage();
+            } catch (Exception $e) {
+                echo "Erro: " . $e->getMessage();
+            }
+        }
+
+        public function listarProdutoTamanhos($id_produto){
+            $objConexao = new Connection();
+            $connection = $objConexao->conectar();
+            try {
+                $sql = "SELECT tamanho FROM tamanho_produto WHERE tamanho_produto.id_produto_fk = :id_produto";
+            
+                $consulta = $connection->prepare($sql);
+                $consulta->bindValue(":id_produto", $id_produto);
+                $consulta->execute();
+
+                $vl = $consulta->rowCount();
+
+                if ($vl > 0):
+                    $dados = $consulta->fetchAll();
+                    $resultado = "-|-att".$vl;
+                    $resultado .= "-|-tamanho";
+
+                    for ($i = 0; $i < $vl; $i++) { 
+                        $resultado .= "-|-".$dados[$i]["tamanho"];
+                    }
+                    echo $resultado;
+                endif;
+
             } catch (PDOException $e) {
                 echo "Erro de cadastrar: " . $e->getMessage();
             } catch (Exception $e) {
@@ -137,11 +200,11 @@
                 $cadastrar->bindValue(":quantidade", $quantidade);
                 $cadastrar->bindValue(":imagem", $imagem);
 
-                if ($cadastrar->execute()) {
+                if($cadastrar->execute()):
                     return $connection->lastInsertId();
-                }else{
+                else:
                     return "alert_notification_error_id!";
-                }
+                endif;
 
             } catch (PDOException $e) {
                 echo "Erro de cadastrar: " . $e->getMessage();
@@ -161,11 +224,11 @@
                 $cadastrar->bindValue(":id_produto", $id_produto);
                 $cadastrar->bindValue(":cor", $cor);
                 
-                if ($cadastrar->execute()) {
+                if($cadastrar->execute()):
                     return true;
-                }else{
+                else:
                     return false;
-                }
+                endif;
 
             } catch (PDOException $e) {
                 echo "Erro de cadastrar: " . $e->getMessage();
@@ -185,11 +248,11 @@
                 $cadastrar->bindValue(":id_produto", $id_produto);
                 $cadastrar->bindValue(":tamanho", $tamanho);
 
-                if ($cadastrar->execute()) {
+                if($cadastrar->execute()):
                     return true;
-                }else{
+                else:
                     return false;
-                }
+                endif;
 
             } catch (PDOException $e) {
                 echo "Erro de cadastrar: " . $e->getMessage();
@@ -212,11 +275,11 @@
                 $atualizar->bindValue(":quantidade", $quantidade);
                 $atualizar->bindValue(":imagem", $imagem);
 
-                if ($atualizar->execute()) {
+                if($atualizar->execute()):
                     return true;
-                }else{
+                else:
                     return false;
-                }
+                endif;
                 
             } catch (PDOException $e) {
                 echo "Erro de cadastrar: " . $e->getMessage();
@@ -235,11 +298,11 @@
                 $apagar = $connection->prepare($sql);
                 $apagar->bindValue(":id_produto", $id_produto);
 
-                if ($apagar->execute()) {
+                if($apagar->execute()):
                     return true;
-                }else{
+                else:
                     return false;
-                }
+                endif;
                 
             } catch (PDOException $e) {
                 echo "Erro de cadastrar: " . $e->getMessage();

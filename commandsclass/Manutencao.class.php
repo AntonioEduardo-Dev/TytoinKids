@@ -13,20 +13,21 @@
             $consulta->execute();
 
             $vl = $consulta->rowCount();
-
-            if ($vl > 0) {
+            
+            if($vl > 0):
                 $dados = $consulta->fetchAll();
                 
                 $valStatus = intval($dados[0]["status"]);
-
-                if ($valStatus === 1) {
+                
+                if($valStatus === 1):
                     $status = true;
-                }else{
+                else:
                     $status = false;
-                }
-            }else{
+                endif;
+
+            else:
                 $status = false;
-            }
+            endif;
 
             return $status;
         }
@@ -41,27 +42,13 @@
                 
                 $consulta = $connection->prepare($sql);
                 $consulta->bindValue(":statusManutencao", $statusManutencao);
-                $consulta->execute();
-
-                $vl = $consulta->rowCount();
-
-                if ($vl > 0) {
-                    $dados = $consulta->fetchAll();
-
-                    if (isset($dados[0]["status"])) {
-                        $valStatus = intval($dados[0]["status"]);
-        
-                        if ($valStatus === 1) {
-                            $status = true;
-                        }else{
-                            $status = false;
-                        }
-                    }
-                }else{
-                    $status = false;
-                }
                 
-                return true;
+                if($consulta->execute()):
+                    return true;
+                else:
+                    return false;
+                endif;
+                
             } catch (PDOException $e) {
                 echo "Erro de cadastrar: " . $e->getMessage();
             } catch (Exception $e) {

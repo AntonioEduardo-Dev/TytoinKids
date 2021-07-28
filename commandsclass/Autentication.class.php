@@ -1,7 +1,7 @@
 <?php
     require_once "Connection.class.php";
     
-    class Autentication{
+    class Authentication{
         private $email;
         private $senha;
 
@@ -28,11 +28,11 @@
         }
         
         public function validar(){
-            if ($this->email == "a.edu@gmail.com" && $this->senha == 123) {
+            if ($this->email == "a.edu@gmail.com" && $this->senha == 123):
                 return "Logado!";
-            }else{
+            else:
                 return "Dados Incorretos!";
-            }
+            endif;
         }
     }
 ?>

@@ -4,5 +4,5 @@
     //instanciando classes
     $objEncomenda = new Encomendas();
 
-    //execucao de metodos
+    //execução de métodos
 ?>

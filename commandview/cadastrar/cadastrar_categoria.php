@@ -61,9 +61,17 @@
 		</div>
 	</div>
 	<!-- end breadcrumb section -->
+	
+	<!-- link section -->
+	<div class="row mt-5 ">
+		<div class="col-md-2 offset-md-5">
+			<a href="../listar/categorias"><input type="submit" value="Listar"></a>
+		</div>
+	</div>
+	<!-- end link section -->
 
 	<!-- check out section -->
-	<div class="checkout-section mt-5 mb-5">
+	<div class="checkout-section mb-5">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg ml-4 mr-4 mt-5 mb-5">
@@ -80,7 +88,7 @@
 
 						    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
 								<div class="card-body">
-									<div class="mt-4 ml-3 mr-3 mb-2">
+									<div class="mt-2 ml-3 mr-3 mb-2">
 										<div class="col">
 											<div class="row">
 												<div class="col-lg">
@@ -171,14 +179,15 @@
 	<script src="../commandview/assets/js/sticker.js"></script>
 	<!-- pagina js -->
 	<script src="../commandsfunction/content/conteudoPagina.js"></script>
-	<!-- main js -->
-	<script src="../commandview/assets/js/main.js"></script>
 	
 	<!-- inserir Categorias js -->
 	<script src="../commandsfunction/create/insertCategorie.js"></script>
 
 	<!-- funcao Modal js -->
 	<script src="../commandsfunction/content/conteudoAlerta.js"></script>
+	
+	<!-- main js -->
+	<script src="../commandview/assets/js/main.js"></script>
 
 </body>
 </html>

@@ -4,7 +4,7 @@
     //instanciando classes
     $objProduto = new Produtos();
 
-    //execucao de metodos
+    //execução de métodos
     
     if (isset($_POST['listarCategorias'])) {
         $objProduto->listarCategorias();
@@ -17,10 +17,19 @@
     if (isset($_POST['listarProduto'])) {
         $objProduto->listarProduto(intval($_POST['id_produto']));
     }
+
+    if (isset($_POST['btn_listar_produto'])) {
+        $dados = [];
+        $consulta = $objProduto->listarProduto(intval($_POST['id_produto']));
+        $consultaCores = $objProduto->listarProdutoCores(intval($_POST['id_produto']));
+        $consultaTamanhos = $objProduto->listarProdutoTamanhos(intval($_POST['id_produto']));
+
+        return $consulta+$consultaCores+$consultaTamanhos;
+    }
     
     if (isset($_POST['btn_cadastrar'])) {
 
-        // alocando posts nas variaveis
+        // alocando posts nas variáveis
         $nome       = $_POST['prod_nome'];
         $categoria  = $_POST['prod_categ'];
         $preco      = $_POST['prod_preco'];
@@ -41,7 +50,7 @@
                     echo $objProduto->cadastrar($categoria, $nome, $preco,$quantidade,$imagem);
                     /*
                     if ($objProduto->cadastrar($categoria, $nome, $preco,$quantidade,$imagem)) {
-                        echo "Success!";
+                        echo "Sucesso!";
                     }else{
                         echo "alert_notification_error!";
                     }
@@ -59,9 +68,9 @@
     if(isset($_FILES['nm_imageUpload'])){
         if (!empty($_FILES['nm_imageUpload'])){
 
-            $ext = strtolower(substr($_FILES['nm_imageUpload']['name'], -4)); // pegar extensao
+            $ext = strtolower(substr($_FILES['nm_imageUpload']['name'], -4)); // pegar extensão
             
-            $extValidas = array(".jpg",".jpeg",".png"); // extensoes validas
+            $extValidas = array(".jpg",".jpeg",".png"); // extensões validas
 
             $verifica = 0;
             for ($i=0; $i < count($extValidas); $i++) { 
@@ -70,7 +79,7 @@
 
             if ($verifica > 0) {
                 $novoNome = md5(time()).$ext; // definir novo nome
-                $dir = "../commandview/assets/img/images/"; // definir diretorio para upload da imagem
+                $dir = "../commandview/assets/img/images/"; // definir diretório para upload da imagem
     
                 // upload imagem
                 if (move_uploaded_file($_FILES['nm_imageUpload']['tmp_name'], $dir.$novoNome)) {
@@ -93,7 +102,7 @@
         $cores              = [];
         $coresDefinidos     = ["Vermelho","Verde","Azul","Amarelo"];
         $tamanhos           = [];
-        $tamanhosDefinidos  = ["P","M","G","GG","1","2","3","4"];
+        $tamanhosDefinidos  = ["P","M","G","GG","1","2","4","6"];
         $cores              = $_POST['cores'];
         $tamanhos           = $_POST['tamanhos'];
         $erroCores          = 0;
@@ -145,12 +154,18 @@
         }
     }
     
-    if (isset($_POST['apagarProdutos'])) {
-        if ($objProduto->apagar($id_produto)) {
-            echo "Apagado!";
-        }else {
-            echo "alert_notification_error!-|-alert-danger";
-        }
+    if (isset($_POST['btn_apagar'])) {
+        $id_produto = intval($_POST['id_produto']);
+
+        if(is_int($id_produto)):
+            if ($objProduto->apagar($id_produto)):
+                echo "Apagado!";
+            else:
+                echo "alert_notification_error!-|-alert-danger";
+            endif;
+        else:
+            echo "alert_notification_error_data_bite!-|-alert-danger";
+        endif;
     }
 
 ?>
