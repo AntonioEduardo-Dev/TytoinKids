@@ -120,8 +120,7 @@
 
                 if ($vl > 0):
                     $dados = $consulta->fetchAll();
-                    $resultado = "-|-att".$vl;
-                    $resultado .= "-|-cor";
+                    $resultado = "-|-att";
                     
                     for ($i = 0; $i < $vl; $i++) { 
                         $resultado .= "-|-".$dados[$i]["cor"];
@@ -150,8 +149,7 @@
 
                 if ($vl > 0):
                     $dados = $consulta->fetchAll();
-                    $resultado = "-|-att".$vl;
-                    $resultado .= "-|-tamanho";
+                    $resultado = "-|-att";
 
                     for ($i = 0; $i < $vl; $i++) { 
                         $resultado .= "-|-".$dados[$i]["tamanho"];
@@ -178,6 +176,57 @@
                 $vl = $consulta->rowCount();
 
                 return $vl;
+
+            } catch (PDOException $e) {
+                echo "Erro de cadastrar: " . $e->getMessage();
+            } catch (Exception $e) {
+                echo "Erro: " . $e->getMessage();
+            }
+        }
+
+        public function quantidadeProdutosDisponiveis($id_produto){
+            $objConexao = new Connection();
+            $connection = $objConexao->conectar();
+            try {
+                $sql = "SELECT quatidade_disponivel FROM produtos WHERE produtos.id_produto = :id_produto";
+            
+                $consulta = $connection->prepare($sql);
+                $consulta->bindValue(":id_produto", $id_produto);
+                $consulta->execute();
+
+                $vl = $consulta->rowCount();
+                if($vl > 0){
+                    $dados = $consulta->fetchAll();
+                    return $dados[0][0];
+                }else{
+                    return 0;
+                }
+
+            } catch (PDOException $e) {
+                echo "Erro de cadastrar: " . $e->getMessage();
+            } catch (Exception $e) {
+                echo "Erro: " . $e->getMessage();
+            }
+        }
+
+        public function listarAll($id_produto){
+            $objConexao = new Connection();
+            $connection = $objConexao->conectar();
+            try {
+                $sql = "SELECT * FROM produtos WHERE produtos.id_produto = :id_produto";
+            
+                $consulta = $connection->prepare($sql);
+                $consulta->bindValue(":id_produto", $id_produto);
+                $consulta->execute();
+
+                $vl = $consulta->rowCount();
+
+                if ($vl > 0):
+                    $dados = $consulta->fetchAll();
+                    return $dados;
+                else:
+                    return "";
+                endif;
 
             } catch (PDOException $e) {
                 echo "Erro de cadastrar: " . $e->getMessage();

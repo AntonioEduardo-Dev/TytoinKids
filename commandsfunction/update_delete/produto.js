@@ -25,26 +25,17 @@ $(function() {
                     qtd_produto         = retornoDados[3];
                     img_produto         = retornoDados[4];
                     categoria_produto   = retornoDados[5];
-                    
+
+                    dados = [];
                     if(retorno[1]){
                         dados = retorno[1];
-                        dados = dados.split("-|-");
-                        if (dados[1] == "cor") {
-                            definirCor(dados);
 
-                            if(retorno[2]){
-                                dados2 = retorno[2];
-                                dados2 = dados2.split("-|-");
-
-                                if(dados2[1] == "tamanho"){
-                                    definirTamanho(dados2);
-                                }
-                            }
-                        }else if(dados[1] == "tamanho"){
-                            definirTamanho(dados);
+                        if(retorno[2]){
+                            dados += retorno[2];
                         }
+                        dados = dados.split("-|-");
                     }
-
+                    console.log(dados);
                     if (tipo === -1) {
                         $(".conteudo_modal_lg").html('');
                         
@@ -97,19 +88,19 @@ $(function() {
                                                                         </div>
                                                                         <div class="col mt-3">
                                                                             <div class="form-check row">
-                                                                                <input class="form-check-input" type="checkbox" name="btn_nm_cores" value="vermelho" id="btn_id_check_cor_vermelho">
+                                                                                <input class="form-check-input" type="checkbox" name="btn_nm_cores" value="vermelho" id="btn_id_check_cor_vermelho" `+(dados.includes("Vermelho") ? 'checked' : '')+`>
                                                                                 <label class="form-check-label" for="flexSwitchCheckDefault">Vermelho</label>
                                                                             </div>
                                                                             <div class="form-check row">
-                                                                                <input class="form-check-input" type="checkbox" name="btn_nm_cores" value="verde" id="btn_id_check_cor_verde">
+                                                                                <input class="form-check-input" type="checkbox" name="btn_nm_cores" value="verde" id="btn_id_check_cor_verde" `+(dados.includes("Verde") ? 'checked' : '')+`>
                                                                                 <label class="form-check-label" for="flexSwitchCheckDefault">Verde</label>
                                                                             </div>
                                                                             <div class="form-check row">
-                                                                                <input class="form-check-input" type="checkbox" name="btn_nm_cores" value="azul" id="btn_id_check_cor_azul">
+                                                                                <input class="form-check-input" type="checkbox" name="btn_nm_cores" value="azul" id="btn_id_check_cor_azul" `+(dados.includes("Azul") ? 'checked' : '')+`>
                                                                                 <label class="form-check-label" for="flexSwitchCheckDefault">Azul</label>
                                                                             </div>
                                                                             <div class="form-check row">
-                                                                                <input class="form-check-input" type="checkbox" name="btn_nm_cores" value="amarelo" id="btn_id_check_cor_amarelo">
+                                                                                <input class="form-check-input" type="checkbox" name="btn_nm_cores" value="amarelo" id="btn_id_check_cor_amarelo" `+(dados.includes("Amarelo") ? 'checked' : '')+`>
                                                                                 <label class="form-check-label" for="flexSwitchCheckDefault">Amarelo</label>
                                                                             </div>
                                                                         </div>
@@ -126,37 +117,37 @@ $(function() {
                                                                             <div class="row">
                                                                                 <div class="col-xl-6 mt-2">
                                                                                     <div class="form-check row">
-                                                                                        <input class="form-check-input" type="checkbox" name="btn_nm_tamanho" value="p" id="btn_id_check_tam_p">
+                                                                                        <input class="form-check-input" type="checkbox" name="btn_nm_tamanho" value="p" id="btn_id_check_tam_p" `+(dados.includes("P") ? 'checked' : '')+`>
                                                                                         <label class="form-check-label" for="flexSwitchCheckDefault">P</label>
                                                                                     </div>
                                                                                     <div class="form-check row">
-                                                                                        <input class="form-check-input" type="checkbox" name="btn_nm_tamanho" value="m" id="btn_id_check_tam_m">
+                                                                                        <input class="form-check-input" type="checkbox" name="btn_nm_tamanho" value="m" id="btn_id_check_tam_m" `+(dados.includes("M") ? 'checked' : '')+`>
                                                                                         <label class="form-check-label" for="flexSwitchCheckDefault">M</label>
                                                                                     </div>
                                                                                     <div class="form-check row">
-                                                                                        <input class="form-check-input" type="checkbox" name="btn_nm_tamanho" value="g" id="btn_id_check_tam_g">
+                                                                                        <input class="form-check-input" type="checkbox" name="btn_nm_tamanho" value="g" id="btn_id_check_tam_g" `+(dados.includes("G") ? 'checked' : '')+`>
                                                                                         <label class="form-check-label" for="flexSwitchCheckDefault">G</label>
                                                                                     </div>
                                                                                     <div class="form-check row">
-                                                                                        <input class="form-check-input" type="checkbox" name="btn_nm_tamanho" value="gg" id="btn_id_check_tam_gg">
+                                                                                        <input class="form-check-input" type="checkbox" name="btn_nm_tamanho" value="gg" id="btn_id_check_tam_gg" `+(dados.includes("GG") ? 'checked' : '')+`>
                                                                                         <label class="form-check-label" for="flexSwitchCheckDefault">GG</label>
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="col-xl-6 mt-2">
                                                                                     <div class="form-check row">
-                                                                                        <input class="form-check-input" type="checkbox" name="btn_nm_tamanho" value="1" id="btn_id_check_tam_1">
+                                                                                        <input class="form-check-input" type="checkbox" name="btn_nm_tamanho" value="1" id="btn_id_check_tam_1" `+(dados.includes("1") ? 'checked' : '')+`>
                                                                                         <label class="form-check-label" for="flexSwitchCheckDefault">1</label>
                                                                                     </div>
                                                                                     <div class="form-check row">
-                                                                                        <input class="form-check-input" type="checkbox" name="btn_nm_tamanho" value="2" id="btn_id_check_tam_2">
+                                                                                        <input class="form-check-input" type="checkbox" name="btn_nm_tamanho" value="2" id="btn_id_check_tam_2" `+(dados.includes("2") ? 'checked' : '')+`>
                                                                                         <label class="form-check-label" for="flexSwitchCheckDefault">2</label>
                                                                                     </div>
                                                                                     <div class="form-check row">
-                                                                                        <input class="form-check-input" type="checkbox" name="btn_nm_tamanho" value="3" id="btn_id_check_tam_4">
+                                                                                        <input class="form-check-input" type="checkbox" name="btn_nm_tamanho" value="3" id="btn_id_check_tam_4" `+(dados.includes("4") ? 'checked' : '')+`>
                                                                                         <label class="form-check-label" for="flexSwitchCheckDefault">4</label>
                                                                                     </div>
                                                                                     <div class="form-check row">
-                                                                                        <input class="form-check-input" type="checkbox" name="btn_nm_tamanho" value="4" id="btn_id_check_tam_6">
+                                                                                        <input class="form-check-input" type="checkbox" name="btn_nm_tamanho" value="4" id="btn_id_check_tam_6" `+(dados.includes("6") ? 'checked' : '')+`>
                                                                                         <label class="form-check-label" for="flexSwitchCheckDefault">6</label>
                                                                                     </div>
                                                                                 </div>

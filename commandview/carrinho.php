@@ -1,8 +1,15 @@
 <?php
-	session_start();
-
-	if (isset($_SESSION["logado"])) {
-	}
+	/*
+	echo "Nome: ".$_SESSION["user"]["nome"]."</br>";
+	echo "Status: ".$_SESSION["user"]["status"];
+	*/
+	if (!(isset($_SESSION["cart"]))):
+		// echo '<script>alert("Carrinho vazio!!")</script>';
+		// echo '<script>window.location="loja"</script>';
+	else:
+		// var_dump($_SESSION["cart"]);
+		// session_destroy();
+    endif;
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -88,30 +95,16 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr class="table-body-row">
-									<td class="product-remove"><a href="#"><i class="far fa-window-close"></i></a></td>
-									<td class="product-image"><img src="commandview/assets/img/images/productind.jpg" alt=""></td>
-									<td class="product-name">Strawberry</td>
-									<td class="product-price">$85</td>
-									<td class="product-quantity"><input type="number" placeholder="0"></td>
-									<td class="product-total">1</td>
-								</tr>
-								<tr class="table-body-row">
-									<td class="product-remove"><a href="#"><i class="far fa-window-close"></i></a></td>
-									<td class="product-image"><img src="commandview/assets/img/images/productind.jpg" alt=""></td>
-									<td class="product-name">Berry</td>
-									<td class="product-price">$70</td>
-									<td class="product-quantity"><input type="number" placeholder="0"></td>
-									<td class="product-total">1</td>
-								</tr>
-								<tr class="table-body-row">
-									<td class="product-remove"><a href="#"><i class="far fa-window-close"></i></a></td>
-									<td class="product-image"><img src="commandview/assets/img/images/productind.jpg" alt=""></td>
-									<td class="product-name">Lemon</td>
-									<td class="product-price">$35</td>
-									<td class="product-quantity"><input type="number" placeholder="0"></td>
-									<td class="product-total">1</td>
-								</tr>
+								<?php if (isset($_SESSION["cart"])): for ($i = 1 ; $i < count($_SESSION["cart"][0]); $i++) { ?>
+									<tr class="table-body-row">
+										<td class="product-remove"><a><i class="far fa-window-close"></i></a><input type="text" hidden id="" value="<?php echo $_SESSION["cart"][0][$i]; ?>"></td>
+										<td class="product-image"><img src="commandview/assets/img/images/<?php echo $_SESSION["cart"][1][$i]; ?>" alt=""></td>
+										<td class="product-name"><?php echo $_SESSION["cart"][2][$i]; ?></td>
+										<td class="product-price">$<?php echo $_SESSION["cart"][3][$i]; ?></td>
+										<td class="product-quantity"><input type="number" placeholder="0" value="<?php echo $_SESSION["cart"][4][$i]; ?>" disabled></td>
+										<td class="product-total"><?php echo $_SESSION["cart"][5][$i]; ?></td>
+									</tr>
+								<?php } endif; ?>
 							</tbody>
 						</table>
 					</div>
@@ -122,28 +115,38 @@
 						<table class="total-table">
 							<thead class="total-table-head">
 								<tr class="table-total-row">
-									<th>Total</th>
+									<th>Produto</th>
 									<th>Preço</th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr class="total-data">
-									<td><strong>Subtotal: </strong></td>
-									<td>$500</td>
-								</tr>
-								<tr class="total-data">
-									<td><strong>Shipping: </strong></td>
-									<td>$45</td>
-								</tr>
-								<tr class="total-data">
-									<td><strong>Total: </strong></td>
-									<td>$545</td>
-								</tr>
+								<?php 
+									if (isset($_SESSION["cart"])):
+										for ($i = 1; $i < count($_SESSION["cart"][0]); $i++) { 
+											echo '	<tr class="total-data">
+														<td><strong>'.$_SESSION["cart"][2][$i].': </strong></td>
+														<td>$'.$_SESSION["cart"][3][$i].'</td>
+													</tr>';
+										}
+									endif;
+								?>
+								<?php 
+									if (isset($_SESSION["cart"])):
+										$total = 0;
+										for ($i = 1; $i < count($_SESSION["cart"][0]); $i++) {
+											$total = $total+$_SESSION["cart"][3][$i];
+										} 
+										echo '	<tr class="total-data">
+													<td><strong>Total: </strong></td>
+													<td>$'.$total.'</td>
+												</tr>';
+									endif;
+								?>
 							</tbody>
 						</table>
-						<div class="cart-buttons">
-							<a href="carrinho" class="boxed-btn">Atualizar Carrinho</a>
-							<a href="encomendar" class="boxed-btn black">Encomendar</a>
+						<div class="cart-buttons text-center">
+							<!-- <a href="carrinho" class="boxed-btn">Atualizar Carrinho</a> -->
+							<a class="boxed-btn black">Encomendar</a>
 						</div>
 					</div>
 
@@ -151,7 +154,8 @@
 						<h3>Adicionar Cupom</h3>
 						<div class="coupon-form-wrap">
 							<p><input type="text" class="btn_nm_cupom" name="Cupom" placeholder="Cupom" required></p>
-							<p><input type="submit" class="modal_system_open" value="Aplicar"></p>
+							<p class="text-center"><a class="boxed-btn black modal_system_open">Aplicar</a></p>
+							
 						</div>
 					</div>
 				</div>

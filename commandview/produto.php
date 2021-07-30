@@ -1,5 +1,4 @@
 <?php
-	session_start();
 	if(empty($_GET['id'])){
 		echo '<script>window.location="loja"</script>';
 		exit;
@@ -86,6 +85,7 @@
 				</div>
 				<div class="col-md-7 mt-5 mb-5">
 					<div class="single-product-content">
+						<input type="text" id="id_produto_inp" hidden>
 						<h3 id="id_nome_produto"></h3>
 						<p class="single-product-pricing"><span>P/Quantidade</span> R$ <a id="id_preco_produto"></a></p>
 						<div class="single-product-form">
@@ -96,12 +96,12 @@
 							</div>
 							<div class="row">
 								<div class="col mt-1">
-									<input type="number" placeholder="0">
+									<input type="number" placeholder="Ex: 5" id="id_qtd_produto_inp">
 								</div>
 							</div>
 							<div class="form-group row">
 								<div class="col">
-									<a href="carrinho" class="cart-btn"><i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho</a>
+									<a class="cart-btn addToCart"><i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho</a>
 								</div>
 							</div>
 							<p><strong>Categoria: </strong><a id="id_categoria_produto"></a></p>
