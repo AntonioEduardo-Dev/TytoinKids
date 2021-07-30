@@ -10,6 +10,10 @@
         $objProduto->listarCategorias();
     }
 
+    if (isset($_POST['listarCategoriasFilter'])) {
+        $objProduto->listarCategoriasFilter();
+    }
+
     if (isset($_POST['listarProdutos'])) {
         $objProduto->listar();
     }

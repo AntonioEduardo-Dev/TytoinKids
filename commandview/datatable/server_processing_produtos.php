@@ -57,10 +57,10 @@ if($conn){
         $subdata[]  = $row[3];
         $subdata[]  = $row[4];
         $subdata[]  = '<h4 class="product-remove">
-                            <a href="#" class="modal_system_open" name="btn_nm_edit-|-'.$row[0].' ">
+                            <a class="modal_system_open" name="btn_nm_edit-|-'.$row[0].' ">
                                 <i class="far fa-window-close"></i>
                             </a>
-                            <a href="#" class="modal_system_open" name="btn_nm_remove-|-'.$row[0].' ">
+                            <a class="modal_system_open" name="btn_nm_remove-|-'.$row[0].' ">
                                 <i class="far fa-window-close"></i>
                             </a>
                         </h4>';

@@ -162,7 +162,7 @@
 	<script src="../commandsfunction/content/conteudoPagina.js"></script>
 	<!-- listar Encomendas js -->
     <script src="../commandsfunction/read/scriptDataTableEncomendas.js"></script>
-	<!-- funcao Modal js -->
+	<!-- função Modal js -->
 	<script src="../commandsfunction/content/conteudoModal.js"></script>
 	<!-- editar/apagar Encomendas js -->
     <script src="../commandsfunction/update_delete/encomenda.js"></script>

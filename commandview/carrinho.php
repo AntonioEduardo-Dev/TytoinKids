@@ -8,6 +8,7 @@
 		// echo '<script>window.location="loja"</script>';
 	else:
 		// var_dump($_SESSION["cart"]);
+		// unset($_SESSION["cart"][0]);
 		// session_destroy();
     endif;
 ?>
@@ -86,25 +87,29 @@
 						<table class="cart-table">
 							<thead class="cart-table-head">
 								<tr class="table-head-row">
-									<th class="product-remove"></th>
 									<th class="product-image">Produto</th>
 									<th class="product-name">Nome</th>
 									<th class="product-price">Preço</th>
 									<th class="product-quantity">Quantidade</th>
 									<th class="product-total">Total</th>
+									<th class="product-remove"></th>
 								</tr>
 							</thead>
 							<tbody>
-								<?php if (isset($_SESSION["cart"])): for ($i = 1 ; $i < count($_SESSION["cart"][0]); $i++) { ?>
-									<tr class="table-body-row">
-										<td class="product-remove"><a><i class="far fa-window-close"></i></a><input type="text" hidden id="" value="<?php echo $_SESSION["cart"][0][$i]; ?>"></td>
-										<td class="product-image"><img src="commandview/assets/img/images/<?php echo $_SESSION["cart"][1][$i]; ?>" alt=""></td>
-										<td class="product-name"><?php echo $_SESSION["cart"][2][$i]; ?></td>
-										<td class="product-price">$<?php echo $_SESSION["cart"][3][$i]; ?></td>
-										<td class="product-quantity"><input type="number" placeholder="0" value="<?php echo $_SESSION["cart"][4][$i]; ?>" disabled></td>
-										<td class="product-total"><?php echo $_SESSION["cart"][5][$i]; ?></td>
-									</tr>
-								<?php } endif; ?>
+								<?php 
+								if (isset($_SESSION["cart"])):
+									foreach ($_SESSION['cart'] as $key => $value) :
+										$query = explode(',', $value);
+										echo '<tr class="table-body-row">
+													<td class="product-image"><img src="commandview/assets/img/images/'.$query[1].'" alt=""></td>
+													<td class="product-name">'.$query[2].'</td>
+													<td class="product-price">'.$query[3].'</td>
+													<td class="product-quantity"><input type="number" placeholder="0" value="'.$query[4].'" disabled></td>
+													<td class="product-total">'.$query[5].'</td>
+													<td class="product-remove"><h5><a class="delete_item_cart" data-filter="'.$key.'"><i class="far fa-window-close mt-4"></i></a></h5><input type="text" hidden value="'.$key.'"></td>
+												</tr>';
+									endforeach;
+								endif; ?>
 							</tbody>
 						</table>
 					</div>
@@ -122,23 +127,18 @@
 							<tbody>
 								<?php 
 									if (isset($_SESSION["cart"])):
-										for ($i = 1; $i < count($_SESSION["cart"][0]); $i++) { 
-											echo '	<tr class="total-data">
-														<td><strong>'.$_SESSION["cart"][2][$i].': </strong></td>
-														<td>$'.$_SESSION["cart"][3][$i].'</td>
-													</tr>';
-										}
-									endif;
-								?>
-								<?php 
-									if (isset($_SESSION["cart"])):
 										$total = 0;
-										for ($i = 1; $i < count($_SESSION["cart"][0]); $i++) {
-											$total = $total+$_SESSION["cart"][3][$i];
-										} 
+										foreach ($_SESSION['cart'] as $key => $value) :
+											$query = explode(',', $value);
+											echo '<tr class="total-data">
+														<td><strong>'.$query[2].': </strong></td>
+														<td>$'.$query[3].'</td>
+													</tr>';
+											$total = $total + $query[3];
+										endforeach;
 										echo '	<tr class="total-data">
 													<td><strong>Total: </strong></td>
-													<td>$'.$total.'</td>
+													<td>$'.number_format($total, 2).'</td>
 												</tr>';
 									endif;
 								?>
@@ -146,7 +146,7 @@
 						</table>
 						<div class="cart-buttons text-center">
 							<!-- <a href="carrinho" class="boxed-btn">Atualizar Carrinho</a> -->
-							<a class="boxed-btn black">Encomendar</a>
+							<a class="boxed-btn black add_item_cart">Encomendar</a>
 						</div>
 					</div>
 
@@ -155,7 +155,6 @@
 						<div class="coupon-form-wrap">
 							<p><input type="text" class="btn_nm_cupom" name="Cupom" placeholder="Cupom" required></p>
 							<p class="text-center"><a class="boxed-btn black modal_system_open">Aplicar</a></p>
-							
 						</div>
 					</div>
 				</div>
@@ -176,6 +175,17 @@
 	</div>
 
 	<!-- End Large modal -->
+
+	<!-- Small modal -->
+	<div class="modal fade modal_system_success_class" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-sm modal-dialog-centered">
+			<div class="modal-content">
+				<div class="conteudo_modal_sm">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Small modal -->
 
 	<!-- footer -->
 	<div class="footer-area footer-copyright">
@@ -210,6 +220,10 @@
 	<script src="commandsfunction/content/conteudoPagina.js"></script>
 	<!-- conteudo modal js -->
 	<script src="commandsfunction/content/conteudoCart.js"></script>
+	<!-- inserir produtos js -->
+	<script src="commandsfunction/create/insertOrder.js"></script>
+	<!-- função Modal js -->
+	<script src="commandsfunction/content/conteudoModal.js"></script>
 	<!-- main js -->
 	<script src="commandview/assets/js/main.js"></script>
 

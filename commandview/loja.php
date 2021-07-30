@@ -56,29 +56,6 @@
 							</a>
 						</div>
 						<!-- logo -->
-
-						<!-- menu start -->
-						<nav class="main-menu">
-							<ul>
-								<li><a class="cool-hover" href="sobre">Sobre</a></li>
-								<li><a class="cool-hover" href="contato">Contato</a></li>
-								<li><a class="cool-hover" href="loja">Produtos</a>
-									<ul class="sub-menu">
-										<li><a href="loja">Produtos</a></li>
-										<li><a href="carrinho">Carrinho</a></li>
-									</ul>
-								</li>
-								<li>
-									<div class="header-icons">
-										<a class="shopping-cart cool-hover" href="carrinho"><i class="fas fa-shopping-cart"></i></a>
-										<a class="mobile-hide search-bar-icon cool-hover" href="#"><i class="fas fa-search"></i></a>
-									</div>
-								</li>
-							</ul>
-						</nav>
-						<a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
-						<div class="mobile-menu"></div>
-						<!-- menu end -->
 					</div>
 				</div>
 			</div>
@@ -124,27 +101,23 @@
 						<div class="card">
 							<h4 class="card-header">Filtros</h4>
 							<div class="card-body">
-								<div class="list-group" id="list-tab" role="tablist">
-									<a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center active" id="list-home-list" data-toggle="list" href="loja" role="tab" aria-controls="home">
+								<div class="list-group product-filter-button" id="list-tab" role="tablist">
+									<a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center active" data-filter="*">
 										<i class='fas fa-angle-right'></i>
 										Todos
 										<span class="badge badge-primary-custom badge-pill">14</span>
 									</a>
-									<a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" id="list-home-list" data-toggle="list" href="loja" role="tab" aria-controls="home">
+									<a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
 										<i class='fas fa-angle-right'></i>
 										Masculino
 										<span class="badge badge-primary-custom badge-pill">7</span>
 									</a>
-									<a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" id="list-home-list" data-toggle="list" href="loja" role="tab" aria-controls="home">
-										<i class='fas fa-angle-right'></i>
-										Feminino
-										<span class="badge badge-primary-custom badge-pill">6</span>
-									</a>
+									<!--
 									<a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" id="list-home-list" data-toggle="list" href="loja" role="tab" aria-controls="home">
 										<i class='fas fa-angle-right'></i>
 										Infantil
 										<span class="badge badge-primary-custom badge-pill">1</span>
-									</a>
+									</a>-->
 								</div>
 								<div class="list-group mt-3">
 									<select class="form-control" name="" id="">
@@ -208,8 +181,20 @@
 				</div>
 			</div>
 		</div>
-		<!-- end products -->
 	</div>
+	<!-- end products -->
+
+	<!-- Small modal -->
+	<div class="modal fade modal_system_success_class" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-sm modal-dialog-centered">
+			<div class="modal-content">
+				<div class="conteudo_modal_sm">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Small modal -->
+
 	<!-- footer -->
 	<div class="footer-area footer-copyright">
 		<div class="container">
@@ -299,6 +284,8 @@
 	<script src="commandview/assets/js/sticker.js"></script>
 	<!-- listar produtos js -->
 	<script src="commandsfunction/read/shop.js"></script>
+	<!-- função Modal js -->
+	<script src="commandsfunction/content/conteudoModal.js"></script>
 	<!-- main js -->
 	<script src="commandview/assets/js/main.js"></script>
 

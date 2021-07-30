@@ -6,6 +6,12 @@ $(function() {
         $(".product-filters").html(retorna);
     }); 
 
+    listarCategoriasFilter = {listarCategoriasFilter : true}
+
+    $.post('commandscontrol/Produtos.php', listarCategoriasFilter, function(retorna) {
+        $(".product-filter-button").html(retorna);
+    }); 
+
     listarProdutos = {listarProdutos : true}
 
     $.post('commandscontrol/Produtos.php', listarProdutos, function(retorna) {

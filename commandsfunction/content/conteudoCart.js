@@ -54,4 +54,22 @@ $(function() {
         $('.modal_system_open_class').modal('hide')
     });
 
+    $(document).on('click', '.delete_item_cart', function() {
+        var dados = {
+            btn_unset       : true,
+            linha           : $(this).attr('data-filter')
+        }
+        
+        $.post('commandscontrol/Encomendas.php', dados, function(response) {
+            var tipo = response.indexOf("alert_notification_error");
+            retorno = response.split("-|-");
+
+            if (tipo === -1) {
+                exibirModal(retorno[0],true,"alert-success");
+            } else if (tipo > -1) {
+                exibirModal(retorno[0],false,retorno[1]);
+            }
+        });
+    });
+
 });

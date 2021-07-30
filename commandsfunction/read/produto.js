@@ -31,12 +31,14 @@ $(function() {
             produtoCarrinho = {cart : true, id_produto, qtd_produto}
 
             $.post('commandscontrol/Encomendas.php', produtoCarrinho, function(retorna) {
-                // var values = retorna.split("-|-")
-                console.log(retorna);
-
-                setTimeout(function(){
-                    // location.reload();
-                }, 500);
+                var tipo = retorna.indexOf("alert_notification_error");
+                var values = retorna.split("-|-")
+                
+                if (tipo === -1) {
+                    exibirModal("Produto adicionado ao carrinho!",true,"modal-success");
+                } else if (tipo > -1) {
+                    exibirModal(values[0],false,values[1]);
+                }
             });
         }
     });

@@ -170,7 +170,7 @@
 	<script src="../commandsfunction/content/conteudoPagina.js"></script>
 	<!-- listar Categorias js -->
     <script src="../commandsfunction/read/scriptDataTableCategorias.js"></script>
-	<!-- funcao Modal js -->
+	<!-- função Modal js -->
 	<script src="../commandsfunction/content/conteudoModal.js"></script>
 	<!-- editar/apagar Categorias js -->
     <script src="../commandsfunction/update_delete/categoria.js"></script>

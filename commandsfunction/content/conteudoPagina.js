@@ -48,6 +48,7 @@ $(function() {
                                         
                                         <nav class="main-menu">
                                             <ul>
+                                                <li><a class="cool-hover" href="`+diretorio+`home">Inicio</a></li>
                                                 <li><a class="cool-hover" href="`+diretorio+`sobre">Sobre</a></li>
                                                 <li><a class="cool-hover" href="`+diretorio+`contato">Contato</a></li>
                                                 <li><a class="cool-hover" href="`+diretorio+`loja">Produtos</a>

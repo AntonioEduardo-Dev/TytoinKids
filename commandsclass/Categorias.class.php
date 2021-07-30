@@ -25,7 +25,7 @@
                 endif;
 
             } catch (PDOException $e) {
-                echo "Erro de cadastrar: " . $e->getMessage();
+                echo "Erro de listar: " . $e->getMessage();
             } catch (Exception $e) {
                 echo "Erro: " . $e->getMessage();
             }
@@ -53,7 +53,7 @@
                 endif;
 
             } catch (PDOException $e) {
-                echo "Erro de cadastrar: " . $e->getMessage();
+                echo "Erro de listar: " . $e->getMessage();
             } catch (Exception $e) {
                 echo "Erro: " . $e->getMessage();
             }
@@ -72,7 +72,7 @@
 
                 return $vl;
             } catch (PDOException $e) {
-                echo "Erro de cadastrar: " . $e->getMessage();
+                echo "Erro de listar: " . $e->getMessage();
             } catch (Exception $e) {
                 echo "Erro: " . $e->getMessage();
             }
@@ -115,7 +115,7 @@
                 endif;
 
             } catch (PDOException $e) {
-                echo "Erro de cadastrar: " . $e->getMessage();
+                echo "Erro de apagar: " . $e->getMessage();
             } catch (Exception $e) {
                 echo "Erro: " . $e->getMessage();
             }

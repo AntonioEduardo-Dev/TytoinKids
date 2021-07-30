@@ -167,6 +167,16 @@
 	</div>
 	<!-- end more products -->
 
+	<!-- Small modal -->
+	<div class="modal fade modal_system_success_class" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-sm modal-dialog-centered">
+			<div class="modal-content">
+				<div class="conteudo_modal_sm">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Small modal -->
 
 	<!-- footer -->
 	<div class="footer-area footer-copyright">
@@ -201,6 +211,8 @@
 	<script src="commandsfunction/content/conteudoPagina.js"></script>
 	<!-- listar produtos js -->
 	<script src="commandsfunction/read/produto.js"></script>
+	<!-- função Modal js -->
+	<script src="commandsfunction/content/conteudoModal.js"></script>
 	<!-- main js -->
 	<script src="commandview/assets/js/main.js"></script>
 

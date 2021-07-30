@@ -46,13 +46,10 @@
                     5 => $qtd_produto_disp,
                 ];
 
-                if (isset($_SESSION["cart"])):
-                    $_SESSION["cart"] = array_map(null, $_SESSION["cart"], $cart);
-                else:
-                    $array = [];
-                    $_SESSION["cart"] = array_map(null, $cart, $cart);
-
+                if (empty($_SESSION["cart"])):
+                    $_SESSION["cart"] = [];
                 endif;
+                array_push($_SESSION["cart"], $idProduto.",".$imgProduto.",".$nomeProduto.",".$preco_produto.",".$qtd_produto.",".$qtd_produto_disp);
 
                 var_dump ($_SESSION["cart"]);
             else:
@@ -68,5 +65,32 @@
             $_SESSION["cart"] = "produto";
         endif;
         */
+    endif;
+
+    if(isset($_POST["btn_unset"])):
+        $linha = $_POST["linha"];
+        if(isset($_SESSION["cart"])):
+            unset($_SESSION["cart"][$linha]);
+            if(empty($_SESSION["cart"])):
+                session_destroy();
+            endif;
+
+            echo "Removido!-|-alert-success";
+        else:
+            echo "alert_notification_error!-|-alert-danger";
+        endif;
+    endif;
+
+    if(isset($_POST["btn_cadastrar"])):
+        if(isset($_SESSION["cart"])):
+            foreach ($_SESSION['cart'] as $key => $value) {
+                # code...
+            }
+            if(true):
+                echo "Sucesso, encomenda cadastrada!-|-alert-success";
+            endif;
+        else:
+            echo "alert_notification_error_cart_empty!-|-alert-danger";
+        endif;
     endif;
 ?>

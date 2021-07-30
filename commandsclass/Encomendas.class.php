@@ -17,7 +17,7 @@
                 return $vl;
                 
             } catch (PDOException $e) {
-                echo "Erro de cadastrar: " . $e->getMessage();
+                echo "Erro de listar: " . $e->getMessage();
             } catch (Exception $e) {
                 echo "Erro: " . $e->getMessage();
             }
@@ -25,6 +25,13 @@
         public function cadastrarEncomendas(){
             $objConexao = new Connection();
             $connection = $objConexao->conectar();
+
+            try {
+            } catch (PDOException $e) {
+                echo "Erro de cadastrar: " . $e->getMessage();
+            } catch (Exception $e) {
+                echo "Erro: " . $e->getMessage();
+            }
         }
         public function editarEncomendas(){
             $objConexao = new Connection();

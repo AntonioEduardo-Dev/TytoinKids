@@ -32,7 +32,7 @@
                             <div class="col-lg-4 col-md-6 text-center indisponível">
                                 <div class="single-product-item">
                                     <div class="product-image">
-                                        <a href="#"><img src="commandview/assets/img/images/productind.jpg" alt="Produtos Indisponíveis"></a>
+                                        <a><img src="commandview/assets/img/images/productind.jpg" alt="Produtos Indisponíveis"></a>
                                     </div>
                                     <h3>Produtos Indisponíveis</h3>
                                     <p class="product-price"><span>P/Quantidade</span> R$00.00 </p>
@@ -42,7 +42,7 @@
                 endif;
 
             } catch (PDOException $e) {
-                echo "Erro de cadastrar: " . $e->getMessage();
+                echo "Erro de listar: " . $e->getMessage();
             } catch (Exception $e) {
                 echo "Erro: " . $e->getMessage();
             }
@@ -71,6 +71,40 @@
                         <li class="li" data-filter=".'.$dado['nome_categoria'].'">'.$dado['nome_categoria'].'</li>';
                     }
                     echo "</ul>";
+                endif;
+
+            } catch (PDOException $e) {
+                echo "Erro de listar: " . $e->getMessage();
+            } catch (Exception $e) {
+                echo "Erro: " . $e->getMessage();
+            }
+        }
+
+        public function listarCategoriasFilter(){
+            $objConexao = new Connection();
+            $connection = $objConexao->conectar();
+            try {
+                $sql = "SELECT categorias.nome_categoria, (SELECT count(produtos.id_produto) FROM produtos WHERE produtos.id_categoria_fk=categorias.id_categoria ) as quantidade FROM categorias WHERE 1 = 1 LIMIT 10";
+            
+                $consulta = $connection->prepare($sql);
+                $consulta->execute();
+
+                $vl = $consulta->rowCount();
+
+                if ($vl > 0):
+                    $dados = $consulta->fetchAll();
+                    echo '  <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center active" data-filter="*" data-toggle="list" href="loja" role="tab" aria-controls="home">
+                                <i class="fas fa-angle-right"></i>
+                                Todos
+                                <span class="badge badge-primary-custom badge-pill">14</span>
+                            </a>';
+                    foreach ($dados as $indice => $dado) {
+                        echo '  <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" data-filter=".'.$dado['nome_categoria'].'" data-toggle="list" href="loja" role="tab" aria-controls="home">
+                                    <i class="fas fa-angle-right"></i>
+                                    '.$dado['nome_categoria'].'
+                                    <span class="badge badge-primary-custom badge-pill">'.$dado['quantidade'].'</span>
+                                </a>';
+                    }
                 endif;
 
             } catch (PDOException $e) {
@@ -331,7 +365,7 @@
                 endif;
                 
             } catch (PDOException $e) {
-                echo "Erro de cadastrar: " . $e->getMessage();
+                echo "Erro de editar: " . $e->getMessage();
             } catch (Exception $e) {
                 echo "Erro: " . $e->getMessage();
             }
@@ -354,7 +388,7 @@
                 endif;
                 
             } catch (PDOException $e) {
-                echo "Erro de cadastrar: " . $e->getMessage();
+                echo "Erro de apagar: " . $e->getMessage();
             } catch (Exception $e) {
                 echo "Erro: " . $e->getMessage();
             }

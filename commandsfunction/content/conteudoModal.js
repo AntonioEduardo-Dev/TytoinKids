@@ -59,6 +59,18 @@ function exibirModal(msgModal, tipoModal, corModal) {
             case "alert_notification_error_tamanho!":
                 msgModal = "Ocorreu um erro no modulo de tamanhos, se o erro persistir entre em contato com a administração!";
                 break;
+
+            case "alert_notification_error_qtd_disp!":
+                msgModal = "Quantidade solicitada não disponível!";
+                break;
+
+            case "alert_notification_error_qtd_insert!":
+                msgModal = "Verifique a quantidade selecionada!";
+                break;
+
+            case "alert_notification_error_cart_empty!":
+                msgModal = "Carrinho vazio!";
+                break;
             
             case "Imagem_nao_enviada!":
                 msgModal = "Imagem não enviada!";

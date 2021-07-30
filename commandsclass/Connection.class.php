@@ -10,7 +10,7 @@
 				$pdo= new PDO($host, $user, $pass);
 				return $pdo;
 			} catch (PDOException $e) {
-                echo "Erro de login: " . $e->getMessage();
+                echo "Erro de conexão: " . $e->getMessage();
             } catch (Exception $e) {
                 echo "Erro: " . $e->getMessage();
             }

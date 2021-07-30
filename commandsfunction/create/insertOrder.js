@@ -1,21 +1,19 @@
 /* INSERIR ENCOMENDA */
 $(function() {
 
-    $(document).on('click', '#id_cad', function() {
-        $("#id_cad").prop('disabled', true);
-
+    $(document).on('click', '.add_item_cart', function() {
         var dados = {
-            btn_cadastrar   : $("#id_cad").val(),
+            btn_cadastrar   : true,
         }
 
-        $.post('../commandscontrol/Encomendas.php', dados, function(retorno) {
+        $.post('commandscontrol/Encomendas.php', dados, function(retorno) {
             var tipo = retorno.indexOf("alert_notification_error");
             retorno = retorno.split("-|-");
 
             if (tipo === -1) {
-                exibirModalAlerta(retorno[0],true,"alert-success");
+                exibirModal(retorno[0],true,"alert-success");
             } else if (tipo > -1) {
-                exibirModalAlerta(retorno[0],false,retorno[1]);
+                exibirModal(retorno[0],false,retorno[1]);
             }
         });
         

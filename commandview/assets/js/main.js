@@ -86,11 +86,11 @@
         }
 
         $(document).on('click', '.product-filters li', function() {
+            
             $(".product-filters li").removeClass("active");
             $(this).addClass("active");
 
             var selector = $(this).attr('data-filter');
-            console.log(selector);
             
             $(".product-lists").isotope({
                 filter: selector,
@@ -104,11 +104,23 @@
             $(this).addClass("active");
 
             var selector = $(this).attr('data-filter');
-
+            
             $(".product-lists").isotope({
                 filter: selector,
             });
             
+        });
+
+        // projects filters isotop
+        $(document).on('click', '.list-group-item', function() {
+            $(".list-group-item").removeClass("active");
+            $(this).addClass("active");
+
+            var selector = ($(this).attr('data-filter'));
+
+            $(".product-lists").isotope({
+                filter: selector,
+            });
         });
         
         // isotop inner

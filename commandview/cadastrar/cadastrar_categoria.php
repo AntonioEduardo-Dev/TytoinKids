@@ -183,8 +183,11 @@
 	<!-- inserir Categorias js -->
 	<script src="../commandsfunction/create/insertCategorie.js"></script>
 
-	<!-- funcao Modal js -->
+	<!-- função Modal js -->
 	<script src="../commandsfunction/content/conteudoAlerta.js"></script>
+
+	<!-- função Modal js -->
+	<script src="commandsfunction/content/conteudoModal.js"></script>
 	
 	<!-- main js -->
 	<script src="../commandview/assets/js/main.js"></script>
