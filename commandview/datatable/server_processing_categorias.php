@@ -24,7 +24,7 @@ if($conn){
     $sql ="SELECT * FROM categorias WHERE 1";
     if(!empty($_POST['search']['value'])){
         $sql.=" AND (id_categoria Like '".$_POST['search']['value']."%' ";
-        $sql.=" OR nome_categoria Like '".$_POST['search']['value']."%' ";
+        $sql.=" OR nome_categoria Like '".$_POST['search']['value']."%' )";
     }
 
     $statement  = $conn->prepare($sql);

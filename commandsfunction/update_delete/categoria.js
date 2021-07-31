@@ -20,9 +20,9 @@ $(function() {
                     retorno = retorno.split("-|-");
                     
                     if (tipo === -1) {
-                        exibirModal(retorno[0],true,"modal-success");
+                        exibirModal(retorno[0],true);
                     } else if (tipo > -1) {
-                        exibirModal(retorno[0],false,retorno[1]);
+                        exibirModal(retorno[0],false);
                     }
                 });
             }

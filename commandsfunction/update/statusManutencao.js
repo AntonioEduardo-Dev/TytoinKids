@@ -1,5 +1,6 @@
 /* ATUALIZAR STATUS */
 $(function() {
+    verify();
 
     $(document).on('click', '.alter_status', function() {
         var tipo = $(this).attr('name');
@@ -22,16 +23,38 @@ $(function() {
         }
 
         $.post('../commandscontrol/setManutencao.php', dados, function(response) {
+            var tipo = response.indexOf("alert_notification_error");
+            
+            if (tipo === -1) {
+                $('.modal_system_open_class').modal('hide');
+                exibirModal("Status alterado com sucesso!",true);
+            } else if (tipo > -1) {
+                $('.modal_system_open_class').modal('hide');
+                exibirModal(values[0],false);
+            }
+        });
+    }
+
+    function verify() {
+        var dados = {
+            verificarStatus : true
+        }
+
+        $.post('../commandscontrol/Manutencao.php', dados, function(response) {
             console.log("Response: "+response);
             
             var tipo = response.indexOf("alert_notification_error");
             
             if (tipo === -1) {
-                console.log('ok');
-                $('.modal_system_open_class').modal('hide');
+                if (response == "true") {
+                    $("[name='btn_on']").prop("disabled",true);
+                    $("[name='btn_off']").prop("disabled",false);
+                }else{
+                    $("[name='btn_off']").prop("disabled",true);
+                    $("[name='btn_on']").prop("disabled",false);
+                }
             } else if (tipo > -1) {
                 console.log('Ocorreu um erro');
-                $('.modal_system_open_class').modal('hide');
             }
         });
     }

@@ -35,9 +35,9 @@ $(function() {
                 var values = retorna.split("-|-")
                 
                 if (tipo === -1) {
-                    exibirModal("Produto adicionado ao carrinho!",true,"modal-success");
+                    exibirModal("Produto adicionado ao carrinho!",true);
                 } else if (tipo > -1) {
-                    exibirModal(values[0],false,values[1]);
+                    exibirModal(values[0],false);
                 }
             });
         }

@@ -26,7 +26,7 @@ if($conn){
     if(!empty($_POST['search']['value'])){
         $sql.=" AND (id_encomenda Like '".$_POST['search']['value']."%' ";
         $sql.=" OR quantidade Like '".$_POST['search']['value']."%' ";
-        $sql.=" OR data_hora Like '".$_POST['search']['value']."%' ";
+        $sql.=" OR data_hora Like '".$_POST['search']['value']."%' )";
     }
 
     $statement  = $conn->prepare($sql);

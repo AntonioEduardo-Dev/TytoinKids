@@ -45,7 +45,6 @@
 	<link rel="stylesheet" href="commandview/assets/css/main.css">
 	<!-- responsive -->
 	<link rel="stylesheet" href="commandview/assets/css/responsive.css">
-
 </head>
 <body>
 	
@@ -80,81 +79,90 @@
 
 	<!-- cart -->
 	<div class="cart-section mt-5 mb-5">
-		<div class="container">
+		<div class="container cart-class">
 			<div class="row">
 				<div class="col-lg-8 col-md-12 mt-5 mb-5">
-					<div class="cart-table-wrap">
-						<table class="cart-table">
-							<thead class="cart-table-head">
-								<tr class="table-head-row">
-									<th class="product-image">Produto</th>
-									<th class="product-name">Nome</th>
-									<th class="product-price">Preço</th>
-									<th class="product-quantity">Quantidade</th>
-									<th class="product-total">Total</th>
-									<th class="product-remove"></th>
-								</tr>
-							</thead>
-							<tbody>
-								<?php 
-								if (isset($_SESSION["cart"])):
-									foreach ($_SESSION['cart'] as $key => $value) :
-										$query = explode(',', $value);
-										echo '<tr class="table-body-row">
-													<td class="product-image"><img src="commandview/assets/img/images/'.$query[1].'" alt=""></td>
-													<td class="product-name">'.$query[2].'</td>
-													<td class="product-price">'.$query[3].'</td>
-													<td class="product-quantity"><input type="number" placeholder="0" value="'.$query[4].'" disabled></td>
-													<td class="product-total">'.$query[5].'</td>
-													<td class="product-remove"><h5><a class="delete_item_cart" data-filter="'.$key.'"><i class="far fa-window-close mt-4"></i></a></h5><input type="text" hidden value="'.$key.'"></td>
-												</tr>';
-									endforeach;
-								endif; ?>
-							</tbody>
-						</table>
+					
+					<div class="card bg-light">
+						<div class="card-body">
+							<h5 class="card-title">Carrinho</h5>
+							<div class="cart-table-wrap">
+								<table class="cart-table">
+									<thead class="cart-table-head">
+										<tr class="table-head-row">
+											<th class="product-image">Produto</th>
+											<th class="product-name">Nome</th>
+											<th class="product-price">Preço</th>
+											<th class="product-quantity">Quantidade</th>
+											<th class="product-total">Total</th>
+											<th class="product-remove"></th>
+										</tr>
+									</thead>
+									<tbody>
+										<?php 
+										if (isset($_SESSION["cart"])):
+											foreach ($_SESSION['cart'] as $key => $value) :
+												$query = explode(',', $value);
+												echo '<tr class="table-body-row">
+															<td class="product-image"><img src="commandview/assets/img/images/'.$query[1].'" alt=""></td>
+															<td class="product-name">'.$query[2].'</td>
+															<td class="product-price">'.$query[3].'</td>
+															<td class="product-quantity"><input type="number" placeholder="0" value="'.$query[4].'" disabled></td>
+															<td class="product-total">'.$query[5].'</td>
+															<td class="product-remove"><h5><a class="delete_item_cart" data-filter="'.$key.'"><i class="far fa-window-close mt-4"></i></a></h5><input type="text" hidden value="'.$key.'"></td>
+														</tr>';
+											endforeach;
+										endif; ?>
+									</tbody>
+								</table>
+							</div>
+						</div>
 					</div>
 				</div>
 
 				<div class="col-lg-4 mt-5 mb-5">
 					<div class="total-section">
-						<table class="total-table">
-							<thead class="total-table-head">
-								<tr class="table-total-row">
-									<th>Produto</th>
-									<th>Preço</th>
-								</tr>
-							</thead>
-							<tbody>
-								<?php 
-									if (isset($_SESSION["cart"])):
-										$total = 0;
-										foreach ($_SESSION['cart'] as $key => $value) :
-											$query = explode(',', $value);
-											echo '<tr class="total-data">
-														<td><strong>'.$query[2].': </strong></td>
-														<td>$'.$query[3].'</td>
-													</tr>';
-											$total = $total + $query[3];
-										endforeach;
-										echo '	<tr class="total-data">
-													<td><strong>Total: </strong></td>
-													<td>$'.number_format($total, 2).'</td>
-												</tr>';
-									endif;
-								?>
-							</tbody>
-						</table>
-						<div class="cart-buttons text-center">
-							<!-- <a href="carrinho" class="boxed-btn">Atualizar Carrinho</a> -->
-							<a class="boxed-btn black add_item_cart">Encomendar</a>
+						<div class="card bg-light">
+							<div class="card-body">
+								<h6 class="card-title">Adicionar Cupom</h6>
+								<p class="card-text">
+									<input type="text" class="btn_nm_cupom" name="Cupom" placeholder="Cupom" required>
+								</p>
+							</div>
 						</div>
-					</div>
-
-					<div class="coupon-section">
-						<h3>Adicionar Cupom</h3>
-						<div class="coupon-form-wrap">
-							<p><input type="text" class="btn_nm_cupom" name="Cupom" placeholder="Cupom" required></p>
-							<p class="text-center"><a class="boxed-btn black modal_system_open">Aplicar</a></p>
+						<div class="card bg-light">
+							<div class="card-body text-center">
+								<table class="total-table">
+									<thead class="total-table-head">
+										<tr class="table-total-row">
+											<th>Produto</th>
+											<th>Preço</th>
+										</tr>
+									</thead>
+									<tbody>
+										<?php 
+											if (isset($_SESSION["cart"])):
+												$total = 0;
+												foreach ($_SESSION['cart'] as $key => $value) :
+													$query = explode(',', $value);
+													echo '<tr class="total-data">
+																<td><strong>'.$query[2].': </strong></td>
+																<td>$'.$query[3].'</td>
+															</tr>';
+													$total = $total + $query[3];
+												endforeach;
+												echo '	<tr class="total-data">
+															<td><strong>Total: </strong></td>
+															<td>$'.number_format($total, 2).'</td>
+														</tr>';
+											endif;
+										?>
+									</tbody>
+								</table>
+								<div class="cart-buttons">
+									<a class="boxed-btn black add_item_cart">Encomendar</a>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

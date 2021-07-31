@@ -77,7 +77,7 @@
 				<div class="col-lg ml-4 mr-4 mt-5 mb-5">
 					<div class="checkout-accordion-wrap">
 						<div class="accordion" id="accordionExample">
-						  <div class="card single-accordion">
+						  <div class="card bg-light single-accordion">
 						    <div class="card-header" id="headingOne">
 						      <h5>
 						        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">

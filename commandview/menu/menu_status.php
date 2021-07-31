@@ -99,6 +99,17 @@
 	</div>
 	</div>
 	<!-- End Large modal -->
+
+	<!-- Small modal -->
+	<div class="modal fade modal_system_success_class" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-sm modal-dialog-centered">
+			<div class="modal-content">
+				<div class="conteudo_modal_sm">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Small modal -->
 	
 	<!-- jquery -->
 	<script src="../commandview/assets/js/jquery-1.11.3.min.js"></script>
@@ -118,10 +129,12 @@
 	<script src="../commandview/assets/js/jquery.meanmenu.min.js"></script>
 	<!-- sticker js -->
 	<script src="../commandview/assets/js/sticker.js"></script>
-	<!-- conteudo modal js -->
+	<!-- conteúdo modal js -->
 	<script src="../commandsfunction/content/conteudoManutencao.js"></script>
 	<!-- alterar status js -->
 	<script src="../commandsfunction/update/statusManutencao.js"></script>
+	<!-- função Modal js -->
+	<script src="../commandsfunction/content/conteudoModal.js"></script>
 	<!-- main js -->
 	<script src="../commandview/assets/js/main.js"></script>
 	

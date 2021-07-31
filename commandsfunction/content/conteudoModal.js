@@ -1,5 +1,5 @@
 /* CONTENT MODAL */
-function exibirModal(msgModal, tipoModal, corModal) {
+function exibirModal(msgModal, tipoModal) {
     if (tipoModal) {
         $(".conteudo_modal_sm").html('');
 
@@ -23,71 +23,26 @@ function exibirModal(msgModal, tipoModal, corModal) {
         }, 1500);
 
     }else{
-        switch (msgModal) {
-            case "alert_notification_error!":
-                msgModal = "Ocorreu um erro na operação, se o erro persistir entre em contato com a administração!";
-                break;
-
-            case "alert_notification_error_data_bite!":
-                msgModal = "Verifique dados digitados incorretamente!";
-                break;
-
-            case "alert_notification_error_null!":
-                msgModal = "Verifique possíveis campos nulos!";
-                break;
-
-            case "alert_notification_error_empty!":
-                msgModal = "Preencha todos os campos!";
-                break;
-
-            case "alert_notification_error_categoria_null!":
-                msgModal = "Verifique a categoria selecionada!";
-                break;
-
-            case "alert_notification_error_id!":
-                msgModal = "Ocorreu um erro na consulta do id do produto!";
-                break;
-        
-            case "alert_notification_error_tam_cor!":
-                msgModal = "Ocorreu um erro no modulo de cores e tamanhos, se o erro persistir contate a administração!";
-                break;
-
-            case "alert_notification_error_cor!":
-                msgModal = "Ocorreu um erro no modulo de cores, se o erro persistir entre em contato com a administração!";
-                break;
-
-            case "alert_notification_error_tamanho!":
-                msgModal = "Ocorreu um erro no modulo de tamanhos, se o erro persistir entre em contato com a administração!";
-                break;
-
-            case "alert_notification_error_qtd_disp!":
-                msgModal = "Quantidade solicitada não disponível!";
-                break;
-
-            case "alert_notification_error_qtd_insert!":
-                msgModal = "Verifique a quantidade selecionada!";
-                break;
-
-            case "alert_notification_error_cart_empty!":
-                msgModal = "Carrinho vazio!";
-                break;
-            
-            case "Imagem_nao_enviada!":
-                msgModal = "Imagem não enviada!";
-                break;
-
-            case "Extensao_Invalida!":
-                msgModal = "Extensão Inválida!";
-                break;
-
-            case "erro_inesperado!":
-                msgModal = "Ocorreu um erro inesperado!";
-                break;
-
-            default:
-                msgModal = "Ocorreu um erro inesperado!";
-                break;
+        const mensagens = {
+            "alert_notification_error!"                 : "Ocorreu um erro na operação, se o erro persistir entre em contato com a administração!",
+            "alert_notification_error_data_bite!"       : "Verifique dados digitados incorretamente!",
+            "alert_notification_error_null!"            : "Verifique possíveis campos nulos!",
+            "alert_notification_error_empty!"           : "Preencha todos os campos!",
+            "alert_notification_error_categoria_null!"  : "Verifique a categoria selecionada!",
+            "alert_notification_error_id!"              : "Ocorreu um erro na consulta do id do produto!",
+            "alert_notification_error_tam_cor!"         : "Ocorreu um erro no modulo de cores e tamanhos, se o erro persistir contate a administração!",
+            "alert_notification_error_cor!"             : "Ocorreu um erro no modulo de cores, se o erro persistir entre em contato com a administração!",
+            "alert_notification_error_tamanho!"         : "Ocorreu um erro no modulo de tamanhos, se o erro persistir entre em contato com a administração!",
+            "alert_notification_error_qtd_disp!"        : "Quantidade solicitada não disponível!",
+            "alert_notification_error_qtd_insert!"      : "Verifique a quantidade selecionada!",
+            "alert_notification_error_cart_empty!"      : "Carrinho vazio!",
+            "Imagem_nao_enviada!"                       : "Imagem não enviada!",
+            "Extensao_Invalida!"                        : "Extensão Inválida!",
+            "erro_inesperado!"                          : "Ocorreu um erro inesperado!",
+            "default"                                   : "Ocorreu um erro inesperado!"
         }
+
+        msgModal = mensagens[msgModal] || mensagens.default;
         
         $(".conteudo_modal_sm").html('');
 
@@ -108,6 +63,6 @@ function exibirModal(msgModal, tipoModal, corModal) {
         setTimeout(function(){
             $(".modal_system_success_class").modal("hide");
             location.reload();
-        }, 1500);
+        }, 2000);
     }
 }

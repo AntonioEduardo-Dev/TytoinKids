@@ -2,6 +2,7 @@
 	session_start();
     require_once "commandscontrol/Manutencao.php";
 	$validManutencao = getStatus();
+	
 	$user = [
 		"nome" => "Antonio Eduardo",
 		"status" => "Admin" // "Admin"

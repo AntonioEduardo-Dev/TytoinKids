@@ -66,7 +66,7 @@ $(function() {
                                                 <li>
                                                     <div class="header-icons">
                                                         <a class="shopping-cart cool-hover" href="`+diretorio+`carrinho"><i class="fas fa-shopping-cart"></i></a>
-                                                        <a class="mobile-hide search-bar-icon cool-hover" href="#"><i class="fas fa-user"></i></a>
+                                                        <a class="mobile-hide search-bar-icon cool-hover" href="`+diretorio+`login"><i class="fas fa-user"></i></a>
                                                     </div>
                                                 </li>
                                             </ul>

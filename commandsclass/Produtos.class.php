@@ -93,10 +93,10 @@
 
                 if ($vl > 0):
                     $dados = $consulta->fetchAll();
-                    echo '  <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center active" data-filter="*" data-toggle="list" href="loja" role="tab" aria-controls="home">
+                    echo '  <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center active text-center" data-filter="*" data-toggle="list" href="loja" role="tab" aria-controls="home">
                                 <i class="fas fa-angle-right"></i>
                                 Todos
-                                <span class="badge badge-primary-custom badge-pill">14</span>
+                                <span class="badge badge-primary-custom badge-pill">Qtd</span>
                             </a>';
                     foreach ($dados as $indice => $dado) {
                         echo '  <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" data-filter=".'.$dado['nome_categoria'].'" data-toggle="list" href="loja" role="tab" aria-controls="home">

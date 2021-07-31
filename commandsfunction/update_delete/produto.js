@@ -196,7 +196,7 @@ $(function() {
                         $(".modal_system_open_class").modal("hide");
                         $(".modal_system_open_class").modal("show");
                     } else if (tipo > -1) {
-                        exibirModal(retorno[0],false,retorno[1]);
+                        exibirModal(retorno[0],false);
                     }
                 });
             }else if (btn_clicked === "btn_nm_remove") {
@@ -210,9 +210,9 @@ $(function() {
                     retorno = retorno.split("-|-");
                     
                     if (tipo === -1) {
-                        exibirModal(retorno[0],true,"modal-success");
+                        exibirModal(retorno[0],true);
                     } else if (tipo > -1) {
-                        exibirModal(retorno[0],false,retorno[1]);
+                        exibirModal(retorno[0],false);
                     }
                 });
             }

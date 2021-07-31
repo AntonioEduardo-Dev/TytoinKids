@@ -65,9 +65,9 @@ $(function() {
             retorno = response.split("-|-");
 
             if (tipo === -1) {
-                exibirModal(retorno[0],true,"alert-success");
+                exibirModal(retorno[0],true);
             } else if (tipo > -1) {
-                exibirModal(retorno[0],false,retorno[1]);
+                exibirModal(retorno[0],false);
             }
         });
     });

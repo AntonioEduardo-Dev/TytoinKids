@@ -33,6 +33,7 @@ body img {
 }
 
 a {
+  color: #402b65;
   cursor: pointer;
   text-decoration: none;
   -webkit-transition: all 0.2s ease-in-out;
@@ -448,6 +449,41 @@ p:last-child {
 
 .blue-bg {
   background-color: #402b65;
+}
+
+.body-login {
+  background: linear-gradient(to right, #402b65, #ff5882);
+}
+
+.btn-login {
+  background-color: #ff5882;
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 15px 25px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-bottom-left-radius: 50px;padding: 10px 20px;
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  font-family: 'Poppins', sans-serif;
+  display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.btn-login:hover {
+  background-color: #402b65;
+  color: #ffffff;
+}
+
+.container-custom {
+  background-color: #ffffff;
 }
 
 a.boxed-btn {
@@ -1237,6 +1273,46 @@ input {
   font-family: 'Poppins', sans-serif;
   display: inline-block;
   padding: 15px 20px;
+}
+
+input[type="submit"][disabled] {
+  background-color: rgb(229, 229, 229) !important;
+  color: #783171;
+}
+
+input[type="submit"][disabled]:hover {
+  background-color: rgb(229, 229, 229) !important;
+  color: #783171;
+}
+
+input[type="text"][disabled] {
+  background-color: rgb(229, 229, 229) !important;
+  color: #783171;
+}
+
+input[type="text"][disabled]:hover {
+  background-color: rgb(229, 229, 229) !important;
+  color: #783171;
+}
+
+input[type="email"][disabled] {
+  background-color: rgb(229, 229, 229) !important;
+  color: #783171;
+}
+
+input[type="email"][disabled]:hover {
+  background-color: rgb(229, 229, 229) !important;
+  color: #783171;
+}
+
+input[type="number"][disabled] {
+  background-color: rgb(229, 229, 229) !important;
+  color: #783171;
+}
+
+input[type="number"][disabled]:hover {
+  background-color: rgb(229, 229, 229) !important;
+  color: #783171;
 }
 
 /* All select elements on page */
