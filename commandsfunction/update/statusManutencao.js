@@ -4,7 +4,7 @@ $(function() {
 
     $(document).on('click', '.alter_status', function() {
         var tipo = $(this).attr('name');
-
+        
         if(tipo === "Ativar"){
             status = 1;
             alterStatus(status);
@@ -12,7 +12,7 @@ $(function() {
             status = 0;
             alterStatus(status);
         }else{
-            $('.modal_system_open_class').modal('hide');
+            $('.modal_system_success_class').modal('hide');
         }
 
     });
@@ -25,13 +25,15 @@ $(function() {
         $.post('../commandscontrol/setManutencao.php', dados, function(response) {
             var tipo = response.indexOf("alert_notification_error");
             
-            if (tipo === -1) {
-                $('.modal_system_open_class').modal('hide');
-                exibirModal("Status alterado com sucesso!",true);
-            } else if (tipo > -1) {
-                $('.modal_system_open_class').modal('hide');
-                exibirModal(values[0],false);
-            }
+            $('.modal_system_success_class').modal('hide');
+            
+            setTimeout(function(){
+                if (tipo === -1) {
+                    exibirModal("Status alterado com sucesso!",true);
+                } else if (tipo > -1) {
+                    exibirModal(values[0],false);
+                }
+            }, 800);
         });
     }
 

@@ -1,7 +1,7 @@
 <?php
 	/*
 	echo "Nome: ".$_SESSION["user"]["nome"]."</br>";
-	echo "Status: ".$_SESSION["user"]["status"];
+	echo "Status: ".$_SESSION["user"]["tipo_user"];
 	*/
 	if (!(isset($_SESSION["cart"]))):
 		// echo '<script>alert("Carrinho vazio!!")</script>';
@@ -25,26 +25,26 @@
 	<title>Carrinho</title>
 
 	<!-- favicon -->
-	<link rel="shortcut icon" type="image/png" href="commandview/assets/img/favicon.png">
+	<link rel="shortcut icon" type="image/png" href="commandsview/assets/img/favicon.png">
 	<!-- google font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
 	<!-- fontawesome -->
-	<link rel="stylesheet" href="commandview/assets/css/all.min.css">
+	<link rel="stylesheet" href="commandsview/assets/css/all.min.css">
 	<!-- bootstrap -->
-	<link rel="stylesheet" href="commandview/assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="commandsview/assets/bootstrap/css/bootstrap.min.css">
 	<!-- owl carousel -->
-	<link rel="stylesheet" href="commandview/assets/css/owl.carousel.css">
+	<link rel="stylesheet" href="commandsview/assets/css/owl.carousel.css">
 	<!-- magnific popup -->
-	<link rel="stylesheet" href="commandview/assets/css/magnific-popup.css">
+	<link rel="stylesheet" href="commandsview/assets/css/magnific-popup.css">
 	<!-- animate css -->
-	<link rel="stylesheet" href="commandview/assets/css/animate.css">
+	<link rel="stylesheet" href="commandsview/assets/css/animate.css">
 	<!-- mean menu css -->
-	<link rel="stylesheet" href="commandview/assets/css/meanmenu.min.css">
+	<link rel="stylesheet" href="commandsview/assets/css/meanmenu.min.css">
 	<!-- main style -->
-	<link rel="stylesheet" href="commandview/assets/css/main.css">
+	<link rel="stylesheet" href="commandsview/assets/css/main.css">
 	<!-- responsive -->
-	<link rel="stylesheet" href="commandview/assets/css/responsive.css">
+	<link rel="stylesheet" href="commandsview/assets/css/responsive.css">
 </head>
 <body>
 	
@@ -104,7 +104,7 @@
 											foreach ($_SESSION['cart'] as $key => $value) :
 												$query = explode(',', $value);
 												echo '<tr class="table-body-row">
-															<td class="product-image"><img src="commandview/assets/img/images/'.$query[1].'" alt=""></td>
+															<td class="product-image"><img src="commandsview/assets/img/images/'.$query[1].'" alt=""></td>
 															<td class="product-name">'.$query[2].'</td>
 															<td class="product-price">'.$query[3].'</td>
 															<td class="product-quantity"><input type="number" placeholder="0" value="'.$query[4].'" disabled></td>
@@ -207,23 +207,23 @@
 	<!-- end copyright -->
 	
 	<!-- jquery -->
-	<script src="commandview/assets/js/jquery-1.11.3.min.js"></script>
+	<script src="commandsview/assets/js/jquery-1.11.3.min.js"></script>
 	<!-- bootstrap -->
-	<script src="commandview/assets/bootstrap/js/bootstrap.min.js"></script>
+	<script src="commandsview/assets/bootstrap/js/bootstrap.min.js"></script>
 	<!-- count down -->
-	<script src="commandview/assets/js/jquery.countdown.js"></script>
+	<script src="commandsview/assets/js/jquery.countdown.js"></script>
 	<!-- isotope -->
-	<script src="commandview/assets/js/jquery.isotope-3.0.6.min.js"></script>
+	<script src="commandsview/assets/js/jquery.isotope-3.0.6.min.js"></script>
 	<!-- waypoints -->
-	<script src="commandview/assets/js/waypoints.js"></script>
+	<script src="commandsview/assets/js/waypoints.js"></script>
 	<!-- owl carousel -->
-	<script src="commandview/assets/js/owl.carousel.min.js"></script>
+	<script src="commandsview/assets/js/owl.carousel.min.js"></script>
 	<!-- magnific popup -->
-	<script src="commandview/assets/js/jquery.magnific-popup.min.js"></script>
+	<script src="commandsview/assets/js/jquery.magnific-popup.min.js"></script>
 	<!-- mean menu -->
-	<script src="commandview/assets/js/jquery.meanmenu.min.js"></script>
+	<script src="commandsview/assets/js/jquery.meanmenu.min.js"></script>
 	<!-- sticker js -->
-	<script src="commandview/assets/js/sticker.js"></script>
+	<script src="commandsview/assets/js/sticker.js"></script>
 	<!-- pagina js -->
 	<script src="commandsfunction/content/conteudoPagina.js"></script>
 	<!-- conteudo modal js -->
@@ -233,7 +233,7 @@
 	<!-- função Modal js -->
 	<script src="commandsfunction/content/conteudoModal.js"></script>
 	<!-- main js -->
-	<script src="commandview/assets/js/main.js"></script>
+	<script src="commandsview/assets/js/main.js"></script>
 
 </body>
 </html>

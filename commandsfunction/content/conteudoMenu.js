@@ -82,7 +82,7 @@ $(function() {
                 content += `<div class="col text-center">
                                 <div class="single-product-item">
                                     <div class="product-image">
-                                        <a href="`+llinks[index]+`" name="btn_nm_categoria"><img src="../commandview/assets/img/menu/`+limagens[index]+`" alt=""></a>
+                                        <a href="`+llinks[index]+`" name="btn_nm_categoria"><img src="../commandsview/assets/img/menu/`+limagens[index]+`" alt=""></a>
                                     </div>
                                     <a href="`+llinks[index]+`" name="btn_nm_categoria"><h3>`+lsubTitulos[index]+`</h3></a>
                                 </div>
@@ -92,7 +92,7 @@ $(function() {
             content += `<div class="col text-center">
                             <div class="single-product-item">
                                 <div class="product-image">
-                                    <a href="menu" name="btn_nm_categoria"><img src="../commandview/assets/img/menu/img_undefined.png" alt=""></a>
+                                    <a href="menu" name="btn_nm_categoria"><img src="../commandsview/assets/img/menu/img_undefined.png" alt=""></a>
                                 </div>
                                 <a href="menu" name="btn_nm_categoria"><h3>Cadastrar</h3></a>
                             </div>

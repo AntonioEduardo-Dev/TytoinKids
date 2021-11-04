@@ -39,7 +39,7 @@ $(function() {
                                         <!-- logo -->
                                         <div class="site-logo">
                                             <a href="`+diretorio+`index">
-                                                <img src="`+diretorio+`commandview/assets/img/logo_defined.png" alt="">
+                                                <img src="`+diretorio+`commandsview/assets/img/logo_defined.png" alt="">
                                             </a>
                                         </div>
                                         <!-- logo -->

@@ -3,7 +3,7 @@ $(document).ready(function() {
     var table = $('#table_dinamic_js').DataTable( {
         "processing": true,
         "serverSide": true,
-        "ajax": {url: "../commandview/datatable/server_processing_categorias.php", type: "POST"},
+        "ajax": {url: "../commandsview/datatable/server_processing_categorias.php", type: "POST"},
         "deferRender": true
     } );
     

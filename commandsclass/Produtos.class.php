@@ -19,7 +19,7 @@
                         echo '<div class="col-lg-4 col-md-6 text-center '.$dado['nome_categoria'].'">
                                 <div class="single-product-item">
                                     <div class="product-image">
-                                        <a href="produto?id='.$dado['id_produto'].'" id="single-product-item" data-id="'.$dado['id_produto'].'"><img src="commandview/assets/img/images/'.$dado['imagem_produto'].'" alt="'.$dado['nome_produto'].'"></a>
+                                        <a href="produto?id='.$dado['id_produto'].'" id="single-product-item" data-id="'.$dado['id_produto'].'"><img src="commandsview/assets/img/images/'.$dado['imagem_produto'].'" alt="'.$dado['nome_produto'].'"></a>
                                     </div>
                                     <h3>'.$dado['nome_produto'].'</h3>
                                     <p class="product-price"><span>P/Quantidade</span> R$'.$dado['preco_produto'].' </p>
@@ -32,7 +32,7 @@
                             <div class="col-lg-4 col-md-6 text-center indisponível">
                                 <div class="single-product-item">
                                     <div class="product-image">
-                                        <a><img src="commandview/assets/img/images/productind.jpg" alt="Produtos Indisponíveis"></a>
+                                        <a><img src="commandsview/assets/img/images/productind.jpg" alt="Produtos Indisponíveis"></a>
                                     </div>
                                     <h3>Produtos Indisponíveis</h3>
                                     <p class="product-price"><span>P/Quantidade</span> R$00.00 </p>

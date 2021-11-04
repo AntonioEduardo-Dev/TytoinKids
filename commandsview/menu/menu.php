@@ -10,26 +10,26 @@
 	<title>Menu</title>
 
 	<!-- favicon -->
-	<link rel="shortcut icon" type="image/png" href="../commandview/assets/img/favicon.png">
+	<link rel="shortcut icon" type="image/png" href="../commandsview/assets/img/favicon.png">
 	<!-- google font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
 	<!-- fontawesome -->
-	<link rel="stylesheet" href="../commandview/assets/css/all.min.css">
+	<link rel="stylesheet" href="../commandsview/assets/css/all.min.css">
 	<!-- bootstrap -->
-	<link rel="stylesheet" href="../commandview/assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../commandsview/assets/bootstrap/css/bootstrap.min.css">
 	<!-- owl carousel -->
-	<link rel="stylesheet" href="../commandview/assets/css/owl.carousel.css">
+	<link rel="stylesheet" href="../commandsview/assets/css/owl.carousel.css">
 	<!-- magnific popup -->
-	<link rel="stylesheet" href="../commandview/assets/css/magnific-popup.css">
+	<link rel="stylesheet" href="../commandsview/assets/css/magnific-popup.css">
 	<!-- animate css -->
-	<link rel="stylesheet" href="../commandview/assets/css/animate.css">
+	<link rel="stylesheet" href="../commandsview/assets/css/animate.css">
 	<!-- mean menu css -->
-	<link rel="stylesheet" href="../commandview/assets/css/meanmenu.min.css">
+	<link rel="stylesheet" href="../commandsview/assets/css/meanmenu.min.css">
 	<!-- main style -->
-	<link rel="stylesheet" href="../commandview/assets/css/main.css">
+	<link rel="stylesheet" href="../commandsview/assets/css/main.css">
 	<!-- responsive -->
-	<link rel="stylesheet" href="../commandview/assets/css/responsive.css">
+	<link rel="stylesheet" href="../commandsview/assets/css/responsive.css">
 
 </head>
 <body>
@@ -51,7 +51,7 @@
 						<!-- logo -->
 						<div class="site-logo">
 							<a href="../home">
-								<img src="../commandview/assets/img/logo_defined.png" alt="">
+								<img src="../commandsview/assets/img/logo_defined.png" alt="">
 							</a>
 						</div>
 						<!-- logo -->
@@ -110,7 +110,7 @@
 						<div class="col-lg-4 col-md-6 text-center">
 							<div class="single-product-item">
 								<div class="product-image">
-									<a href="#" class="modal_system_open" name="btn_nm_categoria"><img src="../commandview/assets/img/menu/image_menu.png" alt=""></a>
+									<a href="#" class="modal_system_open" name="btn_nm_categoria"><img src="../commandsview/assets/img/menu/image_menu.png" alt=""></a>
 								</div>
 								<a href="#" class="modal_system_open" name="btn_nm_categoria"><h3>Categorias</h3></a>
 							</div>
@@ -118,7 +118,7 @@
 						<div class="col-lg-4 col-md-6 text-center">
 							<div class="single-product-item">
 								<div class="product-image">
-									<a href="#" class="modal_system_open" name="btn_nm_produto"><img src="../commandview/assets/img/menu/image_menu.png" alt=""></a>
+									<a href="#" class="modal_system_open" name="btn_nm_produto"><img src="../commandsview/assets/img/menu/image_menu.png" alt=""></a>
 								</div>
 								<a href="#" class="modal_system_open" name="btn_nm_produto"><h3>Produtos</h3></a>
 							</div>
@@ -126,7 +126,7 @@
 						<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
 							<div class="single-product-item">
 								<div class="product-image">
-									<a href="#" class="modal_system_open" name="btn_nm_encomenda"><img src="../commandview/assets/img/menu/image_menu.png" alt=""></a>
+									<a href="#" class="modal_system_open" name="btn_nm_encomenda"><img src="../commandsview/assets/img/menu/image_menu.png" alt=""></a>
 								</div>
 								<a href="#" class="modal_system_open" name="btn_nm_encomenda"><h3>Encomendas</h3></a>
 							</div>
@@ -138,7 +138,7 @@
 						<div class="col-lg-4 col-md-6 text-center">
 							<div class="single-product-item">
 								<div class="product-image">
-									<a href="#" class="modal_system_open" name="btn_nm_categoria"><img src="../commandview/assets/img/menu/image_menu.png" alt=""></a>
+									<a href="#" class="modal_system_open" name="btn_nm_categoria"><img src="../commandsview/assets/img/menu/image_menu.png" alt=""></a>
 								</div>
 								<a href="#" class="modal_system_open" name="btn_nm_categoria"><h3>Categorias</h3></a>
 							</div>
@@ -146,7 +146,7 @@
 						<div class="col-lg-4 col-md-6 text-center">
 							<div class="single-product-item">
 								<div class="product-image">
-									<a href="#" class="modal_system_open" name="btn_nm_produto"><img src="../commandview/assets/img/menu/image_menu.png" alt=""></a>
+									<a href="#" class="modal_system_open" name="btn_nm_produto"><img src="../commandsview/assets/img/menu/image_menu.png" alt=""></a>
 								</div>
 								<a href="#" class="modal_system_open" name="btn_nm_produto"><h3>Produtos</h3></a>
 							</div>
@@ -154,7 +154,7 @@
 						<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
 							<div class="single-product-item">
 								<div class="product-image">
-									<a href="#" class="modal_system_open" name="btn_nm_encomenda"><img src="../commandview/assets/img/menu/image_menu.png" alt=""></a>
+									<a href="#" class="modal_system_open" name="btn_nm_encomenda"><img src="../commandsview/assets/img/menu/image_menu.png" alt=""></a>
 								</div>
 								<a href="#" class="modal_system_open" name="btn_nm_encomenda"><h3>Encomendas</h3></a>
 							</div>
@@ -251,27 +251,27 @@
 	<!-- end copyright -->
 	
 	<!-- jquery -->
-	<script src="../commandview/assets/js/jquery-1.11.3.min.js"></script>
+	<script src="../commandsview/assets/js/jquery-1.11.3.min.js"></script>
 	<!-- bootstrap -->
-	<script src="../commandview/assets/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../commandsview/assets/bootstrap/js/bootstrap.min.js"></script>
 	<!-- count down -->
-	<script src="../commandview/assets/js/jquery.countdown.js"></script>
+	<script src="../commandsview/assets/js/jquery.countdown.js"></script>
 	<!-- isotope -->
-	<script src="../commandview/assets/js/jquery.isotope-3.0.6.min.js"></script>
+	<script src="../commandsview/assets/js/jquery.isotope-3.0.6.min.js"></script>
 	<!-- waypoints -->
-	<script src="../commandview/assets/js/waypoints.js"></script>
+	<script src="../commandsview/assets/js/waypoints.js"></script>
 	<!-- owl carousel -->
-	<script src="../commandview/assets/js/owl.carousel.min.js"></script>
+	<script src="../commandsview/assets/js/owl.carousel.min.js"></script>
 	<!-- magnific popup -->
-	<script src="../commandview/assets/js/jquery.magnific-popup.min.js"></script>
+	<script src="../commandsview/assets/js/jquery.magnific-popup.min.js"></script>
 	<!-- mean menu -->
-	<script src="../commandview/assets/js/jquery.meanmenu.min.js"></script>
+	<script src="../commandsview/assets/js/jquery.meanmenu.min.js"></script>
 	<!-- sticker js -->
-	<script src="../commandview/assets/js/sticker.js"></script>
+	<script src="../commandsview/assets/js/sticker.js"></script>
 	<!-- conteudo js -->
 	<script src="../commandsfunction/content/conteudoMenu.js"></script>
 	<!-- main js -->
-	<script src="../commandview/assets/js/main.js"></script>
+	<script src="../commandsview/assets/js/main.js"></script>
 
 
 </body>

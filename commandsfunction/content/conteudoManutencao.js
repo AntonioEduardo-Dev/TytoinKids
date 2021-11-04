@@ -4,7 +4,7 @@ $(function() {
     $(document).on('click', '.modal_system_open', function() {
         var tipo = $(this).val();
 
-        $('.conteudo').html('');
+        $('.conteudo_modal_sm').html('');
         
         var cardHeader = `<div class="card">
                             <div class="card-header">
@@ -23,11 +23,8 @@ $(function() {
         var conteudo            = `<div class="col text-center">
                                         <h4>Voçê tem certeza da sua escolha?</h4>
                                         <div class="form-group row">
-                                            <div class="col-sm-6">
-                                                <input type="submit" class="alter_status" name="`+tipo+`" value="Confirmar">
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <input type="submit" class="alter_status" name="btn_off" value="Cancelar">
+                                            <div class="col">
+                                                <input type="submit" class="btn btn-login alter_status" name="`+tipo+`" value="Confirmar">
                                             </div>
                                         </div>
                                     </div>`;
@@ -39,13 +36,13 @@ $(function() {
 
         var fullCard = cardHeader+conteudo+cardBody;
 
-        $(".conteudo").append(fullCard);
+        $(".conteudo_modal_sm").append(fullCard);
 
-        $('.modal_system_open_class').modal('show')
+        $('.modal_system_success_class').modal('show')
     });
 
     $(document).on('click', '.modal_sistem_close', function() {
-        $('.modal_system_open_class').modal('hide')
+        $('.modal_system_success_class').modal('hide')
     });
 
 });
