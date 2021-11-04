@@ -7,15 +7,15 @@
         return $userStat->validar();
     }
 
-    if (isset($_POST["verificarStatus"])):
+    if (isset($_POST["verificarStatus"])){
         require_once "../commandsclass/Manutencao.class.php";
         
         //instanciando classe
         $userStat = new Manutencao();
-        if($userStat->validar()):
+        if($userStat->validar()){
             echo "true";
-        else:
+        } else {
             echo "false";
-        endif;
-    endif;
+        }
+    }
 ?>

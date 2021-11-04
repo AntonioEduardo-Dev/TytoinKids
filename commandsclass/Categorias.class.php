@@ -3,9 +3,10 @@
 
     class Categorias{
         public function listarCategorias(){
-            $objConexao = new Connection();
-            $connection = $objConexao->conectar();
             try {
+                $objConexao = new Connection();
+                $connection = $objConexao->conectar();
+
                 $sql = "SELECT * FROM categorias";
             
                 $consulta = $connection->prepare($sql);
@@ -32,9 +33,10 @@
         }
         
         public function listarSelectCategorias(){
-            $objConexao = new Connection();
-            $connection = $objConexao->conectar();
             try {
+                $objConexao = new Connection();
+                $connection = $objConexao->conectar();
+
                 $sql = "SELECT * FROM categorias LIMIT 10";
             
                 $consulta = $connection->prepare($sql);
@@ -60,9 +62,10 @@
         }
 
         public function quantidadeCategorias(){
-            $objConexao = new Connection();
-            $connection = $objConexao->conectar();
             try {
+                $objConexao = new Connection();
+                $connection = $objConexao->conectar();
+
                 $sql = "SELECT * FROM categorias";
             
                 $consulta = $connection->prepare($sql);
@@ -79,9 +82,10 @@
         }
 
         public function cadastrar($nome){
-            $objConexao = new Connection();
-            $connection = $objConexao->conectar();
             try {
+                $objConexao = new Connection();
+                $connection = $objConexao->conectar();
+
                 $sql = "INSERT INTO categorias(id_categoria, nome_categoria) VALUES (NULL, :nome)";
 
                 $cadastrar = $connection->prepare($sql);
@@ -101,9 +105,10 @@
         }
 
         public function apagarCategorias($id_categoria){
-            $objConexao = new Connection();
-            $connection = $objConexao->conectar();
             try {
+                $objConexao = new Connection();
+                $connection = $objConexao->conectar();
+                
                 $sql = "DELETE FROM categorias WHERE categorias.id_categoria = :id_categoria";
                 $apagar = $connection->prepare($sql);
                 $apagar->bindValue(":id_categoria", $id_categoria);

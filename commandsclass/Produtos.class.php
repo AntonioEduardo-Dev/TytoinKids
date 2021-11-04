@@ -3,9 +3,10 @@
 
     class Produtos{
         public function listar(){
-            $objConexao = new Connection();
-            $connection = $objConexao->conectar();
             try {
+                $objConexao = new Connection();
+                $connection = $objConexao->conectar();
+
                 $sql = "SELECT * FROM produtos INNER JOIN categorias ON produtos.id_categoria_fk = categorias.id_categoria WHERE 1";
             
                 $consulta = $connection->prepare($sql);
@@ -49,9 +50,10 @@
         }
         
         public function listarCategorias(){
-            $objConexao = new Connection();
-            $connection = $objConexao->conectar();
             try {
+                $objConexao = new Connection();
+                $connection = $objConexao->conectar();
+
                 $sql = "SELECT DISTINCT(categorias.nome_categoria) 
                         FROM categorias INNER JOIN produtos 
                         ON categorias.id_categoria = produtos.id_categoria_fk 
@@ -81,9 +83,10 @@
         }
 
         public function listarCategoriasFilter(){
-            $objConexao = new Connection();
-            $connection = $objConexao->conectar();
             try {
+                $objConexao = new Connection();
+                $connection = $objConexao->conectar();
+
                 $sql = "SELECT categorias.nome_categoria, (SELECT count(produtos.id_produto) FROM produtos WHERE produtos.id_categoria_fk=categorias.id_categoria ) as quantidade FROM categorias WHERE 1 = 1 LIMIT 10";
             
                 $consulta = $connection->prepare($sql);
@@ -115,9 +118,10 @@
         }
 
         public function listarProduto($id_produto){
-            $objConexao = new Connection();
-            $connection = $objConexao->conectar();
             try {
+                $objConexao = new Connection();
+                $connection = $objConexao->conectar();
+
                 $sql = "SELECT * FROM produtos INNER JOIN categorias ON produtos.id_categoria_fk = categorias.id_categoria WHERE id_produto = :id_produto";
             
                 $consulta = $connection->prepare($sql);
@@ -141,9 +145,10 @@
         }
 
         public function listarProdutoCores($id_produto){
-            $objConexao = new Connection();
-            $connection = $objConexao->conectar();
             try {
+                $objConexao = new Connection();
+                $connection = $objConexao->conectar();
+
                 $sql = "SELECT cor FROM cor_produto WHERE cor_produto.id_produto_fk = :id_produto";
             
                 $consulta = $connection->prepare($sql);
@@ -170,9 +175,10 @@
         }
 
         public function listarProdutoTamanhos($id_produto){
-            $objConexao = new Connection();
-            $connection = $objConexao->conectar();
             try {
+                $objConexao = new Connection();
+                $connection = $objConexao->conectar();
+
                 $sql = "SELECT tamanho FROM tamanho_produto WHERE tamanho_produto.id_produto_fk = :id_produto";
             
                 $consulta = $connection->prepare($sql);
@@ -199,9 +205,10 @@
         }
         
         public function quantidadeProdutos(){
-            $objConexao = new Connection();
-            $connection = $objConexao->conectar();
             try {
+                $objConexao = new Connection();
+                $connection = $objConexao->conectar();
+
                 $sql = "SELECT * FROM produtos";
             
                 $consulta = $connection->prepare($sql);
@@ -219,9 +226,10 @@
         }
 
         public function quantidadeProdutosDisponiveis($id_produto){
-            $objConexao = new Connection();
-            $connection = $objConexao->conectar();
             try {
+                $objConexao = new Connection();
+                $connection = $objConexao->conectar();
+
                 $sql = "SELECT quatidade_disponivel FROM produtos WHERE produtos.id_produto = :id_produto";
             
                 $consulta = $connection->prepare($sql);
@@ -243,10 +251,11 @@
             }
         }
 
-        public function listarAll($id_produto){
-            $objConexao = new Connection();
-            $connection = $objConexao->conectar();
+        public function listarTodos($id_produto){
             try {
+                $objConexao = new Connection();
+                $connection = $objConexao->conectar();
+
                 $sql = "SELECT * FROM produtos WHERE produtos.id_produto = :id_produto";
             
                 $consulta = $connection->prepare($sql);
@@ -270,10 +279,10 @@
         }
 
         public function cadastrar($categoria, $nome, $preco, $quantidade, $imagem){
-            $objConexao = new Connection();
-            $connection = $objConexao->conectar();
-
             try {
+                $objConexao = new Connection();
+                $connection = $objConexao->conectar();
+
                 $sql = "INSERT INTO produtos(id_produto, id_categoria_fk, nome_produto, preco_produto, quatidade_disponivel, imagem_produto) VALUES (NULL, :categoria, :nome, :preco, :quantidade, :imagem)";
 
                 $cadastrar = $connection->prepare($sql);
@@ -297,10 +306,10 @@
         }
         
         public function cadastrarCorProduto($id_produto, $cor){
-            $objConexao = new Connection();
-            $connection = $objConexao->conectar();
-
             try {
+                $objConexao = new Connection();
+                $connection = $objConexao->conectar();
+    
                 $sql = "INSERT INTO cor_produto (id_cor_produto, id_produto_fk, cor) VALUES (NULL, :id_produto, :cor)";
 
                 $cadastrar = $connection->prepare($sql);
@@ -321,10 +330,10 @@
         }
 
         public function cadastrarTamProduto($id_produto, $tamanho){
-            $objConexao = new Connection();
-            $connection = $objConexao->conectar();
-
             try {
+                $objConexao = new Connection();
+                $connection = $objConexao->conectar();
+    
                 $sql = "INSERT INTO tamanho_produto (id_tamanho_produto, id_produto_fk, tamanho) VALUES (NULL, :id_produto, :tamanho)";
 
                 $cadastrar = $connection->prepare($sql);
@@ -345,10 +354,10 @@
         }
 
         public function editar($id_produto,$nome,$preco,$quantidade,$imagem){
-            $objConexao = new Connection();
-            $connection = $objConexao->conectar();
-
             try {
+                $objConexao = new Connection();
+                $connection = $objConexao->conectar();
+    
                 $sql = "UPDATE produtos SET nome_produto = :nome, preco_produto = :preco, quatidade_disponivel = :quantidade, imagem_produto = :imagem WHERE produtos.id_produto = :id_produto";
 
                 $atualizar = $connection->prepare($sql);
@@ -372,10 +381,10 @@
         }
 
         public function apagar($id_produto){
-            $objConexao = new Connection();
-            $connection = $objConexao->conectar();
-
             try {
+                $objConexao = new Connection();
+                $connection = $objConexao->conectar();
+    
                 $sql = "DELETE FROM produtos WHERE produtos.id_produto = :id_produto";
 
                 $apagar = $connection->prepare($sql);

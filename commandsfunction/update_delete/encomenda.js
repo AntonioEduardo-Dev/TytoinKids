@@ -1,4 +1,4 @@
-/* INSERIR PRODUTOS */
+/* INSERIR ENCOMENDA */
 $(function() {
 
     $(document).on('click', '.modal_system_open', function() {

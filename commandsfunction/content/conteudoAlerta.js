@@ -3,8 +3,8 @@ function exibirModalAlerta(msgModal, tipoModal, corModal) {
     if (tipoModal) {
         $(".conteudo_alerta").html('');
 
-        var conteudo = `<div class="alert `+corModal+`" role="alert">
-                            <h4 class="alert-heading">`+msgModal+`</h4>
+        var conteudo = `<div class="alert ${corModal}" role="alert">
+                            <h4 class="alert-heading">${msgModal}</h4>
                             <hr>
                             <p>Ocorreu tudo como o planejado!</p>
                         </div>`;
@@ -45,10 +45,10 @@ function exibirModalAlerta(msgModal, tipoModal, corModal) {
 
         $(".conteudo_alerta").html('');
 
-        var conteudo = `<div class="alert `+corModal+`" role="alert">
+        var conteudo = `<div class="alert ${corModal}" role="alert">
                             <h4 class="alert-heading">Oops!!!</h4>
                             <hr>
-                            <p>`+msgModal+`</p>
+                            <p>${msgModal}</p>
                         </div>`;
 
         if ($(".conteudo_alerta").html(conteudo)) {

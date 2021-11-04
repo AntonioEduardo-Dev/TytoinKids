@@ -4,17 +4,23 @@
 
     if (isset($_POST["btn_realizar_login"])) {
 
-        if ((isset($_POST["id_email"])) && (isset($_POST["id_senha"])) && (($_POST["id_email"]) != "") && (($_POST["id_senha"]) != "")):
+        if ((isset($_POST["id_email"])) 
+            && (isset($_POST["id_senha"])) 
+            && (($_POST["id_email"]) != "") 
+            && (($_POST["id_senha"]) != ""))
+        {
             $email = $_POST["id_email"];
             $senha = $_POST["id_senha"];
-            if(filter_var($email, FILTER_VALIDATE_EMAIL)):
-                if(is_string($email) && is_string($senha)):
+
+            if(filter_var($email, FILTER_VALIDATE_EMAIL)){
+                if(is_string($email) && is_string($senha)){
+
                     $autenticar = new Authentication($email,$senha);
                     $retorno    = $autenticar->validar();
                     
-                    if(!empty($_SESSION["user"])):
+                    if(!empty($_SESSION["user"])){
                         session_unset();
-                    endif;
+                    };
                     
                     $user = [
                         "id"        => (($retorno[0]["id_usuario"]) != "")         ? $retorno[0]["id_usuario"]                 : 0,
@@ -25,19 +31,22 @@
                         "acesso"    => (($retorno[0]["primeiro_acesso"]) != "")    ? $retorno[0]["primeiro_acesso"]            : 1
                     ];
                     
-                    if($_SESSION["user"] = $user):
+                    if($_SESSION["user"] = $user){
                         echo "Login realizado com sucesso!-|-alert-success";
-                    else:
+                    }else{
                         echo "alert_notification_error!-|-alert-danger";
-                    endif;
-                else:
+                    };
+
+                }else{
                     echo "alert_notification_error!-|-alert-danger";
-                endif;
-            else:
+                };
+
+            }else{
                 echo "alert_notification_error!-|-alert-danger";
-            endif;
-        else:
+            };
+            
+        }else{
             echo "alert_notification_error!-|-alert-danger";
-        endif;
+        };
     }
 ?>

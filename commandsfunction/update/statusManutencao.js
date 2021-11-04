@@ -4,6 +4,7 @@ $(function() {
 
     $(document).on('click', '.alter_status', function() {
         var tipo = $(this).attr('name');
+        var status = 0;
         
         if(tipo === "Ativar"){
             status = 1;

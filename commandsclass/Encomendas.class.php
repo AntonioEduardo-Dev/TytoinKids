@@ -3,10 +3,10 @@
 
     class Encomendas{
         public function quantidadeEncomendas(){
-            $objConexao = new Connection();
-            $connection = $objConexao->conectar();
-
             try {
+                $objConexao = new Connection();
+                $connection = $objConexao->conectar();
+
                 $sql = "SELECT * FROM encomendas";
             
                 $consulta = $connection->prepare($sql);
@@ -17,29 +17,43 @@
                 return $vl;
                 
             } catch (PDOException $e) {
-                echo "Erro de listar: " . $e->getMessage();
+                echo "Erro ao listar quantidade: " . $e->getMessage();
             } catch (Exception $e) {
                 echo "Erro: " . $e->getMessage();
             }
         }
         public function cadastrarEncomendas(){
-            $objConexao = new Connection();
-            $connection = $objConexao->conectar();
-
             try {
+                $objConexao = new Connection();
+                $connection = $objConexao->conectar();
+    
             } catch (PDOException $e) {
-                echo "Erro de cadastrar: " . $e->getMessage();
+                echo "Erro ao cadastrar: " . $e->getMessage();
             } catch (Exception $e) {
                 echo "Erro: " . $e->getMessage();
             }
         }
         public function editarEncomendas(){
-            $objConexao = new Connection();
-            $connection = $objConexao->conectar();
+            try {
+                $objConexao = new Connection();
+                $connection = $objConexao->conectar();
+    
+            } catch (PDOException $e) {
+                echo "Erro ao editar: " . $e->getMessage();
+            } catch (Exception $e) {
+                echo "Erro: " . $e->getMessage();
+            }
         }
         public function apagarEncomendas(){
-            $objConexao = new Connection();
-            $connection = $objConexao->conectar();
+            try {
+                $objConexao = new Connection();
+                $connection = $objConexao->conectar();
+    
+            } catch (PDOException $e) {
+                echo "Erro ao apagar: " . $e->getMessage();
+            } catch (Exception $e) {
+                echo "Erro: " . $e->getMessage();
+            }
         }
     }
 ?>

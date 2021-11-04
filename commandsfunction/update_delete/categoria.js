@@ -1,4 +1,4 @@
-/* INSERIR PRODUTOS */
+/* INSERIR CATEGORIA */
 $(function() {
     $(document).on('click', '.modal_system_open', function() {
         value = ($(this).attr('name')).split("-|-");

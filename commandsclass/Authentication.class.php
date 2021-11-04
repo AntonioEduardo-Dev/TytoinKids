@@ -41,17 +41,11 @@
                 $consulta->bindValue(":email", $email);
                 $consulta->bindValue(":senha", $senha);
                 $consulta->execute();
-
-                $vl = $consulta->rowCount();
                 
-                if ($vl > 0):
-                    return $consulta->fetchAll();
-                else:
-                    return false;
-                endif;
-
+                return ($consulta->execute() && $consulta->rowCount() > 0) ? $consulta->fetchAll() : false;
+                // return ($consulta->execute() && $consulta->rowCount() > 0) ? $consulta->fetch($connection::FETCH_ASSOC) : false;
             } catch (PDOException $e) {
-                echo "Erro de cadastrar: " . $e->getMessage();
+                echo "Erro de validação: " . $e->getMessage();
             } catch (Exception $e) {
                 echo "Erro: " . $e->getMessage();
             }

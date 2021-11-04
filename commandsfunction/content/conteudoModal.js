@@ -9,7 +9,7 @@ function exibirModal(msgModal, tipoModal) {
                             </div>
                             <hr>
                             <div class="form-group">
-                                <h4>`+msgModal+`</h4>
+                                <h4>${msgModal}</h4>
                             </div>
                         </div>`;
 
@@ -52,7 +52,7 @@ function exibirModal(msgModal, tipoModal) {
                             </div>
                             <hr>
                             <div class="form-group">
-                                <h5>Erro: `+msgModal+`</h5>
+                                <h5>Erro: ${msgModal}</h5>
                             </div>
                         </div>`;
 

@@ -24,7 +24,7 @@ $(function() {
                                         <h4>Voçê tem certeza da sua escolha?</h4>
                                         <div class="form-group row">
                                             <div class="col">
-                                                <input type="submit" class="btn btn-login alter_status" name="`+tipo+`" value="Confirmar">
+                                                <input type="submit" class="btn btn-login alter_status" name="${tipo}" value="Confirmar">
                                             </div>
                                         </div>
                                     </div>`;

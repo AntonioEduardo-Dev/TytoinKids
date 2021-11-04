@@ -48,7 +48,7 @@ $(function() {
                             <div class="card-header">
                                 <div class="form-group row">
                                     <div class="col mt-2">
-                                        <h4>`+titulo+`</h4>
+                                        <h4>${titulo}</h4>
                                     </div>
                                     <div class="col mt-3 mr-3">
                                         <h4><a><i class="fas fa-window-close close-btn float-right" data-dismiss="modal"></i></a></h4>
@@ -82,9 +82,9 @@ $(function() {
                 content += `<div class="col text-center">
                                 <div class="single-product-item">
                                     <div class="product-image">
-                                        <a href="`+llinks[index]+`" name="btn_nm_categoria"><img src="../commandsview/assets/img/menu/`+limagens[index]+`" alt=""></a>
+                                        <a href="${llinks[index]}" name="btn_nm_categoria"><img src="../commandsview/assets/img/menu/${limagens[index]}" alt=""></a>
                                     </div>
-                                    <a href="`+llinks[index]+`" name="btn_nm_categoria"><h3>`+lsubTitulos[index]+`</h3></a>
+                                    <a href="${llinks[index]}" name="btn_nm_categoria"><h3>${lsubTitulos[index]}</h3></a>
                                 </div>
                             </div>`;
             }

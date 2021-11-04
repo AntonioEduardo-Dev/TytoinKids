@@ -3,7 +3,6 @@
 
     class Manutencao{
         public function validar(){
-            
             $objConexao = new Connection();
             $connection = $objConexao->conectar();
             
@@ -33,22 +32,16 @@
         }
 
         public function alterar($statusManutencao){
-
-            $objConexao = new Connection();
-            $connection = $objConexao->conectar();
-            
             try {
+                $objConexao = new Connection();
+                $connection = $objConexao->conectar();
+
                 $sql = "UPDATE manutencao SET status = :statusManutencao WHERE manutencao.id_manutencao = 1";
                 
                 $consulta = $connection->prepare($sql);
                 $consulta->bindValue(":statusManutencao", $statusManutencao);
                 
-                if($consulta->execute()):
-                    return true;
-                else:
-                    return false;
-                endif;
-                
+                return ($consulta->execute()) ? true : false;
             } catch (PDOException $e) {
                 echo "Erro de cadastrar: " . $e->getMessage();
             } catch (Exception $e) {
