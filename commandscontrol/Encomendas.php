@@ -8,9 +8,9 @@
     $objProduto = new Produtos();
 
     //execução de métodos
-    if (isset($_POST["cart"])){
-        $id_produto = $_POST["id_produto"];
-        $qtd_produto = intval($_POST["qtd_produto"]);
+    if (isset($_GET["cart"])){
+        $id_produto = $_GET["id_produto"];
+        $qtd_produto = intval($_GET["qtd_produto"]);
         if($qtd_produto > 0){
             $qtd_produto_disp = intval($objProduto->quantidadeProdutosDisponiveis($id_produto));
             
@@ -60,8 +60,8 @@
         };
     };
 
-    if(isset($_POST["btn_unset"])){
-        $linha = $_POST["linha"];
+    if(isset($_GET["btn_unset"])){
+        $linha = $_GET["linha"];
         if(isset($_SESSION["cart"])){
             unset($_SESSION["cart"][$linha]);
             if(empty($_SESSION["cart"])){

@@ -60,9 +60,9 @@ $(function() {
             linha           : $(this).attr('data-filter')
         }
         
-        $.post('commandscontrol/Encomendas.php', dados, function(response) {
-            var tipo = response.indexOf("alert_notification_error");
-            retorno = response.split("-|-");
+        $.get('commandscontrol/Encomendas.php', dados, function(retorna) {
+            var tipo = retorna.indexOf("alert_notification_error");
+            retorno = retorna.split("-|-");
 
             if (tipo === -1) {
                 exibirModal(retorno[0],true);

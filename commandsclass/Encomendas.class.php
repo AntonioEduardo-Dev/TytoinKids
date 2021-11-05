@@ -10,11 +10,8 @@
                 $sql = "SELECT * FROM encomendas";
             
                 $consulta = $connection->prepare($sql);
-                $consulta->execute();
-
-                $vl = $consulta->rowCount();
-
-                return $vl;
+                
+                return (($consulta->execute() && $consulta->rowCount() > 0)? $consulta->rowCount() : 0 );
                 
             } catch (PDOException $e) {
                 echo "Erro ao listar quantidade: " . $e->getMessage();

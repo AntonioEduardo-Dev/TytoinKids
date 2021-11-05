@@ -1,16 +1,16 @@
 <?php
     session_start();
-    require_once "../../commandsclass/new/Encomendas.class.php";
-    require_once "../../commandsclass/new/Produtos.class.php";
+    require_once "../commandsclass/Encomendas.class.php";
+    require_once "../commandsclass/Produtos.class.php";
 
     //instanciando classes
     $objEncomenda = new Encomendas();
     $objProduto = new Produtos();
 
     //execução de métodos
-    if (isset($_GET["cart"])){
-        $id_produto = $_GET["id_produto"];
-        $qtd_produto = intval($_GET["qtd_produto"]);
+    if (isset($_POST["cart"])){
+        $id_produto = $_POST["id_produto"];
+        $qtd_produto = intval($_POST["qtd_produto"]);
         if($qtd_produto > 0){
             $qtd_produto_disp = intval($objProduto->quantidadeProdutosDisponiveis($id_produto));
             

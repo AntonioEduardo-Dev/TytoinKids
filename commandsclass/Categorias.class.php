@@ -10,23 +10,10 @@
                 $sql = "SELECT * FROM categorias";
             
                 $consulta = $connection->prepare($sql);
-                $consulta->execute();
-
-                $vl = $consulta->rowCount();
-
-                if($vl > 0):
-                    $dados = $consulta->fetchAll();
-                    echo '<ul>
-                            <li class="li active" data-filter="*">Todos</li>';
-                    foreach ($dados as $indice => $dado) {
-                        echo '
-                        <li class="li" data-filter=".'.$dado['nome_categoria'].'">'.$dado['nome_categoria'].'</li>';
-                    }
-                    echo "</ul>";
-                endif;
-
+                
+                return (($consulta->execute() && $consulta->rowCount() > 0)? $consulta->fetchAll($connection::FETCH_ASSOC) : "" );
             } catch (PDOException $e) {
-                echo "Erro de listar: " . $e->getMessage();
+                echo "Erro ao listar: " . $e->getMessage();
             } catch (Exception $e) {
                 echo "Erro: " . $e->getMessage();
             }
@@ -40,22 +27,10 @@
                 $sql = "SELECT * FROM categorias LIMIT 10";
             
                 $consulta = $connection->prepare($sql);
-                $consulta->execute();
-
-                $vl = $consulta->rowCount();
-
-                if($vl > 0):
-                    $dados = $consulta->fetchAll();
-                    echo '<option value="0" selected style="display: none;">Categoria do produto*</option>';
-                    foreach ($dados as $indice => $dado) {
-                        echo '<option value="'.$dado['id_categoria'].'">'.$dado['nome_categoria'].'</option>';
-                    }
-                else:
-                    echo '<option value="0" selected style="display: none;">Erro, Cadastre uma categoria no sistema!</option>';
-                endif;
-
+                
+                return (($consulta->execute() && $consulta->rowCount() > 0)? $consulta->fetchAll($connection::FETCH_ASSOC) : "" );
             } catch (PDOException $e) {
-                echo "Erro de listar: " . $e->getMessage();
+                echo "Erro ao listar: " . $e->getMessage();
             } catch (Exception $e) {
                 echo "Erro: " . $e->getMessage();
             }
@@ -67,15 +42,12 @@
                 $connection = $objConexao->conectar();
 
                 $sql = "SELECT * FROM categorias";
-            
                 $consulta = $connection->prepare($sql);
-                $consulta->execute();
-
-                $vl = $consulta->rowCount();
-
-                return $vl;
+                
+                return (($consulta->execute() && $consulta->rowCount() > 0)? $consulta->rowCount() : 0 );
+                
             } catch (PDOException $e) {
-                echo "Erro de listar: " . $e->getMessage();
+                echo "Erro ao listar: " . $e->getMessage();
             } catch (Exception $e) {
                 echo "Erro: " . $e->getMessage();
             }
@@ -91,14 +63,10 @@
                 $cadastrar = $connection->prepare($sql);
                 $cadastrar->bindValue(":nome", $nome);
 
-                if($cadastrar->execute()):
-                    return true;
-                else:
-                    return false;
-                endif;
+                return (($cadastrar->execute()) ? true : false);
 
             } catch (PDOException $e) {
-                echo "Erro de cadastrar: " . $e->getMessage();
+                echo "Erro ao cadastrar: " . $e->getMessage();
             } catch (Exception $e) {
                 echo "Erro: " . $e->getMessage();
             }
@@ -113,14 +81,10 @@
                 $apagar = $connection->prepare($sql);
                 $apagar->bindValue(":id_categoria", $id_categoria);
 
-                if($apagar->execute()):
-                    return true;
-                else:
-                    return false;
-                endif;
-
+                return (($apagar->execute()) ? true : false);
+                
             } catch (PDOException $e) {
-                echo "Erro de apagar: " . $e->getMessage();
+                echo "Erro ao apagar: " . $e->getMessage();
             } catch (Exception $e) {
                 echo "Erro: " . $e->getMessage();
             }

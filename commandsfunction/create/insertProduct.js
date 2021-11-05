@@ -4,7 +4,20 @@ $(function() {
     listarCategorias = {listarCategorias : true}
 
     $.post('../commandscontrol/Categorias.php', listarCategorias, function(retorna) {
-        $("#id_categ").html(retorna);
+        var objCateg = jQuery.parseJSON(retorna);
+        var content = ``;
+
+        if (objCateg.type == "success") {
+            content = `<option selected style="display: none;">Categoria do produto*</option>`;
+
+            $.each(objCateg.data, function (indice, dados_categoria) {
+                content += `<option value="${dados_categoria.id_categoria}">${dados_categoria.nome_categoria}</option>`;
+            })
+        }else{
+            content = `<option selected style="display: none;">Cadastre uma categoria no sistema!</option>`;
+        }
+
+        $("#id_categ").html(content);
     }); 
 
     $(document).on('click', '#id_cad', function() {

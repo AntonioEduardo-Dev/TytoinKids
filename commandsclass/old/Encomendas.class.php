@@ -1,5 +1,5 @@
 <?php
-    require_once "../../commandsclass/Connection.class.php";
+    require_once "Connection.class.php";
 
     class Encomendas{
         public function quantidadeEncomendas(){
@@ -10,8 +10,11 @@
                 $sql = "SELECT * FROM encomendas";
             
                 $consulta = $connection->prepare($sql);
-                
-                return (($consulta->execute() && $consulta->rowCount() > 0)? $consulta->rowCount() : 0 );
+                $consulta->execute();
+
+                $vl = $consulta->rowCount();
+
+                return $vl;
                 
             } catch (PDOException $e) {
                 echo "Erro ao listar quantidade: " . $e->getMessage();

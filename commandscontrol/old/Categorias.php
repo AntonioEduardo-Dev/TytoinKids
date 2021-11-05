@@ -1,40 +1,16 @@
 <?php
-    require_once "../../commandsclass/new/Categorias.class.php";
+    require_once "../commandsclass/Categorias.class.php";
     
     //instanciando classes
     $objCategoria = new Categorias();
 
     //execução de métodos
     if(isset($_POST['listar'])){
-        if ($dados = $objCategoria->listarCategorias()) {
-            $retorno = [
-                "type" => "success", 
-                "data" => $dados,
-            ];
-        } else {
-            $retorno = [
-                "type" => "error",
-                "data" => "Nenhuma categoria cadastrada",
-            ];
-        }
-
-        echo json_encode($retorno);
+        $objCategoria->listarCategorias();
     };
 
     if(isset($_POST['listarCategorias'])){
-        if ($dados = $objCategoria->listarSelectCategorias()) {
-            $retorno = [
-                "type" => "success", 
-                "data" => $dados,
-            ];
-        } else {
-            $retorno = [
-                "type" => "error",
-                "data" => "Nenhuma categoria cadastrada",
-            ];
-        }
-
-        echo json_encode($retorno);
+        $objCategoria->listarSelectCategorias();
     };
 
     if (isset($_POST['btn_cadastrar'])){

@@ -1,76 +1,25 @@
 <?php
-    require_once "../../commandsclass/new/Produtos.class.php";
+    require_once "../commandsclass/Produtos.class.php";
 
-    // Instanciando classes
+    //instanciando classes
     $objProduto = new Produtos();
 
-    // Execução de métodos
+    //execução de métodos
     
-    if (isset($_GET['listarCategorias'])) {
-        if ($dados = $objProduto->listarCategorias()) {
-            $retorno = [
-                "type" => "success", 
-                "data" => $dados,
-            ];
-        } else {
-            $retorno = [
-                "type" => "error",
-                "data" => "Nenhuma categoria cadastrada",
-            ];
-        }
-
-        echo json_encode($retorno);
+    if (isset($_POST['listarCategorias'])) {
+        $objProduto->listarCategorias();
     }
 
-    if (isset($_GET['listarCategoriasFilter'])) {
-        if ($dados = $objProduto->listarCategoriasFilter()) {
-            $retorno = [
-                "type" => "success", 
-                "data" => $dados,
-            ];
-        } else {
-            $retorno = [
-                "type" => "error",
-                "data" => "Nenhuma categoria filtrada",
-            ];
-        }
-
-        echo json_encode($retorno);
+    if (isset($_POST['listarCategoriasFilter'])) {
+        $objProduto->listarCategoriasFilter();
     }
 
-    if (isset($_GET['listarProdutos'])) {
-        if ($dados = $objProduto->listar()) {
-            $retorno = [
-                "type" => "success", 
-                "data" => $dados,
-            ];
-        } else {
-            $retorno = [
-                "type" => "error",
-                "data" => "Nenhum produto cadastrado",
-            ];
-        }
-
-        echo json_encode($retorno);
+    if (isset($_POST['listarProdutos'])) {
+        $objProduto->listar();
     }
 
-    if (isset($_GET['listarProduto'])) {
-        $objProduto->listarProduto(intval($_GET['id_produto']));
-        
-        
-        if ($dados = $objProduto->listarProduto(intval($_GET['id_produto']))) {
-            $retorno = [
-                "type" => "success", 
-                "data" => $dados,
-            ];
-        } else {
-            $retorno = [
-                "type" => "error",
-                "data" => "Nenhum produto cadastrado",
-            ];
-        }
-
-        echo json_encode($retorno);
+    if (isset($_POST['listarProduto'])) {
+        $objProduto->listarProduto(intval($_POST['id_produto']));
     }
 
     if (isset($_POST['btn_listar_produto'])) {

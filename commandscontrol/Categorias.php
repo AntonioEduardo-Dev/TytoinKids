@@ -6,11 +6,35 @@
 
     //execução de métodos
     if(isset($_POST['listar'])){
-        $objCategoria->listarCategorias();
+        if ($dados = $objCategoria->listarCategorias()) {
+            $retorno = [
+                "type" => "success", 
+                "data" => $dados,
+            ];
+        } else {
+            $retorno = [
+                "type" => "error",
+                "data" => "Nenhuma categoria cadastrada",
+            ];
+        }
+
+        echo json_encode($retorno);
     };
 
     if(isset($_POST['listarCategorias'])){
-        $objCategoria->listarSelectCategorias();
+        if ($dados = $objCategoria->listarSelectCategorias()) {
+            $retorno = [
+                "type" => "success", 
+                "data" => $dados,
+            ];
+        } else {
+            $retorno = [
+                "type" => "error",
+                "data" => "Nenhuma categoria cadastrada",
+            ];
+        }
+
+        echo json_encode($retorno);
     };
 
     if (isset($_POST['btn_cadastrar'])){

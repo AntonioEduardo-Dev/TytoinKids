@@ -100,8 +100,8 @@
 									</thead>
 									<tbody>
 										<?php 
-										if (isset($_SESSION["cart"])):
-											foreach ($_SESSION['cart'] as $key => $value) :
+										if (isset($_SESSION["cart"])){
+											foreach ($_SESSION['cart'] as $key => $value) {
 												$query = explode(',', $value);
 												echo '<tr class="table-body-row">
 															<td class="product-image"><img src="commandsview/assets/img/images/'.$query[1].'" alt=""></td>
@@ -111,8 +111,12 @@
 															<td class="product-total">'.$query[5].'</td>
 															<td class="product-remove"><h5><a class="delete_item_cart" data-filter="'.$key.'"><i class="far fa-window-close mt-4"></i></a></h5><input type="text" hidden value="'.$key.'"></td>
 														</tr>';
-											endforeach;
-										endif; ?>
+											};
+										}else{
+											echo '<tr class="table-body-row">
+														<td colspan="5">Carrinho Vazio!</td>
+													</tr>';
+										}; ?>
 									</tbody>
 								</table>
 							</div>
@@ -141,21 +145,25 @@
 									</thead>
 									<tbody>
 										<?php 
-											if (isset($_SESSION["cart"])):
+											if (isset($_SESSION["cart"])){
 												$total = 0;
-												foreach ($_SESSION['cart'] as $key => $value) :
+												foreach ($_SESSION['cart'] as $key => $value) {
 													$query = explode(',', $value);
 													echo '<tr class="total-data">
 																<td><strong>'.$query[2].': </strong></td>
 																<td>$'.$query[3].'</td>
 															</tr>';
 													$total = $total + $query[3];
-												endforeach;
+												};
 												echo '	<tr class="total-data">
 															<td><strong>Total: </strong></td>
 															<td>$'.number_format($total, 2).'</td>
 														</tr>';
-											endif;
+											}else{
+												echo '<tr class="table-body-row">
+															<td colspan="2">Carrinho Vazio!</td>
+														</tr>';
+											};
 										?>
 									</tbody>
 								</table>
