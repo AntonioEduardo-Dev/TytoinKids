@@ -29,9 +29,20 @@ $(function () {
     $(document).on('click', '.addToCart', function () {
         var id_produto = $("#id_produto_inp").val();
         var qtd_produto = $("#id_qtd_produto_inp").val();
+        var id_tamanho_selecionado = $("#id_tamanho_selecionado").val();
+        var id_cor_selecionado = $("#id_cor_selecionado").val();
+        var tamanho_selecionado = $("#tamanho_selecionado").val();
+        var cor_selecionado = $("#cor_selecionado").val();
 
         if (id_produto != 0 && id_produto > 0) {
-            produtoCarrinho = { cart : true, id_produto, qtd_produto }
+            produtoCarrinho = { 
+                cart : true, 
+                id_produto, qtd_produto, 
+                id_tamanho_selecionado, id_tamanho_selecionado, 
+                id_cor_selecionado, id_cor_selecionado, 
+                tamanho_selecionado, tamanho_selecionado, 
+                cor_selecionado, cor_selecionado 
+            }
 
             $.get('commandscontrol/Encomendas.php', produtoCarrinho, function (retorna) {
                 var tipo = retorna.indexOf("alert_notification_error");

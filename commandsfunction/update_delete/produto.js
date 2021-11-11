@@ -13,7 +13,6 @@ $(function() {
                     btn_listar_produto  : true,
                     id_produto          : identificador
                 }
-        
                 $.get('../commandscontrol/Produtos.php', dados, function(retorno) {
                     var objProdutos = jQuery.parseJSON(retorno);
 
@@ -166,7 +165,7 @@ $(function() {
                                                 <div class="col-md-6 offset-md-3">
                                                     <div class="row">
                                                         <div class="col-lg-6">
-                                                            <input type="submit" name="cadastrar" value="Editar" id="id_cad">
+                                                            <input type="submit" name="cadastrar" value="Editar" id="id_editar_produto">
                                                         </div>
                                                         <div class="col-lg-6">
                                                             <input type="submit" name="cancelar" value="Cancelar" id="id_cancel" data-dismiss="modal">
@@ -178,7 +177,7 @@ $(function() {
                                     </div>
                                 </div>`;
 
-                            $(".conteudo_modal_lg").append(conteudoModal);
+                            $(".conteudo_modal_lg").html(conteudoModal);
                             $(".modal_system_open_class").modal("hide");
                             $(".modal_system_open_class").modal("show");
                         }
@@ -204,5 +203,9 @@ $(function() {
                 });
             }
         }
+    });
+    
+    $(document).on('click', '#id_editar_produto', function() {
+        value = ($(this).attr('name')).split("-|-");
     });
 });

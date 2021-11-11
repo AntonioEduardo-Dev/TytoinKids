@@ -58,7 +58,7 @@ if($conn){
         $subdata[]  = $row[4];
         $subdata[]  = '<h4 class="product-remove">
                             <a class="modal_system_open" name="btn_nm_edit-|-'.$row[0].' ">
-                                <i class="far fa-window-close"></i>
+                                <i class="fas fa-edit"></i>
                             </a>
                             <a class="modal_system_open" name="btn_nm_remove-|-'.$row[0].' ">
                                 <i class="far fa-window-close"></i>

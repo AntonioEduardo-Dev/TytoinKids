@@ -51,11 +51,11 @@ if($conn){
     foreach($dados as $row){
         $subdata    = array();
         $subdata[]  = $row[0];
-        $subdata[]  = $row[4];
         $subdata[]  = $row[5];
+        $subdata[]  = $row[6];
         $subdata[]  = '<h4 class="product-remove">
                             <a class="modal_system_open" name="btn_nm_edit-|-'.$row[0].' ">
-                                <i class="far fa-window-close"></i>
+                                <i class="fas fa-eye"></i>
                             </a>
                             <a class="modal_system_open" name="btn_nm_remove-|-'.$row[0].' ">
                                 <i class="far fa-window-close"></i>

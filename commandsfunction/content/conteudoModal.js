@@ -24,15 +24,15 @@ function exibirModal(msgModal, tipoModal) {
 
     }else{
         const mensagens = {
-            "alert_notification_error!"                 : "Ocorreu um erro na operação, se o erro persistir entre em contato com a administração!",
+            "alert_notification_error!"                 : "Ocorreu um erro na operação, se o erro persistir entre em contato com o suporte!",
             "alert_notification_error_data_bite!"       : "Verifique dados digitados incorretamente!",
             "alert_notification_error_null!"            : "Verifique possíveis campos nulos!",
             "alert_notification_error_empty!"           : "Preencha todos os campos!",
             "alert_notification_error_categoria_null!"  : "Verifique a categoria selecionada!",
             "alert_notification_error_id!"              : "Ocorreu um erro na consulta do id do produto!",
-            "alert_notification_error_tam_cor!"         : "Ocorreu um erro no modulo de cores e tamanhos, se o erro persistir contate a administração!",
-            "alert_notification_error_cor!"             : "Ocorreu um erro no modulo de cores, se o erro persistir entre em contato com a administração!",
-            "alert_notification_error_tamanho!"         : "Ocorreu um erro no modulo de tamanhos, se o erro persistir entre em contato com a administração!",
+            "alert_notification_error_tam_cor!"         : "Ocorreu um erro no modulo de cores e tamanhos, se o erro persistir contate o suporte!",
+            "alert_notification_error_cor!"             : "Ocorreu um erro no modulo de cores, se o erro persistir entre em contato com o suporte!",
+            "alert_notification_error_tamanho!"         : "Ocorreu um erro no modulo de tamanhos, se o erro persistir entre em contato com o suporte!",
             "alert_notification_error_qtd_disp!"        : "Quantidade solicitada não disponível!",
             "alert_notification_error_qtd_insert!"      : "Verifique a quantidade selecionada!",
             "alert_notification_error_cart_empty!"      : "Carrinho vazio!",

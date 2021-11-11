@@ -98,6 +98,12 @@
 								<div class="col mt-1">
 									<input type="number" placeholder="Ex: 5" id="id_qtd_produto_inp">
 								</div>
+								<div class="col mt-1">
+									<input type="number" placeholder="Ex: 5" id="id_tamanho_selecionado" hidden>
+								</div>
+								<div class="col mt-1">
+									<input type="number" placeholder="Ex: 5" id="id_cor_selecionado" hidden>
+								</div>
 							</div>
 							<div class="form-group row">
 								<div class="col">
