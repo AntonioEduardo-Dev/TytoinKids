@@ -115,7 +115,7 @@
 											};
 										}else{
 											echo '<tr class="table-body-row">
-														<td colspan="5">Carrinho Vazio!</td>
+														<td colspan="7">Carrinho Vazio!</td>
 													</tr>';
 										}; ?>
 									</tbody>
@@ -135,7 +135,7 @@
 								</p>
 							</div>
 						</div>
-						<div class="card bg-light">
+						<div class="card bg-light mt-3">
 							<div class="card-body text-center">
 								<table class="total-table">
 									<thead class="total-table-head">
