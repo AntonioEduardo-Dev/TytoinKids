@@ -1,8 +1,9 @@
 /* lISTAR PRODUTOS */
 $(function () {
     var url_atual = window.location.href;
-
-    if (url = url_atual.split("?id=")) {
+    var url = url_atual.split("?id=");
+    
+    if (url) {
         if (url[1]) {
             listarProduto = { listarProduto : true, id_produto: url[1] }
 
@@ -25,7 +26,7 @@ $(function () {
                     $.each(dados_produto.data, function (indice, dados_produto) {
                         content_tam.push(
                             {
-                                id_tam_produto : dados_produto.id_tam_produto,
+                                id_tam_produto : dados_produto.id_tamanho_produto,
                                 tamanho : dados_produto.tamanho
                             }
                         );
@@ -83,25 +84,22 @@ $(function () {
         var qtd_produto = $("#id_qtd_produto_inp").val();
         var id_tamanho_selecionado = $("#id_tamanho_selecionado").val();
         var id_cor_selecionado = $("#id_cor_selecionado").val();
-        var tamanho_selecionado = $("#tamanho_selecionado").val();
-        var cor_selecionado = $("#cor_selecionado").val();
-
-        tamanho_selecionado = 2;
-        cor_selecionado = 2;
+        var tamanho_selecionado = $( "#id_tamanho_selecionado option:selected" ).text();
+        var cor_selecionado = $( "#id_cor_selecionado option:selected" ).text();
 
         if (id_produto != 0 && id_produto > 0) {
             produtoCarrinho = { 
                 cart : true, 
-                id_produto, qtd_produto, 
-                id_tamanho_selecionado, id_tamanho_selecionado, 
-                id_cor_selecionado, id_cor_selecionado, 
-                tamanho_selecionado, tamanho_selecionado, 
-                cor_selecionado, cor_selecionado 
+                id_produto, 
+                qtd_produto, 
+                id_tamanho_selecionado: id_tamanho_selecionado, 
+                id_cor_selecionado: id_cor_selecionado, 
+                tamanho_selecionado: tamanho_selecionado, 
+                cor_selecionado: cor_selecionado 
             }
 
             $.get('commandscontrol/Encomendas.php', produtoCarrinho, function (retorna) {
                 var tipo = retorna.indexOf("alert_notification_error");
-                console.log(retorna);
                 var values = retorna.split("-|-")
 
                 if (tipo === -1) {

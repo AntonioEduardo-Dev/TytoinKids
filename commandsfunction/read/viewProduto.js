@@ -20,6 +20,5 @@ $(function() {
             var valor = chaveValor[1];
             data[chave] = valor;
         });
-        console.log(data); 
     }
 });

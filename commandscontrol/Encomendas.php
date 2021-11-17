@@ -16,8 +16,6 @@
         $tamanho_selecionado = intval($_GET["tamanho_selecionado"]);
         $cor_selecionado = intval($_GET["cor_selecionado"]);
 
-        $tamanho_selecionado = "M";
-        $cor_selecionado = "Verde";
         if($qtd_produto > 0){
             if ($id_tamanho_selecionado > 0 && $id_tamanho_selecionado != "") {
                 if ($id_cor_selecionado > 0 && $id_cor_selecionado != "") {
