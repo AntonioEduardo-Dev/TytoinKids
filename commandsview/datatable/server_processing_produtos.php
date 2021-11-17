@@ -52,13 +52,13 @@ if($conn){
 
     foreach($dados as $row){
         $subdata    = array();
-        $subdata[]  = '<img src="../commandsview/assets/img/images/'.$row[5].'" height="35" width="35"/>';
+        $subdata[]  = '<img src="commandsview/assets/img/images/'.$row[5].'" height="35" width="35"/>';
         $subdata[]  = $row[2];
         $subdata[]  = $row[3];
         $subdata[]  = $row[4];
         $subdata[]  = '<h4 class="product-remove">
                             <a class="modal_system_open" name="btn_nm_edit-|-'.$row[0].' ">
-                                <i class="fas fa-edit"></i>
+                                <i class="fas fa-eye"></i>
                             </a>
                             <a class="modal_system_open" name="btn_nm_remove-|-'.$row[0].' ">
                                 <i class="far fa-window-close"></i>

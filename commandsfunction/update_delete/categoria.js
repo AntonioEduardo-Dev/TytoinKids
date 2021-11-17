@@ -15,7 +15,7 @@ $(function() {
                     id_categoria    : identificador
                 }
         
-                $.post('../commandscontrol/Categorias.php', dados, function(retorno) {
+                $.post('commandscontrol/Categorias.php', dados, function(retorno) {
                     var tipo = retorno.indexOf("alert_notification_error");
                     retorno = retorno.split("-|-");
                     

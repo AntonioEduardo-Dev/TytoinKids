@@ -18,63 +18,66 @@
 
         $tamanho_selecionado = "M";
         $cor_selecionado = "Verde";
-
-        if (isset($_SESSION["user"]) && $_SESSION["user"]["id"] > 0 && $_SESSION["user"]["tipo_user"] != "convidado") {
-            if($qtd_produto > 0){
-                $qtd_produto_disp = intval($objProduto->quantidadeProdutosDisponiveis($id_produto));
-                
-                if($qtd_produto_disp != 0){
-                    if($qtd_produto_disp != NULL){
-                        if($qtd_produto <= $qtd_produto_disp){
-                            $disponibilidade = true;
+        if($qtd_produto > 0){
+            if ($id_tamanho_selecionado > 0 && $id_tamanho_selecionado != "") {
+                if ($id_cor_selecionado > 0 && $id_cor_selecionado != "") {
+                    $qtd_produto_disp = intval($objProduto->quantidadeProdutosDisponiveis($id_produto));
+                    
+                    if($qtd_produto_disp != 0){
+                        if($qtd_produto_disp != NULL){
+                            if($qtd_produto <= $qtd_produto_disp){
+                                $disponibilidade = true;
+                            }else{
+                                $disponibilidade = false;
+                            };
                         }else{
-                            $disponibilidade = false;
+                            $disponibilidade = true;
                         };
                     }else{
-                        $disponibilidade = true;
+                        $disponibilidade = false;
+                    };
+        
+                    if ($disponibilidade){
+                        $dados = $objProduto->listarTodos($id_produto);
+        
+                        $idProduto              = ((isset($dados[0]["id_produto"]))             ? $dados[0]["id_produto"] : "Indisponível");
+                        $imgProduto             = ((isset($dados[0]["imagem_produto"]))         ? $dados[0]["imagem_produto"] : "productind.jpg");
+                        $nomeProduto            = ((isset($dados[0]["nome_produto"]))           ? $dados[0]["nome_produto"] : "Indisponível");
+                        $preco_produto          = ((isset($dados[0]["preco_produto"]))          ? $dados[0]["preco_produto"] : "Indisponível");
+                        $qtd_produto_disp       = ((isset($dados[0]["quatidade_disponivel"]))   ? $dados[0]["quatidade_disponivel"] : "Indisponível");
+        
+                        if (empty($_SESSION["cart"])){
+                            $_SESSION["cart"] = [];
+                        };
+        
+                        $dados_cart = [
+                            "id_usuario"        => $_SESSION["user"]["id"],
+                            "id_produto"        => $idProduto,
+                            "id_tamanho"        => $id_tamanho_selecionado,
+                            "id_cor"            => $id_cor_selecionado,
+                            "tamanho"           => $tamanho_selecionado,
+                            "cor"               => $cor_selecionado,
+                            "imgProduto"        => $imgProduto,
+                            "nomeProduto"       => $nomeProduto,
+                            "preco_produto"     => $preco_produto,
+                            "qtd_produto"       => $qtd_produto,
+                            "qtd_produto_disp"  => $qtd_produto_disp
+                        ];
+        
+                        array_push($_SESSION["cart"], $dados_cart);
+        
+                        var_dump ($_SESSION["cart"]);
+                    }else{
+                        echo "alert_notification_error_qtd_disp!-|-alert-danger";
                     };
                 }else{
-                    $disponibilidade = false;
-                };
-    
-                if ($disponibilidade){
-                    $dados = $objProduto->listarTodos($id_produto);
-    
-                    $idProduto              = ((isset($dados[0]["id_produto"]))             ? $dados[0]["id_produto"] : "Indisponível");
-                    $imgProduto             = ((isset($dados[0]["imagem_produto"]))         ? $dados[0]["imagem_produto"] : "productind.jpg");
-                    $nomeProduto            = ((isset($dados[0]["nome_produto"]))           ? $dados[0]["nome_produto"] : "Indisponível");
-                    $preco_produto          = ((isset($dados[0]["preco_produto"]))          ? $dados[0]["preco_produto"] : "Indisponível");
-                    $qtd_produto_disp       = ((isset($dados[0]["quatidade_disponivel"]))   ? $dados[0]["quatidade_disponivel"] : "Indisponível");
-    
-                    if (empty($_SESSION["cart"])){
-                        $_SESSION["cart"] = [];
-                    };
-    
-                    $dados_cart = [
-                        "id_usuario"        => $_SESSION["user"]["id"],
-                        "id_produto"        => $idProduto,
-                        "id_tamanho"        => $id_tamanho_selecionado,
-                        "id_cor"            => $id_cor_selecionado,
-                        "tamanho"           => $tamanho_selecionado,
-                        "cor"               => $cor_selecionado,
-                        "imgProduto"        => $imgProduto,
-                        "nomeProduto"       => $nomeProduto,
-                        "preco_produto"     => $preco_produto,
-                        "qtd_produto"       => $qtd_produto,
-                        "qtd_produto_disp"  => $qtd_produto_disp
-                    ];
-    
-                    array_push($_SESSION["cart"], $dados_cart);
-    
-                    var_dump ($_SESSION["cart"]);
-                }else{
-                    echo "alert_notification_error_qtd_disp!-|-alert-danger";
-                };
+                    echo "alert_notification_error_cor_insert!-|-alert-danger";
+                }
             }else{
-                echo "alert_notification_error_qtd_insert!-|-alert-danger";
-            };
+                echo "alert_notification_error_tam_insert!-|-alert-danger";
+            }
         }else{
-            echo "alert_notification_error!-|-alert-danger";
+            echo "alert_notification_error_qtd_insert!-|-alert-danger";
         };
     };
 
@@ -93,23 +96,28 @@
     };
 
     if(isset($_POST["btn_cadastrar"])){
-        if(isset($_SESSION["cart"])){
-            $erro = 0;
-            $data_atual = date("Y-m-d H:i:s");
 
-            foreach ($_SESSION['cart'] as $key => $value) {
-                if (!($objEncomenda->cadastrarEncomendas($value["id_usuario"], $value["id_produto"], $value["id_cor"], $value["id_tamanho"], $value["qtd_produto"], $data_atual))) {
-                    $erro++;
+        if (isset($_SESSION["user"]) && $_SESSION["user"]["id"] > 0 && $_SESSION["user"]["tipo_user"] != "convidado") {
+            if(isset($_SESSION["cart"])){
+                $erro = 0;
+                $data_atual = date("Y-m-d H:i:s");
+
+                foreach ($_SESSION['cart'] as $key => $value) {
+                    if (!($objEncomenda->cadastrarEncomendas($value["id_usuario"], $value["id_produto"], $value["id_cor"], $value["id_tamanho"], $value["qtd_produto"], $data_atual))) {
+                        $erro++;
+                    }
                 }
-            }
 
-            if($erro == 0){
-                echo "Sucesso, encomenda cadastrada!-|-alert-success";
+                if($erro == 0){
+                    echo "Sucesso, encomenda cadastrada!-|-alert-success";
+                }else{
+                    echo "alert_notification_error!-|-alert-danger";
+                }
             }else{
-                echo "alert_notification_error!-|-alert-danger";
-            }
+                echo "alert_notification_error_cart_empty!-|-alert-danger";
+            };
         }else{
-            echo "alert_notification_error_cart_empty!-|-alert-danger";
+            echo "alert_notification_error_session_empty!-|-alert-danger";
         };
     };
     

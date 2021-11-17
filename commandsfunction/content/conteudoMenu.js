@@ -1,3 +1,31 @@
+function bodyModalContent(lqtdblocks, limagens, llinks, lsubTitulos) {
+    var content = ``;
+    
+    if (lqtdblocks > 0) {
+        for (let index = 0; index < lqtdblocks; index++) {
+            content += `<div class="col text-center">
+                            <div class="single-product-item">
+                                <div class="product-image">
+                                    <a href="${llinks[index]}" name="btn_nm_categoria"><img src="commandsview/assets/img/menu/${limagens[index]}" alt=""></a>
+                                </div>
+                                <a href="${llinks[index]}" name="btn_nm_categoria"><h3>${lsubTitulos[index]}</h3></a>
+                            </div>
+                        </div>`;
+        }
+    }else{
+        content += `<div class="col text-center">
+                        <div class="single-product-item">
+                            <div class="product-image">
+                                <a href="menu" name="btn_nm_categoria"><img src="commandsview/assets/img/menu/img_undefined.png" alt=""></a>
+                            </div>
+                            <a href="menu" name="btn_nm_categoria"><h3>Cadastrar</h3></a>
+                        </div>
+                    </div>`;
+    }
+
+    return content;
+}
+
 /* CONTENT MENU */
 $(function() {
 
@@ -11,7 +39,7 @@ $(function() {
                 var titulo      = "Categorias";
                 var qtdblocks   = 2;
                 var imagens     = ['image_menu.png', 'image_menu.png'];
-                var links       = ['../listar/categorias', '../cadastrar/cadastrar_categoria'];
+                var links       = ['listar/categorias', 'cadastrar/cadastrar_categoria'];
                 var subTitulos  = ['Listar', 'Cadastrar'];
 
                 var conteudo = bodyModalContent(qtdblocks, imagens, links, subTitulos);
@@ -20,7 +48,7 @@ $(function() {
                 var titulo      = "Produtos";
                 var qtdblocks   = 2;
                 var imagens     = ['image_menu.png', 'image_menu.png'];
-                var links       = ['../listar/produtos','../cadastrar/cadastrar_produto'];
+                var links       = ['listar/produtos','cadastrar/cadastrar_produto'];
                 var subTitulos  = ['Listar', 'Cadastrar'];
 
                 var conteudo = bodyModalContent(qtdblocks, imagens, links, subTitulos);
@@ -29,7 +57,7 @@ $(function() {
                 var titulo      = "Encomendas";
                 var qtdblocks   = 2;
                 var imagens     = ['image_menu.png', 'image_menu.png'];
-                var links       = ['../listar/encomendas','../cadastrar/cadastrar_produto'];
+                var links       = ['listar/encomendas','cadastrar/cadastrar_produto'];
                 var subTitulos  = ['Listar', 'Cadastrar'];
 
                 var conteudo = bodyModalContent(qtdblocks, imagens, links, subTitulos);
@@ -73,32 +101,4 @@ $(function() {
     $(document).on('click', '.modal_sistem_close', function() {
         $('.modal_system_open_class').modal('hide')
     });
-
-    function bodyModalContent(lqtdblocks, limagens, llinks, lsubTitulos) {
-        var content = ``;
-        
-        if (lqtdblocks > 0) {
-            for (let index = 0; index < lqtdblocks; index++) {
-                content += `<div class="col text-center">
-                                <div class="single-product-item">
-                                    <div class="product-image">
-                                        <a href="${llinks[index]}" name="btn_nm_categoria"><img src="../commandsview/assets/img/menu/${limagens[index]}" alt=""></a>
-                                    </div>
-                                    <a href="${llinks[index]}" name="btn_nm_categoria"><h3>${lsubTitulos[index]}</h3></a>
-                                </div>
-                            </div>`;
-            }
-        }else{
-            content += `<div class="col text-center">
-                            <div class="single-product-item">
-                                <div class="product-image">
-                                    <a href="menu" name="btn_nm_categoria"><img src="../commandsview/assets/img/menu/img_undefined.png" alt=""></a>
-                                </div>
-                                <a href="menu" name="btn_nm_categoria"><h3>Cadastrar</h3></a>
-                            </div>
-                        </div>`;
-        }
-
-        return content;
-    }
 });

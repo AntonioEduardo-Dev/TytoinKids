@@ -5,10 +5,10 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Tytoin_kids - Seja muito bem vindo, Conheça nossos produtos, encomende algo que o agrade para seu filho ou filha, nós somos a Tytoin kids.">
+	<meta name="description" content="Tytoin_kids - Seja muito bem vindo, nós somos a Tytoin kids, conheça nossos produtos, encomende algo que o agrade para sua filha ou filho.">
 
 	<!-- title -->
-	<title>404!</title>
+	<title>Menu</title>
 
 	<!-- favicon -->
 	<link rel="shortcut icon" type="image/png" href="commandsview/assets/img/favicon.png">
@@ -56,54 +56,41 @@
 							</a>
 						</div>
 						<!-- logo -->
+
+						<!-- menu start -->
+						<nav class="main-menu">
+							<ul>
+								<li><a class="cool-hover" href="home">Inicio</a></li>
+								<li><a class="cool-hover" href="sobre">Sobre</a></li>
+								<li><a class="cool-hover" href="contato">Contato</a></li>
+								<li><a class="cool-hover" href="loja">Produtos</a>
+									<ul class="sub-menu">
+										<li><a href="loja">Produtos</a></li>
+										<li><a href="carrinho">Carrinho</a></li>
+									</ul>
+								</li>
+								<?php if (isset($_SESSION["user"]) && $_SESSION["user"]["tipo_user"] === "admin") { ?>
+									<li><a class="cool-hover" href="menu/menu">Menu</a>
+										<ul class="sub-menu">
+											<li><a href="menu/menu">Menu</a></li>
+											<li><a href="menu/menu_status">Manutenção</a></li>
+										</ul>
+									</li>
+								<?php } ?>
+								<li>
+									<div class="header-icons">
+										<a class="shopping-cart cool-hover" href="carrinho"><i class="fas fa-shopping-cart"></i></a>
+                                        <a class="mobile-hide search-bar-icon cool-hover" href="login"><i class="fas fa-user"></i></a>
+									</div>
+								</li>
+							</ul>
+						</nav>
+                        <a class="mobile-show search-bar-icon" href="login"><i class="fas fa-user"></i></a>
+                        <div class="mobile-menu"></div>
+						<!-- menu end -->
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- end header -->
-
-		 
-
-	<!-- error section -->
-	<div class="full-height-section error-section">
-		<div class="full-height-tablecell">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 offset-lg-2 text-center">
-						<div class="error-text">
-							<i class="far fa-sad-cry"></i>
-							<h1>Oops! Não encontrado.</h1>
-							<p>A página solicitada não foi encontrada.</p>
-							<a href="index" class="boxed-btn">Voltar ao Início</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end error section -->
-	
-	<!-- jquery -->
-	<script src="commandsview/assets/js/jquery-1.11.3.min.js"></script>
-	<!-- bootstrap -->
-	<script src="commandsview/assets/bootstrap/js/bootstrap.min.js"></script>
-	<!-- count down -->
-	<script src="commandsview/assets/js/jquery.countdown.js"></script>
-	<!-- isotope -->
-	<script src="commandsview/assets/js/jquery.isotope-3.0.6.min.js"></script>
-	<!-- waypoints -->
-	<script src="commandsview/assets/js/waypoints.js"></script>
-	<!-- owl carousel -->
-	<script src="commandsview/assets/js/owl.carousel.min.js"></script>
-	<!-- magnific popup -->
-	<script src="commandsview/assets/js/jquery.magnific-popup.min.js"></script>
-	<!-- mean menu -->
-	<script src="commandsview/assets/js/jquery.meanmenu.min.js"></script>
-	<!-- sticker js -->
-	<script src="commandsview/assets/js/sticker.js"></script>
-	<!-- main js -->
-	<script src="commandsview/assets/js/main.js"></script>
-	
-	</body>
-</html>

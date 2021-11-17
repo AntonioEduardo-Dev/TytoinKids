@@ -172,7 +172,7 @@ $(function() {
                     id_encomenda   : identificador
                 }
 
-                $.post('../commandscontrol/Encomendas.php', dados, function(retorno) {
+                $.post('commandscontrol/Encomendas.php', dados, function(retorno) {
                     var tipo = retorno.indexOf("alert_notification_error");
                     retorno = retorno.split("-|-");
                     

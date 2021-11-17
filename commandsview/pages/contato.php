@@ -1,53 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-	<base href="http://localhost/projetos/TytoinKids/" />
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Tytoin_kids - Seja muito bem vindo, Conheça nossos produtos, encomende algo que o agrade para seu filho ou filha, nós somos a Tytoin kids.">
-
-	<!-- title -->
-	<title>Contato</title>
-
-	<!-- favicon -->
-	<link rel="shortcut icon" type="image/png" href="commandsview/assets/img/favicon.png">
-	<!-- google font -->
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
-	<!-- fontawesome -->
-	<link rel="stylesheet" href="commandsview/assets/css/all.min.css">
-	<!-- bootstrap -->
-	<link rel="stylesheet" href="commandsview/assets/bootstrap/css/bootstrap.min.css">
-	<!-- owl carousel -->
-	<link rel="stylesheet" href="commandsview/assets/css/owl.carousel.css">
-	<!-- magnific popup -->
-	<link rel="stylesheet" href="commandsview/assets/css/magnific-popup.css">
-	<!-- animate css -->
-	<link rel="stylesheet" href="commandsview/assets/css/animate.css">
-	<!-- mean menu css -->
-	<link rel="stylesheet" href="commandsview/assets/css/meanmenu.min.css">
-	<!-- main style -->
-	<link rel="stylesheet" href="commandsview/assets/css/main.css">
-	<!-- responsive -->
-	<link rel="stylesheet" href="commandsview/assets/css/responsive.css">
-
-</head>
-<body>
-	
-	<!--PreLoader-->
-    <div class="loader">
-        <div class="loader-inner">
-            <div class="circle"></div>
-        </div>
-    </div>
-    <!--PreLoader Ends-->
-	
-	<!-- header -->
-	<div class="top-header-area" id="sticker">
-	</div>
-	<!-- end header -->
- 
+<?php include_once "commandsview/includes/header.php";?>
 	
 	<!-- breadcrumb-section -->
 	<div class="breadcrumb-section breadcrumb-bg">
@@ -140,43 +91,5 @@
 		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26432.42324808999!2d-118.34398767954286!3d34.09378509738966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bf07045279bf%3A0xf67a9a6797bdfae4!2sHollywood%2C%20Los%20Angeles%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1576846473265!5m2!1sen!2sbd" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" class="embed-responsive-item"></iframe>
 	</div>
 	<!-- end google map section -->
-
-
-	<!-- footer -->
-	<div class="footer-area footer-copyright">
-	</div>
-	<!-- end footer -->
 	
-	<!-- copyright -->
-	
-	<div class="copyright footer-copyright-party-end">
-	</div>
-	<!-- end copyright -->
-	
-	<!-- jquery -->
-	<script src="commandsview/assets/js/jquery-1.11.3.min.js"></script>
-	<!-- bootstrap -->
-	<script src="commandsview/assets/bootstrap/js/bootstrap.min.js"></script>
-	<!-- count down -->
-	<script src="commandsview/assets/js/jquery.countdown.js"></script>
-	<!-- isotope -->
-	<script src="commandsview/assets/js/jquery.isotope-3.0.6.min.js"></script>
-	<!-- waypoints -->
-	<script src="commandsview/assets/js/waypoints.js"></script>
-	<!-- owl carousel -->
-	<script src="commandsview/assets/js/owl.carousel.min.js"></script>
-	<!-- magnific popup -->
-	<script src="commandsview/assets/js/jquery.magnific-popup.min.js"></script>
-	<!-- mean menu -->
-	<script src="commandsview/assets/js/jquery.meanmenu.min.js"></script>
-	<!-- sticker js -->
-	<script src="commandsview/assets/js/sticker.js"></script>
-	<!-- form validation js -->
-	<script src="commandsview/assets/js/form-validate.js"></script>
-	<!-- pagina js -->
-	<script src="commandsfunction/content/conteudoPagina.js"></script>
-	<!-- main js -->
-	<script src="commandsview/assets/js/main.js"></script>
-	
-</body>
-</html>
+<?php include_once "commandsview/includes/footer.php";?>

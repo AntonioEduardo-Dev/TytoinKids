@@ -45,10 +45,12 @@
                 $objConexao = new Connection();
                 $connection = $objConexao->conectar();
 
-                $sql = "SELECT categorias.nome_categoria, (SELECT count(produtos.id_produto) FROM produtos 
-                        INNER JOIN categorias ON produtos.id_categoria_fk = categorias.id_categoria 
-                        WHERE produtos.id_categoria_fk = categorias.id_categoria ) as quantidade 
-                        FROM categorias LIMIT 10";
+                $sql = "SELECT DISTINCT(categorias.nome_categoria) AS nome_categoria, 
+                        (SELECT count(produtos.id_produto) 
+                        FROM produtos WHERE produtos.id_categoria_fk = categorias.id_categoria ) AS quantidade 
+                        FROM categorias INNER JOIN produtos ON categorias.id_categoria = produtos.id_categoria_fk 
+                        GROUP BY nome_categoria 
+                        ORDER BY quantidade DESC LIMIT 10";
                 $consulta = $connection->prepare($sql);
                 
                 return (($consulta->execute() && $consulta->rowCount() > 0) 
@@ -66,7 +68,7 @@
                 $objConexao = new Connection();
                 $connection = $objConexao->conectar();
 
-                $sql = "SELECT * FROM produtos INNER JOIN categorias ON produtos.id_categoria_fk = categorias.id_categoria WHERE id_produto = :id_produto";
+                $sql = "SELECT * FROM produtos INNER JOIN categorias ON produtos.id_categoria_fk = categorias.id_categoria INNER JOIN tamanho_produto ON produtos.id_produto = tamanho_produto.id_produto_fk INNER JOIN cor_produto ON produtos.id_produto = tamanho_produto.id_produto_fk WHERE id_produto = :id_produto";
                 $consulta = $connection->prepare($sql);
                 $consulta->bindValue(":id_produto", $id_produto);
                 

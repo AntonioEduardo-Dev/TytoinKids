@@ -3,7 +3,7 @@ $(function() {
 
     listarCategorias = {listarCategorias : true}
 
-    $.post('../commandscontrol/Categorias.php', listarCategorias, function(retorna) {
+    $.post('commandscontrol/Categorias.php', listarCategorias, function(retorna) {
         var objCateg = jQuery.parseJSON(retorna);
         var content = ``;
 
@@ -27,7 +27,7 @@ $(function() {
             data.append('nm_imageUpload', $('#id_imageUpload')[0].files[0]);
 
             $.ajax({
-                url: '../commandscontrol/Produtos.php',
+                url: 'commandscontrol/Produtos.php',
                 data: data,
                 processData: false,
                 contentType: false,
@@ -58,7 +58,7 @@ $(function() {
                     prod_imagem     : prod_imagem
                 }
         
-                $.post('../commandscontrol/Produtos.php', dados, function(idRetorno) {
+                $.post('commandscontrol/Produtos.php', dados, function(idRetorno) {
                     
                     var tipo = idRetorno.indexOf("alert_notification_error");
                     idRetorno = idRetorno.split("-|-");
@@ -85,7 +85,7 @@ $(function() {
                             tamanhos                : tamanhosSelecionados,
                         }
 
-                        $.post('../commandscontrol/Produtos.php', dados, function(response) {
+                        $.post('commandscontrol/Produtos.php', dados, function(response) {
                             var tipo = response.indexOf("alert_notification_error");
                             retorno = response.split("-|-");
 

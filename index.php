@@ -19,7 +19,7 @@
 	/* INDEX REDIRECIONAMENTO DE PÁGINAS */
 	if ($validManutencao && $_SESSION["user"]["tipo_user"] != "admin")
 	{
-		require_once("commandsview/manutencao.php");
+		require_once("commandsview/pages/manutencao.php");
 	}
 	else
 	{
@@ -43,15 +43,15 @@
 			};
 		};
 		
-		if (file_exists("commandsview/" . $URL[2] . ".php"))
+		if (file_exists("commandsview/pages/" . $URL[2] . ".php"))
 		{
 			if(isset($URL[3]))
 			{
-				require_once("commandsview/404.php");
+				require_once("commandsview/pages/404.php");
 			}
 			else
 			{
-				require_once("commandsview/" . $URL[2] . ".php");
+				require_once("commandsview/pages/" . $URL[2] . ".php");
 			};
 		}
 		elseif(is_dir("commandsview/" . $URL[2]))
@@ -62,12 +62,12 @@
 			}
 			else
 			{
-				require_once("commandsview/404.php");
+				require_once("commandsview/pages/404.php");
 			};
 		}
 		else
 		{
-			require_once("commandsview/404.php");
+			require_once("commandsview/pages/404.php");
 		};
 	};
 	/* FIM INDEX REDIRECIONAMENTO DE PÁGINAS */

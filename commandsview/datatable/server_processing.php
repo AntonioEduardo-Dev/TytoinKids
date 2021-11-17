@@ -53,7 +53,7 @@ $data=array();
 
 foreach($dados as $row){
     $subdata    = array();
-    $subdata[]  = '<img src="../commandsview/assets/img/images/'.$row[5].'" height="35" width="35"/>';
+    $subdata[]  = '<img src="commandsview/assets/img/images/'.$row[5].'" height="35" width="35"/>';
     $subdata[]  = $row[2];
     $subdata[]  = $row[3];
     $subdata[]  = $row[4];

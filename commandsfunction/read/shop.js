@@ -65,7 +65,7 @@ $(function () {
                                     </div>
                                     <h3>${dados_produto.nome_produto}</h3>
                                     <p class="product-price"><span>P/Quantidade</span> R$${dados_produto.preco_produto} </p>
-                                    <a href="carrinho" data-id="${dados_produto.id_produto}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Adicionar ao carrinho</a>
+                                    <a href="produto?id=${dados_produto.id_produto}" data-id="${dados_produto.id_produto}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Adicionar ao carrinho</a>
                                 </div>
                             </div>
                 `;

@@ -1,66 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Responsive - Tytoin_kids">
-
-	<!-- title -->
-	<title>Categorias</title>
-
-	<!-- favicon -->
-	<link rel="shortcut icon" type="image/png" href="../commandsview/assets/img/favicon.png">
-	<!-- google font -->
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
-	<!-- fontawesome -->
-	<link rel="stylesheet" href="../commandsview/assets/css/all.min.css">
-	<!-- bootstrap -->
-	<link rel="stylesheet" href="../commandsview/assets/bootstrap/css/bootstrap.min.css">
-	<!-- owl carousel -->
-	<link rel="stylesheet" href="../commandsview/assets/css/owl.carousel.css">
-	<!-- magnific popup -->
-	<link rel="stylesheet" href="../commandsview/assets/css/magnific-popup.css">
-	<!-- animate css -->
-	<link rel="stylesheet" href="../commandsview/assets/css/animate.css">
-	<!-- mean menu css -->
-	<link rel="stylesheet" href="../commandsview/assets/css/meanmenu.min.css">
-	<!-- main style -->
-	<link rel="stylesheet" href="../commandsview/assets/css/main.css">
-	<!-- responsive -->
-	<link rel="stylesheet" href="../commandsview/assets/css/responsive.css">
-	
-	<!-- jquery -->
-	<script src="../commandsview/assets/js/jquery-1.11.3.min.js"></script>
-
-	<!-- scripts table -->
-    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.9/js/responsive.bootstrap4.min.js"></script>
-    <!-- end scripts table -->
-	
-    <!-- end css table -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css">
-    <!-- end css table -->
-
-</head>
-<body>
-	
-	<!--PreLoader-->
-    <div class="loader">
-        <div class="loader-inner">
-            <div class="circle"></div>
-        </div>
-    </div>
-    <!--PreLoader Ends-->
-	
-	<!-- header -->
-	<div class="top-header-area" id="sticker">
-	</div>
-	<!-- end header -->
- 
+<?php include_once "commandsview/includes/header.php";?> 
 	
 	<!-- breadcrumb-section -->
 	<div class="breadcrumb-section breadcrumb-bg">
@@ -79,7 +17,7 @@
 	<!-- link section -->
 	<div class="row mt-5 ">
 		<div class="col-md-2 offset-md-5">
-			<a href="../cadastrar/cadastrar_categoria"><input type="submit" value="Cadastrar"></a>
+			<a href="cadastrar/cadastrar_categoria"><input type="submit" value="Cadastrar"></a>
 		</div>
 	</div>
 	<!-- end link section -->
@@ -139,43 +77,22 @@
 	</div>
 	<!-- End Small modal -->
 
-	<!-- footer -->
-	<div class="footer-area footer-copyright">
-	</div>
-	<!-- end footer -->
-	
-	<!-- copyright -->
-	
-	<div class="copyright footer-copyright-party-end">
-	</div>
-	<!-- end copyright -->
-	
-	<!-- bootstrap -->
-	<script src="../commandsview/assets/bootstrap/js/bootstrap.min.js"></script>
-	<!-- count down -->
-	<script src="../commandsview/assets/js/jquery.countdown.js"></script>
-	<!-- isotope -->
-	<script src="../commandsview/assets/js/jquery.isotope-3.0.6.min.js"></script>
-	<!-- waypoints -->
-	<script src="../commandsview/assets/js/waypoints.js"></script>
-	<!-- owl carousel -->
-	<script src="../commandsview/assets/js/owl.carousel.min.js"></script>
-	<!-- magnific popup -->
-	<script src="../commandsview/assets/js/jquery.magnific-popup.min.js"></script>
-	<!-- mean menu -->
-	<script src="../commandsview/assets/js/jquery.meanmenu.min.js"></script>
-	<!-- sticker js -->
-	<script src="../commandsview/assets/js/sticker.js"></script>
-	<!-- pagina js -->
-	<script src="../commandsfunction/content/conteudoPagina.js"></script>
-	<!-- listar Categorias js -->
-    <script src="../commandsfunction/read/scriptDataTableCategorias.js"></script>
-	<!-- função Modal js -->
-	<script src="../commandsfunction/content/conteudoModal.js"></script>
-	<!-- editar/apagar Categorias js -->
-    <script src="../commandsfunction/update_delete/categoria.js"></script>
-	<!-- main js -->
-	<script src="../commandsview/assets/js/main.js"></script>
+<?php include_once "commandsview/includes/footer.php";?>
 
-</body>
-</html>
+<!-- scripts table -->
+<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.9/js/responsive.bootstrap4.min.js"></script>
+<!-- end scripts table -->
+
+<!-- end css table -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css">
+<!-- end css table -->
+
+<!-- listar Categorias js -->
+<script src="commandsfunction/read/scriptDataTableCategorias.js"></script>
+<!-- função Modal js -->
+<script src="commandsfunction/content/conteudoModal.js"></script>
+<!-- editar/apagar Categorias js -->
+<script src="commandsfunction/update_delete/categoria.js"></script>

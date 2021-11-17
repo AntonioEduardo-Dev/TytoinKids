@@ -13,7 +13,7 @@ $(function() {
                     btn_listar_produto  : true,
                     id_produto          : identificador
                 }
-                $.get('../commandscontrol/Produtos.php', dados, function(retorno) {
+                $.get('commandscontrol/Produtos.php', dados, function(retorno) {
                     var objProdutos = jQuery.parseJSON(retorno);
 
                     if (objProdutos.type == "success") {
@@ -191,7 +191,7 @@ $(function() {
                     id_produto   : identificador
                 }
         
-                $.post('../commandscontrol/Produtos.php', dados, function(retorno) {
+                $.post('commandscontrol/Produtos.php', dados, function(retorno) {
                     var tipo = retorno.indexOf("alert_notification_error");
                     retorno = retorno.split("-|-");
                     

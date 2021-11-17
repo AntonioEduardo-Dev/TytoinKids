@@ -23,7 +23,7 @@ $(function() {
             btn_alterar_status : status
         }
 
-        $.post('../commandscontrol/setManutencao.php', dados, function(response) {
+        $.post('commandscontrol/setManutencao.php', dados, function(response) {
             var tipo = response.indexOf("alert_notification_error");
             
             $('.modal_system_success_class').modal('hide');
@@ -43,7 +43,7 @@ $(function() {
             verificarStatus : true
         }
 
-        $.post('../commandscontrol/Manutencao.php', dados, function(response) {
+        $.post('commandscontrol/Manutencao.php', dados, function(response) {
             console.log("Response: "+response);
             
             var tipo = response.indexOf("alert_notification_error");

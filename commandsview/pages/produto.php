@@ -8,56 +8,7 @@
 		exit;
 	}
 ?>
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-	<base href="http://localhost/projetos/TytoinKids/" />
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Tytoin_kids - Seja muito bem vindo, Conheça nossos produtos, encomende algo que o agrade para seu filho ou filha, nós somos a Tytoin kids.">
-
-	<!-- title -->
-	<title>Produto</title>
-
-	<!-- favicon -->
-	<link rel="shortcut icon" type="image/png" href="commandsview/assets/img/favicon.png">
-	<!-- google font -->
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
-	<!-- fontawesome -->
-	<link rel="stylesheet" href="commandsview/assets/css/all.min.css">
-	<!-- bootstrap -->
-	<link rel="stylesheet" href="commandsview/assets/bootstrap/css/bootstrap.min.css">
-	<!-- owl carousel -->
-	<link rel="stylesheet" href="commandsview/assets/css/owl.carousel.css">
-	<!-- magnific popup -->
-	<link rel="stylesheet" href="commandsview/assets/css/magnific-popup.css">
-	<!-- animate css -->
-	<link rel="stylesheet" href="commandsview/assets/css/animate.css">
-	<!-- mean menu css -->
-	<link rel="stylesheet" href="commandsview/assets/css/meanmenu.min.css">
-	<!-- main style -->
-	<link rel="stylesheet" href="commandsview/assets/css/main.css">
-	<!-- responsive -->
-	<link rel="stylesheet" href="commandsview/assets/css/responsive.css">
-
-</head>
-<body>
-	
-	<!--PreLoader-->
-    <div class="loader">
-        <div class="loader-inner">
-            <div class="circle"></div>
-        </div>
-    </div>
-    <!--PreLoader Ends-->
-	
-	<!-- header -->
-	<div class="top-header-area" id="sticker">
-	</div>
-	<!-- end header -->
- 
+<?php include_once "commandsview/includes/header.php";?>
 	
 	<!-- breadcrumb-section -->
 	<div class="breadcrumb-section breadcrumb-bg">
@@ -91,22 +42,35 @@
 						<div class="single-product-form">
 							<div class="row">
 								<div class="col">
-									Disponiveis: <a id="id_qtd_produto"> </a>
+									Disponíveis: <a id="id_qtd_produto"></a>
 								</div>
 							</div>
 							<div class="row">
-								<div class="col mt-1">
-									<input type="number" placeholder="Ex: 5" id="id_qtd_produto_inp">
-								</div>
-								<div class="col mt-1">
-									<input type="number" placeholder="Ex: 5" id="id_tamanho_selecionado" hidden>
-								</div>
-								<div class="col mt-1">
-									<input type="number" placeholder="Ex: 5" id="id_cor_selecionado" hidden>
+								<div class="col-lg-3 mt-1 mb-1">
+									<input class="form-control mt-2" type="text" placeholder="Quant. Ex: 5" id="id_qtd_produto_inp">
+									<select class="form-control mt-2" name="" placeholder="Ex: 1" id="id_tamanho_selecionado">
+										<option value="1" hidden selected>Tamanho:</option>
+										<!-- <option value="p">P</option> -->
+										<!-- <option value="m">M</option> -->
+										<!-- <option value="g">G</option> -->
+										<!-- <option value="gg">GG</option> -->
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="4">4</option>
+										<option value="6">6</option>
+										<option value="8">8</option>
+									</select>
+									<select class="form-control mt-2" name="" placeholder="Ex: 5" id="id_cor_selecionado">
+										<option value="" hidden selected>Cor:</option>
+										<option value="1">Vermelho</option>
+										<option value="2">Verde</option>
+										<option value="3">Azul</option>
+										<option value="4">Amarelo</option>
+									</select>
 								</div>
 							</div>
 							<div class="form-group row">
-								<div class="col">
+								<div class="col mt-3">
 									<a class="cart-btn addToCart"><i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho</a>
 								</div>
 							</div>
@@ -184,43 +148,13 @@
 	</div>
 	<!-- End Small modal -->
 
-	<!-- footer -->
-	<div class="footer-area footer-copyright">
-	</div>
-	<!-- end footer -->
-	
-	<!-- copyright -->
-	
-	<div class="copyright footer-copyright-party-end">
-	</div>
-	<!-- end copyright -->
-	
-	<!-- jquery -->
-	<script src="commandsview/assets/js/jquery-1.11.3.min.js"></script>
-	<!-- bootstrap -->
-	<script src="commandsview/assets/bootstrap/js/bootstrap.min.js"></script>
-	<!-- count down -->
-	<script src="commandsview/assets/js/jquery.countdown.js"></script>
-	<!-- isotope -->
-	<script src="commandsview/assets/js/jquery.isotope-3.0.6.min.js"></script>
-	<!-- waypoints -->
-	<script src="commandsview/assets/js/waypoints.js"></script>
-	<!-- owl carousel -->
-	<script src="commandsview/assets/js/owl.carousel.min.js"></script>
-	<!-- magnific popup -->
-	<script src="commandsview/assets/js/jquery.magnific-popup.min.js"></script>
-	<!-- mean menu -->
-	<script src="commandsview/assets/js/jquery.meanmenu.min.js"></script>
-	<!-- sticker js -->
-	<script src="commandsview/assets/js/sticker.js"></script>
-	<!-- pagina js -->
-	<script src="commandsfunction/content/conteudoPagina.js"></script>
-	<!-- listar produtos js -->
-	<script src="commandsfunction/read/produto.js"></script>
-	<!-- função Modal js -->
-	<script src="commandsfunction/content/conteudoModal.js"></script>
-	<!-- main js -->
-	<script src="commandsview/assets/js/main.js"></script>
+<?php include_once "commandsview/includes/footer.php";?>
 
-</body>
-</html>
+<!-- functions js -->
+
+<!-- função Modal js -->
+<script src="commandsfunction/content/conteudoModal.js"></script>
+<!-- listar produtos js -->
+<script src="commandsfunction/read/produto.js"></script>
+
+<!-- end functions js -->
