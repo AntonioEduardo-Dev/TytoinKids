@@ -27,30 +27,30 @@
 				 	<div id="form_status"></div>
 					<div class="contact-form">
 						<div class="row mt-3">
-							<div class="col-lg-6">
-								<input type="text" placeholder="Name*" name="name" id="name" required>
-							</div>
-							<div class="col-lg-6">
-								<input type="email" placeholder="Email*" name="email" id="email" required>
+							<div class="col">
+								<input type="text" placeholder="Nome*" name="name" id="id_name" required>
 							</div>
 						</div>
 						<div class="row mt-3">
-							<div class="col-lg-6">
-								<input type="tel" placeholder="Phone*" name="phone" id="phone" required>
+							<div class="col-sm-6">
+								<input type="email" placeholder="Email*" name="Email" id="id_email" required>
 							</div>
-							<div class="col-lg-6">
-								<input type="text" placeholder="Subject*" name="subject" id="subject" required>
+							<div class="col-sm-6">
+								<input type="tel" placeholder="WhatsApp*" name="WhatsApp" id="id_phone" required>
 							</div>
 						</div>
 						<div class="row mt-3">
 							<div class="col">
-								<textarea name="message" id="message" rows="1" placeholder="Message" maxlength="255"></textarea>
-								<input type="hidden" name="token" value="FsWga4&@f6aw" />
+								<textarea name="message" id="id_message" rows="1" placeholder="Mensagem*" maxlength="255"></textarea>
 							</div>
 						</div>
 						<div class="row mt-3">
-							<div class="col">
-								<input type="submit" value="Enviar">
+							<div class="col-lg conteudo_alerta">
+							</div>
+						</div>	
+						<div class="row mt-3">
+							<div class="col-sm-3">
+								<input type="submit" id="id_cad_duvida" value="Enviar">
 							</div>
 						</div>
 					</div>
@@ -93,3 +93,12 @@
 	<!-- end google map section -->
 	
 <?php include_once "commandsview/includes/footer.php";?>
+
+<!-- função Modal js -->
+<script src="commandsfunction/content/conteudoModal.js"></script>
+
+<!-- função Modal js -->
+<script src="commandsfunction/content/conteudoAlerta.js"></script>
+
+<!-- inserir Dúvida js -->
+<script src="commandsfunction/create/insertDoubt.js"></script>

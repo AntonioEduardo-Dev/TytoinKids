@@ -40,7 +40,6 @@
                 $consulta = $connection->prepare($sql);
                 $consulta->bindValue(":email", $email);
                 $consulta->bindValue(":senha", $senha);
-                $consulta->execute();
                 
                 return ($consulta->execute() && $consulta->rowCount() > 0) ? $consulta->fetchAll() : false;
                 // return ($consulta->execute() && $consulta->rowCount() > 0) ? $consulta->fetch($connection::FETCH_ASSOC) : false;

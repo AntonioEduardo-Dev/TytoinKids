@@ -2,28 +2,80 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-				<div class="card border-1 shadow rounded-3 mt-80">
+			<div class="col-sm-10 mx-auto mb-3">
+				<div class="card border-1 shadow rounded-3 mt-4">
 					<div class="card-body p-3 p-sm-5 container-custom">
-						<h3 class="card-title text-center mb-3"><i class="fas fa-user-plus"></i></h3>
-						<form>
-							<div class="form-floating mb-3">
-								<label for="floatingInput">Email</label>
-								<input type="email" id="floatingInput" placeholder="name@example.com" autocomplete="on">
+						<h3 class="card-title text-center"><i class="fas fa-user-plus"></i></h3>
+						<div class="row">
+							<div class="col-sm-6">
+								<div class="form-floating">
+									<label for="floatingInput">Email</label>
+									<input type="email" id="floatingInput" placeholder="name@example.com" autocomplete="on">
+								</div>
 							</div>
-							<div class="form-floating mb-3">
-								<label for="floatingPassword">Senha</label>
-								<input type="password" id="floatingPassword" placeholder="Password" autocomplete="on">
+							<div class="col-sm-6">
+								<div class="form-floating">
+									<label for="floatingPassword">Senha</label>
+									<input type="password" id="floatingPassword" placeholder="Password" autocomplete="on">
+								</div>
 							</div>
-							<hr>
-							<div class="text-center p-sm-2">
-								<button class="btn btn-login text-uppercase fw-bold" type="submit">Entrar</button>
-								<p class="mt-3">
-									Já possui uma conta? <a href="login">Entrar</a>
-									<br>Voltar ao <a href="home">Inicio</a>
-								</p>
+						</div>
+						<hr>
+						<div class="row">
+							<div class="col-lg-3">
+								<div class="form-floating">
+									<label for="floatingInput">Nome</label>
+									<input type="email" id="floatingInput" placeholder="name@example.com" autocomplete="on">
+								</div>
 							</div>
-						</form>
+							<div class="col-lg-3">
+								<div class="form-floating">
+									<label for="floatingInput">CPF</label>
+									<input type="email" id="floatingInput" placeholder="name@example.com" autocomplete="on">
+								</div>
+							</div>
+							<div class="col-lg-3">
+								<div class="form-floating">
+									<label for="floatingInput">Data</label>
+									<input type="email" id="floatingInput" placeholder="name@example.com" autocomplete="on">
+								</div>
+							</div>
+							<div class="col-lg-3">
+								<div class="form-floating">
+									<label for="floatingInput">Whatsapp</label>
+									<input type="email" id="floatingInput" placeholder="name@example.com" autocomplete="on">
+								</div>
+							</div>
+						</div>
+						<hr>
+						<div class="row">
+							<div class="col-lg-6">
+								<div class="form-floating">
+									<label for="floatingInput">Endereço</label>
+									<input type="email" id="floatingInput" placeholder="name@example.com" autocomplete="on">
+								</div>
+							</div>
+							<div class="col-lg-3">
+								<div class="form-floating">
+									<label for="floatingInput">Bairro</label>
+									<input type="email" id="floatingInput" placeholder="name@example.com" autocomplete="on">
+								</div>
+							</div>
+							<div class="col-lg-3">
+								<div class="form-floating">
+									<label for="floatingInput">CEP</label>
+									<input type="email" id="floatingInput" placeholder="name@example.com" autocomplete="on">
+								</div>
+							</div>
+						</div>
+						<hr>
+						<div class="text-center p-sm-2">
+							<button class="btn btn-login text-uppercase fw-bold" type="submit">Cadastrar</button>
+							<p class="mt-3">
+								Já possui uma conta? <a href="login">Entrar</a>
+								<br>Voltar ao <a href="home">Inicio</a>
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>
