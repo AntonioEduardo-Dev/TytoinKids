@@ -57,7 +57,7 @@
                 $fone       = $this->fone;
                 $mensagem   = $this->mensagem;
 
-                $sql = "";
+                $sql = "INSERT INTO duvidas VALUES (NULL, :nome, :email, :fone, :mensagem)";
 
                 $consulta = $connection->prepare($sql);
                 $consulta->bindValue(":email", $email);
@@ -65,7 +65,7 @@
                 $consulta->bindValue(":fone", $fone);
                 $consulta->bindValue(":mensagem", $mensagem);
                 
-                return ($consulta->execute() && $consulta->rowCount() > 0) ? $consulta->fetchAll() : false;
+                return ($consulta->execute() && $consulta->rowCount() > 0) ? true : false;
 
             } catch (PDOException $e) {
                 echo "Erro de cadastro de dúvida: " . $e->getMessage();

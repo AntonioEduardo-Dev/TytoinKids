@@ -31,7 +31,7 @@ function exibirModalAlerta(msgModal, tipoModal, corModal) {
         var conteudo = `<div class="alert ${corModal}" role="alert">
                             <h4 class="alert-heading">Oops!!!</h4>
                             <hr>
-                            <p>${msgModal}</p>
+                            <p class="text-dark">${msgModal}</p>
                         </div>`;
 
         if ($(".conteudo_alerta").html(conteudo)) {

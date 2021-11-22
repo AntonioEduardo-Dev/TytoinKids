@@ -1,6 +1,7 @@
 <?php
 	session_start();
     require_once "../commandsclass/Authentication.class.php";
+    require_once "funcoes/validar_email.php";
 
     if (isset($_POST["btn_realizar_login"])) {
 
@@ -12,7 +13,7 @@
             $email = $_POST["id_email"];
             $senha = $_POST["id_senha"];
 
-            if(filter_var($email, FILTER_VALIDATE_EMAIL)){
+            if(validar_email($email) != ""){
                 if(is_string($email) && is_string($senha)){
 
                     $autenticar = new Authentication($email,$senha);
@@ -42,7 +43,7 @@
                 };
 
             }else{
-                echo "alert_notification_error!-|-alert-danger";
+                echo "alert_notification_error_invalid_email!-|-alert-danger";
             };
             
         }else{

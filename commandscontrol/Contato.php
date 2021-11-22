@@ -1,5 +1,6 @@
 <?php
     require_once "../commandsclass/Contato.class.php";
+    require_once "funcoes/validar_email.php";
 
     if(isset($_POST["form_cadastrar_duvida"])){
 
@@ -16,14 +17,19 @@
             echo "alert_notification_error_null!-|-alert-warning";
         }
         else{
-            $objDuvida = new Contato($email, $nome, $fone, $mensagem);
-            $retorno   = $objDuvida->cadastrarDuvida();
-                    
-            if($retorno){
-                echo "Cadastro realizado com sucesso!-|-alert-success";
-            }else{
-                echo "alert_notification_error!-|-alert-danger";
-            };
+            if (validar_email($email) != "") {
+                $objDuvida = new Contato($email, $nome, $fone, $mensagem);
+                $retorno   = $objDuvida->cadastrarDuvida();
+                        
+                if($retorno){
+                    echo "Cadastro realizado com sucesso!-|-alert-success";
+                }else{
+                    echo "alert_notification_error!-|-alert-danger";
+                };
+            }
+            else{
+                echo "alert_notification_error_invalid_email!-|-alert-danger";
+            }
         }
 
     };

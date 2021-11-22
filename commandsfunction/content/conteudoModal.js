@@ -16,6 +16,7 @@ function viewMsgs() {
         "alert_notification_error_cor_insert!"      : "Verifique a cor selecionada!",
         "alert_notification_error_cart_empty!"      : "Carrinho vazio!",
         "alert_notification_error_session_empty!"   : "Realize login para continuar!",
+        "alert_notification_error_invalid_email!"   : "Email inválido!",
         "alert_notification_error_qtd_empty!"       : "Quantidade vazia!",
         "Imagem_nao_enviada!"                       : "Imagem não enviada!",
         "Extensao_Invalida!"                        : "Extensão Inválida!",
@@ -37,7 +38,7 @@ function exibirModal(msgModal, tipoModal) {
                                 <h1><i class="fas fa-thumbs-up"></i></h1>
                             </div>
                             <hr>
-                            <div class="form-group">
+                            <div class="form-group text-dark">
                                 <h4>${msgModal}</h4>
                             </div>
                         </div>`;

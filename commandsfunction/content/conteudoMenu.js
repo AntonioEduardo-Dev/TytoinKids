@@ -6,7 +6,7 @@ function bodyModalContent(lqtdblocks, limagens, llinks, lsubTitulos) {
             content += `<div class="col text-center">
                             <div class="single-product-item">
                                 <div class="product-image">
-                                    <a href="${llinks[index]}" name="btn_nm_categoria"><img src="commandsview/assets/img/menu/${limagens[index]}" alt=""></a>
+                                    <a href="${llinks[index]}" name="btn_nm_categoria"><img src="commandsview/assets/img/menu/${limagens[index]}" alt="" style="width: 200px; height: 200px;"></a>
                                 </div>
                                 <a href="${llinks[index]}" name="btn_nm_categoria"><h3>${lsubTitulos[index]}</h3></a>
                             </div>
@@ -38,7 +38,7 @@ $(function() {
             case "btn_nm_categoria":
                 var titulo      = "Categorias";
                 var qtdblocks   = 2;
-                var imagens     = ['image_menu.png', 'image_menu.png'];
+                var imagens     = ['image_menu_listar.png', 'image_menu_cadastrar.png'];
                 var links       = ['listar/categorias', 'cadastrar/cadastrar_categoria'];
                 var subTitulos  = ['Listar', 'Cadastrar'];
 
@@ -47,7 +47,7 @@ $(function() {
             case "btn_nm_produto":
                 var titulo      = "Produtos";
                 var qtdblocks   = 2;
-                var imagens     = ['image_menu.png', 'image_menu.png'];
+                var imagens     = ['image_menu_listar.png', 'image_menu_cadastrar.png'];
                 var links       = ['listar/produtos','cadastrar/cadastrar_produto'];
                 var subTitulos  = ['Listar', 'Cadastrar'];
 
@@ -56,7 +56,7 @@ $(function() {
             case "btn_nm_encomenda":
                 var titulo      = "Encomendas";
                 var qtdblocks   = 2;
-                var imagens     = ['image_menu.png', 'image_menu.png'];
+                var imagens     = ['image_menu_listar.png', 'image_menu_cadastrar.png'];
                 var links       = ['listar/encomendas','cadastrar/cadastrar_produto'];
                 var subTitulos  = ['Listar', 'Cadastrar'];
 

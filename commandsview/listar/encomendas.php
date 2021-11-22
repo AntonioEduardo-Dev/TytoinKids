@@ -68,6 +68,40 @@
 		</div>
 	</div>
 	<!-- End Small modal -->
+	
+	<!-- Large modal -->
+	<div class="modal fade modal_system_delete" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="conteudo_delete">
+					<div class="card">
+						<div class="card-header">
+							<div class="form-group row mt-3">
+								<div class="col mr-3">
+									<h4><a><i class="fas fa-window-close close-btn float-right" data-dismiss="modal"></i></a></h4>
+								</div>
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group row mt-2 ml-3 mr-3">`;
+								<div class="col text-center">
+									<h4>Voçê tem certeza da sua escolha?</h4>
+									<div class="form-group row">
+										<div class="col">
+											<button class="btn btn-login text-uppercase fw-bold" id="id_opc_delete" type="submit">
+												Confirmar
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Large modal -->
 
 <?php include_once "commandsview/includes/footer.php";?>
 
