@@ -2,6 +2,7 @@
     session_start();
     require_once "../commandsclass/Encomendas.class.php";
     require_once "../commandsclass/Produtos.class.php";
+    require_once "../commandsclass/datatable/ListarEncomenda.class.php";
 
     // Instanciando classes
     $objEncomenda = new Encomendas();
@@ -117,6 +118,16 @@
         }else{
             echo "alert_notification_error_session_empty!-|-alert-danger";
         };
+    };
+
+    if(isset($_POST['listarEncomendasTable'])){
+        //instanciando classes
+        $objEncomendaTable = new ListarEncomenda();
+        $dados = $objEncomendaTable->listar();
+
+        if ($dados) {
+            echo json_encode($dados);
+        }
     };
     
     if (isset($_GET['listarEncomendas'])) {

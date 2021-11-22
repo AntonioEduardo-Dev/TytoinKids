@@ -1,5 +1,6 @@
 <?php
     require_once "../commandsclass/Categorias.class.php";
+    require_once "../commandsclass/datatable/ListarCategoria.class.php";
     
     //instanciando classes
     $objCategoria = new Categorias();
@@ -20,6 +21,18 @@
 
         echo json_encode($retorno);
     };
+
+    //execução de métodos
+    if(isset($_POST['listarCategoriasTable'])){
+        //instanciando classes
+        $objCategoriaTable = new ListarCategoria();
+        $dados = $objCategoriaTable->listar();
+
+        if ($dados) {
+            echo json_encode($dados);
+        }
+    };
+
 
     if(isset($_POST['listarCategorias'])){
         if ($dados = $objCategoria->listarSelectCategorias()) {

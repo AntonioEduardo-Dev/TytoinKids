@@ -1,10 +1,21 @@
 <?php
     require_once "../commandsclass/Produtos.class.php";
+    require_once "../commandsclass/datatable/ListarProduto.class.php";
 
     // Instanciando classes
     $objProduto = new Produtos();
 
     // Execução de métodos
+    
+    if(isset($_POST['listarProdutosTable'])){
+        //instanciando classes
+        $objProdutoTable = new ListarProduto();
+        $dados = $objProdutoTable->listar();
+
+        if ($dados) {
+            echo json_encode($dados);
+        }
+    };
     
     if (isset($_GET['listarCategorias'])) {
         if ($dados = $objProduto->listarCategorias()) {
