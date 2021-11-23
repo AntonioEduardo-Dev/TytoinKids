@@ -77,7 +77,7 @@ class ListarProduto{
                     "data"              =>  $data
                 );
 
-                echo json_encode($json_data);
+                return ($json_data);
             }
         } catch (PDOException $e) {
             echo "Erro ao listar: " . $e->getMessage();

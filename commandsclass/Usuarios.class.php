@@ -73,5 +73,111 @@
                 echo "Erro: " . $e->getMessage();
             }
         }
+        
+        public function listar(){
+            try {
+                $objConexao = new Connection();
+                $conn = $objConexao->conectar();
+
+                if($conn){
+                    //Colunas da tabela
+                    $col = array(
+                        0   =>  'id_usuario',
+                        1   =>  'email',
+                        2   =>  'nome',
+                        3   =>  'cpf',
+                        4   =>  'id_usuario',
+                    ); 
+                
+                    $sql = "SELECT * FROM usuarios";
+                
+                    $statement = $conn->prepare($sql);
+                    $statement->execute();
+                
+                    $totalData      = $statement->rowCount();
+                    $totalFilter    = $totalData;
+                
+                    //Pesquisar
+                    $sql ="SELECT * FROM usuarios WHERE 1";
+                    if(!empty($_POST['search']['value'])){
+                        $sql.=" AND (id_usuario Like '".$_POST['search']['value']."%' ";
+                        $sql.=" OR email Like '".$_POST['search']['value']."%' ";
+                        $sql.=" OR nome Like '".$_POST['search']['value']."%' )";
+                        $sql.=" OR cpf Like '".$_POST['search']['value']."%' )";
+                    }
+                
+                    $statement  = $conn->prepare($sql);
+                    $query      = $statement->execute();
+                
+                    $totalData  = $statement->rowCount();
+                    $totalFilter= $totalData;
+                
+                    //Ordenar
+                    $sql.=" ORDER BY ".$col[$_POST['order'][0]['column']]."   ".$_POST['order'][0]['dir']."  LIMIT ".
+                    $_POST['start']."  ,".$_POST['length']."  ";
+                
+                    $statement  = $conn->prepare($sql);
+                    $statement->execute();
+                
+                    $dados      = $statement->fetchAll();
+                
+                    // Armazenamendo do query array em data
+                
+                    $data=array();
+                
+                    foreach($dados as $row){
+                        $subdata    = array();
+                        $subdata[]  = $row[0];
+                        $subdata[]  = $row[1];
+                        $subdata[]  = $row[2];
+                        $subdata[]  = $row[4];
+                        $subdata[]  = '<h4 class="product-remove">
+                                            <a class="modal_system_open" name="btn_nm_edit-|-'.$row[0].' ">
+                                                <i class="fas fa-eye"></i>
+                                            </a>
+                                        </h4>';
+                        $data[]     = $subdata;
+                    }
+                
+                    $json_data=array(
+                        "draw"              =>  intval($_POST['draw']),
+                        "recordsTotal"      =>  intval($totalData),
+                        "recordsFiltered"   =>  intval($totalFilter),
+                        "data"              =>  $data
+                    );
+                
+                    return ($json_data);
+                }
+            } catch (PDOException $e) {
+                echo "Erro ao listar: " . $e->getMessage();
+            } catch (Exception $e) {
+                echo "Erro: " . $e->getMessage();
+            }
+        }
+
+        public function listarDadosId($id_usuario){
+            try {
+                $objConexao = new Connection();
+                $conectar = $objConexao->conectar();
+
+                $sql = "SELECT usuarios.id_usuario, usuarios.email, usuarios.nome, usuarios.cpf, usuarios.tipo_usuario, usuario_contato.id_usuario_contato, usuario_contato.fone, usuario_contato.whatsapp, usuario_contato.insta, usuario_endereco.id_usuario_endereco, usuario_endereco.id_cidade_fk, usuario_endereco.cep, usuario_endereco.endereco, usuario_endereco.bairro, usuario_endereco.complemento, usuario_endereco.numero, 
+                        (SELECT COUNT(encomendas.id_encomenda) FROM encomendas 
+                        WHERE encomendas.id_usuario_fk = usuarios.id_usuario) AS quantidade_encomendas 
+                        FROM usuarios 
+                        INNER JOIN usuario_contato ON usuarios.id_usuario = usuario_contato.id_usuario_fk 
+                        INNER JOIN usuario_endereco ON usuarios.id_usuario = usuario_endereco.id_usuario_fk
+                        WHERE usuarios.id_usuario = :id_usuario";
+                
+                $consulta = $conectar->prepare($sql);
+                $consulta->bindValue(":id_usuario", $id_usuario);
+
+                return (($consulta->execute() && $consulta->rowCount() > 0) ? $consulta->fetchAll() : "");
+
+            } catch (PDOException $e) {
+                echo "Erro ao listar: " . $e->getMessage();
+            } catch (Exception $e) {
+                echo "Erro: " . $e->getMessage();
+            }
+        }
     }
 ?>

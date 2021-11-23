@@ -6,6 +6,15 @@
     // Instanciando classes
     $objUsuario = new Usuarios();
 
+    if(isset($_POST['listarUsersTable'])){
+        //instanciando classes
+        $dados = $objUsuario->listar();
+
+        if ($dados) {
+            echo json_encode($dados);
+        }
+    };
+
     if(isset($_POST["form_cadastrar_usuario"])){
         
         // alocando posts nas variáveis

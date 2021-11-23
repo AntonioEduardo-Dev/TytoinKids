@@ -8,7 +8,7 @@
 	<meta name="description" content="Tytoin_kids - Seja muito bem vindo, nós somos a Tytoin kids, conheça nossos produtos, encomende algo que o agrade para sua filha ou filho.">
 
 	<!-- title -->
-	<title>Menu</title>
+	<title>Tytoin Kids</title>
 
 	<!-- favicon -->
 	<link rel="shortcut icon" type="image/png" href="commandsview/assets/img/favicon.png">
