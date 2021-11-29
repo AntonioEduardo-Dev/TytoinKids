@@ -15,6 +15,24 @@
         }
     };
 
+    if(isset($_GET['listarUser'])){
+        $id_usuario = $_GET["id_usuario"];
+
+        if ($dados = $objUsuario->listarDadosId($id_usuario)) {
+            $retorno = [
+                "type" => "success", 
+                "data" => $dados,
+            ];
+        } else {
+            $retorno = [
+                "type" => "error",
+                "data" => "Nenhum usuário cadastrado",
+            ];
+        }
+
+        echo json_encode($retorno);
+    };
+
     if(isset($_POST["form_cadastrar_usuario"])){
         
         // alocando posts nas variáveis

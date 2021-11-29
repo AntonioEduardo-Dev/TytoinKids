@@ -12,7 +12,7 @@
 						</div>
 						<div class="form-floating mb-3">
 							<label for="floatingPassword">Senha</label>
-							<input type="text" id="floatingInputPassword" placeholder="Password">
+							<input type="password" id="floatingInputPassword" placeholder="Password">
 						</div>
 						<div class="text-center p-sm-2">
 							<button class="btn btn-login text-uppercase fw-bold btn_logar_now" type="submit">Entrar</button>

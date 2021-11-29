@@ -171,7 +171,8 @@
                 $consulta = $conectar->prepare($sql);
                 $consulta->bindValue(":id_usuario", $id_usuario);
 
-                return (($consulta->execute() && $consulta->rowCount() > 0) ? $consulta->fetchAll() : "");
+                return ( ($consulta->execute() && $consulta->rowCount() > 0) 
+                        ? $consulta->fetchAll($connection::FETCH_ASSOC) : "" );
 
             } catch (PDOException $e) {
                 echo "Erro ao listar: " . $e->getMessage();

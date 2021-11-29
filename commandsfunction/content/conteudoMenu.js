@@ -71,6 +71,15 @@ $(function() {
 
                 var conteudo = bodyModalContent(qtdblocks, imagens, links, subTitulos);
                 break;
+            case "btn_nm_mensagem":
+                var titulo      = "Sugestões";
+                var qtdblocks   = 1;
+                var imagens     = ['image_menu_listar.png'];
+                var links       = ['listar/mensagens'];
+                var subTitulos  = ['Listar'];
+
+                var conteudo = bodyModalContent(qtdblocks, imagens, links, subTitulos);
+                break;
             default:
                 var titulo      = "Indefinido";
                 var qtdblocks   = 1;

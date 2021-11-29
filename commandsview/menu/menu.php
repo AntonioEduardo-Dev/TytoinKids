@@ -57,15 +57,15 @@
 						<div class="col-lg-4 col-md-6 text-center">
 							<div class="single-product-item">
 								<div class="product-image">
-									<a href="#" onclick="return false;" class="modal_system_open" name="btn_nm_vazio"><img src="commandsview/assets/img/menu/image_menu_produto.png" alt="" style="width: 200px; height: 200px;"></a>
+									<a href="#" onclick="return false;" class="modal_system_open" name="btn_nm_mensagem"><img src="commandsview/assets/img/menu/image_menu_categoria.png" alt="" style="width: 200px; height: 200px;"></a>
 								</div>
-								<a href="#" onclick="return false;" class="modal_system_open" name="btn_nm_produto"><h3>""</h3></a>
+								<a href="#" onclick="return false;" class="modal_system_open" name="btn_nm_produto"><h3>Sugestões</h3></a>
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
 							<div class="single-product-item">
 								<div class="product-image">
-									<a href="#" onclick="return false;" class="modal_system_open" name="btn_nm_vazio"><img src="commandsview/assets/img/menu/image_menu_encomenda.png" alt="" style="width: 200px; height: 200px;"></a>
+									<a href="#" onclick="return false;" class="modal_system_open" name="btn_nm_vazio"><img src="commandsview/assets/img/menu/image_menu_categoria.png" alt="" style="width: 200px; height: 200px;"></a>
 								</div>
 								<a href="#" onclick="return false;" class="modal_system_open" name="btn_nm_encomenda"><h3>""</h3></a>
 							</div>

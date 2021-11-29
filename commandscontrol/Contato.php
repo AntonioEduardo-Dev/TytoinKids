@@ -33,4 +33,39 @@
         }
 
     };
+    
+    if(isset($_POST['listarMensagensTable'])){
+
+        // alocando posts nas variáveis
+        $nome       = "";
+        $email      = "";
+        $fone       = "";
+        $mensagem   = "";
+
+        //instanciando classes
+        $objDuvida = new Contato($email, $nome, $fone, $mensagem);
+        $dados = $objDuvida->listar();
+
+        if ($dados) {
+            echo json_encode($dados);
+        }
+    };
+
+    if(isset($_GET['listarMensagem'])){
+        $id_mensagem = $_GET["id_mensagem"];
+
+        if ($dados = $objUsuario->listarDadosId($id_mensagem)) {
+            $retorno = [
+                "type" => "success", 
+                "data" => $dados,
+            ];
+        } else {
+            $retorno = [
+                "type" => "error",
+                "data" => "Nenhuma mensagem cadastrada",
+            ];
+        }
+
+        echo json_encode($retorno);
+    };
 ?>

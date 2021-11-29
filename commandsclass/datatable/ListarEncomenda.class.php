@@ -51,7 +51,7 @@ class ListarEncomenda{
             
                 $data=array();
             
-                foreach($dados as $row){
+                foreach($dados as $indice => $row){
                     $subdata    = array();
                     $subdata[]  = $row[0];
                     $subdata[]  = $row[5];

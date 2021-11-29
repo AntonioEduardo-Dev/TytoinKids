@@ -54,6 +54,9 @@ class ListarCategoria{
                     $subdata[]  = $dado[0];
                     $subdata[]  = $dado[1];
                     $subdata[]  = '<h4 class="product-remove">
+                                        <a class="modal_system_open" name="btn_nm_edit-|-'.$dado[0].' ">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
                                         <a class="modal_system_open" name="btn_nm_remove-|-'.$dado[0].' ">
                                             <i class="far fa-window-close"></i>
                                         </a>

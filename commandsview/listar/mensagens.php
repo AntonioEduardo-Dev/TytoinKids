@@ -6,7 +6,7 @@
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="breadcrumb-text">
-						<h1>Clientes</h1>
+						<h1>Sugestões</h1>
 					</div>
 				</div>
 			</div>
@@ -19,7 +19,7 @@
 		<div class="container">
 			<div class="card">
 				<div class="card-header">
-					<h4>Usuários</h4>
+					<h4>Sugestões</h4>
 				</div>
 				<div class="card-body">
 					<div class="row">
@@ -31,7 +31,7 @@
 											<th class="product-cod"><h6>Código</h6></th>
 											<th class="product-nome"><h6>Nome</h6></th>
 											<th class="product-email"><h6>Email</h6></th>
-											<th class="product-cpf"><h6>CPF</h6></th>
+											<th class="product-cpf"><h6>Whatsapp</h6></th>
 											<th><h6></h6></th>
 										</tr>
 									</thead>
@@ -120,6 +120,6 @@
 <!-- end css table -->
 
 <!-- listar Categorias js -->
-<script src="commandsfunction/read/scriptDataTableUsuarios.js"></script>
+<script src="commandsfunction/read/scriptDataTableMensagens.js"></script>
 <!-- função Modal js -->
 <script src="commandsfunction/content/conteudoModal.js"></script>
