@@ -19,21 +19,25 @@
                     $autenticar = new Authentication($email,$senha);
                     $retorno    = $autenticar->validar();
                     
-                    if(!empty($_SESSION["user"])){
-                        session_unset();
-                    };
-                    
-                    $user = [
-                        "id"        => (($retorno[0]["id_usuario"]) != "")         ? $retorno[0]["id_usuario"]                 : 0,
-                        "email"     => (($retorno[0]["email"]) != "")              ? strtolower($retorno[0]["email"])          : "convidado@convidado",
-                        "nome"      => (($retorno[0]["nome"]) != "")               ? strtolower($retorno[0]["nome"])           : "convidado",
-                        "status"    => (($retorno[0]["status"]) != "")             ? $retorno[0]["status"]                     : 1,
-                        "tipo_user" => (($retorno[0]["tipo_usuario"]) != "")       ? strtolower($retorno[0]["tipo_usuario"])   : "convidado",
-                        "acesso"    => (($retorno[0]["primeiro_acesso"]) != "")    ? $retorno[0]["primeiro_acesso"]            : 1
-                    ];
-                    
-                    if($_SESSION["user"] = $user){
-                        echo "Login realizado com sucesso!-|-alert-success";
+                    if ($retorno) {
+                        if(!empty($_SESSION["user"])){
+                            session_unset();
+                        };
+                        
+                        $user = [
+                            "id"        => (($retorno[0]["id_usuario"]) != "")         ? $retorno[0]["id_usuario"]                 : 0,
+                            "email"     => (($retorno[0]["email"]) != "")              ? strtolower($retorno[0]["email"])          : "convidado@convidado",
+                            "nome"      => (($retorno[0]["nome"]) != "")               ? strtolower($retorno[0]["nome"])           : "convidado",
+                            "status"    => (($retorno[0]["status"]) != "")             ? $retorno[0]["status"]                     : 1,
+                            "tipo_user" => (($retorno[0]["tipo_usuario"]) != "")       ? strtolower($retorno[0]["tipo_usuario"])   : "convidado",
+                            "acesso"    => (($retorno[0]["primeiro_acesso"]) != "")    ? $retorno[0]["primeiro_acesso"]            : 1
+                        ];
+                        
+                        if($_SESSION["user"] = $user){
+                            echo "Login realizado com sucesso!-|-alert-success";
+                        }else{
+                            echo "alert_notification_error!-|-alert-danger";
+                        };
                     }else{
                         echo "alert_notification_error!-|-alert-danger";
                     };

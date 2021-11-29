@@ -42,7 +42,7 @@
                 $consulta->bindValue(":senha", $senha);
                 
                 return ($consulta->execute() && $consulta->rowCount() > 0) ? $consulta->fetchAll() : false;
-                // return ($consulta->execute() && $consulta->rowCount() > 0) ? $consulta->fetch($connection::FETCH_ASSOC) : false;
+                
             } catch (PDOException $e) {
                 echo "Erro de validação: " . $e->getMessage();
             } catch (Exception $e) {
