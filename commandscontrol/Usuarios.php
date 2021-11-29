@@ -15,7 +15,7 @@
         }
     };
 
-    if(isset($_GET['listarUser'])){
+    if(isset($_GET['btn_listar_usuario'])){
         $id_usuario = $_GET["id_usuario"];
 
         if ($dados = $objUsuario->listarDadosId($id_usuario)) {

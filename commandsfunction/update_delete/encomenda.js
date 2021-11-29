@@ -14,7 +14,7 @@ $(function() {
                     id_encomenda          : identificador
                 }
 
-                $.get('../commandscontrol/Encomendas.php', dados, function(retorno) {
+                $.get('commandscontrol/Encomendas.php', dados, function(retorno) {
                     var objEncomenda = jQuery.parseJSON(retorno);
                     
                     if (objEncomenda.type == "success") {
@@ -134,7 +134,7 @@ $(function() {
                                                     <div class="col-lg-6">
                                                         <div class="row">
                                                             <div class="col-lg text-center">
-                                                                <img class="mt-3 mb-3" src="../commandsview/assets/img/images/${imagem_produto}" alt="${nome_produto}" style="width: 100px; height: 100px;">
+                                                                <img class="mt-3 mb-3" src="commandsview/assets/img/images/${imagem_produto}" alt="${nome_produto}" style="width: 100px; height: 100px;">
                                                             </div>
                                                         </div>
                                                     </div>

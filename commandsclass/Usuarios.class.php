@@ -158,21 +158,21 @@
         public function listarDadosId($id_usuario){
             try {
                 $objConexao = new Connection();
-                $conectar = $objConexao->conectar();
+                $connection = $objConexao->conectar();
 
                 $sql = "SELECT usuarios.id_usuario, usuarios.email, usuarios.nome, usuarios.cpf, usuarios.tipo_usuario, usuario_contato.id_usuario_contato, usuario_contato.fone, usuario_contato.whatsapp, usuario_contato.insta, usuario_endereco.id_usuario_endereco, usuario_endereco.id_cidade_fk, usuario_endereco.cep, usuario_endereco.endereco, usuario_endereco.bairro, usuario_endereco.complemento, usuario_endereco.numero, 
                         (SELECT COUNT(encomendas.id_encomenda) FROM encomendas 
-                        WHERE encomendas.id_usuario_fk = usuarios.id_usuario) AS quantidade_encomendas 
+                        WHERE encomendas.id_usuario_fk = :id_usuario) AS quantidade_encomendas 
                         FROM usuarios 
                         INNER JOIN usuario_contato ON usuarios.id_usuario = usuario_contato.id_usuario_fk 
                         INNER JOIN usuario_endereco ON usuarios.id_usuario = usuario_endereco.id_usuario_fk
                         WHERE usuarios.id_usuario = :id_usuario";
                 
-                $consulta = $conectar->prepare($sql);
+                $consulta = $connection->prepare($sql);
                 $consulta->bindValue(":id_usuario", $id_usuario);
 
                 return ( ($consulta->execute() && $consulta->rowCount() > 0) 
-                        ? $consulta->fetchAll($connection::FETCH_ASSOC) : "" );
+                        ? $consulta->fetchAll($connection::FETCH_ASSOC) : false );
 
             } catch (PDOException $e) {
                 echo "Erro ao listar: " . $e->getMessage();

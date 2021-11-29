@@ -51,7 +51,7 @@
 	<div class="modal fade modal_system_open_class" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
-				<div class="conteudo">
+				<div class="conteudo_modal_lg">
 					
 				</div>
 			</div>
@@ -123,3 +123,5 @@
 <script src="commandsfunction/read/scriptDataTableMensagens.js"></script>
 <!-- função Modal js -->
 <script src="commandsfunction/content/conteudoModal.js"></script>
+<!-- editar/apagar mensagens js -->
+<script src="commandsfunction/update_delete/sugestoes.js"></script>

@@ -9,16 +9,17 @@ $(function() {
         if (identificador) {
             if (btn_clicked === "btn_nm_edit") {
                 var dados = {
-                    btn_listar_categoria  : true,
-                    id_categoria          : identificador
+                    btn_listar_sugestao  : true,
+                    id_mensagem          : identificador
                 }
-                $.get('commandscontrol/Categorias.php', dados, function(retorno) {
-                    var objCategoria = jQuery.parseJSON(retorno);
+                $.get('commandscontrol/Contato.php', dados, function(retorno) {
+                    var objMensagem = jQuery.parseJSON(retorno);
+                    console.log(objMensagem);
 
-                    if (objCategoria.type == "success") {
+                    if (objMensagem.type == "success") {
                         var conteudoModal;
 
-                        dados_categoria = objCategoria.data[0];
+                        dados_mensagem = objMensagem.data[0];
 
                         $(".conteudo_modal_lg").html('');
 
@@ -27,7 +28,7 @@ $(function() {
                                     <div class="card-header" id="headingOne">
                                             <h5>
                                             <button class="btn btn-link" type="button">
-                                                Editar Produto
+                                                Visualizar sugestão
                                             </button>
                                             </h5>
                                     </div>
@@ -36,33 +37,21 @@ $(function() {
                                             <div class="ml-3 mr-3">
                                                 <div class="col pl">
                                                     <div class="row">
-                                                        <div class="col-lg">
-                                                            <input type="text" placeholder="Categoria*" id="id_nome" value="${dados_categoria.nome_categoria}*" required>
+                                                        <div class="col-lg-4">
+                                                            <input type="text" placeholder="Email*" id="id_nome" value="Email: ${dados_mensagem.email}" disabled>
                                                         </div>
-                                                    </div>
-                                                    <div class="row mt-2">
-                                                        <div class="col-lg">
-                                                            <div class="col-lg mt-1">
-                                                                <h6 class="">Itens com * são obrigatórios</h6>
-                                                            </div>
+                                                        <div class="col-lg-4">
+                                                            <input type="text" placeholder="Nome*" id="id_nome" value="Nome: ${dados_mensagem.nome}" disabled>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <input type="text" placeholder="Whatsapp*" id="id_nome" value="Whatsapp: ${dados_mensagem.whatsapp}" disabled>
                                                         </div>
                                                     </div>	
-                                                    <div class="row mt-3">
-                                                        <div class="col-lg conteudo_alerta">
-                                                        </div>
-                                                    </div>										
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-md-6 offset-md-3">
                                                     <div class="row">
-                                                        <div class="col-lg-6">
-                                                            <input type="submit" name="cadastrar" value="Editar" id="id_editar_produto">
+                                                        <div class="col-lg mt-2">                                                            
+								                            <textarea name="message" id="id_message" placeholder="Mensagem*" maxlength="255" rows="4" disabled>Sugestão: ${dados_mensagem.mensagem}</textarea>
                                                         </div>
-                                                        <div class="col-lg-6">
-                                                            <input type="submit" name="cancelar" value="Cancelar" id="id_cancel" data-dismiss="modal">
-                                                        </div>
-                                                    </div>
+                                                    </div>								
                                                 </div>
                                             </div>
                                         </div>
@@ -75,8 +64,8 @@ $(function() {
                             $(".modal_system_open_class").modal("show");
                         }
                         
-                    } else if (objCategoria.type != "success") {
-                        exibirModal(objCategoria.data, false);
+                    } else if (objMensagem.type != "success") {
+                        exibirModal(objMensagem.data, false);
                     }
                 });
             }else if (btn_clicked === "btn_nm_remove") {
@@ -92,10 +81,10 @@ $(function() {
         if (identificador) {
             var dados = {
                 btn_apagar   : true,
-                id_categoria    : identificador
+                id_sugestao    : identificador
             }
     
-            $.post('commandscontrol/Categorias.php', dados, function(retorno) {
+            $.post('commandscontrol/Contato.php', dados, function(retorno) {
                 var tipo = retorno.indexOf("alert_notification_error");
                 retorno = retorno.split("-|-");
 

@@ -160,13 +160,13 @@
                 $objConexao = new Connection();
                 $conectar = $objConexao->conectar();
 
-                $sql = "";
+                $sql = "SELECT * FROM duvidas WHERE duvidas.id_duvida = :id_duvida";
                 
                 $consulta = $conectar->prepare($sql);
                 $consulta->bindValue(":id_duvida", $id_duvida);
 
                 return (($consulta->execute() && $consulta->rowCount() > 0) 
-                        ? $consulta->fetchAll($connection::FETCH_ASSOC) : "" );
+                        ? $consulta->fetchAll($conectar::FETCH_ASSOC) : false );
 
             } catch (PDOException $e) {
                 echo "Erro ao listar: " . $e->getMessage();

@@ -58,10 +58,10 @@
                 $consulta->bindValue(":id_encomenda", $id_encomenda);
                 
                 return (($consulta->execute() && $consulta->rowCount() > 0) 
-                        ? $consulta->fetchAll($connection::FETCH_ASSOC) : "" );
+                        ? $consulta->fetchAll($connection::FETCH_ASSOC) : false );
                 
             } catch (PDOException $e) {
-                echo "Erro ao listar quantidade: " . $e->getMessage();
+                echo "Erro ao listar: " . $e->getMessage();
             } catch (Exception $e) {
                 echo "Erro: " . $e->getMessage();
             }

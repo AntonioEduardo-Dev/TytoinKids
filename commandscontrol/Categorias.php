@@ -21,6 +21,23 @@
 
         echo json_encode($retorno);
     };
+    
+    //execução de métodos
+    if (isset($_GET['btn_listar_categoria'])) {
+        if ($dados = $objCategoria->listarCategoriaId($_GET['id_categoria'])) {
+            $retorno = [
+                "type" => "success", 
+                "data" => $dados,
+            ];
+        } else {
+            $retorno = [
+                "type" => "error",
+                "data" => "Nenhuma encomenda cadastrada",
+            ];
+        }
+
+        echo json_encode($retorno);
+    }
 
     //execução de métodos
     if(isset($_POST['listarCategoriasTable'])){

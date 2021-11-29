@@ -29,9 +29,10 @@ $(function() {
                         categoria_produto   = produto[0].nome_categoria;
 
                         if (produto && cores && tamanhos) {
+                            var conteudoModal;
                             $(".conteudo_modal_lg").html('');
 
-                            var conteudoModal = `
+                            conteudoModal = `
                                 <div class="card single-accordion">
                                     <div class="card-header" id="headingOne">
                                             <h5>
@@ -63,6 +64,15 @@ $(function() {
                                                         </div>
                                                         <div class="col-lg-6">
                                                             <input type="text" placeholder="Preço por unidade*" id="id_preco" value="`+preco_produto+`" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mt-2">
+                                                        <div class="col-lg">
+                                                            <div class="row">
+                                                                <div class="col-lg text-center">
+                                                                    <img class="mt-3 mb-3" src="commandsview/assets/img/images/${img_produto}" alt="${img_produto}" style="width: 100px; height: 100px;">
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div class="row mt-2">
@@ -178,8 +188,10 @@ $(function() {
                                 </div>`;
 
                             $(".conteudo_modal_lg").html(conteudoModal);
-                            $(".modal_system_open_class").modal("hide");
-                            $(".modal_system_open_class").modal("show");
+                            
+                            if ($(".modal_system_open_class").modal("hide")) {
+                                $(".modal_system_open_class").modal("show");
+                            }
                         }
                     } else if (objProdutos.type != "success") {
                         exibirModal(objProdutos.data, false);

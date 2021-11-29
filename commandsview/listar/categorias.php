@@ -57,7 +57,7 @@
 	<div class="modal fade modal_system_open_class" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
-				<div class="conteudo">
+				<div class="conteudo_modal_lg">
 					
 				</div>
 			</div>

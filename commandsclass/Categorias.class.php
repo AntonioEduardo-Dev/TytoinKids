@@ -18,6 +18,26 @@
                 echo "Erro: " . $e->getMessage();
             }
         }
+
+        public function listarCategoriaId($id_categoria){
+            try {
+                $objConexao = new Connection();
+                $connection = $objConexao->conectar();
+
+                $sql = "SELECT * FROM categorias WHERE categorias.id_categoria = :id_categoria";
+            
+                $consulta = $connection->prepare($sql);
+                $consulta->bindValue(":id_categoria", $id_categoria);
+                
+                return (($consulta->execute() && $consulta->rowCount() > 0) 
+                        ? $consulta->fetchAll($connection::FETCH_ASSOC) : false );
+                
+            } catch (PDOException $e) {
+                echo "Erro ao listar quantidade: " . $e->getMessage();
+            } catch (Exception $e) {
+                echo "Erro: " . $e->getMessage();
+            }
+        }
         
         public function listarSelectCategorias(){
             try {

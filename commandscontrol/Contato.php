@@ -51,10 +51,20 @@
         }
     };
 
-    if(isset($_GET['listarMensagem'])){
+    if(isset($_GET['btn_listar_sugestao'])){
+
+        // alocando posts nas variáveis
+        $nome       = "";
+        $email      = "";
+        $fone       = "";
+        $mensagem   = "";
+
+        //instanciando classes
+        $objDuvida = new Contato($email, $nome, $fone, $mensagem);
+        
         $id_mensagem = $_GET["id_mensagem"];
 
-        if ($dados = $objUsuario->listarDadosId($id_mensagem)) {
+        if ($dados = $objDuvida->listarDadosId($id_mensagem)) {
             $retorno = [
                 "type" => "success", 
                 "data" => $dados,
