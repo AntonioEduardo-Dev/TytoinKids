@@ -56,18 +56,21 @@ class ListarEncomenda{
                     $subdata[]  = $row[0];
                     $subdata[]  = $row[5];
                     $subdata[]  = $row[6];
-                    $subdata[]  = '<h4 class="product-remove">
+                    $subdata[]  = '<h4 class="product-status">
                                         <a class="modal_system_open" name="btn_nm_edit-|-'.$row[0].' ">
                                             <i class="fas fa-eye"></i>
                                         </a>
-                                        <a class="modal_system_open" name="btn_nm_remove-|-'.$row[0].' ">
+                                        <a class="modal_system_open" name="btn_nm_accept-|-'.$row[0].' ">
+                                            <i class="far fa-check-square"></i>
+                                        </a>
+                                        <a class="modal_system_open" name="btn_nm_decline-|-'.$row[0].' ">
                                             <i class="far fa-window-close"></i>
                                         </a>
                                     </h4>';
                     $data[]     = $subdata;
                 }
             
-                $json_data=array(
+                $json_data = array(
                     "draw"              =>  intval($_POST['draw']),
                     "recordsTotal"      =>  intval($totalData),
                     "recordsFiltered"   =>  intval($totalFilter),

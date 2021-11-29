@@ -259,6 +259,25 @@
             }
         }
 
+        public function editarQuantidade($id_produto, $quantidade){
+            try {
+                $objConexao = new Connection();
+                $connection = $objConexao->conectar();
+    
+                $sql = "UPDATE produtos SET quatidade_disponivel = :quantidade WHERE produtos.id_produto = :id_produto";
+                $atualizar = $connection->prepare($sql);
+                $atualizar->bindValue(":id_produto", $id_produto);
+                $atualizar->bindValue(":quantidade", $quantidade);
+                
+                return (($atualizar->execute()) ? true : false);
+                
+            } catch (PDOException $e) {
+                echo "Erro ao editar: " . $e->getMessage();
+            } catch (Exception $e) {
+                echo "Erro: " . $e->getMessage();
+            }
+        }
+
         public function apagar($id_produto){
             try {
                 $objConexao = new Connection();

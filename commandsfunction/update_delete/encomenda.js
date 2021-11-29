@@ -197,4 +197,76 @@ $(function() {
         }
     });
     
+    $(document).on('click', '#id_opc_decline', function() {
+        identificador = ($(this).val());
+        
+        if (identificador) {
+            var dados = {
+                btn_recusar     : true,
+                id_encomenda    : identificador
+            }
+
+            $.post('commandscontrol/Encomendas.php', dados, function(retorno) {
+                var tipo = retorno.indexOf("alert_notification_error");
+                retorno = retorno.split("-|-");
+
+                if($('.modal_system_delete').modal('hide')){
+                    if (tipo === -1) {
+                        exibirModal(retorno[0],true);
+                    } else if (tipo > -1) {
+                        exibirModal(retorno[0],false);
+                    }
+                }
+            });
+        }
+    });
+
+    $(document).on('click', '#id_opc_accept', function() {
+        identificador = ($(this).val());
+        
+        if (identificador) {
+            var dados = {
+                btn_aceitar     : true,
+                id_encomenda    : identificador
+            }
+
+            $.post('commandscontrol/Encomendas.php', dados, function(retorno) {
+                var tipo = retorno.indexOf("alert_notification_error");
+                retorno = retorno.split("-|-");
+
+                if($('.modal_system_delete').modal('hide')){
+                    if (tipo === -1) {
+                        exibirModal(retorno[0],true);
+                    } else if (tipo > -1) {
+                        exibirModal(retorno[0],false);
+                    }
+                }
+            });
+        }
+    });
+
+    $(document).on('click', '#id_opc_done', function() {
+        identificador = ($(this).val());
+        
+        if (identificador) {
+            var dados = {
+                btn_finalizar   : true,
+                id_encomenda    : identificador
+            }
+
+            $.post('commandscontrol/Encomendas.php', dados, function(retorno) {
+                var tipo = retorno.indexOf("alert_notification_error");
+                retorno = retorno.split("-|-");
+
+                if($('.modal_system_delete').modal('hide')){
+                    if (tipo === -1) {
+                        exibirModal(retorno[0],true);
+                    } else if (tipo > -1) {
+                        exibirModal(retorno[0],false);
+                    }
+                }
+            });
+        }
+    });
+    
 });

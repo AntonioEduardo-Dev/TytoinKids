@@ -72,7 +72,7 @@
                 $objConexao = new Connection();
                 $connection = $objConexao->conectar();
     
-                $sql = "INSERT INTO encomendas VALUES (NULL, :id_usuario_fk, :id_produto_fk, :id_cor_produto_fk, :id_tamanho_produto_fk, :quantidade, :data_hora)";
+                $sql = "INSERT INTO encomendas VALUES (NULL, :id_usuario_fk, :id_produto_fk, :id_cor_produto_fk, :id_tamanho_produto_fk, :quantidade, :data_hora, :status)";
             
                 $cadastrar = $connection->prepare($sql);
                 $cadastrar->bindValue(":id_usuario_fk", $id_usuario_fk);
@@ -81,6 +81,7 @@
                 $cadastrar->bindValue(":id_tamanho_produto_fk", $id_tamanho_produto_fk);
                 $cadastrar->bindValue(":quantidade", $quantidade);
                 $cadastrar->bindValue(":data_hora", $data_hora);
+                $cadastrar->bindValue(":status", "pendente");
 
                 return (($cadastrar->execute()) ? true : false);
 
@@ -105,6 +106,26 @@
                 $editar->bindValue(":id_tamanho_produto_fk", $id_tamanho_produto_fk);
                 $editar->bindValue(":quantidade", $quantidade);
                 $editar->bindValue(":data_hora", $data_hora);
+
+                return (($editar->execute()) ? true : false);
+
+            } catch (PDOException $e) {
+                echo "Erro ao editar: " . $e->getMessage();
+            } catch (Exception $e) {
+                echo "Erro: " . $e->getMessage();
+            }
+        }
+
+        public function atualizarStatusEncomenda($id_encomenda, $status){
+            try {
+                $objConexao = new Connection();
+                $connection = $objConexao->conectar();
+                
+                $sql = "UPDATE encomendas SET status = :status WHERE encomendas.id_encomenda = :id_encomenda";
+
+                $editar = $connection->prepare($sql);
+                $editar->bindValue(":id_encomenda", $id_encomenda);
+                $editar->bindValue(":status", $status);
 
                 return (($editar->execute()) ? true : false);
 

@@ -100,18 +100,23 @@
             if(isset($_SESSION["cart"])){
                 $erro = 0;
                 $data_atual = date("Y-m-d H:i:s");
-
-                foreach ($_SESSION['cart'] as $key => $value) {
-                    if (!($objEncomenda->cadastrarEncomendas($value["id_usuario"], $value["id_produto"], $value["id_cor"], $value["id_tamanho"], $value["qtd_produto"], $data_atual))) {
-                        $erro++;
+                    foreach ($_SESSION['cart'] as $key => $value) {
+                        $qtd_produto_disp = intval($objProduto->quantidadeProdutosDisponiveis($value["id_produto"]));
+                        
+                        if ($qtd_produto_disp >= $value["qtd_produto"]) {
+                            if (!($objEncomenda->cadastrarEncomendas($value["id_usuario"], $value["id_produto"], $value["id_cor"], $value["id_tamanho"], $value["qtd_produto"], $data_atual))) {
+                                $erro++;
+                            }
+                        }else{
+                            $erro++;
+                        }
                     }
-                }
-
-                if($erro == 0){
-                    echo "Sucesso, encomenda cadastrada!-|-alert-success";
-                }else{
-                    echo "alert_notification_error!-|-alert-danger";
-                }
+    
+                    if($erro == 0){
+                        echo "Sucesso, encomenda cadastrada!-|-alert-success";
+                    }else{
+                        echo "alert_notification_error!-|-alert-danger";
+                    }
             }else{
                 echo "alert_notification_error_cart_empty!-|-alert-danger";
             };
@@ -183,6 +188,51 @@
         if(is_int($id_encomenda)){
             if ($objEncomenda->apagarEncomendas($id_encomenda)){
                 echo "Apagado!";
+            }else{
+                echo "alert_notification_error!-|-alert-danger";
+            };
+        }else{
+            echo "alert_notification_error_data_bite!-|-alert-danger";
+        };
+    }
+    
+    if (isset($_POST['btn_aceitar'])) {
+        $id_encomenda = intval($_POST['id_encomenda']);
+        $status = "aprovado";
+
+        if(is_int($id_encomenda)){
+            if ($objEncomenda->atualizarStatusEncomenda($id_encomenda, $status)){
+                echo "Aprovado!";
+            }else{
+                echo "alert_notification_error!-|-alert-danger";
+            };
+        }else{
+            echo "alert_notification_error_data_bite!-|-alert-danger";
+        };
+    }
+
+    if (isset($_POST['btn_recusar'])) {
+        $id_encomenda = intval($_POST['id_encomenda']);
+        $status = "recusado";
+
+        if(is_int($id_encomenda)){
+            if ($objEncomenda->atualizarStatusEncomenda($id_encomenda, $status)){
+                echo "Recusado!";
+            }else{
+                echo "alert_notification_error!-|-alert-danger";
+            };
+        }else{
+            echo "alert_notification_error_data_bite!-|-alert-danger";
+        };
+    }
+
+    if (isset($_POST['btn_finalizar'])) {
+        $id_encomenda = intval($_POST['id_encomenda']);
+        $status = "finalizado";
+
+        if(is_int($id_encomenda)){
+            if ($objEncomenda->atualizarStatusEncomenda($id_encomenda, $status)){
+                echo "Finalizado!";
             }else{
                 echo "alert_notification_error!-|-alert-danger";
             };

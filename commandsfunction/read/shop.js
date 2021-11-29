@@ -61,7 +61,7 @@ $(function () {
                 content += `<div class="col-lg-4 col-md-6 text-center ${dados_produto.nome_categoria}">
                                 <div class="single-product-item">
                                     <div class="product-image">
-                                        <a href="produto?id=${dados_produto.id_produto}" id="single-product-item" data-id="${dados_produto.id_produto}"><img src="commandsview/assets/img/images/${dados_produto.imagem_produto}" alt="${dados_produto.nome_produto}"></a>
+                                        <a href="produto?id=${dados_produto.id_produto}" id="single-product-item" data-id="${dados_produto.id_produto}"><img src="commandsview/assets/img/images/${dados_produto.imagem_produto}" style="width: 200px; height: 200px;" alt="${dados_produto.nome_produto}"></a>
                                     </div>
                                     <h3>${dados_produto.nome_produto}</h3>
                                     <p class="product-price"><span>P/Quantidade</span> R$${dados_produto.preco_produto} </p>

@@ -70,7 +70,7 @@ class ListarProduto{
                     $data[]     = $subdata;
                 }
 
-                $json_data=array(
+                $json_data = array(
                     "draw"              =>  intval($_POST['draw']),
                     "recordsTotal"      =>  intval($totalData),
                     "recordsFiltered"   =>  intval($totalFilter),
