@@ -177,17 +177,16 @@
             }
         }
 
-        public function cadastrar($categoria, $nome, $preco, $quantidade, $imagem){
+        public function cadastrar($categoria, $nome, $preco, $imagem){
             try {
                 $objConexao = new Connection();
                 $connection = $objConexao->conectar();
 
-                $sql = "INSERT INTO produtos(id_produto, id_categoria_fk, nome_produto, preco_produto, quatidade_disponivel, imagem_produto) VALUES (NULL, :categoria, :nome, :preco, :quantidade, :imagem)";
+                $sql = "INSERT INTO produtos(id_produto, id_categoria_fk, nome_produto, preco_produto, imagem_produto) VALUES (NULL, :categoria, :nome, :preco, :imagem)";
                 $cadastrar = $connection->prepare($sql);
                 $cadastrar->bindValue(":categoria", $categoria);
                 $cadastrar->bindValue(":nome", $nome);
                 $cadastrar->bindValue(":preco", $preco);
-                $cadastrar->bindValue(":quantidade", $quantidade);
                 $cadastrar->bindValue(":imagem", $imagem);
 
                 return (($cadastrar->execute()) ? $connection->lastInsertId() : "alert_notification_error_id!");
@@ -199,7 +198,7 @@
             }
         }
         
-        public function cadastrarCorProduto($id_produto, $cor){
+        public function cadastrarCorProduto($id_produto, $cor, $quantidade){
             try {
                 $objConexao = new Connection();
                 $connection = $objConexao->conectar();
@@ -218,15 +217,16 @@
             }
         }
 
-        public function cadastrarTamProduto($id_produto, $tamanho){
+        public function cadastrarTamProduto($id_produto, $tamanho, $quantidade){
             try {
                 $objConexao = new Connection();
                 $connection = $objConexao->conectar();
     
-                $sql = "INSERT INTO tamanho_produto (id_tamanho_produto, id_produto_fk, tamanho) VALUES (NULL, :id_produto, :tamanho)";
+                $sql = "INSERT INTO tamanho_produto VALUES (NULL, :id_produto, :tamanho, :quantidade)";
                 $cadastrar = $connection->prepare($sql);
                 $cadastrar->bindValue(":id_produto", $id_produto);
                 $cadastrar->bindValue(":tamanho", $tamanho);
+                $cadastrar->bindValue(":quantidade", $quantidade);
 
                 return (($cadastrar->execute()) ? true : false);
 
@@ -237,37 +237,17 @@
             }
         }
 
-        public function editar($id_produto,$nome,$preco,$quantidade,$imagem){
+        public function editar($id_produto, $nome, $preco, $imagem){
             try {
                 $objConexao = new Connection();
                 $connection = $objConexao->conectar();
     
-                $sql = "UPDATE produtos SET nome_produto = :nome, preco_produto = :preco, quatidade_disponivel = :quantidade, imagem_produto = :imagem WHERE produtos.id_produto = :id_produto";
+                $sql = "UPDATE produtos SET nome_produto = :nome, preco_produto = :preco, imagem_produto = :imagem WHERE produtos.id_produto = :id_produto";
                 $atualizar = $connection->prepare($sql);
                 $atualizar->bindValue(":id_produto", $id_produto);
                 $atualizar->bindValue(":nome", $nome);
                 $atualizar->bindValue(":preco", $preco);
-                $atualizar->bindValue(":quantidade", $quantidade);
                 $atualizar->bindValue(":imagem", $imagem);
-                
-                return (($atualizar->execute()) ? true : false);
-                
-            } catch (PDOException $e) {
-                echo "Erro ao editar: " . $e->getMessage();
-            } catch (Exception $e) {
-                echo "Erro: " . $e->getMessage();
-            }
-        }
-
-        public function editarQuantidade($id_produto, $quantidade){
-            try {
-                $objConexao = new Connection();
-                $connection = $objConexao->conectar();
-    
-                $sql = "UPDATE produtos SET quatidade_disponivel = :quantidade WHERE produtos.id_produto = :id_produto";
-                $atualizar = $connection->prepare($sql);
-                $atualizar->bindValue(":id_produto", $id_produto);
-                $atualizar->bindValue(":quantidade", $quantidade);
                 
                 return (($atualizar->execute()) ? true : false);
                 

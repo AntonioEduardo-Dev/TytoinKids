@@ -175,19 +175,23 @@
     if (isset($_POST['btn_cadastrar_cores'])) {
         $id_produto = $_POST['btn_cadastrar_cores'];
 
-        $cores              = [];
-        $coresDefinidos     = ["Vermelho","Verde","Azul","Amarelo"];
-        $tamanhos           = [];
-        $tamanhosDefinidos  = ["P","M","G","GG","1","2","4","6"];
-        $cores              = $_POST['cores'];
-        $tamanhos           = $_POST['tamanhos'];
-        $erroCores          = 0;
-        $erroTamanho        = 0;
+        $cores                  = [];
+        $quantidade_cores       = [];
+        $coresDefinidos         = ["Vermelho","Verde","Azul","Amarelo"];
+        $tamanhos               = [];
+        $quantidade_tamanhos    = [];
+        $tamanhosDefinidos      = ["1","2","4","6","8"];
+        $cores                  = $_POST['cores'];
+        $tamanhos               = $_POST['tamanhos'];
+        $quantidade_cores       = $_POST['quantidade_cores'];
+        $quantidade_tamanhos    = $_POST['quantidade_tamanhos'];
+        $erroCores              = 0;
+        $erroTamanho            = 0;
         
         if (count($cores) <= count($coresDefinidos)) {
             for ($i = 0; $i < count($cores); $i++) { 
                 if ($cores[$i] === "1") {
-                    if(!($objProduto->cadastrarCorProduto($id_produto, $coresDefinidos[$i]))){
+                    if(!($objProduto->cadastrarCorProduto($id_produto, $coresDefinidos[$i], $quantidade_cores[$i]))){
                         $erroCores++;
                     }
                 }
@@ -199,7 +203,7 @@
         if (count($tamanhos) <= count($tamanhosDefinidos)) {
             for ($i = 0; $i < count($tamanhos); $i++) { 
                 if ($tamanhos[$i] === "1") {
-                    if(!($objProduto->cadastrarTamProduto($id_produto, $tamanhosDefinidos[$i]))){
+                    if(!($objProduto->cadastrarTamProduto($id_produto, $tamanhosDefinidos[$i], $quantidade_tamanhos[$i]))){
                         $erroTamanho++;
                     }
                 }

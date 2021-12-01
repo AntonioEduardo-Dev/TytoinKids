@@ -68,21 +68,33 @@ $(function() {
                                                         $('#btn_id_check_cor_verde').prop("checked")    == true ? 1 : 0,
                                                         $('#btn_id_check_cor_azul').prop("checked")     == true ? 1 : 0,
                                                         $('#btn_id_check_cor_amarelo').prop("checked")  == true ? 1 : 0
-                                                    ]
-                        var tamanhosSelecionados    = [ $('#btn_id_check_tam_p').prop("checked")    == true ? 1 : 0,
-                                                        $('#btn_id_check_tam_m').prop("checked")    == true ? 1 : 0,
-                                                        $('#btn_id_check_tam_g').prop("checked")    == true ? 1 : 0,
-                                                        $('#btn_id_check_tam_gg').prop("checked")   == true ? 1 : 0,
-                                                        $('#btn_id_check_tam_1').prop("checked")    == true ? 1 : 0,
+                                                    ];
+
+                        var quantidade_cores        = [ $('#btn_id_check_cor_vermelho').val() > 0 ? 1 : 0,
+                                                        $('#btn_id_check_cor_verde').val()    > 0 ? 1 : 0,
+                                                        $('#btn_id_check_cor_azul').val()     > 0 ? 1 : 0,
+                                                        $('#btn_id_check_cor_amarelo').val()  > 0 ? 1 : 0
+                                                    ];
+
+                        var tamanhosSelecionados    = [ $('#btn_id_check_tam_1').prop("checked")    == true ? 1 : 0,
                                                         $('#btn_id_check_tam_2').prop("checked")    == true ? 1 : 0,
                                                         $('#btn_id_check_tam_4').prop("checked")    == true ? 1 : 0,
-                                                        $('#btn_id_check_tam_6').prop("checked")    == true ? 1 : 0
+                                                        $('#btn_id_check_tam_6').prop("checked")   == true ? 1 : 0,
+                                                        $('#btn_id_check_tam_8').prop("checked")    == true ? 1 : 0
+                                                    ];
+
+                        var quantidade_tamanhos     = [ $('#btn_id_check_cor_vermelho').val() > 0 ? 1 : 0,
+                                                        $('#btn_id_check_cor_verde').val()    > 0 ? 1 : 0,
+                                                        $('#btn_id_check_cor_azul').val()     > 0 ? 1 : 0,
+                                                        $('#btn_id_check_cor_amarelo').val()  > 0 ? 1 : 0
                                                     ];
 
                         var dados = {
                             btn_cadastrar_cores     : idRetorno[0],
                             cores                   : coresSelecionados,
+                            quantidade_cores        : quantidade_cores,
                             tamanhos                : tamanhosSelecionados,
+                            quantidade_tamanhos     : quantidade_tamanhos
                         }
 
                         $.post('commandscontrol/Produtos.php', dados, function(response) {

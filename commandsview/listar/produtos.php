@@ -39,7 +39,6 @@
 											<th class="product-image"><h6>Produto</h6></th>
 											<th class="product-name"><h6>Nome do produto</h6></th>
 											<th class="product-price"><h6>Preço</h6></th>
-											<th class="product-quantity"><h6>Quantidade Disponível</h6></th>
 											<th class="product-remove"><h6></h6></th>
 										</tr>
 									</thead>

@@ -6,8 +6,8 @@
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="breadcrumb-text">
-						<p>Os melhores produtos</p>
-						<h1>Confira os produtos</h1>
+						<p>Os melhores vestidos</p>
+						<h1>Confira nosso estoque</h1>
 					</div>
 				</div>
 			</div>
@@ -45,7 +45,7 @@
 								</div>
 								<div class="list-group mt-3">
 									<select class="form-control" name="" id="">
-										<option value="vermelho" hidden selected>Cor:</option>
+										<option value="vermelho" hidden selected>Personagens:</option>
 										<option value="vermelho">Vermelho</option>
 										<option value="verde">Verde</option>
 										<option value="azul">Azul</option>
@@ -54,15 +54,12 @@
 								</div>
 								<div class="list-group mt-3">
 									<select class="form-control" name="" id="">
-										<option value="1" hidden selected>Tamanho:</option>
-										<!-- <option value="p">P</option> -->
-										<!-- <option value="m">M</option> -->
-										<!-- <option value="g">G</option> -->
-										<!-- <option value="gg">GG</option> -->
+										<option hidden selected>Tamanho:</option>
 										<option value="1">1</option>
 										<option value="2">2</option>
 										<option value="4">4</option>
 										<option value="6">6</option>
+										<option value="8">8</option>
 									</select>
 								</div>
 							</div>

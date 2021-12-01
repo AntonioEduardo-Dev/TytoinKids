@@ -74,7 +74,7 @@
 													<div class="row mt-2">
 														<div class="col-lg">
 															<div class="col-lg mt-1">
-																<h6 class="">Selecione as cores:</h6>
+																<h6 class="">Selecione os personagens:</h6>
 															</div>
 														</div>
 													</div>
@@ -109,24 +109,6 @@
 														<div class="row">
 															<div class="col-xl-6 mt-3">
 																<div class="form-check row">
-																	<input class="form-check-input" type="checkbox" name="btn_nm_tamanho" value="p" id="btn_id_check_tam_p">
-																	<label class="form-check-label" for="flexSwitchCheckDefault">P</label>
-																</div>
-																<div class="form-check row">
-																	<input class="form-check-input" type="checkbox" name="btn_nm_tamanho" value="m" id="btn_id_check_tam_m">
-																	<label class="form-check-label" for="flexSwitchCheckDefault">M</label>
-																</div>
-																<div class="form-check row">
-																	<input class="form-check-input" type="checkbox" name="btn_nm_tamanho" value="g" id="btn_id_check_tam_g">
-																	<label class="form-check-label" for="flexSwitchCheckDefault">G</label>
-																</div>
-																<div class="form-check row">
-																	<input class="form-check-input" type="checkbox" name="btn_nm_tamanho" value="gg" id="btn_id_check_tam_gg">
-																	<label class="form-check-label" for="flexSwitchCheckDefault">GG</label>
-																</div>
-															</div>
-															<div class="col-xl-6 mt-3">
-																<div class="form-check row">
 																	<input class="form-check-input" type="checkbox" name="btn_nm_tamanho" value="1" id="btn_id_check_tam_1">
 																	<label class="form-check-label" for="flexSwitchCheckDefault">1</label>
 																</div>
@@ -135,12 +117,16 @@
 																	<label class="form-check-label" for="flexSwitchCheckDefault">2</label>
 																</div>
 																<div class="form-check row">
-																	<input class="form-check-input" type="checkbox" name="btn_nm_tamanho" value="3" id="btn_id_check_tam_4">
+																	<input class="form-check-input" type="checkbox" name="btn_nm_tamanho" value="4" id="btn_id_check_tam_4">
 																	<label class="form-check-label" for="flexSwitchCheckDefault">4</label>
 																</div>
 																<div class="form-check row">
-																	<input class="form-check-input" type="checkbox" name="btn_nm_tamanho" value="4" id="btn_id_check_tam_6">
+																	<input class="form-check-input" type="checkbox" name="btn_nm_tamanho" value="6" id="btn_id_check_tam_6">
 																	<label class="form-check-label" for="flexSwitchCheckDefault">6</label>
+																</div>
+																<div class="form-check row">
+																	<input class="form-check-input" type="checkbox" name="btn_nm_tamanho" value="8" id="btn_id_check_tam_8">
+																	<label class="form-check-label" for="flexSwitchCheckDefault">8</label>
 																</div>
 															</div>
 														</div>
