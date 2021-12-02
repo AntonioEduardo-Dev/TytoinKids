@@ -109,28 +109,21 @@
         $nome       = $_POST['prod_nome'];
         $categoria  = $_POST['prod_categ'];
         $preco      = $_POST['prod_preco'];
-        $quantidade = $_POST['prod_qtd'];
         $imagem     = $_POST['prod_imagem'];
         
-        if($categoria == "" || $nome == "" || $preco == "" || $quantidade == ""){
+        if($categoria == "" || $nome == "" || $preco == ""){
             echo "alert_notification_error_empty!-|-alert-warning";
         }
-        elseif($categoria == null || $nome == null || $preco == null || $quantidade == null){
+        elseif($categoria == null || $nome == null || $preco == null){
             echo "alert_notification_error_null!-|-alert-warning";
         }
         else{
             if ($categoria != 0) {
-                if ((is_string($nome)) && (is_numeric($categoria)) && (is_numeric($preco)) && (is_numeric($quantidade))) {
+                if ((is_string($nome)) && (is_numeric($categoria)) && (is_numeric($preco))) {
                     $nome = ucfirst(strtolower($nome));
 
-                    echo $objProduto->cadastrar($categoria, $nome, $preco,$quantidade,$imagem);
-                    /*
-                    if ($objProduto->cadastrar($categoria, $nome, $preco,$quantidade,$imagem)) {
-                        echo "Sucesso!";
-                    }else{
-                        echo "alert_notification_error!";
-                    }
-                    */
+                    echo $objProduto->cadastrar($categoria, $nome, $preco, $imagem);
+                    
                 } else {
                     echo "alert_notification_error_data_bite!-|-alert-warning";
                 }

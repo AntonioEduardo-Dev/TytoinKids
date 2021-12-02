@@ -46,8 +46,10 @@
 											<div class="row">
 												<div class="col-lg">
 													<input type="text" placeholder="Nome da Categoria*" id="id_nome" required>
+													
 												</div>
 											</div>
+											<hr>
 											<div class="row">
 												<div class="col-lg">
 													<div class="col-lg mt-2">

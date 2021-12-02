@@ -144,6 +144,7 @@ $(function() {
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <hr>
                                                     <div class="row mt-2">
                                                         <div class="col-lg">
                                                             <div class="col-lg mt-1">

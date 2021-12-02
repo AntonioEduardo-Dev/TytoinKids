@@ -53,7 +53,6 @@ $(function() {
                     btn_cadastrar   : $("#id_cad").val(),
                     prod_categ      : $("#id_categ").val(),
                     prod_nome       : $("#id_nome").val(),
-                    prod_qtd        : $("#id_qtd").val(),
                     prod_preco      : $("#id_preco").val(),
                     prod_imagem     : prod_imagem
                 }
@@ -96,7 +95,8 @@ $(function() {
                             tamanhos                : tamanhosSelecionados,
                             quantidade_tamanhos     : quantidade_tamanhos
                         }
-
+                        console.log(dados);
+                        /*
                         $.post('commandscontrol/Produtos.php', dados, function(response) {
                             var tipo = response.indexOf("alert_notification_error");
                             retorno = response.split("-|-");
@@ -107,7 +107,7 @@ $(function() {
                                 exibirModalAlerta(retorno[0],false,retorno[1]);
                             }
                         });
-
+                        */
                     } else if (tipo > -1) {
                         exibirModalAlerta(idRetorno[0],false,idRetorno[1]);
                     }
