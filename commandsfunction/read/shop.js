@@ -4,15 +4,14 @@ $(function () {
 
     $.get('commandscontrol/Produtos.php', listarCategorias, function (retorna) {
         var objCategFilter = jQuery.parseJSON(retorna);
-        var content = ``;
 
         if (objCategFilter.type == "success") {
-            content = `<ul> 
+            var content = `<ul> 
                         <li class="li active" data-filter="*">Todos</li>`;
 
             $.each(objCategFilter.data, function (indice, dados_categoria) {
                 content += `
-                        <li class="li" data-filter=".${dados_categoria.nome_categoria}">${dados_categoria.nome_categoria}</li>
+                        <li class="li" data-filter=".${dados_categoria.nome_categoria}">${(dados_categoria.nome_categoria).replace("_", " ")}</li>
                 `;
             })
 
@@ -26,10 +25,9 @@ $(function () {
 
     $.get('commandscontrol/Produtos.php', listarCategoriasFilter, function (retorna) {
         var objCategFilter = jQuery.parseJSON(retorna);
-        var content = ``;
 
         if (objCategFilter.type == "success") {
-            content = `<a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center active text-center" data-filter="*" data-toggle="list" href="loja" role="tab" aria-controls="home">
+            var content = `<a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center active text-center" data-filter="*" data-toggle="list" href="loja" role="tab" aria-controls="home">
                             <i class="fas fa-angle-right"></i>
                             Todos
                             <span class="badge badge-primary-custom badge-pill">Qtd</span>
@@ -39,7 +37,7 @@ $(function () {
                 if (dados_categoria.quantidade && dados_categoria.quantidade > 0) {
                     content += `<a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" data-filter=".${dados_categoria.nome_categoria}" data-toggle="list" href="loja" role="tab" aria-controls="home">
                                         <i class="fas fa-angle-right"></i>
-                                        ${dados_categoria.nome_categoria}
+                                        ${(dados_categoria.nome_categoria).replace("_", " ")}
                                         <span class="badge badge-primary-custom badge-pill">${dados_categoria.quantidade}</span>
                                     </a>
                     `;
@@ -54,9 +52,10 @@ $(function () {
 
     $.get('commandscontrol/Produtos.php', listarProdutos, function (retorna) {
         var objProdutos = jQuery.parseJSON(retorna);
-        var content = ``;
 
         if (objProdutos.type == "success") {
+            var content = ``;
+            
             $.each(objProdutos.data, function (indice, dados_produto) {
                 content += `<div class="col-lg-4 col-md-6 text-center ${dados_produto.nome_categoria}">
                                 <div class="single-product-item">
@@ -88,4 +87,19 @@ $(function () {
 
         $(".product-lists").html(content);
     });
+
+    listarTamanhos = { listarTamanhos : true }
+
+    $.get('commandscontrol/Produtos.php', listarTamanhos, function (retorna) {
+        var objTamanhos = jQuery.parseJSON(retorna);
+
+        if (objTamanhos.type = "success") {
+            $("#id_tamanho_select").html("<option hidden selected>Tamanho:</option>");
+            
+            objTamanhos.data.forEach( element => {
+                $("#id_tamanho_select").append(`<option value="${element.id_tamanho}">Tamanho: ${element.tamanho}</option>`);
+            });
+        }
+    });
+
 });

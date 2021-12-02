@@ -39,11 +39,11 @@
                             echo "alert_notification_error!-|-alert-danger";
                         };
                     }else{
-                        echo "alert_notification_error!-|-alert-danger";
+                        echo "alert_notification_error_error_login!-|-alert-danger";
                     };
 
                 }else{
-                    echo "alert_notification_error!-|-alert-danger";
+                    echo "alert_notification_error_data_bite!-|-alert-danger";
                 };
 
             }else{
@@ -51,7 +51,7 @@
             };
             
         }else{
-            echo "alert_notification_error!-|-alert-danger";
+            echo "alert_notification_error_empty!-|-alert-danger";
         };
     }
 ?>

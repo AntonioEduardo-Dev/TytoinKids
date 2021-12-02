@@ -53,7 +53,7 @@
 									</select>
 								</div>
 								<div class="list-group mt-3">
-									<select class="form-control" name="" id="">
+									<select class="form-control" name="nm_tamanho_select" id="id_tamanho_select">
 										<option hidden selected>Tamanho:</option>
 										<option value="1">1</option>
 										<option value="2">2</option>

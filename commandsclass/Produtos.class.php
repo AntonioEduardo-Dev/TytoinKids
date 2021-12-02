@@ -68,13 +68,38 @@
                 $objConexao = new Connection();
                 $connection = $objConexao->conectar();
 
-                $sql = "SELECT * FROM produtos INNER JOIN categorias ON produtos.id_categoria_fk = categorias.id_categoria INNER JOIN tamanho_produto ON produtos.id_produto = tamanho_produto.id_produto_fk INNER JOIN personagem_produto ON produtos.id_produto = tamanho_produto.id_produto_fk WHERE id_produto = :id_produto";
+                $sql = "SELECT produtos.*, categorias.*, tamanho_produto.*, personagem_produto.*, tamanhos.tamanho 
+                        FROM produtos INNER JOIN categorias ON produtos.id_categoria_fk = categorias.id_categoria 
+                        INNER JOIN tamanho_produto ON produtos.id_produto = tamanho_produto.id_produto_fk 
+                        INNER JOIN personagem_produto ON produtos.id_produto = tamanho_produto.id_produto_fk 
+                        INNER JOIN tamanhos ON tamanhos.id_tamanho = tamanho_produto.id_tamanho_fk 
+                        WHERE id_produto = :id_produto";
+
                 $consulta = $connection->prepare($sql);
                 $consulta->bindValue(":id_produto", $id_produto);
                 
                 return (($consulta->execute() && $consulta->rowCount() > 0) 
                         ? $consulta->fetchAll($connection::FETCH_ASSOC) : "" );
 
+            } catch (PDOException $e) {
+                echo "Erro ao listar: " . $e->getMessage();
+            } catch (Exception $e) {
+                echo "Erro: " . $e->getMessage();
+            }
+        }
+
+        public function listarTamanhos(){
+            try {
+                $objConexao = new Connection();
+                $connection = $objConexao->conectar();
+                $status = 1;
+
+                $sql = "SELECT * FROM tamanhos WHERE status = :status";
+                $consulta = $connection->prepare($sql);
+                $consulta->bindValue(":status", $status);
+                
+                return (($consulta->execute() && $consulta->rowCount() > 0) 
+                        ? $consulta->fetchAll($connection::FETCH_ASSOC) : "" );
             } catch (PDOException $e) {
                 echo "Erro ao listar: " . $e->getMessage();
             } catch (Exception $e) {
@@ -120,15 +145,19 @@
             }
         }
         
-        public function quantidadeProdutos(){
+        public function quantidadeProdutosTamanho($id_produto, $id_tamanho){
             try {
                 $objConexao = new Connection();
                 $connection = $objConexao->conectar();
 
-                $sql = "SELECT * FROM produtos";
+                $sql = "SELECT quatidade_disponivel 
+                        FROM tamanho_produto 
+                        WHERE tamanho_produto.id_produto_fk = :id_produto && tamanho_produto.id_tamanho_produto = :id_tamanho LIMIT 1";
                 $consulta = $connection->prepare($sql);
+                $consulta->bindValue(":id_produto", $id_produto);
+                $consulta->bindValue(":id_tamanho", $id_tamanho);
                
-                return (($consulta->execute() && $consulta->rowCount() > 0)? $consulta->rowCount() : 0 );
+                return (($consulta->execute() && $consulta->rowCount() > 0)? $consulta->fetchAll($connection::FETCH_ASSOC) : "" );
                 
             } catch (PDOException $e) {
                 echo "Erro ao listar: " . $e->getMessage();
@@ -137,14 +166,19 @@
             }
         }
 
-        public function quantidadeProdutosDisponiveis($id_produto){
+        public function quantidadeProdutosDisponiveis($id_produto, $id_tamanho){
             try {
                 $objConexao = new Connection();
                 $connection = $objConexao->conectar();
 
-                $sql = "SELECT quatidade_disponivel FROM produtos WHERE produtos.id_produto = :id_produto";
+                $sql = "SELECT quatidade_disponivel 
+                        FROM tamanho_produto 
+                        WHERE tamanho_produto.id_produto_fk = :id_produto 
+                        && tamanho_produto.id_tamanho_produto = :id_tamanho LIMIT 1";
+                        
                 $consulta = $connection->prepare($sql);
                 $consulta->bindValue(":id_produto", $id_produto);
+                $consulta->bindValue(":id_tamanho", $id_tamanho);
                 
                 return (($consulta->execute() 
                         && $consulta->rowCount() > 0 

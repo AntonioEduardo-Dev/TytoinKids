@@ -14,13 +14,13 @@
         $qtd_produto = intval($_GET["qtd_produto"]);
         $id_tamanho_selecionado = intval($_GET["id_tamanho_selecionado"]);
         $id_personagem_selecionado = intval($_GET["id_personagem_selecionado"]);
-        $tamanho_selecionado = intval($_GET["tamanho_selecionado"]);
-        $personagem_selecionado = intval($_GET["personagem_selecionado"]);
+        $tamanho_selecionado = ($_GET["tamanho_selecionado"]);
+        $personagem_selecionado = ($_GET["personagem_selecionado"]);
 
         if($qtd_produto > 0){
             if ($id_tamanho_selecionado > 0 && $id_tamanho_selecionado != "") {
                 if ($id_personagem_selecionado > 0 && $id_personagem_selecionado != "") {
-                    $qtd_produto_disp = intval($objProduto->quantidadeProdutosDisponiveis($id_produto));
+                    $qtd_produto_disp = intval($objProduto->quantidadeProdutosDisponiveis($id_produto, $id_tamanho_selecionado));
                     
                     if($qtd_produto_disp != 0){
                         if($qtd_produto_disp != NULL){
@@ -53,9 +53,9 @@
                             "id_usuario"        => $_SESSION["user"]["id"],
                             "id_produto"        => $idProduto,
                             "id_tamanho"        => $id_tamanho_selecionado,
-                            "id_personagem"            => $id_personagem_selecionado,
+                            "id_personagem"     => $id_personagem_selecionado,
                             "tamanho"           => $tamanho_selecionado,
-                            "personagem"               => $personagem_selecionado,
+                            "personagem"        => $personagem_selecionado,
                             "imgProduto"        => $imgProduto,
                             "nomeProduto"       => $nomeProduto,
                             "preco_produto"     => $preco_produto,
@@ -101,7 +101,7 @@
                 $erro = 0;
                 $data_atual = date("Y-m-d H:i:s");
                     foreach ($_SESSION['cart'] as $key => $value) {
-                        $qtd_produto_disp = intval($objProduto->quantidadeProdutosDisponiveis($value["id_produto"]));
+                        $qtd_produto_disp = intval($objProduto->quantidadeProdutosDisponiveis($value["id_produto"], $value["id_tamanho"]));
                         
                         if ($qtd_produto_disp >= $value["qtd_produto"]) {
                             if (!($objEncomenda->cadastrarEncomendas($value["id_usuario"], $value["id_produto"], $value["id_personagem"], $value["id_tamanho"], $value["qtd_produto"], $data_atual))) {

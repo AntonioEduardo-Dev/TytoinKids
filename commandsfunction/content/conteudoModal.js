@@ -2,6 +2,7 @@
 function viewMsgs() {
     const mensagens = {
         "alert_notification_error!"                 : "Ocorreu um erro na operação, se o erro persistir entre em contato com o suporte!",
+        "alert_notification_error_error_login!"     : "Email do usuário ou senha incorretos. Tente novamente!",
         "alert_notification_error_data_bite!"       : "Verifique dados digitados incorretamente!",
         "alert_notification_error_null!"            : "Verifique possíveis campos nulos!",
         "alert_notification_error_empty!"           : "Preencha todos os campos!",
@@ -50,7 +51,7 @@ function exibirModal(msgModal, tipoModal) {
         setTimeout(function(){
             $(".modal_system_success_class").modal("hide");
             location.reload();
-        }, 1500);
+        }, 2500);
 
     }else{
         var mensagens = viewMsgs();
@@ -76,7 +77,7 @@ function exibirModal(msgModal, tipoModal) {
         setTimeout(function(){
             $(".modal_system_success_class").modal("hide");
             location.reload();
-        }, 2000);
+        }, 2500);
     }
 }
 /* FIM CONTENT MODAL */

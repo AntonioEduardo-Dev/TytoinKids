@@ -107,4 +107,19 @@
             echo "alert_notification_error_data_bite!-|-alert-danger";
         };
     };
+
+    if(isset($_POST['btn_editar'])){
+        $id_categoria   = intval($_POST['id_categoria']);
+        $categoria      = ($_POST['categoria_desc']);
+
+        if(is_int($id_categoria)){
+            if($objCategoria->editarCategoria($id_categoria, $categoria)){
+                echo "Editado!";
+            }else{
+                echo "alert_notification_error!-|-alert-danger";
+            };
+        }else{
+            echo "alert_notification_error_data_bite!-|-alert-danger";
+        };
+    };
 ?>

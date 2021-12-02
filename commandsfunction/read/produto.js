@@ -1,5 +1,26 @@
 /* lISTAR PRODUTOS */
 $(function () {
+    function verificarQuant(id_tam, id_person) {
+        id_tam      = ((id_tam)     ? id_tam    : "");
+        id_person   = ((id_person)  ? id_person : "");
+
+        dados = { 
+            listar_quantidade   : true,
+            id_produto          : $("#id_produto_inp").val(),
+            id_tamanho          : id_tam
+        };
+
+        $.get('commandscontrol/Produtos.php', dados, function (retorna) {
+            var objQtdProduto = jQuery.parseJSON(retorna);
+
+            if (objQtdProduto.type === "success") {
+                objQtdProduto.data.forEach( element => {
+                    $("#id_qtd_produto").html(element.quatidade_disponivel);
+                });
+            }
+        });
+    }
+
     var url_atual = window.location.href;
     var url = url_atual.split("?id=");
     
@@ -13,12 +34,12 @@ $(function () {
                 if (dados_produto.type == "success") {
                     var produto = dados_produto.data["0"];
 
-                    $("#id_produto_inp").val(produto.id_produto == 0 || produto.id_produto == null ? 0 : produto.id_produto);
-                    $("#id_nome_produto").html(produto.nome_produto == 0 || produto.nome_produto == null ? 'Nome do produto' : produto.nome_produto);
-                    $("#id_preco_produto").html(produto.preco_produto == 0 || produto.preco_produto == null ? 'Indisponível' : produto.preco_produto);
-                    $("#id_qtd_produto").html((produto.quatidade_disponivel == 0 || produto.quatidade_disponivel == null ? 'Sem estoque' : produto.quatidade_disponivel));
+                    $("#id_produto_inp").val(produto.id_produto ? produto.id_produto : 0);
+                    $("#id_nome_produto").html(produto.nome_produto ? produto.nome_produto : 'Nome do produto');
+                    $("#id_preco_produto").html(produto.preco_produto ? produto.preco_produto : 'Indisponível');
+                    $("#id_qtd_produto").html((produto.quatidade_disponivel ? "-" : 'Sem estoque' ));
                     $("#imagem_produto").attr('src', (produto.imagem_produto == "" || produto.imagem_produto == null || produto.imagem_produto == "productind.jpg" ? 'commandsview/assets/img/images/productind.jpg' : 'commandsview/assets/img/images/' + produto.imagem_produto));
-                    $("#id_categoria_produto").html((produto.nome_categoria == 0 || produto.nome_categoria == null ? 'Sem categoria' : produto.nome_categoria));
+                    $("#id_categoria_produto").html((produto.nome_categoria ?  (produto.nome_categoria).replace("_", " ") : 'Sem categoria'));
 
                     // Exibir tamanhos
                     var content_tam = [];
@@ -88,6 +109,7 @@ $(function () {
         var personagem_selecionado = $( "#id_personagem_selecionado option:selected" ).text();
 
         if (id_produto != 0 && id_produto > 0) {
+
             produtoCarrinho = { 
                 cart : true, 
                 id_produto, 
@@ -97,7 +119,7 @@ $(function () {
                 tamanho_selecionado: tamanho_selecionado, 
                 personagem_selecionado: personagem_selecionado 
             }
-
+            
             $.get('commandscontrol/Encomendas.php', produtoCarrinho, function (retorna) {
                 var tipo = retorna.indexOf("alert_notification_error");
                 var values = retorna.split("-|-")
@@ -110,4 +132,8 @@ $(function () {
             });
         }
     });
+
+    $(document).on("change", "#id_tamanho_selecionado", function(){
+        verificarQuant($(this).val() , $("#id_personagem_selecionado").val());
+    })
 });

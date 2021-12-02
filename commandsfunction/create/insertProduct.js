@@ -20,6 +20,29 @@ $(function() {
         $("#id_categ").html(content);
     }); 
 
+    listarTamanhos = {listarTamanhos : true}
+
+    $.get('commandscontrol/Produtos.php', listarTamanhos, function(retorna) {
+        var objTamanho = jQuery.parseJSON(retorna);
+        if (objTamanho.type == "success") {
+            $(".content-tamanhos").html("");
+
+            objTamanho.data.forEach( ( tamanhos, indice ) => {
+                $(".content-tamanhos").append(`
+                    <div class='row mt-3'>
+                        <div class="col-lg-2">
+                            <input type="checkbox" name="btn_nm_tamanho" value="${tamanhos.id_tamanho}" id="btn_id_check_tam_1">
+                            <label for="flexSwitchCheckDefault">${tamanhos.tamanho}</label>
+                        </div>
+                        <div class="col-lg-4">
+                            <input type="text" placeholder="Quantidade disponível*" id="btn_id_qtd_tam_${tamanhos.id_tamanho}">
+                        </div>
+                    </div>
+                `);
+            });
+        }
+    }); 
+
     $(document).on('click', '#id_cad', function() {
 
         if($('#id_imageUpload')[0].files[0]) {

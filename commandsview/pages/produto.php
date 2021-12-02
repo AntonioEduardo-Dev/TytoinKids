@@ -47,22 +47,13 @@
 							</div>
 							<div class="row">
 								<div class="col-lg-3 mt-1 mb-1">
-									<input class="form-control mt-2" type="text" placeholder="Quant. Ex: 5" id="id_qtd_produto_inp">
 									<select class="form-control mt-2" name="" placeholder="Ex: 1" id="id_tamanho_selecionado">
 										<option value="1" hidden selected>Tamanho:</option>
-										<!-- <option value="p">P</option> -->
-										<!-- <option value="m">M</option> -->
-										<!-- <option value="g">G</option> -->
-										<!-- <option value="gg">GG</option> -->
-										<option value="1">1</option>
-										<option value="2">2</option>
-										<option value="4">4</option>
-										<option value="6">6</option>
-										<option value="8">8</option>
 									</select>
 									<select class="form-control mt-2" name="" placeholder="Ex: 5" id="id_personagem_selecionado">
 										<option value="" hidden selected>Personagem:</option>
 									</select>
+									<input class="form-control mt-2" type="text" placeholder="Quant. Ex: 5" id="id_qtd_produto_inp">
 								</div>
 							</div>
 							<div class="form-group row">

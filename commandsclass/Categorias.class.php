@@ -109,5 +109,24 @@
                 echo "Erro: " . $e->getMessage();
             }
         }
+
+        public function editarCategoria($id_categoria, $categoria){
+            try {
+                $objConexao = new Connection();
+                $connection = $objConexao->conectar();
+                
+                $sql = "UPDATE categorias SET nome_categoria = :categoria WHERE categorias.id_categoria = :id_categoria";
+                $editar = $connection->prepare($sql);
+                $editar->bindValue(":id_categoria", $id_categoria);
+                $editar->bindValue(":categoria", $categoria);
+
+                return (($editar->execute()) ? true : false);
+                
+            } catch (PDOException $e) {
+                echo "Erro ao editar: " . $e->getMessage();
+            } catch (Exception $e) {
+                echo "Erro: " . $e->getMessage();
+            }
+        }
     }
 ?>

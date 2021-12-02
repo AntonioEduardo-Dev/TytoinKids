@@ -90,57 +90,7 @@
 													</div>
 													<div class="col">
 														<div class="row">
-															<div class="col mt-3">
-																<div class="row">
-																	<div class="col-lg-2">
-																		<input type="checkbox" name="btn_nm_tamanho" value="1" id="btn_id_check_tam_1">
-																		<label for="flexSwitchCheckDefault">1</label>
-																	</div>
-																	<div class="col-lg-4">
-																		<input type="text" placeholder="Quantidade disponível*" id="btn_id_qtd_tam_1">
-																	</div>
-																	<div class="col-lg-2">
-																		<input type="checkbox" name="btn_nm_tamanho" value="2" id="btn_id_check_tam_2">
-																		<label for="flexSwitchCheckDefault">2</label>
-																	</div>
-																	<div class="col-lg-4">
-																		<input type="text" placeholder="Quantidade disponível*" id="btn_id_qtd_tam_2">
-																	</div>
-																</div>
-																<hr>
-																<div class="row">
-																	<div class="col-lg-2">
-																		<input type="checkbox" name="btn_nm_tamanho" value="4" id="btn_id_check_tam_4">
-																		<label for="flexSwitchCheckDefault">4</label>
-																	</div>
-																	<div class="col-lg-4">
-																		<input type="text" placeholder="Quantidade disponível*" id="btn_id_qtd_tam_4">
-																	</div>
-																	<div class="col-lg-2">
-																		<input type="checkbox" name="btn_nm_tamanho" value="6" id="btn_id_check_tam_6">
-																		<label for="flexSwitchCheckDefault">6</label>
-																	</div>
-																	<div class="col-lg-4">
-																		<input type="text" placeholder="Quantidade disponível*" id="btn_id_qtd_tam_6">
-																	</div>
-																</div>
-																<hr>
-																<div class="row">
-																	<div class="col-lg-2">
-																		<input type="checkbox" name="btn_nm_tamanho" value="8" id="btn_id_check_tam_8">
-																		<label for="flexSwitchCheckDefault">8</label>
-																	</div>
-																	<div class="col-lg-4">
-																		<input type="text" placeholder="Quantidade disponível*" id="btn_id_qtd_tam_8">
-																	</div>
-																	<div class="col-lg-2">
-																		<input type="checkbox" name="btn_nm_tamanho" value="10" id="btn_id_check_tam_10">
-																		<label for="flexSwitchCheckDefault">10</label>
-																	</div>
-																	<div class="col-lg-4">
-																		<input type="text" placeholder="Quantidade disponível*" id="btn_id_qtd_tam_10">
-																	</div>
-																</div>
+															<div class="col mt-3 content-tamanhos">
 															</div>
 														</div>
 													</div>

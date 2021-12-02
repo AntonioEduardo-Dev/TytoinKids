@@ -37,7 +37,7 @@ $(function() {
                                                 <div class="col pl">
                                                     <div class="row">
                                                         <div class="col-lg">
-                                                            <input type="text" placeholder="Categoria*" id="id_nome" value="${dados_categoria.nome_categoria}*" required>
+                                                            <input type="text" placeholder="Categoria*" id="id_nome_categoria" value="${dados_categoria.nome_categoria}*" required>
                                                         </div>
                                                     </div>
                                                     <hr>
@@ -58,6 +58,7 @@ $(function() {
                                                 <div class="col-md-6 offset-md-3">
                                                     <div class="row">
                                                         <div class="col-lg-6">
+                                                            <input hidden value="${(identificador).replace(" ", "")}" id="id_editar_produto_hidden">
                                                             <input type="submit" name="cadastrar" value="Editar" id="id_editar_produto">
                                                         </div>
                                                         <div class="col-lg-6">
@@ -101,6 +102,32 @@ $(function() {
                 retorno = retorno.split("-|-");
 
                 if($('.modal_system_delete').modal('hide')){
+                    if (tipo === -1) {
+                        exibirModal(retorno[0],true);
+                    } else if (tipo > -1) {
+                        exibirModal(retorno[0],false);
+                    }
+                }
+            });
+        }
+    });
+
+    $(document).on('click', '#id_editar_produto', function() {
+        identificador = ($("#id_editar_produto_hidden").val());
+        categoria_desc = ($("#id_nome_categoria").val());
+        
+        if (identificador) {
+            var dados = {
+                btn_editar      : true,
+                id_categoria    : identificador,
+                categoria_desc
+            }
+            
+            $.post('commandscontrol/Categorias.php', dados, function(retorno) {
+                var tipo = retorno.indexOf("alert_notification_error");
+                retorno = retorno.split("-|-");
+
+                if($('.modal_system_open_class').modal('hide')){
                     if (tipo === -1) {
                         exibirModal(retorno[0],true);
                     } else if (tipo > -1) {

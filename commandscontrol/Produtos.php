@@ -65,10 +65,42 @@
         echo json_encode($retorno);
     }
 
-    if (isset($_GET['listarProduto'])) {
-        $objProduto->listarProduto(intval($_GET['id_produto']));
-        
-        
+    if (isset($_GET['listar_quantidade'])) {
+        $id_produto = $_GET['id_produto'];
+        $id_tamanho = $_GET['id_tamanho'];
+
+        if ($dados = $objProduto->quantidadeProdutosTamanho($id_produto, $id_tamanho)) {
+            $retorno = [
+                "type" => "success", 
+                "data" => $dados,
+            ];
+        } else {
+            $retorno = [
+                "type" => "error",
+                "data" => "Nenhum produto cadastrado",
+            ];
+        }
+
+        echo json_encode($retorno);
+    }
+
+    if (isset($_GET['listarTamanhos'])) {
+        if ($dados = $objProduto->listarTamanhos()) {
+            $retorno = [
+                "type" => "success", 
+                "data" => $dados,
+            ];
+        } else {
+            $retorno = [
+                "type" => "error",
+                "data" => "Nenhum produto cadastrado",
+            ];
+        }
+
+        echo json_encode($retorno);
+    }
+
+    if (isset($_GET['listarProduto'])) {        
         if ($dados = $objProduto->listarProduto(intval($_GET['id_produto']))) {
             $retorno = [
                 "type" => "success", 
@@ -86,13 +118,13 @@
 
     if (isset($_GET['btn_listar_produto'])) {
         $consulta = $objProduto->listarProduto(intval($_GET['id_produto']));
-        $consultaCores = $objProduto->listarProdutoPersonagens(intval($_GET['id_produto']));
+        $consulta_personagem = $objProduto->listarProdutoPersonagens(intval($_GET['id_produto']));
         $consultaTamanhos = $objProduto->listarProdutoTamanhos(intval($_GET['id_produto']));
 
         $dados = [
-            "produto"   => $consulta, 
-            "cores"     => $consultaCores, 
-            "tamanhos"  => $consultaTamanhos,
+            "produto"       => $consulta, 
+            "personagem"    => $consulta_personagem, 
+            "tamanhos"      => $consultaTamanhos,
         ];
 
         $retorno = [

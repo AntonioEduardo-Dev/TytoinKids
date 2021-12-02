@@ -13,42 +13,35 @@ $(function() {
                     btn_listar_encomenda  : true,
                     id_encomenda          : identificador
                 }
-
                 $.get('commandscontrol/Encomendas.php', dados, function(retorno) {
                     var objEncomenda = jQuery.parseJSON(retorno);
                     
                     if (objEncomenda.type == "success") {
-                        var encomenda = objEncomenda.data;
-
-                        // id_encomenda          = encomenda[0].id_encomenda;
-                        // nome_encomenda        = encomenda[0].nome_encomenda;
-                        // preco_encomenda       = encomenda[0].preco_encomenda;
-                        // qtd_encomenda         = encomenda[0].quatidade_disponivel;
-                        // img_encomenda         = encomenda[0].imagem_encomenda;
-                        // categoria_encomenda   = encomenda[0].nome_categoria;
+                        var encomenda = objEncomenda.data[0];
+                        // encomenda = encomenda[0];
 
                         /* DADOS USUÁRIO */
-                        var nome_autor = encomenda[0].nome;
-                        var email_autor = encomenda[0].email;
-                        var tipo_usuario = encomenda[0].tipo_usuario;
+                        var nome_autor = encomenda.nome;
+                        var email_autor = encomenda.email;
+                        var tipo_usuario = encomenda.tipo_usuario;
                         /* FIM DADOS USUÁRIO */
 
                         /* DADOS ENCOMENDA */
-                        var id_encomenda = encomenda[0].id_encomenda;
-                        var id_personagem_produto = encomenda[0].id_personagem_produto;
-                        var id_tamanho_produto = encomenda[0].id_tamanho_produto;
-                        var personagem_produto = encomenda[0].personagem;
-                        var tamanho_produto = encomenda[0].tamanho;
-                        var quantidade = encomenda[0].quantidade;
-                        var quatidade_disponivel = encomenda[0].quatidade_disponivel;
-                        var data_hora = encomenda[0].data_hora;
+                        var id_encomenda = encomenda.id_encomenda;
+                        var id_personagem_produto = encomenda.id_personagem_produto;
+                        var id_tamanho_produto = encomenda.id_tamanho_produto;
+                        var personagem_produto = encomenda.personagem;
+                        var tamanho_produto = encomenda.tamanho;
+                        var quantidade = encomenda.quantidade;
+                        var quatidade_disponivel = encomenda.quatidade_disponivel;
+                        var data_hora = encomenda.data_hora;
                         /* FIM DADOS ENCOMENDA */
                         
                         /* DADOS PRODUTO */
-                        var id_produto = encomenda[0].id_produto;
-                        var nome_produto = encomenda[0].nome_produto;
-                        var preco_produto = encomenda[0].preco_produto;
-                        var imagem_produto = encomenda[0].imagem_produto;
+                        var id_produto = encomenda.id_produto;
+                        var nome_produto = encomenda.nome_produto;
+                        var preco_produto = encomenda.preco_produto;
+                        var imagem_produto = encomenda.imagem_produto;
                         /* FIM DADOS PRODUTO */
 
                         var conteudoModal = "";
