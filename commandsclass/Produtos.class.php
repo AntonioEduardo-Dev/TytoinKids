@@ -131,7 +131,9 @@
                 $objConexao = new Connection();
                 $connection = $objConexao->conectar();
 
-                $sql = "SELECT tamanho FROM tamanho_produto WHERE tamanho_produto.id_produto_fk = :id_produto";
+                $sql = "SELECT tamanhos.tamanho FROM tamanho_produto 
+                        INNER JOIN tamanhos ON tamanho_produto.id_tamanho_fk = tamanhos.id_tamanho
+                        WHERE tamanho_produto.id_produto_fk = :id_produto";
                 $consulta = $connection->prepare($sql);
                 $consulta->bindValue(":id_produto", $id_produto);
                 

@@ -28,6 +28,7 @@ $(function() {
                         img_produto             = produto[0].imagem_produto;
                         id_categoria_produto    = produto[0].id_categoria;
                         categoria_produto       = produto[0].nome_categoria;
+                        console.log(tamanhos);
 
                         if (produto && personagem && tamanhos) {
                             
@@ -46,7 +47,6 @@ $(function() {
                                             categorias_options += `<option value="${elemento.id_categoria}">${elemento.nome_categoria}</option>`;
                                         }
                                     });
-
                                     $(".conteudo_modal_lg").html('');
 
                                     var conteudoModal = `
