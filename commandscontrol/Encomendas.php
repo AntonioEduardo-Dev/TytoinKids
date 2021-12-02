@@ -13,13 +13,13 @@
         $id_produto = $_GET["id_produto"];
         $qtd_produto = intval($_GET["qtd_produto"]);
         $id_tamanho_selecionado = intval($_GET["id_tamanho_selecionado"]);
-        $id_cor_selecionado = intval($_GET["id_cor_selecionado"]);
+        $id_personagem_selecionado = intval($_GET["id_personagem_selecionado"]);
         $tamanho_selecionado = intval($_GET["tamanho_selecionado"]);
-        $cor_selecionado = intval($_GET["cor_selecionado"]);
+        $personagem_selecionado = intval($_GET["personagem_selecionado"]);
 
         if($qtd_produto > 0){
             if ($id_tamanho_selecionado > 0 && $id_tamanho_selecionado != "") {
-                if ($id_cor_selecionado > 0 && $id_cor_selecionado != "") {
+                if ($id_personagem_selecionado > 0 && $id_personagem_selecionado != "") {
                     $qtd_produto_disp = intval($objProduto->quantidadeProdutosDisponiveis($id_produto));
                     
                     if($qtd_produto_disp != 0){
@@ -53,9 +53,9 @@
                             "id_usuario"        => $_SESSION["user"]["id"],
                             "id_produto"        => $idProduto,
                             "id_tamanho"        => $id_tamanho_selecionado,
-                            "id_cor"            => $id_cor_selecionado,
+                            "id_personagem"            => $id_personagem_selecionado,
                             "tamanho"           => $tamanho_selecionado,
-                            "cor"               => $cor_selecionado,
+                            "personagem"               => $personagem_selecionado,
                             "imgProduto"        => $imgProduto,
                             "nomeProduto"       => $nomeProduto,
                             "preco_produto"     => $preco_produto,
@@ -70,7 +70,7 @@
                         echo "alert_notification_error_qtd_disp!-|-alert-danger";
                     };
                 }else{
-                    echo "alert_notification_error_cor_insert!-|-alert-danger";
+                    echo "alert_notification_error_personagem_insert!-|-alert-danger";
                 }
             }else{
                 echo "alert_notification_error_tam_insert!-|-alert-danger";
@@ -104,7 +104,7 @@
                         $qtd_produto_disp = intval($objProduto->quantidadeProdutosDisponiveis($value["id_produto"]));
                         
                         if ($qtd_produto_disp >= $value["qtd_produto"]) {
-                            if (!($objEncomenda->cadastrarEncomendas($value["id_usuario"], $value["id_produto"], $value["id_cor"], $value["id_tamanho"], $value["qtd_produto"], $data_atual))) {
+                            if (!($objEncomenda->cadastrarEncomendas($value["id_usuario"], $value["id_produto"], $value["id_personagem"], $value["id_tamanho"], $value["qtd_produto"], $data_atual))) {
                                 $erro++;
                             }
                         }else{
@@ -170,12 +170,12 @@
     if (isset($_POST['editarEncomendas'])) {
         $id_encomenda = 0;
         $id_produto_fk = 0;
-        $id_cor_produto_fk = 0;
+        $id_personagem_produto_fk = 0;
         $id_tamanho_produto_fk = 0;
         $quantidade = 0;
         $data_hora = 0;
 
-        if ($objEncomenda->editarEncomendas($id_encomenda, $id_produto_fk, $id_cor_produto_fk, $id_tamanho_produto_fk, $quantidade, $data_hora)) {
+        if ($objEncomenda->editarEncomendas($id_encomenda, $id_produto_fk, $id_personagem_produto_fk, $id_tamanho_produto_fk, $quantidade, $data_hora)) {
             echo "Editado!";
         }else {
             echo "alert_notification_error!-|-alert-danger";

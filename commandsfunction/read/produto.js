@@ -46,30 +46,30 @@ $(function () {
                     $("#id_tamanho_selecionado").html(content_tam_html);
                     // Exibir tamanhos end
 
-                    // Exibir Cores
-                    var content_cor = [];
+                    // Exibir personagem
+                    var content_personagem = [];
 
                     $.each(dados_produto.data, function (indice, dados_produto) {
-                        content_cor.push(
+                        content_personagem.push(
                             {
-                                id_cor_produto : dados_produto.id_cor_produto,
-                                cor : dados_produto.cor
+                                id_personagem_produto : dados_produto.id_personagem_produto,
+                                personagem : dados_produto.personagem
                             }
                         );
 
                     })
-                    content_cor = (content_cor).filter(function (a) {
+                    content_personagem = (content_personagem).filter(function (a) {
                         return !this[JSON.stringify(a)] && (this[JSON.stringify(a)] = true);
                     }, Object.create(null))
                     
-                    var content_cor_html = `<option selected style="display: none;">Cor:</option>`;
+                    var content_personagem_html = `<option selected style="display: none;">Personagem:</option>`;
 
-                    $.each(content_cor, function (indice, dados_produto) {
-                        content_cor_html += `<option value="${dados_produto.id_cor_produto}">${dados_produto.cor}</option>`;
+                    $.each(content_personagem, function (indice, dados_produto) {
+                        content_personagem_html += `<option value="${dados_produto.id_personagem_produto}">${dados_produto.personagem}</option>`;
                     })
 
-                    $("#id_cor_selecionado").html(content_cor_html);
-                    // Exibir Cores end
+                    $("#id_personagem_selecionado").html(content_personagem_html);
+                    // Exibir personagem end
 
                 } else {
                     location.href = 'loja';
@@ -83,9 +83,9 @@ $(function () {
         var id_produto = $("#id_produto_inp").val();
         var qtd_produto = $("#id_qtd_produto_inp").val();
         var id_tamanho_selecionado = $("#id_tamanho_selecionado").val();
-        var id_cor_selecionado = $("#id_cor_selecionado").val();
+        var id_personagem_selecionado = $("#id_personagem_selecionado").val();
         var tamanho_selecionado = $( "#id_tamanho_selecionado option:selected" ).text();
-        var cor_selecionado = $( "#id_cor_selecionado option:selected" ).text();
+        var personagem_selecionado = $( "#id_personagem_selecionado option:selected" ).text();
 
         if (id_produto != 0 && id_produto > 0) {
             produtoCarrinho = { 
@@ -93,9 +93,9 @@ $(function () {
                 id_produto, 
                 qtd_produto, 
                 id_tamanho_selecionado: id_tamanho_selecionado, 
-                id_cor_selecionado: id_cor_selecionado, 
+                id_personagem_selecionado: id_personagem_selecionado, 
                 tamanho_selecionado: tamanho_selecionado, 
-                cor_selecionado: cor_selecionado 
+                personagem_selecionado: personagem_selecionado 
             }
 
             $.get('commandscontrol/Encomendas.php', produtoCarrinho, function (retorna) {

@@ -47,10 +47,10 @@
                 $sql = "SELECT encomendas.id_encomenda, encomendas.quantidade, encomendas.data_hora, usuarios.nome, 
                         usuarios.email, usuarios.tipo_usuario, produtos.id_produto, produtos.nome_produto, 
                         produtos.preco_produto, produtos.quatidade_disponivel, produtos.imagem_produto, 
-                        cor_produto.id_cor_produto, cor_produto.cor, tamanho_produto.id_tamanho_produto, tamanho_produto.tamanho 
+                        personagem_produto.id_personagem_produto, personagem_produto.personagem, tamanho_produto.id_tamanho_produto, tamanho_produto.tamanho 
                         FROM encomendas INNER JOIN usuarios ON encomendas.id_usuario_fk = usuarios.id_usuario 
                         INNER JOIN produtos ON encomendas.id_produto_fk = produtos.id_produto 
-                        INNER JOIN cor_produto ON encomendas.id_cor_produto_fk = cor_produto.id_cor_produto 
+                        INNER JOIN personagem_produto ON encomendas.id_personagem_produto_fk = personagem_produto.id_personagem_produto 
                         INNER JOIN tamanho_produto ON encomendas.id_tamanho_produto_fk = tamanho_produto.id_tamanho_produto 
                         WHERE id_encomenda = :id_encomenda";
             
@@ -67,17 +67,17 @@
             }
         }
 
-        public function cadastrarEncomendas($id_usuario_fk, $id_produto_fk, $id_cor_produto_fk, $id_tamanho_produto_fk, $quantidade, $data_hora){
+        public function cadastrarEncomendas($id_usuario_fk, $id_produto_fk, $id_personagem_produto_fk, $id_tamanho_produto_fk, $quantidade, $data_hora){
             try {
                 $objConexao = new Connection();
                 $connection = $objConexao->conectar();
     
-                $sql = "INSERT INTO encomendas VALUES (NULL, :id_usuario_fk, :id_produto_fk, :id_cor_produto_fk, :id_tamanho_produto_fk, :quantidade, :data_hora, :status)";
+                $sql = "INSERT INTO encomendas VALUES (NULL, :id_usuario_fk, :id_produto_fk, :id_personagem_produto_fk, :id_tamanho_produto_fk, :quantidade, :data_hora, :status)";
             
                 $cadastrar = $connection->prepare($sql);
                 $cadastrar->bindValue(":id_usuario_fk", $id_usuario_fk);
                 $cadastrar->bindValue(":id_produto_fk", $id_produto_fk);
-                $cadastrar->bindValue(":id_cor_produto_fk", $id_cor_produto_fk);
+                $cadastrar->bindValue(":id_personagem_produto_fk", $id_personagem_produto_fk);
                 $cadastrar->bindValue(":id_tamanho_produto_fk", $id_tamanho_produto_fk);
                 $cadastrar->bindValue(":quantidade", $quantidade);
                 $cadastrar->bindValue(":data_hora", $data_hora);
@@ -92,17 +92,17 @@
             }
         }
 
-        public function editarEncomendas($id_encomenda, $id_produto_fk, $id_cor_produto_fk, $id_tamanho_produto_fk, $quantidade, $data_hora){
+        public function editarEncomendas($id_encomenda, $id_produto_fk, $id_personagem_produto_fk, $id_tamanho_produto_fk, $quantidade, $data_hora){
             try {
                 $objConexao = new Connection();
                 $connection = $objConexao->conectar();
                 
-                $sql = "UPDATE encomendas SET id_produto_fk = :, id_cor_produto_fk = :id_cor_produto_fk, id_tamanho_produto_fk = :id_tamanho_produto_fk, quantidade= :quantidade, data_hora = :data_hora WHERE encomendas.id_encomenda = :id_encomenda";
+                $sql = "UPDATE encomendas SET id_produto_fk = :, id_personagem_produto_fk = :id_personagem_produto_fk, id_tamanho_produto_fk = :id_tamanho_produto_fk, quantidade= :quantidade, data_hora = :data_hora WHERE encomendas.id_encomenda = :id_encomenda";
 
                 $editar = $connection->prepare($sql);
                 $editar->bindValue(":id_encomenda", $id_encomenda);
                 $editar->bindValue(":id_produto_fk", $id_produto_fk);
-                $editar->bindValue(":id_cor_produto_fk", $id_cor_produto_fk);
+                $editar->bindValue(":id_personagem_produto_fk", $id_personagem_produto_fk);
                 $editar->bindValue(":id_tamanho_produto_fk", $id_tamanho_produto_fk);
                 $editar->bindValue(":quantidade", $quantidade);
                 $editar->bindValue(":data_hora", $data_hora);

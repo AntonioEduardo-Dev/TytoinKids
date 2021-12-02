@@ -86,7 +86,7 @@
 
     if (isset($_GET['btn_listar_produto'])) {
         $consulta = $objProduto->listarProduto(intval($_GET['id_produto']));
-        $consultaCores = $objProduto->listarProdutoCores(intval($_GET['id_produto']));
+        $consultaCores = $objProduto->listarProdutoPersonagens(intval($_GET['id_produto']));
         $consultaTamanhos = $objProduto->listarProdutoTamanhos(intval($_GET['id_produto']));
 
         $dados = [
@@ -165,51 +165,47 @@
         }
     }
 
-    if (isset($_POST['btn_cadastrar_cores'])) {
-        $id_produto = $_POST['btn_cadastrar_cores'];
+    if (isset($_POST['btn_cadastrar_personagens'])) {
+        $id_produto = $_POST['btn_cadastrar_personagens'];
 
-        $cores                  = [];
-        $quantidade_cores       = [];
-        $coresDefinidos         = ["Vermelho","Verde","Azul","Amarelo"];
-        $tamanhos               = [];
-        $quantidade_tamanhos    = [];
+        $personagensDefinidos   = ["Vermelho","Verde","Azul","Amarelo"];
         $tamanhosDefinidos      = ["1","2","4","6","8"];
-        $cores                  = $_POST['cores'];
+        $personagens            = $_POST['personagens'];
         $tamanhos               = $_POST['tamanhos'];
-        $quantidade_cores       = $_POST['quantidade_cores'];
+        $quantidade_personagens = $_POST['quantidade_personagens'];
         $quantidade_tamanhos    = $_POST['quantidade_tamanhos'];
-        $erroCores              = 0;
-        $erroTamanho            = 0;
+        $erro_personagens       = 0;
+        $erro_tamanho           = 0;
         
-        if (count($cores) <= count($coresDefinidos)) {
-            for ($i = 0; $i < count($cores); $i++) { 
-                if ($cores[$i] === "1") {
-                    if(!($objProduto->cadastrarCorProduto($id_produto, $coresDefinidos[$i], $quantidade_cores[$i]))){
-                        $erroCores++;
+        if (count($personagens) <= count($personagensDefinidos)) {
+            for ($i = 0; $i < count($personagens); $i++) { 
+                if ($personagens[$i] === "1") {
+                    if(!($objProduto->cadastrarPersonagemProduto($id_produto, $personagensDefinidos[$i], $quantidade_personagens[$i]))){
+                        $erro_personagens++;
                     }
                 }
             }    
         }else {
-            $erroCores++;
+            $erro_personagens++;
         }
         
         if (count($tamanhos) <= count($tamanhosDefinidos)) {
             for ($i = 0; $i < count($tamanhos); $i++) { 
                 if ($tamanhos[$i] === "1") {
                     if(!($objProduto->cadastrarTamProduto($id_produto, $tamanhosDefinidos[$i], $quantidade_tamanhos[$i]))){
-                        $erroTamanho++;
+                        $erro_tamanho++;
                     }
                 }
             }
         }else {
-            $erroTamanho++;
+            $erro_tamanho++;
         }
 
-        if ($erroCores > 0 && $erroTamanho > 0) {
+        if ($erro_personagens > 0 && $erro_tamanho > 0) {
             echo "alert_notification_error_tam_cor!-|-alert-danger";
-        }elseif($erroCores > 0){
+        }elseif($erro_personagens > 0){
             echo "alert_notification_error_cor!-|-alert-danger";
-        }elseif($erroTamanho > 0){
+        }elseif($erro_tamanho > 0){
             echo "alert_notification_error_tamanho!-|-alert-danger";
         }else{
             echo "Produto cadastrado com sucesso!";
@@ -218,9 +214,12 @@
 
     if (isset($_POST['editarProdutos'])) {
         $id_produto = 6;
-        $nome = "Vestido Primário"; $preco = 22; $quantidade = 3; $imagem = NULL;
+        $nome = "Vestido Primário"; 
+        $preco = 22; 
+        $quantidade = 3; 
+        $imagem = NULL;
 
-        if ($objProduto->editar($id_produto,$nome,$preco,$quantidade,$imagem)) {
+        if ($objProduto->editar($id_produto, $nome, $preco, $quantidade, $imagem)) {
             echo "Editado!";
         }else {
             echo "alert_notification_error!-|-alert-danger";

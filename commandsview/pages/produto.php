@@ -60,12 +60,8 @@
 										<option value="6">6</option>
 										<option value="8">8</option>
 									</select>
-									<select class="form-control mt-2" name="" placeholder="Ex: 5" id="id_cor_selecionado">
-										<option value="" hidden selected>Cor:</option>
-										<option value="1">Vermelho</option>
-										<option value="2">Verde</option>
-										<option value="3">Azul</option>
-										<option value="4">Amarelo</option>
+									<select class="form-control mt-2" name="" placeholder="Ex: 5" id="id_personagem_selecionado">
+										<option value="" hidden selected>Personagem:</option>
 									</select>
 								</div>
 							</div>

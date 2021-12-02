@@ -68,7 +68,7 @@
                 $objConexao = new Connection();
                 $connection = $objConexao->conectar();
 
-                $sql = "SELECT * FROM produtos INNER JOIN categorias ON produtos.id_categoria_fk = categorias.id_categoria INNER JOIN tamanho_produto ON produtos.id_produto = tamanho_produto.id_produto_fk INNER JOIN cor_produto ON produtos.id_produto = tamanho_produto.id_produto_fk WHERE id_produto = :id_produto";
+                $sql = "SELECT * FROM produtos INNER JOIN categorias ON produtos.id_categoria_fk = categorias.id_categoria INNER JOIN tamanho_produto ON produtos.id_produto = tamanho_produto.id_produto_fk INNER JOIN personagem_produto ON produtos.id_produto = tamanho_produto.id_produto_fk WHERE id_produto = :id_produto";
                 $consulta = $connection->prepare($sql);
                 $consulta->bindValue(":id_produto", $id_produto);
                 
@@ -82,12 +82,12 @@
             }
         }
 
-        public function listarProdutoCores($id_produto){
+        public function listarProdutoPersonagens($id_produto){
             try {
                 $objConexao = new Connection();
                 $connection = $objConexao->conectar();
 
-                $sql = "SELECT cor FROM cor_produto WHERE cor_produto.id_produto_fk = :id_produto";
+                $sql = "SELECT personagem FROM personagem_produto WHERE personagem_produto.id_produto_fk = :id_produto";
                 $consulta = $connection->prepare($sql);
                 $consulta->bindValue(":id_produto", $id_produto);
                 
@@ -198,15 +198,15 @@
             }
         }
         
-        public function cadastrarCorProduto($id_produto, $cor, $quantidade){
+        public function cadastrarPersonagemProduto($id_produto, $personagem, $quantidade){
             try {
                 $objConexao = new Connection();
                 $connection = $objConexao->conectar();
     
-                $sql = "INSERT INTO cor_produto (id_cor_produto, id_produto_fk, cor) VALUES (NULL, :id_produto, :cor)";
+                $sql = "INSERT INTO personagem_produto (id_personagem_produto, id_produto_fk, personagem) VALUES (NULL, :id_produto, :personagem)";
                 $cadastrar = $connection->prepare($sql);
                 $cadastrar->bindValue(":id_produto", $id_produto);
-                $cadastrar->bindValue(":cor", $cor);
+                $cadastrar->bindValue(":personagem", $personagem);
                 
                 return (($cadastrar->execute()) ? true : false);
 

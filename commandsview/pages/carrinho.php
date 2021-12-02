@@ -32,7 +32,7 @@
 											<th class="product-name">Nome</th>
 											<th class="product-price">Preço por unidade</th>
 											<th class="product-quantity">Quantidade</th>
-											<th class="product-total">Cor</th>
+											<th class="product-total">personagem</th>
 											<th class="product-total">Tamanho</th>
 											<th class="product-remove"></th>
 										</tr>
@@ -46,7 +46,7 @@
 															<td class="product-name">'.$value["nomeProduto"].'</td>
 															<td class="product-price">'.$value["preco_produto"].'</td>
 															<td class="product-quantity"><input type="number" placeholder="0" value="'.$value["qtd_produto"].'" disabled></td>
-															<td class="product-cor">'.$value["cor"].'</td>
+															<td class="product-personagem">'.$value["personagem"].'</td>
 															<td class="product-tamanho">'.$value["tamanho"].'</td>
 															<td class="product-remove"><h5><a class="delete_item_cart" data-filter="'.$key.'"><i class="far fa-window-close mt-4"></i></a></h5><input type="text" hidden value="'.$key.'"></td>
 														</tr>';

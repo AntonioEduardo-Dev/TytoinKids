@@ -35,9 +35,9 @@ $(function() {
 
                         /* DADOS ENCOMENDA */
                         var id_encomenda = encomenda[0].id_encomenda;
-                        var id_cor_produto = encomenda[0].id_cor_produto;
+                        var id_personagem_produto = encomenda[0].id_personagem_produto;
                         var id_tamanho_produto = encomenda[0].id_tamanho_produto;
-                        var cor_produto = encomenda[0].cor;
+                        var personagem_produto = encomenda[0].cor;
                         var tamanho_produto = encomenda[0].tamanho;
                         var quantidade = encomenda[0].quantidade;
                         var quatidade_disponivel = encomenda[0].quatidade_disponivel;
@@ -105,7 +105,7 @@ $(function() {
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-lg-6">
-                                                        <input type="text" placeholder="Cor: " id="id_cor" value="Cor: ${cor_produto}" required disabled>
+                                                        <input type="text" placeholder="Cor: " id="id_cor" value="Cor: ${personagem_produto}" required disabled>
                                                     </div>
                                                     <div class="col-lg-6">
                                                         <input type="text" placeholder="Tamanho: " id="id_tamanho" value="Tamanho: ${tamanho_produto}" required disabled>

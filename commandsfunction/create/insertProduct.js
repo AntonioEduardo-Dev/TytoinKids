@@ -62,38 +62,39 @@ $(function() {
                     var tipo = idRetorno.indexOf("alert_notification_error");
                     idRetorno = idRetorno.split("-|-");
 
-                    if (tipo === -1) {
-                        var coresSelecionados       = [ $('#btn_id_check_cor_vermelho').prop("checked") == true ? 1 : 0,
+                    // if (tipo === -1) {
+                        var personagens_selecionados= [ $('#btn_id_check_cor_vermelho').prop("checked") == true ? 1 : 0,
                                                         $('#btn_id_check_cor_verde').prop("checked")    == true ? 1 : 0,
                                                         $('#btn_id_check_cor_azul').prop("checked")     == true ? 1 : 0,
                                                         $('#btn_id_check_cor_amarelo').prop("checked")  == true ? 1 : 0
                                                     ];
 
-                        var quantidade_cores        = [ $('#btn_id_check_cor_vermelho').val() > 0 ? 1 : 0,
+                        var quantidade_personagens        = [ $('#btn_id_check_cor_vermelho').val() > 0 ? 1 : 0,
                                                         $('#btn_id_check_cor_verde').val()    > 0 ? 1 : 0,
                                                         $('#btn_id_check_cor_azul').val()     > 0 ? 1 : 0,
                                                         $('#btn_id_check_cor_amarelo').val()  > 0 ? 1 : 0
                                                     ];
 
-                        var tamanhosSelecionados    = [ $('#btn_id_check_tam_1').prop("checked")    == true ? 1 : 0,
-                                                        $('#btn_id_check_tam_2').prop("checked")    == true ? 1 : 0,
-                                                        $('#btn_id_check_tam_4').prop("checked")    == true ? 1 : 0,
+                        var tamanhosSelecionados    = [ $('#btn_id_check_tam_1').prop("checked")   == true ? 1 : 0,
+                                                        $('#btn_id_check_tam_2').prop("checked")   == true ? 1 : 0,
+                                                        $('#btn_id_check_tam_4').prop("checked")   == true ? 1 : 0,
                                                         $('#btn_id_check_tam_6').prop("checked")   == true ? 1 : 0,
-                                                        $('#btn_id_check_tam_8').prop("checked")    == true ? 1 : 0
+                                                        $('#btn_id_check_tam_8').prop("checked")   == true ? 1 : 0
                                                     ];
 
-                        var quantidade_tamanhos     = [ $('#btn_id_check_cor_vermelho').val() > 0 ? 1 : 0,
-                                                        $('#btn_id_check_cor_verde').val()    > 0 ? 1 : 0,
-                                                        $('#btn_id_check_cor_azul').val()     > 0 ? 1 : 0,
-                                                        $('#btn_id_check_cor_amarelo').val()  > 0 ? 1 : 0
+                        var quantidade_tamanhos     = [ $('#btn_id_qtd_tam_1').val()  > 0 ? $('#btn_id_qtd_tam_1').val() : 0,
+                                                        $('#btn_id_qtd_tam_2').val()  > 0 ? $('#btn_id_qtd_tam_2').val() : 0,
+                                                        $('#btn_id_qtd_tam_4').val()  > 0 ? $('#btn_id_qtd_tam_4').val() : 0,
+                                                        $('#btn_id_qtd_tam_6').val()  > 0 ? $('#btn_id_qtd_tam_6').val() : 0,
+                                                        $('#btn_id_qtd_tam_8').val()  > 0 ? $('#btn_id_qtd_tam_8').val() : 0
                                                     ];
 
                         var dados = {
-                            btn_cadastrar_cores     : idRetorno[0],
-                            cores                   : coresSelecionados,
-                            quantidade_cores        : quantidade_cores,
-                            tamanhos                : tamanhosSelecionados,
-                            quantidade_tamanhos     : quantidade_tamanhos
+                            btn_cadastrar_personagens   : idRetorno[0],
+                            personagens                 : personagens_selecionados,
+                            quantidade_personagens      : quantidade_personagens,
+                            tamanhos                    : tamanhosSelecionados,
+                            quantidade_tamanhos         : quantidade_tamanhos
                         }
                         console.log(dados);
                         /*
@@ -108,9 +109,9 @@ $(function() {
                             }
                         });
                         */
-                    } else if (tipo > -1) {
-                        exibirModalAlerta(idRetorno[0],false,idRetorno[1]);
-                    }
+                    // } else if (tipo > -1) {
+                    //     exibirModalAlerta(idRetorno[0],false,idRetorno[1]);
+                    // }
                 });
             }
         }, 100);
