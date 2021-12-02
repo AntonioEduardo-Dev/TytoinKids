@@ -75,8 +75,8 @@
 													</div>
 													<div class="col-lg">
 														<select class="mt-3" name="nm_personagem" id="id_personagem">
-															<option value="1" selected style="display: none;">Personagem*</option>
-															<option value="1">Peppa</option>
+															<option value="" selected style="display: none;">Personagem*</option>
+															<option value="Peppa">Peppa</option>
 														</select>
 													</div>
 												</div>

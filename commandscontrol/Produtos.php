@@ -170,28 +170,20 @@
 
         $personagensDefinidos   = ["Vermelho","Verde","Azul","Amarelo"];
         $tamanhosDefinidos      = ["1","2","4","6","8"];
-        $personagens            = $_POST['personagens'];
+        $personagens            = $_POST['personagem'];
         $tamanhos               = $_POST['tamanhos'];
         $quantidade_personagens = $_POST['quantidade_personagens'];
         $quantidade_tamanhos    = $_POST['quantidade_tamanhos'];
         $erro_personagens       = 0;
         $erro_tamanho           = 0;
         
-        if (count($personagens) <= count($personagensDefinidos)) {
-            for ($i = 0; $i < count($personagens); $i++) { 
-                if ($personagens[$i] === "1") {
-                    if(!($objProduto->cadastrarPersonagemProduto($id_produto, $personagensDefinidos[$i], $quantidade_personagens[$i]))){
-                        $erro_personagens++;
-                    }
-                }
-            }    
-        }else {
+        if(!($objProduto->cadastrarPersonagemProduto($id_produto, $personagens, $quantidade_personagens))){
             $erro_personagens++;
         }
         
         if (count($tamanhos) <= count($tamanhosDefinidos)) {
             for ($i = 0; $i < count($tamanhos); $i++) { 
-                if ($tamanhos[$i] === "1") {
+                if ($tamanhos[$i] === "1" && $quantidade_tamanhos[$i] != 0 && $quantidade_tamanhos[$i] != "") {
                     if(!($objProduto->cadastrarTamProduto($id_produto, $tamanhosDefinidos[$i], $quantidade_tamanhos[$i]))){
                         $erro_tamanho++;
                     }

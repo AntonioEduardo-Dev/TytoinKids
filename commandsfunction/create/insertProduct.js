@@ -62,18 +62,10 @@ $(function() {
                     var tipo = idRetorno.indexOf("alert_notification_error");
                     idRetorno = idRetorno.split("-|-");
 
-                    // if (tipo === -1) {
-                        var personagens_selecionados= [ $('#btn_id_check_cor_vermelho').prop("checked") == true ? 1 : 0,
-                                                        $('#btn_id_check_cor_verde').prop("checked")    == true ? 1 : 0,
-                                                        $('#btn_id_check_cor_azul').prop("checked")     == true ? 1 : 0,
-                                                        $('#btn_id_check_cor_amarelo').prop("checked")  == true ? 1 : 0
-                                                    ];
+                    if (tipo === -1) {
+                        var personagem_selecionado  = $("#id_personagem").val();
 
-                        var quantidade_personagens        = [ $('#btn_id_check_cor_vermelho').val() > 0 ? 1 : 0,
-                                                        $('#btn_id_check_cor_verde').val()    > 0 ? 1 : 0,
-                                                        $('#btn_id_check_cor_azul').val()     > 0 ? 1 : 0,
-                                                        $('#btn_id_check_cor_amarelo').val()  > 0 ? 1 : 0
-                                                    ];
+                        var quantidade_personagens  = 1;
 
                         var tamanhosSelecionados    = [ $('#btn_id_check_tam_1').prop("checked")   == true ? 1 : 0,
                                                         $('#btn_id_check_tam_2').prop("checked")   == true ? 1 : 0,
@@ -91,13 +83,12 @@ $(function() {
 
                         var dados = {
                             btn_cadastrar_personagens   : idRetorno[0],
-                            personagens                 : personagens_selecionados,
+                            personagem                  : personagem_selecionado,
                             quantidade_personagens      : quantidade_personagens,
                             tamanhos                    : tamanhosSelecionados,
                             quantidade_tamanhos         : quantidade_tamanhos
                         }
-                        console.log(dados);
-                        /*
+
                         $.post('commandscontrol/Produtos.php', dados, function(response) {
                             var tipo = response.indexOf("alert_notification_error");
                             retorno = response.split("-|-");
@@ -108,10 +99,9 @@ $(function() {
                                 exibirModalAlerta(retorno[0],false,retorno[1]);
                             }
                         });
-                        */
-                    // } else if (tipo > -1) {
-                    //     exibirModalAlerta(idRetorno[0],false,idRetorno[1]);
-                    // }
+                    } else if (tipo > -1) {
+                        exibirModalAlerta(idRetorno[0],false,idRetorno[1]);
+                    }
                 });
             }
         }, 100);
