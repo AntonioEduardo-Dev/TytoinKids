@@ -53,7 +53,7 @@ class ListarProduto{
 
                 foreach($dados as $indice => $row){
                     $subdata    = array();
-                    $subdata[]  = '<img src="commandsview/assets/img/images/'.$row[4].'" height="35" width="35"/>';
+                    $subdata[]  = $row[0];
                     $subdata[]  = $row[2];
                     $subdata[]  = $row[3];
                     $subdata[]  = '<h4 class="product-remove">
