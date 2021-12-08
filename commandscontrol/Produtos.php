@@ -141,7 +141,7 @@
         $nome       = $_POST['prod_nome'];
         $categoria  = $_POST['prod_categ'];
         $preco      = $_POST['prod_preco'];
-        $imagem     = $_POST['prod_imagem'];
+        $imagens    = $_POST['prod_imagens'];
         
         if($categoria == "" || $nome == "" || $preco == ""){
             echo "alert_notification_error_empty!-|-alert-warning";
@@ -154,7 +154,16 @@
                 if ((is_string($nome)) && (is_numeric($categoria)) && (is_numeric($preco))) {
                     $nome = ucfirst(strtolower($nome));
 
-                    echo $objProduto->cadastrar($categoria, $nome, $preco, $imagem);
+                    if($id_produto = $objProduto->cadastrar($categoria, $nome, $preco, $imagens)){
+                        foreach ($imagens as $key => $imagem) {
+                            $objProduto->cadastrarImagemProduto($id_produto, $imagem["nome_imagem"]);
+                        }
+
+                        echo $id_produto;
+
+                    } else {
+                        echo "alert_notification_error_id!-|-alert-warning";
+                    }
                     
                 } else {
                     echo "alert_notification_error_data_bite!-|-alert-warning";
@@ -166,35 +175,45 @@
         
     }
 
-    if(isset($_FILES['nm_imageUpload'])){
-        if (!empty($_FILES['nm_imageUpload'])){
+    if(isset($_FILES['nm_cadastro_imagens'])){
+        
+        if (!empty($_FILES['nm_cadastro_imagens'])){
+            $imagens = $_FILES['nm_cadastro_imagens'];
+            $erro_ext_imagens = 0;
+            $nomes_imagens = [];
 
-            $ext = strtolower(substr($_FILES['nm_imageUpload']['name'], -4)); // pegar extensão
-            
-            $extValidas = array(".jpg",".jpeg",".png"); // extensões validas
+            foreach ($imagens['name'] as $key => $imagem) {
+                $ext = strtolower(substr($imagem, -4)); // pegar extensão
 
-            $verifica = 0;
-            for ($i=0; $i < count($extValidas); $i++) { 
-                if ($ext == $extValidas[$i]) $verifica++;
-            }
+                $extValidas = array(".jpg",".png"); // extensões validas
 
-            if ($verifica > 0) {
-                $novoNome = md5(time()).$ext; // definir novo nome
-                $dir = "../commandsview/assets/img/images/"; // definir diretório para upload da imagem
-    
-                // upload imagem
-                if (move_uploaded_file($_FILES['nm_imageUpload']['tmp_name'], $dir.$novoNome)) {
-                    echo 'true-|-'.$novoNome;
-                }else{
-                    echo 'false-|-Imagem_nao_enviada!';
+                for ($i=0; $i < count($extValidas); $i++) { 
+                    if ($ext == $extValidas[$i]) $erro_ext_imagens++;
                 }
-            }else{
-                echo 'false-|-Extensao_Invalida!';
+                
+                if ($erro_ext_imagens > 0) {
+                    $novoNome = md5(time()).$ext; // definir novo nome
+                    $dir = "../commandsview/assets/img/images/"; // definir diretório para upload da imagem
+        
+                    // upload imagem
+                    move_uploaded_file($imagens['tmp_name'][0], $dir.$novoNome);
+
+                    $imagem_nome = [
+                        "nome_imagem" => $novoNome
+                    ];
+
+                    array_push($nomes_imagens, $imagem_nome);
+                }else{
+                    $erro_ext_imagens = 0;
+                }
             }
+
+            echo json_encode($nomes_imagens);
 
         }else{
             echo 'false-|-erro_inesperado!';
         }
+        
     }
 
     if (isset($_POST['btn_cadastrar_personagens'])) {
@@ -253,15 +272,15 @@
     if (isset($_POST['btn_apagar'])) {
         $id_produto = intval($_POST['id_produto']);
 
-        if(is_int($id_produto)):
-            if ($objProduto->apagar($id_produto)):
+        if(is_int($id_produto)){
+            if ($objProduto->apagar($id_produto)){
                 echo "Apagado!";
-            else:
+            }else {
                 echo "alert_notification_error!-|-alert-danger";
-            endif;
-        else:
+            };
+        }else{
             echo "alert_notification_error_data_bite!-|-alert-danger";
-        endif;
+        };
     }
 
 ?>

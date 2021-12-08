@@ -218,14 +218,13 @@
                 $objConexao = new Connection();
                 $connection = $objConexao->conectar();
 
-                $sql = "INSERT INTO produtos(id_produto, id_categoria_fk, nome_produto, preco_produto, imagem_produto) VALUES (NULL, :categoria, :nome, :preco, :imagem)";
+                $sql = "INSERT INTO produtos(id_produto, id_categoria_fk, nome_produto, preco_produto) VALUES (NULL, :categoria, :nome, :preco)";
                 $cadastrar = $connection->prepare($sql);
                 $cadastrar->bindValue(":categoria", $categoria);
                 $cadastrar->bindValue(":nome", $nome);
                 $cadastrar->bindValue(":preco", $preco);
-                $cadastrar->bindValue(":imagem", $imagem);
 
-                return (($cadastrar->execute()) ? $connection->lastInsertId() : "alert_notification_error_id!");
+                return (($cadastrar->execute()) ? $connection->lastInsertId() : false);
 
             } catch (PDOException $e) {
                 echo "Erro ao cadastrar: " . $e->getMessage();
@@ -273,20 +272,48 @@
             }
         }
 
-        public function editar($id_produto, $nome, $preco, $imagem){
+        public function cadastrarImagemProduto($id_produto, $imagem_nome){
             try {
                 $objConexao = new Connection();
                 $connection = $objConexao->conectar();
     
-                $sql = "UPDATE produtos SET nome_produto = :nome, preco_produto = :preco, imagem_produto = :imagem WHERE produtos.id_produto = :id_produto";
+                $sql = "INSERT INTO imagens_produto VALUES (NULL, :id_produto, :imagem_nome)";
+                $cadastrar = $connection->prepare($sql);
+                $cadastrar->bindValue(":id_produto", $id_produto);
+                $cadastrar->bindValue(":imagem_nome", $imagem_nome);
+
+                return (($cadastrar->execute()) ? true : false);
+
+            } catch (PDOException $e) {
+                echo "Erro ao cadastrar: " . $e->getMessage();
+            } catch (Exception $e) {
+                echo "Erro: " . $e->getMessage();
+            }
+        }
+
+        public function editar($id_produto, $nome, $preco, $imagens){
+            try {
+                $objConexao = new Connection();
+                $connection = $objConexao->conectar();
+    
+                $sql = "UPDATE produtos SET nome_produto = :nome, preco_produto = :preco";
+
+                foreach ($imagens as $chave => $imagem) {
+                    $sql .= ", imagem_produto = :imagem".$chave;
+                }
+
+                $sql .= " WHERE produtos.id_produto = :id_produto";
+
                 $atualizar = $connection->prepare($sql);
                 $atualizar->bindValue(":id_produto", $id_produto);
                 $atualizar->bindValue(":nome", $nome);
                 $atualizar->bindValue(":preco", $preco);
-                $atualizar->bindValue(":imagem", $imagem);
+
+                foreach ($imagens as $chave => $imagem) {
+                    $atualizar->bindValue(":imagem".$chave, $imagem);
+                }
                 
                 return (($atualizar->execute()) ? true : false);
-                
             } catch (PDOException $e) {
                 echo "Erro ao editar: " . $e->getMessage();
             } catch (Exception $e) {

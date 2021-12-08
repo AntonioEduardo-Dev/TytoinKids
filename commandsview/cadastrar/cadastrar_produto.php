@@ -61,8 +61,9 @@
 											</div>
 											<div class="row mt-2">
 												<div class="col-lg">
-													<input type="file" placeholder="Imagem do produto*" id="id_imageUpload" name="nm_imageUpload" accept=".png">
+													<input type="file" placeholder="Imagem do produto*" id="id_imageUpload" name="nm_cadastro_imagens[]" multiple accept=".png, .jpg">
 												</div>
+												<div class="" id="id_mensagem_image"></div>
 											</div>
 											<div class="row mt-2">
 												<div class="col-lg-4">

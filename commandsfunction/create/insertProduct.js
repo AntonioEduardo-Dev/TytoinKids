@@ -43,43 +43,51 @@ $(function() {
         }
     }); 
 
-    $(document).on('click', '#id_cad', function() {
+    $(document).on('click', '#id_cad', function(e) {
+        e.preventDefault();
 
-        if($('#id_imageUpload')[0].files[0]) {
+        if(($('#id_imageUpload')[0].files).length != 0) {
             var data = new FormData();
-            data.append('nm_imageUpload', $('#id_imageUpload')[0].files[0]);
+            var prod_imagens = undefined;
+
+            $.each($("#id_imageUpload")[0].files, function(i, file) {
+                data.append('nm_cadastro_imagens[]', file);
+            });
 
             $.ajax({
                 url: 'commandscontrol/Produtos.php',
+                async: false,
                 data: data,
                 processData: false,
                 contentType: false,
                 type: 'POST',
                 success: function(data) 
                 {
+                    $("#id_mensagem_image").html(data);
+
                     var resultado = data.split('-|-');
     
-                    if (resultado[0] == "true") {
-                        prod_imagem = resultado[1];
+                    if (resultado[0] != false) {
+                        prod_imagens = (jQuery.parseJSON(data));
                     }else {
                         exibirModalAlerta(resultado[1],false,"alert-danger");
                     }
                 }
             });
         }else{
-            prod_imagem = "productind.jpg";
+            prod_imagens = "productind.jpg";
         }
 
         setTimeout(function() {
-            if(typeof prod_imagem != 'undefined'){
+            if(typeof prod_imagens != 'undefined'){
                 var dados = {
                     btn_cadastrar   : $("#id_cad").val(),
                     prod_categ      : $("#id_categ").val(),
                     prod_nome       : $("#id_nome").val(),
                     prod_preco      : $("#id_preco").val(),
-                    prod_imagem     : prod_imagem
+                    prod_imagens    : prod_imagens
                 }
-        
+                
                 $.post('commandscontrol/Produtos.php', dados, function(idRetorno) {
                     
                     var tipo = idRetorno.indexOf("alert_notification_error");
