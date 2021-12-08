@@ -51,7 +51,7 @@
     };
 
 
-    if(isset($_POST['listarCategorias'])){
+    if(isset($_GET['listarCategorias'])){
         if ($dados = $objCategoria->listarSelectCategorias()) {
             $retorno = [
                 "type" => "success", 

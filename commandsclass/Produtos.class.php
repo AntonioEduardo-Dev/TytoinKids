@@ -7,7 +7,15 @@
                 $objConexao = new Connection();
                 $connection = $objConexao->conectar();
 
-                $sql = "SELECT * FROM produtos INNER JOIN categorias ON produtos.id_categoria_fk = categorias.id_categoria";
+                $sql = "SELECT *, (SELECT imagens_produto.id_imagem_produto 
+                        FROM imagens_produto WHERE imagens_produto.id_produto_fk = produtos.id_produto 
+                        ORDER BY imagens_produto.id_imagem_produto ASC LIMIT 1) 
+                        AS id_imagem_produto, 
+                        (SELECT imagens_produto.imagem_produto FROM imagens_produto 
+                        WHERE imagens_produto.id_produto_fk = produtos.id_produto 
+                        ORDER BY imagens_produto.id_imagem_produto ASC LIMIT 1) 
+                        AS imagem_produto FROM produtos INNER JOIN categorias 
+                        ON produtos.id_categoria_fk = categorias.id_categoria";
                 $consulta = $connection->prepare($sql);
                 
                 return (($consulta->execute() && $consulta->rowCount() > 0) 
@@ -28,6 +36,24 @@
                 $sql = "SELECT DISTINCT(categorias.nome_categoria) 
                         FROM categorias INNER JOIN produtos 
                         ON categorias.id_categoria = produtos.id_categoria_fk LIMIT 10";
+                $consulta = $connection->prepare($sql);
+                
+                return (($consulta->execute() && $consulta->rowCount() > 0) 
+                        ? $consulta->fetchAll($connection::FETCH_ASSOC) : "" );
+
+            } catch (PDOException $e) {
+                echo "Erro ao listar: " . $e->getMessage();
+            } catch (Exception $e) {
+                echo "Erro: " . $e->getMessage();
+            }
+        }
+
+        public function listarPersonagens(){
+            try {
+                $objConexao = new Connection();
+                $connection = $objConexao->conectar();
+
+                $sql = "SELECT DISTINCT(personagens.personagem), id_personagem FROM personagens";
                 $consulta = $connection->prepare($sql);
                 
                 return (($consulta->execute() && $consulta->rowCount() > 0) 
@@ -68,7 +94,15 @@
                 $objConexao = new Connection();
                 $connection = $objConexao->conectar();
 
-                $sql = "SELECT produtos.*, categorias.*, tamanho_produto.*, personagem_produto.*, tamanhos.tamanho 
+                $sql = "SELECT produtos.*, categorias.*, tamanho_produto.*, personagem_produto.*, tamanhos.tamanho, 
+                        (SELECT imagens_produto.id_imagem_produto 
+                        FROM imagens_produto WHERE imagens_produto.id_produto_fk = produtos.id_produto 
+                        ORDER BY imagens_produto.id_imagem_produto ASC LIMIT 1) 
+                        AS id_imagem_produto, 
+                        (SELECT imagens_produto.imagem_produto FROM imagens_produto 
+                        WHERE imagens_produto.id_produto_fk = produtos.id_produto 
+                        ORDER BY imagens_produto.id_imagem_produto ASC LIMIT 1)  
+                        AS imagem_produto 
                         FROM produtos INNER JOIN categorias ON produtos.id_categoria_fk = categorias.id_categoria 
                         INNER JOIN tamanho_produto ON produtos.id_produto = tamanho_produto.id_produto_fk 
                         INNER JOIN personagem_produto ON produtos.id_produto = tamanho_produto.id_produto_fk 

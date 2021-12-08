@@ -33,6 +33,22 @@
         echo json_encode($retorno);
     }
 
+    if (isset($_GET['listarPersonagens'])) {
+        if ($dados = $objProduto->listarPersonagens()) {
+            $retorno = [
+                "type" => "success", 
+                "data" => $dados,
+            ];
+        } else {
+            $retorno = [
+                "type" => "error",
+                "data" => "Nenhum personagem cadastrado",
+            ];
+        }
+
+        echo json_encode($retorno);
+    }
+
     if (isset($_GET['listarCategoriasFilter'])) {
         if ($dados = $objProduto->listarCategoriasFilter()) {
             $retorno = [
@@ -192,11 +208,11 @@
                 }
                 
                 if ($erro_ext_imagens > 0) {
-                    $novoNome = md5(time()).$ext; // definir novo nome
+                    $novoNome = $key.md5(microtime()).$ext; // definir novo nome
                     $dir = "../commandsview/assets/img/images/"; // definir diretório para upload da imagem
         
                     // upload imagem
-                    move_uploaded_file($imagens['tmp_name'][0], $dir.$novoNome);
+                    move_uploaded_file($imagens['tmp_name'][$key], $dir.$novoNome);
 
                     $imagem_nome = [
                         "nome_imagem" => $novoNome

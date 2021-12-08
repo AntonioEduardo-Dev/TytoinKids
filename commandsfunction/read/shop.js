@@ -52,7 +52,7 @@ $(function () {
 
     $.get('commandscontrol/Produtos.php', listarProdutos, function (retorna) {
         var objProdutos = jQuery.parseJSON(retorna);
-
+        console.log(objProdutos);
         if (objProdutos.type == "success") {
             var content = ``;
             

@@ -3,7 +3,7 @@ $(function() {
 
     listarCategorias = {listarCategorias : true}
 
-    $.post('commandscontrol/Categorias.php', listarCategorias, function(retorna) {
+    $.get('commandscontrol/Categorias.php', listarCategorias, function(retorna) {
         var objCateg = jQuery.parseJSON(retorna);
         var content = ``;
 
@@ -18,6 +18,27 @@ $(function() {
         }
 
         $("#id_categ").html(content);
+    }); 
+
+    listarPersonagens = {listarPersonagens : true}
+
+    $.get('commandscontrol/Produtos.php', listarPersonagens, function(retorna) {
+        var objCateg = jQuery.parseJSON(retorna);
+        console.log(retorna);
+        var content = ``;
+        $("#id_personagem").html(content);
+
+        if (objCateg.type == "success") {
+            content = `<option selected style="display: none;">Personagem do produto*</option>`;
+
+            $.each(objCateg.data, function (indice, dados_categoria) {
+                content += `<option value="${dados_categoria.id_personagem}">${dados_categoria.personagem}</option>`;
+            })
+        }else{
+            content = `<option selected style="display: none;">Cadastre uma categoria no sistema!</option>`;
+        }
+
+        $("#id_personagem").html(content);
     }); 
 
     listarTamanhos = {listarTamanhos : true}
