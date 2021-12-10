@@ -171,8 +171,10 @@
                     $nome = ucfirst(strtolower($nome));
 
                     if($id_produto = $objProduto->cadastrar($categoria, $nome, $preco, $imagens)){
-                        foreach ($imagens as $key => $imagem) {
-                            $objProduto->cadastrarImagemProduto($id_produto, $imagem["nome_imagem"]);
+                        if (isset($imagens) && is_array($imagens) && count($imagens) > 0 ) {
+                            foreach ($imagens as $key => $imagem) {
+                                $objProduto->cadastrarImagemProduto($id_produto, $imagem["nome_imagem"]);
+                            }
                         }
 
                         echo $id_produto;
@@ -239,12 +241,12 @@
         $tamanhosDefinidos      = ["1","2","4","6","8"];
         $personagens            = $_POST['personagem'];
         $tamanhos               = $_POST['tamanhos'];
-        $quantidade_personagens = $_POST['quantidade_personagens'];
+        $personagens            = $_POST['decricao_personagem'];
         $quantidade_tamanhos    = $_POST['quantidade_tamanhos'];
         $erro_personagens       = 0;
         $erro_tamanho           = 0;
         
-        if(!($objProduto->cadastrarPersonagemProduto($id_produto, $personagens, $quantidade_personagens))){
+        if(!($objProduto->cadastrarPersonagemProduto($id_produto, $id_personagem, $personagens))){
             $erro_personagens++;
         }
         

@@ -24,7 +24,6 @@ $(function() {
 
     $.get('commandscontrol/Produtos.php', listarPersonagens, function(retorna) {
         var objCateg = jQuery.parseJSON(retorna);
-        console.log(retorna);
         var content = ``;
         $("#id_personagem").html(content);
 
@@ -49,13 +48,17 @@ $(function() {
             $(".content-tamanhos").html("");
 
             objTamanho.data.forEach( ( tamanhos, indice ) => {
+                if (indice != 0 && indice % 1 == 0) {
+                    $(".content-tamanhos").append(`
+                        <hr>
+                    `);
+                }
                 $(".content-tamanhos").append(`
                     <div class='row mt-3'>
                         <div class="col-lg-2">
-                            <input type="checkbox" name="btn_nm_tamanho" value="${tamanhos.id_tamanho}" id="btn_id_check_tam_1">
-                            <label for="flexSwitchCheckDefault">${tamanhos.tamanho}</label>
+                            <h4 class="mt-3 pl-5">${tamanhos.tamanho} : </h4>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-lg-8">
                             <input type="text" placeholder="Quantidade disponível*" id="btn_id_qtd_tam_${tamanhos.id_tamanho}">
                         </div>
                     </div>
@@ -117,7 +120,7 @@ $(function() {
                     if (tipo === -1) {
                         var personagem_selecionado  = $("#id_personagem").val();
 
-                        var quantidade_personagens  = 1;
+                        var decricao_personagem  = "peppa";
 
                         var tamanhosSelecionados    = [ $('#btn_id_check_tam_1').prop("checked")   == true ? 1 : 0,
                                                         $('#btn_id_check_tam_2').prop("checked")   == true ? 1 : 0,
@@ -136,11 +139,11 @@ $(function() {
                         var dados = {
                             btn_cadastrar_personagens   : idRetorno[0],
                             personagem                  : personagem_selecionado,
-                            quantidade_personagens      : quantidade_personagens,
+                            decricao_personagem         : decricao_personagem,
                             tamanhos                    : tamanhosSelecionados,
                             quantidade_tamanhos         : quantidade_tamanhos
                         }
-
+                        
                         $.post('commandscontrol/Produtos.php', dados, function(response) {
                             var tipo = response.indexOf("alert_notification_error");
                             retorno = response.split("-|-");

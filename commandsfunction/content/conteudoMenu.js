@@ -53,6 +53,11 @@ $(function() {
             "nome"      : "btn_nm_mensagem",
             "imagem"    : "image_menu_categoria.png",
             "titulo"    : "Sugestões"
+        },
+        {
+            "nome"      : "btn_nm_tamanho_personagem",
+            "imagem"    : "image_menu_categoria.png",
+            "titulo"    : "Tamanho e Personagem"
         }
     ];
 
@@ -131,6 +136,15 @@ $(function() {
                 var imagens     = ['image_menu_listar.png'];
                 var links       = ['listar/mensagens'];
                 var subTitulos  = ['Listar'];
+
+                var conteudo = bodyModalContent(qtdblocks, imagens, links, subTitulos);
+                break;
+            case "btn_nm_tamanho_personagem":
+                var titulo      = "Tamanho e Personagem";
+                var qtdblocks   = 2;
+                var imagens     = ['image_menu_cadastrar.png','image_menu_cadastrar.png'];
+                var links       = ['cadastrar/cadastrar_produto','cadastrar/cadastrar_produto'];
+                var subTitulos  = ['Cadastrar personagem', 'Cadastrar tamanho'];
 
                 var conteudo = bodyModalContent(qtdblocks, imagens, links, subTitulos);
                 break;

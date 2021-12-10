@@ -267,14 +267,15 @@
             }
         }
         
-        public function cadastrarPersonagemProduto($id_produto, $personagem, $quantidade){
+        public function cadastrarPersonagemProduto($id_produto, $id_personagem, $personagem){
             try {
                 $objConexao = new Connection();
                 $connection = $objConexao->conectar();
     
-                $sql = "INSERT INTO personagem_produto (id_personagem_produto, id_produto_fk, personagem) VALUES (NULL, :id_produto, :personagem)";
+                $sql = "INSERT INTO personagem_produto VALUES (NULL, :id_produto, :id_personagem, :personagem)";
                 $cadastrar = $connection->prepare($sql);
                 $cadastrar->bindValue(":id_produto", $id_produto);
+                $cadastrar->bindValue(":id_personagem", $id_personagem);
                 $cadastrar->bindValue(":personagem", $personagem);
                 
                 return (($cadastrar->execute()) ? true : false);
