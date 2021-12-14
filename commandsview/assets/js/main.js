@@ -91,10 +91,28 @@
             $(this).addClass("active");
 
             var selector = $(this).attr('data-filter');
+
+            $(".product-lists").isotope({
+                filter: selector,
+            });
+        });
+
+        $(document).on('change', '#id_personagem_select', function() {
+            var selector = $(this).find("option:selected").attr('data-filter');
             
             $(".product-lists").isotope({
                 filter: selector,
             });
+            
+        });
+
+        $(document).on('change', '#id_tamanho_select', function() {
+            var selector = $(this).find("option:selected").attr('data-filter');
+            
+            $(".product-lists").isotope({
+                filter: selector,
+            });
+            
         });
         
         // projects filters isotop

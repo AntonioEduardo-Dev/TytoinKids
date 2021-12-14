@@ -1,11 +1,10 @@
 <?php
     require_once "Connection.class.php";
 
-    class Usuarios {
+    class Usuarios  extends Connection{
         public function cadastrar($email, $nome, $senha, $cpf){
             try {
-                $objConexao = new Connection();
-                $connection = $objConexao->conectar();
+                $connection = $this->conectar();
 
                 $sql = "INSERT INTO usuarios VALUES (NULL, :email, :nome, :senha, :cpf, :status, :tipo_usuario, :primeiro_acesso)";
 
@@ -29,8 +28,7 @@
         
         public function cadastrarContato($id_usuario_fk, $fone, $whatsapp, $insta){
             try {
-                $objConexao = new Connection();
-                $connection = $objConexao->conectar();
+                $connection = $this->conectar();
 
                 $sql = "INSERT INTO usuario_contato VALUES (NULL, :id_usuario_fk, :fone, :whatsapp, :insta)";
 
@@ -51,8 +49,7 @@
 
         public function cadastrarEndereco($id_usuario_fk, $id_cidade_fk, $cep, $endereco, $bairro, $complemento, $numero){
             try {
-                $objConexao = new Connection();
-                $connection = $objConexao->conectar();
+                $connection = $this->conectar();
 
                 $sql = "INSERT INTO usuario_endereco VALUES (NULL, :id_usuario_fk, :id_cidade_fk, :cep, :endereco, :bairro, :complemento, :numero)";
 
@@ -76,8 +73,7 @@
         
         public function listar(){
             try {
-                $objConexao = new Connection();
-                $conn = $objConexao->conectar();
+                $conn = $this->conectar();
 
                 if($conn){
                     //Colunas da tabela
@@ -157,8 +153,7 @@
 
         public function listarDadosId($id_usuario){
             try {
-                $objConexao = new Connection();
-                $connection = $objConexao->conectar();
+                $connection = $this->conectar();
 
                 $sql = "SELECT usuarios.id_usuario, usuarios.email, usuarios.nome, usuarios.cpf, usuarios.tipo_usuario, usuario_contato.id_usuario_contato, usuario_contato.fone, usuario_contato.whatsapp, usuario_contato.insta, usuario_endereco.id_usuario_endereco, usuario_endereco.id_cidade_fk, usuario_endereco.cep, usuario_endereco.endereco, usuario_endereco.bairro, usuario_endereco.complemento, usuario_endereco.numero, 
                         (SELECT COUNT(encomendas.id_encomenda) FROM encomendas 

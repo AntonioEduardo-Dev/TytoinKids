@@ -1,7 +1,7 @@
 <?php
     require_once "Connection.class.php";
     
-    class Authentication{
+    class Authentication extends Connection{
         private $email;
         private $senha;
 
@@ -29,8 +29,7 @@
         
         public function validar(){
             try {
-                $objConexao = new Connection();
-                $connection = $objConexao->conectar();
+                $connection = $this->conectar();
 
                 $email = $this->email;
                 $senha = $this->senha;

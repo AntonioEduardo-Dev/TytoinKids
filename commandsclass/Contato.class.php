@@ -1,7 +1,7 @@
 <?php
     require_once "Connection.class.php";
     
-    class Contato{
+    class Contato extends Connection{
         private $email;
         private $nome;
         private $fone;
@@ -49,8 +49,7 @@
         
         public function cadastrarDuvida(){
             try {
-                $objConexao = new Connection();
-                $connection = $objConexao->conectar();
+                $connection = $this->conectar();
 
                 $email      = $this->email;
                 $nome       = $this->nome;
@@ -76,8 +75,7 @@
         
         public function listar(){
             try {
-                $objConexao = new Connection();
-                $conn = $objConexao->conectar();
+                $conn = $this->conectar();
 
                 if($conn){
                     //Colunas da tabela
@@ -157,16 +155,15 @@
 
         public function listarDadosId($id_duvida){
             try {
-                $objConexao = new Connection();
-                $conectar = $objConexao->conectar();
+                $connection = $this->conectar();
 
                 $sql = "SELECT * FROM duvidas WHERE duvidas.id_duvida = :id_duvida";
                 
-                $consulta = $conectar->prepare($sql);
+                $consulta = $connection->prepare($sql);
                 $consulta->bindValue(":id_duvida", $id_duvida);
 
                 return (($consulta->execute() && $consulta->rowCount() > 0) 
-                        ? $consulta->fetchAll($conectar::FETCH_ASSOC) : false );
+                        ? $consulta->fetchAll($connection::FETCH_ASSOC) : false );
 
             } catch (PDOException $e) {
                 echo "Erro ao listar: " . $e->getMessage();

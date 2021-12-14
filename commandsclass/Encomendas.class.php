@@ -1,11 +1,10 @@
 <?php
     require_once "Connection.class.php";
 
-    class Encomendas{
+    class Encomendas extends Connection{
         public function quantidadeEncomendas(){
             try {
-                $objConexao = new Connection();
-                $connection = $objConexao->conectar();
+                $connection = $this->conectar();
 
                 $sql = "SELECT * FROM encomendas";
             
@@ -22,8 +21,7 @@
 
         public function listarEncomendas(){
             try {
-                $objConexao = new Connection();
-                $connection = $objConexao->conectar();
+                $connection = $this->conectar();
 
                 $sql = "SELECT * FROM encomendas";
             
@@ -41,8 +39,7 @@
 
         public function listarEncomendasId($id_encomenda){
             try {
-                $objConexao = new Connection();
-                $connection = $objConexao->conectar();
+                $connection = $this->conectar();
 
                 $sql = "SELECT encomendas.id_encomenda, encomendas.quantidade, encomendas.data_hora, usuarios.nome, 
                         usuarios.email, usuarios.tipo_usuario, produtos.id_produto, produtos.nome_produto, 
@@ -70,8 +67,7 @@
 
         public function cadastrarEncomendas($id_usuario_fk, $id_produto_fk, $id_personagem_produto_fk, $id_tamanho_produto_fk, $quantidade, $data_hora){
             try {
-                $objConexao = new Connection();
-                $connection = $objConexao->conectar();
+                $connection = $this->conectar();
     
                 $sql = "INSERT INTO encomendas VALUES (NULL, :id_usuario_fk, :id_produto_fk, :id_personagem_produto_fk, :id_tamanho_produto_fk, :quantidade, :data_hora, :status)";
             
@@ -95,8 +91,7 @@
 
         public function editarEncomendas($id_encomenda, $id_produto_fk, $id_personagem_produto_fk, $id_tamanho_produto_fk, $quantidade, $data_hora){
             try {
-                $objConexao = new Connection();
-                $connection = $objConexao->conectar();
+                $connection = $this->conectar();
                 
                 $sql = "UPDATE encomendas SET id_produto_fk = :, id_personagem_produto_fk = :id_personagem_produto_fk, id_tamanho_produto_fk = :id_tamanho_produto_fk, quantidade= :quantidade, data_hora = :data_hora WHERE encomendas.id_encomenda = :id_encomenda";
 
@@ -119,8 +114,7 @@
 
         public function atualizarStatusEncomenda($id_encomenda, $status){
             try {
-                $objConexao = new Connection();
-                $connection = $objConexao->conectar();
+                $connection = $this->conectar();
                 
                 $sql = "UPDATE encomendas SET status = :status WHERE encomendas.id_encomenda = :id_encomenda";
 
@@ -139,8 +133,7 @@
 
         public function apagarEncomendas($id_encomenda){
             try {
-                $objConexao = new Connection();
-                $connection = $objConexao->conectar();
+                $connection = $this->conectar();
 
                 $sql = "DELETE FROM encomendas WHERE encomendas.id_encomenda = :id_encomenda";
 

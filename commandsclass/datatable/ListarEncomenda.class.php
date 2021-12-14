@@ -1,11 +1,10 @@
 <?php
 require_once "../commandsclass/Connection.class.php";
 
-class ListarEncomenda{
+class ListarEncomenda extends Connection{
     public function listar(){
         try {
-            $objConexao = new Connection();
-            $conn = $objConexao->conectar();
+            $conn = $this->conectar();
 
             if($conn){
                 //Colunas da tabela

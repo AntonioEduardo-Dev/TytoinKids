@@ -1,10 +1,9 @@
 <?php
     require_once "Connection.class.php";
 
-    class Manutencao{
+    class Manutencao extends Connection{
         public function validar(){
-            $objConexao = new Connection();
-            $connection = $objConexao->conectar();
+            $connection = $this->conectar();
             
             $sql = "SELECT * FROM manutencao WHERE id_manutencao = 1";
             
@@ -33,8 +32,7 @@
 
         public function alterar($statusManutencao){
             try {
-                $objConexao = new Connection();
-                $connection = $objConexao->conectar();
+                $connection = $this->conectar();
 
                 $sql = "UPDATE manutencao SET status = :statusManutencao WHERE manutencao.id_manutencao = 1";
                 

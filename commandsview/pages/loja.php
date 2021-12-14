@@ -26,30 +26,10 @@
 							<h4 class="card-header">Filtros</h4>
 							<div class="card-body">
 								<div class="list-group product-filter-button" id="list-tab" role="tablist">
-									<a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center active" data-filter="*">
-										<i class='fas fa-angle-right'></i>
-										Todos
-										<span class="badge badge-primary-custom badge-pill">14</span>
-									</a>
-									<a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-										<i class='fas fa-angle-right'></i>
-										Masculino
-										<span class="badge badge-primary-custom badge-pill">7</span>
-									</a>
-									<!--
-									<a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" id="list-home-list" data-toggle="list" href="loja" role="tab" aria-controls="home">
-										<i class='fas fa-angle-right'></i>
-										Infantil
-										<span class="badge badge-primary-custom badge-pill">1</span>
-									</a>-->
 								</div>
 								<div class="list-group mt-3">
-									<select class="form-control" name="" id="">
+									<select class="form-control" name="" id="id_personagem_select">
 										<option value="vermelho" hidden selected>Personagens:</option>
-										<option value="vermelho">Vermelho</option>
-										<option value="verde">Verde</option>
-										<option value="azul">Azul</option>
-										<option value="amarelo">Amarelo</option>
 									</select>
 								</div>
 								<div class="list-group mt-3">

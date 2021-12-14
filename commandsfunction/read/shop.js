@@ -1,26 +1,5 @@
 /* lISTAR CATEGORIAS E PRODUTOS*/
 $(function () {
-    listarCategorias = { listarCategorias : true }
-
-    $.get('commandscontrol/Produtos.php', listarCategorias, function (retorna) {
-        var objCategFilter = jQuery.parseJSON(retorna);
-
-        if (objCategFilter.type == "success") {
-            var content = `<ul> 
-                        <li class="li active" data-filter="*">Todos</li>`;
-
-            $.each(objCategFilter.data, function (indice, dados_categoria) {
-                content += `
-                        <li class="li" data-filter=".${dados_categoria.nome_categoria}">${(dados_categoria.nome_categoria).replace("_", " ")}</li>
-                `;
-            })
-
-            content += `</ul>`;
-        }
-
-        $(".product-filters").html(content);
-    });
-
     listarCategoriasFilter = { listarCategoriasFilter : true }
 
     $.get('commandscontrol/Produtos.php', listarCategoriasFilter, function (retorna) {
@@ -52,12 +31,12 @@ $(function () {
 
     $.get('commandscontrol/Produtos.php', listarProdutos, function (retorna) {
         var objProdutos = jQuery.parseJSON(retorna);
-        console.log(objProdutos);
+
         if (objProdutos.type == "success") {
             var content = ``;
             
             $.each(objProdutos.data, function (indice, dados_produto) {
-                content += `<div class="col-lg-4 col-md-6 text-center ${dados_produto.nome_categoria}">
+                content += `<div class="col-lg-4 col-md-6 text-center ${dados_produto.nome_categoria} ${dados_produto.personagens} ${dados_produto.tamanhos}">
                                 <div class="single-product-item">
                                     <div class="product-image">
                                         <a href="produto?id=${dados_produto.id_produto}" id="single-product-item" data-id="${dados_produto.id_produto}"><img src="commandsview/assets/img/images/${dados_produto.imagem_produto}" style="width: 200px; height: 200px;" alt="${dados_produto.nome_produto}"></a>
@@ -88,17 +67,38 @@ $(function () {
         $(".product-lists").html(content);
     });
 
+    /*================ Listagem de personagens ================*/
+    
+    listarPersonagens = { listarPersonagens : true }
+
+    $.get('commandscontrol/Produtos.php', listarPersonagens, function (retorna) {
+        var objPersonagens = jQuery.parseJSON(retorna);
+        if (objPersonagens.type == "success") {
+            $("#id_personagem_select").html("<option data-filter='*' selected>Personagem: Todos</option>");
+        
+            objPersonagens.data.forEach( element => {
+                $("#id_personagem_select").append(`<option data-filter=".${element.personagem}" value="${element.id_personagem}">Personagem: ${element.personagem}</option>`);
+            });
+        }else{
+            $("#id_personagem_select").html("<option data-filter='*' selected>Personagem: Indisponível</option>");
+        }
+    });
+
+    /*================ Listagem de tamanhos ================*/
+
     listarTamanhos = { listarTamanhos : true }
 
     $.get('commandscontrol/Produtos.php', listarTamanhos, function (retorna) {
         var objTamanhos = jQuery.parseJSON(retorna);
 
-        if (objTamanhos.type = "success") {
-            $("#id_tamanho_select").html("<option hidden selected>Tamanho:</option>");
+        if (objTamanhos.type == "success") {
+            $("#id_tamanho_select").html("<option data-filter='*' selected>Tamanho: Todos</option>");
             
             objTamanhos.data.forEach( element => {
-                $("#id_tamanho_select").append(`<option value="${element.id_tamanho}">Tamanho: ${element.tamanho}</option>`);
+                $("#id_tamanho_select").append(`<option data-filter=".${element.tamanho}" value="${element.id_tamanho}">Tamanho: ${element.tamanho}</option>`);
             });
+        }else{
+            $("#id_tamanho_select").html("<option data-filter='*' selected>Tamanho: Indisponível</option>");
         }
     });
 
