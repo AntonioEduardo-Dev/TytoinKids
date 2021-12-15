@@ -31,7 +31,7 @@
 			<div class="row">
 				<div class="col-md-5 mt-5 mb-5">
 					<div class="single-product-img">
-						<img id="imagem_produto" src="commandsview/assets/img/images/productind.jpg" alt="">
+						<img id="imagem_produto" src="commandsview/assets/img/images/productind.jpg" alt="" style="height: 625px; width: 470px;">
 					</div>
 				</div>
 				<div class="col-md-7 mt-5 mb-5">
