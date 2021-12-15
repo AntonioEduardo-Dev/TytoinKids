@@ -54,22 +54,20 @@
 										<input type="text" value="Pesquisar:" disabled>
 									</div>
 									<div class="col-md-9">
-										<input type="text" value="" placeholder="Digite aqui">
+										<input type="text" value="" placeholder="Digite aqui" id="btn_de_busca" disabled>
 									</div>
 								</div>
 								<div class="row product-lists">
 								</div>
 								<div class="row mb-5">
 									<div class="col text-center">
-										<!-- 
 										<div class="pagination-wrap">
-											<ul>
-												<li><a href="#">Anterior</a></li>
-												<li><a class="active" href="#">1</a></li>
-												<li><a href="#">Próximo</a></li>
-											</ul>
+											<!-- <ul>
+												<li><a href="javascript:void(0)">Anterior</a></li>
+												<li><a class="active" href="javascript:void(0)">1</a></li>
+												<li><a href="javascript:void(0)">Próximo</a></li>
+											</ul> -->
 										</div>
-									-->
 									</div>
 								</div>
 							</div>
@@ -102,5 +100,5 @@
 <!-- pagina js -->
  
 <!-- script pesquisa e paginação js -->
-<script src="commandsfunction/content/conteudoLoja.js"></script>	
+<!-- <script src="commandsfunction/content/conteudoLoja.js"></script>	 -->
 <!-- script pesquisa e paginação js -->
