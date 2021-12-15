@@ -43,13 +43,23 @@
 
                 $sql = "SELECT encomendas.id_encomenda, encomendas.quantidade, encomendas.data_hora, usuarios.nome, 
                         usuarios.email, usuarios.tipo_usuario, produtos.id_produto, produtos.nome_produto, 
-                        produtos.preco_produto, produtos.imagem_produto, 
-                        personagem_produto.id_personagem_produto, personagem_produto.personagem, tamanho_produto.id_tamanho_produto, tamanho_produto.id_tamanho_fk, tamanhos.tamanho 
-                        FROM encomendas INNER JOIN usuarios ON encomendas.id_usuario_fk = usuarios.id_usuario 
-                        INNER JOIN produtos ON encomendas.id_produto_fk = produtos.id_produto 
-                        INNER JOIN personagem_produto ON encomendas.id_personagem_produto_fk = personagem_produto.id_personagem_produto 
-                        INNER JOIN tamanho_produto ON encomendas.id_tamanho_produto_fk = tamanho_produto.id_tamanho_produto 
-                        INNER JOIN tamanhos ON tamanho_produto.id_tamanho_fk = tamanhos.id_tamanho 
+                        produtos.preco_produto, imagens_produto.imagem_produto, 
+                        personagem_produto.id_personagem_produto, personagens.personagem, tamanho_produto.id_tamanho_produto, tamanho_produto.id_tamanho_fk, tamanhos.tamanho 
+                        FROM encomendas 
+                        INNER JOIN usuarios 
+                        ON encomendas.id_usuario_fk = usuarios.id_usuario 
+                        INNER JOIN produtos 
+                        ON encomendas.id_produto_fk = produtos.id_produto 
+                        INNER JOIN personagem_produto 
+                        ON encomendas.id_personagem_produto_fk = personagem_produto.id_personagem_produto 
+                        INNER JOIN tamanho_produto 
+                        ON encomendas.id_tamanho_produto_fk = tamanho_produto.id_tamanho_produto 
+                        INNER JOIN tamanhos 
+                        ON tamanho_produto.id_tamanho_fk = tamanhos.id_tamanho 
+                        INNER JOIN imagens_produto 
+                        ON imagens_produto.id_produto_fk = produtos.id_produto 
+                        INNER JOIN personagens 
+                        ON personagem_produto.id_personagem_fk = personagens.id_personagem 
                         WHERE id_encomenda = :id_encomenda";
             
                 $consulta = $connection->prepare($sql);

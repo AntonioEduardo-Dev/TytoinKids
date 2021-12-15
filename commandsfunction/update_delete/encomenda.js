@@ -13,9 +13,9 @@ $(function() {
                     btn_listar_encomenda  : true,
                     id_encomenda          : identificador
                 }
+                
                 $.get('commandscontrol/Encomendas.php', dados, function(retorno) {
                     var objEncomenda = jQuery.parseJSON(retorno);
-                    
                     if (objEncomenda.type == "success") {
                         var encomenda = objEncomenda.data[0];
                         // encomenda = encomenda[0];

@@ -133,14 +133,18 @@
     }
 
     if (isset($_GET['btn_listar_produto'])) {
-        $consulta = $objProduto->listarProduto(intval($_GET['id_produto']));
-        $consulta_personagem = $objProduto->listarProdutoPersonagens(intval($_GET['id_produto']));
-        $consultaTamanhos = $objProduto->listarProdutoTamanhos(intval($_GET['id_produto']));
+        $consulta                       = $objProduto->listarProduto(intval($_GET['id_produto']));
+        $consulta_personagem            = $objProduto->listarProdutoPersonagens(intval($_GET['id_produto']));
+        $consultaTamanhos               = $objProduto->listarProdutoTamanhos(intval($_GET['id_produto']));
+        $consultaPersonagensDisponiveis = $objProduto->listarPersonagens();
+        $consultaTamanhosDisponiveis    = $objProduto->listarTamanhos();
 
         $dados = [
-            "produto"       => $consulta, 
-            "personagem"    => $consulta_personagem, 
-            "tamanhos"      => $consultaTamanhos,
+            "produto"                       => $consulta, 
+            "personagem"                    => $consulta_personagem, 
+            "tamanhos"                      => $consultaTamanhos, 
+            "personagens_disponiveis"       => $consultaPersonagensDisponiveis, 
+            "tamanhos_disponiveis"          => $consultaTamanhosDisponiveis,
         ];
 
         $retorno = [

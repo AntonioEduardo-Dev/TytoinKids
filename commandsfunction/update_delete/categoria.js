@@ -37,7 +37,9 @@ $(function() {
                                                 <div class="col pl">
                                                     <div class="row">
                                                         <div class="col-lg">
-                                                            <input type="text" placeholder="Categoria*" id="id_nome_categoria" value="${dados_categoria.nome_categoria}*" required>
+                                                            <p class="">Categoria*
+                                                                <input type="text" placeholder="Categoria*" id="id_nome_categoria" value="${dados_categoria.nome_categoria}" required>
+                                                            </p>
                                                         </div>
                                                     </div>
                                                     <hr>

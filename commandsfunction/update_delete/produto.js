@@ -17,10 +17,13 @@ $(function() {
                     var objProdutos = jQuery.parseJSON(retorno);
 
                     if (objProdutos.type == "success") {
-                        var produto = objProdutos.data.produto;
-                        var personagem = objProdutos.data.personagem;
-                        var tamanhos = objProdutos.data.tamanhos;
+                        var produto             = objProdutos.data.produto;
+                        var personagem          = objProdutos.data.personagem;
+                        var tamanhos            = objProdutos.data.tamanhos;
+                        var personagens_disp    = objProdutos.data.personagens_disponiveis;
+                        var tamanhos_disp       = objProdutos.data.tamanhos_disponiveis;
 
+                        console.log(tamanhos);
                         id_produto              = produto[0].id_produto;
                         nome_produto            = produto[0].nome_produto;
                         preco_produto           = produto[0].preco_produto;
@@ -28,7 +31,11 @@ $(function() {
                         img_produto             = produto[0].imagem_produto;
                         id_categoria_produto    = produto[0].id_categoria;
                         categoria_produto       = produto[0].nome_categoria;
-                        console.log(tamanhos);
+                        id_personagem_produto   = personagem[0].id_personagem;
+                        personagem_produto      = personagem[0].personagem;
+                        id_tamanho_produto      = tamanhos[0].id_tamanho;
+                        tamanho_produto         = tamanhos[0].tamanho;
+                        qtd_tam_produto         = tamanhos[0].quatidade_disponivel;  
 
                         if (produto && personagem && tamanhos) {
                             
@@ -47,6 +54,52 @@ $(function() {
                                             categorias_options += `<option value="${elemento.id_categoria}">${elemento.nome_categoria}</option>`;
                                         }
                                     });
+
+                                    var personagens_options = "";
+
+                                    (personagens_disp).forEach( (elemento) => {
+                                        if (elemento.id_personagem != id_personagem_produto) {
+                                            personagens_options += `<option value="${elemento.id_personagem}">${elemento.personagem}</option>`;
+                                        }
+                                    });
+
+                                    var tamanhos_options = "";
+
+                                    (tamanhos_disp).forEach( (elemento, indice) => {
+                                        if (indice != 0 && indice % 1 == 0) {
+                                            tamanhos_options +=`
+                                                <hr>
+                                            `;
+                                        }
+
+                                        if (elemento.id_tamanho != id_tamanho_produto) {
+                                            tamanhos_options +=`
+                                                <div class='row mt-3'>
+                                                    <div class="col-lg-3">
+                                                        <h4 class="mt-3 pl-5">${elemento.tamanho} : </h4>
+                                                    </div>
+                                                    <div class="col-lg-9">
+                                                        <input type="text" placeholder="Quantidade disponível*" id="btn_id_qtd_tam_${elemento.id_tamanho}">
+                                                    </div>
+                                                </div>
+                                            `;
+                                        }
+
+                                        if (elemento.id_tamanho == id_tamanho_produto) {
+                                            tamanhos_options +=`
+                                                <div class='row mt-3'>
+                                                    <div class="col-lg-3">
+                                                        <h4 class="mt-3 pl-5">${elemento.tamanho} : </h4>
+                                                    </div>
+                                                    <div class="col-lg-9">
+                                                        <input type="text" placeholder="Quantidade disponível*" id="btn_id_qtd_tam_${elemento.id_tamanho}" value="${qtd_tam_produto}">
+                                                    </div>
+                                                </div>
+                                            `;
+                                        }
+                                        
+                                    });
+
                                     $(".conteudo_modal_lg").html('');
 
                                     var conteudoModal = `
@@ -93,7 +146,7 @@ $(function() {
                                                                 </div>
                                                             </div>
                                                             <div class="row mt-2">
-                                                                <div class="col-lg-7">
+                                                                <div class="col-lg-4">
                                                                     <div class="row mt-2">
                                                                         <div class="col-lg">
                                                                             <div class="col-lg mt-1">
@@ -101,26 +154,14 @@ $(function() {
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col mt-3">
-                                                                        <div class="form-check row">
-                                                                            <input class="form-check-input" type="checkbox" name="btn_nm_personagem" value="vermelho" id="btn_id_check_cor_vermelho" ${(personagem[0].personagem.includes("Vermelho") ? 'checked' : '')}>
-                                                                            <label class="form-check-label" for="flexSwitchCheckDefault">Vermelho</label>
-                                                                        </div>
-                                                                        <div class="form-check row">
-                                                                            <input class="form-check-input" type="checkbox" name="btn_nm_personagem" value="verde" id="btn_id_check_cor_verde" ${(personagem[0].personagem.includes("Verde") ? 'checked' : '')}>
-                                                                            <label class="form-check-label" for="flexSwitchCheckDefault">Verde</label>
-                                                                        </div>
-                                                                        <div class="form-check row">
-                                                                            <input class="form-check-input" type="checkbox" name="btn_nm_personagem" value="azul" id="btn_id_check_cor_azul" ${(personagem[0].personagem.includes("Azul") ? 'checked' : '')}>
-                                                                            <label class="form-check-label" for="flexSwitchCheckDefault">Azul</label>
-                                                                        </div>
-                                                                        <div class="form-check row">
-                                                                            <input class="form-check-input" type="checkbox" name="btn_nm_personagem" value="amarelo" id="btn_id_check_cor_amarelo" ${(personagem[0].personagem.includes("Amarelo") ? 'checked' : '')}>
-                                                                            <label class="form-check-label" for="flexSwitchCheckDefault">Amarelo</label>
-                                                                        </div>
+                                                                    <div class="col-lg">
+                                                                        <select class="mt-3" name="nm_personagem" id="id_personagem">
+                                                                            <option selected value="${id_personagem_produto}">${personagem_produto}</option>
+                                                                            ${personagens_options}
+                                                                        </select>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-lg-5">
+                                                                <div class="col-lg-8">
                                                                     <div class="row mt-2">
                                                                         <div class="col-lg">
                                                                             <div class="col-lg mt-1">
@@ -130,27 +171,8 @@ $(function() {
                                                                     </div>
                                                                     <div class="col">
                                                                         <div class="row">
-                                                                            <div class="col-xl-6 mt-2">
-                                                                                <div class="form-check row">
-                                                                                    <input class="form-check-input" type="checkbox" name="btn_nm_tamanho" value="1" id="btn_id_check_tam_1" ${(tamanhos[0].tamanho.includes("1") ? 'checked' : '')}>
-                                                                                    <label class="form-check-label" for="flexSwitchCheckDefault">1</label>
-                                                                                </div>
-                                                                                <div class="form-check row">
-                                                                                    <input class="form-check-input" type="checkbox" name="btn_nm_tamanho" value="2" id="btn_id_check_tam_2" ${(tamanhos[0].tamanho.includes("2") ? 'checked' : '')}>
-                                                                                    <label class="form-check-label" for="flexSwitchCheckDefault">2</label>
-                                                                                </div>
-                                                                                <div class="form-check row">
-                                                                                    <input class="form-check-input" type="checkbox" name="btn_nm_tamanho" value="4" id="btn_id_check_tam_4" ${(tamanhos[0].tamanho.includes("4") ? 'checked' : '')}>
-                                                                                    <label class="form-check-label" for="flexSwitchCheckDefault">4</label>
-                                                                                </div>
-                                                                                <div class="form-check row">
-                                                                                    <input class="form-check-input" type="checkbox" name="btn_nm_tamanho" value="6" id="btn_id_check_tam_6" ${(tamanhos[0].tamanho.includes("6") ? 'checked' : '')}>
-                                                                                    <label class="form-check-label" for="flexSwitchCheckDefault">6</label>
-                                                                                </div>
-                                                                                <div class="form-check row">
-                                                                                    <input class="form-check-input" type="checkbox" name="btn_nm_tamanho" value="8" id="btn_id_check_tam_8" ${(tamanhos[0].tamanho.includes("8") ? 'checked' : '')}>
-                                                                                    <label class="form-check-label" for="flexSwitchCheckDefault">8</label>
-                                                                                </div>
+                                                                            <div class="col mt-3 content-tamanhos">
+                                                                                ${tamanhos_options}
                                                                             </div>
                                                                         </div>
                                                                     </div>

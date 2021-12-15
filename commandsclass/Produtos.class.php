@@ -170,7 +170,12 @@
             try {
                 $connection = $this->conectar();
 
-                $sql = "SELECT personagem FROM personagem_produto WHERE personagem_produto.id_produto_fk = :id_produto";
+                $sql = "SELECT personagens.personagem, personagens.id_personagem 
+                        FROM personagem_produto 
+                        INNER JOIN personagens 
+                        ON personagem_produto.id_personagem_fk = personagens.id_personagem 
+                        WHERE personagem_produto.id_produto_fk = :id_produto 
+                        LIMIT 1";
                 $consulta = $connection->prepare($sql);
                 $consulta->bindValue(":id_produto", $id_produto);
                 
@@ -188,9 +193,12 @@
             try {
                 $connection = $this->conectar();
 
-                $sql = "SELECT tamanhos.tamanho FROM tamanho_produto 
-                        INNER JOIN tamanhos ON tamanho_produto.id_tamanho_fk = tamanhos.id_tamanho
+                $sql = "SELECT DISTINCT(tamanhos.id_tamanho), tamanhos.tamanho, tamanho_produto.quatidade_disponivel 
+                        FROM tamanho_produto 
+                        INNER JOIN tamanhos 
+                        ON tamanho_produto.id_tamanho_fk = tamanhos.id_tamanho
                         WHERE tamanho_produto.id_produto_fk = :id_produto";
+                        
                 $consulta = $connection->prepare($sql);
                 $consulta->bindValue(":id_produto", $id_produto);
                 
