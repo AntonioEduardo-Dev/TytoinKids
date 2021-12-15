@@ -235,42 +235,43 @@
     }
 
     if (isset($_POST['btn_cadastrar_personagens'])) {
-        $id_produto = $_POST['btn_cadastrar_personagens'];
+        $id_produto = $_POST['id_produto'];
 
-        $personagensDefinidos   = ["Vermelho","Verde","Azul","Amarelo"];
         $tamanhosDefinidos      = ["1","2","4","6","8"];
-        $personagens            = $_POST['personagem'];
+        $id_personagem          = $_POST['id_personagem'];
         $tamanhos               = $_POST['tamanhos'];
-        $personagens            = $_POST['decricao_personagem'];
-        $quantidade_tamanhos    = $_POST['quantidade_tamanhos'];
         $erro_personagens       = 0;
         $erro_tamanho           = 0;
-        
-        if(!($objProduto->cadastrarPersonagemProduto($id_produto, $id_personagem, $personagens))){
-            $erro_personagens++;
-        }
-        
-        if (count($tamanhos) <= count($tamanhosDefinidos)) {
-            for ($i = 0; $i < count($tamanhos); $i++) { 
-                if ($tamanhos[$i] === "1" && $quantidade_tamanhos[$i] != 0 && $quantidade_tamanhos[$i] != "") {
-                    if(!($objProduto->cadastrarTamProduto($id_produto, $tamanhosDefinidos[$i], $quantidade_tamanhos[$i]))){
+
+        if (isset($id_personagem) && $id_personagem != "") {
+            if(!($objProduto->cadastrarPersonagemProduto($id_produto, $id_personagem))){
+                $erro_personagens++;
+            }
+    
+            foreach ($tamanhos as $indic => $dados_tamanho) {
+                if ($dados_tamanho['qtd_tamanho'] != 0) {
+                    if(!($objProduto->cadastrarTamProduto($id_produto, 
+                        $dados_tamanho['id_tamanho'], 
+                        $dados_tamanho['qtd_tamanho'])))
+                    {
                         $erro_tamanho++;
                     }
                 }
             }
-        }else {
-            $erro_tamanho++;
-        }
-
-        if ($erro_personagens > 0 && $erro_tamanho > 0) {
-            echo "alert_notification_error_tam_cor!-|-alert-danger";
-        }elseif($erro_personagens > 0){
-            echo "alert_notification_error_cor!-|-alert-danger";
-        }elseif($erro_tamanho > 0){
-            echo "alert_notification_error_tamanho!-|-alert-danger";
+    
+            if ($erro_personagens > 0 && $erro_tamanho > 0) {
+                echo "alert_notification_error_tam_person!-|-alert-danger";
+            }elseif($erro_personagens > 0){
+                echo "alert_notification_error_person!-|-alert-danger";
+            }elseif($erro_tamanho > 0){
+                echo "alert_notification_error_tamanho!-|-alert-danger";
+            }else{
+                echo "Produto cadastrado com sucesso!";
+            }
         }else{
-            echo "Produto cadastrado com sucesso!";
+            echo "alert_notification_error_person_insert!-|-alert-danger";
         }
+        
     }
 
     if (isset($_POST['editarProdutos'])) {

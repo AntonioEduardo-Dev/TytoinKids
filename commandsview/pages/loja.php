@@ -50,16 +50,10 @@
 							<h4 class="card-header">Nossos produtos</h4>
 							<div class="card-body">
 								<div class="row mb-4">
-									<div class="col-md-2">
-										<input type="text" value="" placeholder="Min:">
-									</div>
-									<div class="col-md-2">
-										<input type="text" value="" placeholder="Max:">
-									</div>
 									<div class="col-md-3">
 										<input type="text" value="Pesquisar:" disabled>
 									</div>
-									<div class="col-md-5">
+									<div class="col-md-9">
 										<input type="text" value="" placeholder="Digite aqui">
 									</div>
 								</div>
@@ -102,7 +96,11 @@
 
 <!-- listar produtos js -->
 <script src="commandsfunction/read/shop.js"></script>	
+
 <!-- função Modal js -->
 <script src="commandsfunction/content/conteudoModal.js"></script>
 <!-- pagina js -->
  
+<!-- script pesquisa e paginação js -->
+<script src="commandsfunction/content/conteudoLoja.js"></script>	
+<!-- script pesquisa e paginação js -->

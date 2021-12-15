@@ -120,34 +120,43 @@ $(function() {
                     if (tipo === -1) {
                         var personagem_selecionado  = $("#id_personagem").val();
 
-                        var decricao_personagem  = "peppa";
-
-                        var tamanhosSelecionados    = [ $('#btn_id_check_tam_1').prop("checked")   == true ? 1 : 0,
-                                                        $('#btn_id_check_tam_2').prop("checked")   == true ? 1 : 0,
-                                                        $('#btn_id_check_tam_4').prop("checked")   == true ? 1 : 0,
-                                                        $('#btn_id_check_tam_6').prop("checked")   == true ? 1 : 0,
-                                                        $('#btn_id_check_tam_8').prop("checked")   == true ? 1 : 0
-                                                    ];
-
-                        var quantidade_tamanhos     = [ $('#btn_id_qtd_tam_1').val()  > 0 ? $('#btn_id_qtd_tam_1').val() : 0,
-                                                        $('#btn_id_qtd_tam_2').val()  > 0 ? $('#btn_id_qtd_tam_2').val() : 0,
-                                                        $('#btn_id_qtd_tam_4').val()  > 0 ? $('#btn_id_qtd_tam_4').val() : 0,
-                                                        $('#btn_id_qtd_tam_6').val()  > 0 ? $('#btn_id_qtd_tam_6').val() : 0,
-                                                        $('#btn_id_qtd_tam_8').val()  > 0 ? $('#btn_id_qtd_tam_8').val() : 0
-                                                    ];
+                        var tamanhos = [
+                            {
+                                id_tamanho      : "1",
+                                qtd_tamanho     : $('#btn_id_qtd_tam_1').val()  > 0 ? $('#btn_id_qtd_tam_1').val() : 0
+                            },
+                            {
+                                id_tamanho      : "2",
+                                qtd_tamanho     : $('#btn_id_qtd_tam_2').val()  > 0 ? $('#btn_id_qtd_tam_2').val() : 0
+                            },
+                            {
+                                id_tamanho      : "3",
+                                qtd_tamanho     : $('#btn_id_qtd_tam_4').val()  > 0 ? $('#btn_id_qtd_tam_4').val() : 0
+                            },
+                            {
+                                id_tamanho      : "4",
+                                qtd_tamanho     : $('#btn_id_qtd_tam_6').val()  > 0 ? $('#btn_id_qtd_tam_6').val() : 0
+                            },
+                            {
+                                id_tamanho      : "5",
+                                qtd_tamanho     : $('#btn_id_qtd_tam_8').val()  > 0 ? $('#btn_id_qtd_tam_8').val() : 0
+                            },
+                            {
+                                id_tamanho      : "6",
+                                qtd_tamanho     : $('#btn_id_qtd_tam_10').val()  > 0 ? $('#btn_id_qtd_tam_10').val() : 0
+                            }
+                        ];
 
                         var dados = {
-                            btn_cadastrar_personagens   : idRetorno[0],
-                            personagem                  : personagem_selecionado,
-                            decricao_personagem         : decricao_personagem,
-                            tamanhos                    : tamanhosSelecionados,
-                            quantidade_tamanhos         : quantidade_tamanhos
+                            btn_cadastrar_personagens   : true,
+                            id_produto                  : idRetorno[0],
+                            id_personagem               : personagem_selecionado,
+                            tamanhos                    : tamanhos
                         }
-                        
-                        $.post('commandscontrol/Produtos.php', dados, function(response) {
-                            var tipo = response.indexOf("alert_notification_error");
-                            retorno = response.split("-|-");
-
+                        $.post('commandscontrol/Produtos.php', dados, function(retorno) {
+                            var tipo = retorno.indexOf("alert_notification_error");
+                            retorno = retorno.split("-|-");
+                            
                             if (tipo === -1) {
                                 exibirModalAlerta(retorno[0],true,"alert-success");
                             } else if (tipo > -1) {

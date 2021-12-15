@@ -30,7 +30,7 @@ $(function () {
 
             $.get('commandscontrol/Produtos.php', listarProduto, function (retorna) {
                 var dados_produto = jQuery.parseJSON(retorna);
-                
+
                 if (dados_produto.type == "success") {
                     var produto = dados_produto.data["0"];
 
@@ -43,7 +43,6 @@ $(function () {
 
                     // Exibir tamanhos
                     var content_tam = [];
-                    console.log(dados_produto.data);
                     $.each(dados_produto.data, function (indice, dados_produto) {
                         content_tam.push(
                             {
@@ -54,7 +53,6 @@ $(function () {
 
                     })
                     
-                    console.log(content_tam);
                     content_tam = (content_tam).filter(function (a) {
                         return !this[JSON.stringify(a)] && (this[JSON.stringify(a)] = true);
                     }, Object.create(null))
@@ -68,29 +66,10 @@ $(function () {
                     $("#id_tamanho_selecionado").html(content_tam_html);
                     // Exibir tamanhos end
 
-                    // Exibir personagem
-                    var content_personagem = [];
-
-                    $.each(dados_produto.data, function (indice, dados_produto) {
-                        content_personagem.push(
-                            {
-                                id_personagem_produto : dados_produto.id_personagem_produto,
-                                personagem : dados_produto.personagem
-                            }
-                        );
-
-                    })
-
-                    console.log(content_personagem);
-                    content_personagem = (content_personagem).filter(function (b) {
-                        return !this[JSON.stringify(b)] && (this[JSON.stringify(b)] = true);
-                    }, Object.create(null))
-                    
+                    // Exibir personagem                    
                     var content_personagem_html = `<option selected style="display: none;">Personagem:</option>`;
 
-                    $.each(content_personagem, function (indice, dados_produto) {
-                        content_personagem_html += `<option value="${dados_produto.id_personagem_produto}">${dados_produto.personagem}</option>`;
-                    })
+                        content_personagem_html += `<option value="${dados_produto.data[0].id_personagem_produto}">${dados_produto.data[0].personagem}</option>`;
 
                     $("#id_personagem_selecionado").html(content_personagem_html);
                     // Exibir personagem end

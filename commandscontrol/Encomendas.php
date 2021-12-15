@@ -16,67 +16,79 @@
         $id_personagem_selecionado = intval($_GET["id_personagem_selecionado"]);
         $tamanho_selecionado = ($_GET["tamanho_selecionado"]);
         $personagem_selecionado = ($_GET["personagem_selecionado"]);
+        $id_existente = 0;
 
-        if($qtd_produto > 0){
-            if ($id_tamanho_selecionado > 0 && $id_tamanho_selecionado != "") {
-                if ($id_personagem_selecionado > 0 && $id_personagem_selecionado != "") {
-                    $qtd_produto_disp = intval($objProduto->quantidadeProdutosDisponiveis($id_produto, $id_tamanho_selecionado));
-                    
-                    if($qtd_produto_disp != 0){
-                        if($qtd_produto_disp != NULL){
-                            if($qtd_produto <= $qtd_produto_disp){
-                                $disponibilidade = true;
+        if (isset($_SESSION["cart"]) && count($_SESSION["cart"]) > 0) {
+            if (in_array($id_produto, array_column($_SESSION["cart"], 'id_produto')) 
+                && in_array($id_tamanho_selecionado, array_column($_SESSION["cart"], 'id_tamanho'))) { 
+                $id_existente++;
+            }
+        }
+        
+        if ($id_existente === 0) {
+            if($qtd_produto > 0){
+                if ($id_tamanho_selecionado > 0 && $id_tamanho_selecionado != "") {
+                    if ($id_personagem_selecionado > 0 && $id_personagem_selecionado != "") {
+                        $qtd_produto_disp = intval($objProduto->quantidadeProdutosDisponiveis($id_produto, $id_tamanho_selecionado));
+                        
+                        if($qtd_produto_disp != 0){
+                            if($qtd_produto_disp != NULL){
+                                if($qtd_produto <= $qtd_produto_disp){
+                                    $disponibilidade = true;
+                                }else{
+                                    $disponibilidade = false;
+                                };
                             }else{
-                                $disponibilidade = false;
+                                $disponibilidade = true;
                             };
                         }else{
-                            $disponibilidade = true;
+                            $disponibilidade = false;
+                        };
+            
+                        if ($disponibilidade){
+                            $dados = $objProduto->listarTodos($id_produto);
+            
+                            $idProduto              = ((isset($dados[0]["id_produto"]))             ? $dados[0]["id_produto"] : "Indisponível");
+                            $imgProduto             = ((isset($dados[0]["imagem_produto"]))         ? $dados[0]["imagem_produto"] : "productind.jpg");
+                            $nomeProduto            = ((isset($dados[0]["nome_produto"]))           ? $dados[0]["nome_produto"] : "Indisponível");
+                            $preco_produto          = ((isset($dados[0]["preco_produto"]))          ? $dados[0]["preco_produto"] : "Indisponível");
+                            $qtd_produto_disp       = ((isset($dados[0]["quatidade_disponivel"]))   ? $dados[0]["quatidade_disponivel"] : "Indisponível");
+            
+                            if (empty($_SESSION["cart"])){
+                                $_SESSION["cart"] = [];
+                            };
+            
+                            $dados_cart = [
+                                "id_usuario"        => $_SESSION["user"]["id"],
+                                "id_produto"        => $idProduto,
+                                "id_tamanho"        => $id_tamanho_selecionado,
+                                "id_personagem"     => $id_personagem_selecionado,
+                                "tamanho"           => $tamanho_selecionado,
+                                "personagem"        => $personagem_selecionado,
+                                "imgProduto"        => $imgProduto,
+                                "nomeProduto"       => $nomeProduto,
+                                "preco_produto"     => $preco_produto,
+                                "qtd_produto"       => $qtd_produto,
+                                "qtd_produto_disp"  => $qtd_produto_disp
+                            ];
+            
+                            array_push($_SESSION["cart"], $dados_cart);
+            
+                            var_dump ($_SESSION["cart"]);
+                        }else{
+                            echo "alert_notification_error_qtd_disp!-|-alert-danger";
                         };
                     }else{
-                        $disponibilidade = false;
-                    };
-        
-                    if ($disponibilidade){
-                        $dados = $objProduto->listarTodos($id_produto);
-        
-                        $idProduto              = ((isset($dados[0]["id_produto"]))             ? $dados[0]["id_produto"] : "Indisponível");
-                        $imgProduto             = ((isset($dados[0]["imagem_produto"]))         ? $dados[0]["imagem_produto"] : "productind.jpg");
-                        $nomeProduto            = ((isset($dados[0]["nome_produto"]))           ? $dados[0]["nome_produto"] : "Indisponível");
-                        $preco_produto          = ((isset($dados[0]["preco_produto"]))          ? $dados[0]["preco_produto"] : "Indisponível");
-                        $qtd_produto_disp       = ((isset($dados[0]["quatidade_disponivel"]))   ? $dados[0]["quatidade_disponivel"] : "Indisponível");
-        
-                        if (empty($_SESSION["cart"])){
-                            $_SESSION["cart"] = [];
-                        };
-        
-                        $dados_cart = [
-                            "id_usuario"        => $_SESSION["user"]["id"],
-                            "id_produto"        => $idProduto,
-                            "id_tamanho"        => $id_tamanho_selecionado,
-                            "id_personagem"     => $id_personagem_selecionado,
-                            "tamanho"           => $tamanho_selecionado,
-                            "personagem"        => $personagem_selecionado,
-                            "imgProduto"        => $imgProduto,
-                            "nomeProduto"       => $nomeProduto,
-                            "preco_produto"     => $preco_produto,
-                            "qtd_produto"       => $qtd_produto,
-                            "qtd_produto_disp"  => $qtd_produto_disp
-                        ];
-        
-                        array_push($_SESSION["cart"], $dados_cart);
-        
-                        var_dump ($_SESSION["cart"]);
-                    }else{
-                        echo "alert_notification_error_qtd_disp!-|-alert-danger";
-                    };
+                        echo "alert_notification_error_personagem_insert!-|-alert-danger";
+                    }
                 }else{
-                    echo "alert_notification_error_personagem_insert!-|-alert-danger";
+                    echo "alert_notification_error_tam_insert!-|-alert-danger";
                 }
             }else{
-                echo "alert_notification_error_tam_insert!-|-alert-danger";
-            }
+                echo "alert_notification_error_qtd_insert!-|-alert-danger";
+            };
         }else{
-            echo "alert_notification_error_qtd_insert!-|-alert-danger";
+            echo "alert_notification_error_id_insert!-|-alert-danger";
         };
     };
 

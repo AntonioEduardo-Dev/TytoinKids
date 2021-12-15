@@ -10,22 +10,28 @@
                         (SELECT imagens_produto.id_imagem_produto 
                         FROM imagens_produto 
                         WHERE imagens_produto.id_produto_fk = produtos.id_produto 
-                        ORDER BY imagens_produto.id_imagem_produto ASC LIMIT 1) 
+                        ORDER BY imagens_produto.id_imagem_produto 
+                        ASC LIMIT 1) 
                         AS id_imagem_produto, 
                         (SELECT imagens_produto.imagem_produto FROM imagens_produto 
                         WHERE imagens_produto.id_produto_fk = produtos.id_produto 
-                        ORDER BY imagens_produto.id_imagem_produto ASC LIMIT 1) 
+                        ORDER BY imagens_produto.id_imagem_produto 
+                        ASC LIMIT 1) 
                         AS imagem_produto,
-                        (SELECT GROUP_CONCAT(personagem_produto.personagem SEPARATOR ' ') 
-                        FROM personagem_produto 
+                        (SELECT GROUP_CONCAT(personagens.personagem SEPARATOR ' ') 
+                        FROM personagens 
+                        INNER JOIN personagem_produto 
+                        ON personagens.id_personagem = personagem_produto.id_personagem_fk
                         WHERE personagem_produto.id_produto_fk = produtos.id_produto) 
                         AS personagens,
                         (SELECT GROUP_CONCAT(tamanhos.tamanho SEPARATOR ' ') 
-                        FROM tamanhos INNER JOIN tamanho_produto 
+                        FROM tamanhos 
+                        INNER JOIN tamanho_produto 
                         ON tamanhos.id_tamanho = tamanho_produto.id_tamanho_fk 
                         WHERE tamanho_produto.id_produto_fk = produtos.id_produto) 
                         AS tamanhos
-                        FROM produtos INNER JOIN categorias 
+                        FROM produtos 
+                        INNER JOIN categorias 
                         ON produtos.id_categoria_fk = categorias.id_categoria";
                 $consulta = $connection->prepare($sql);
                 
@@ -101,19 +107,32 @@
             try {
                 $connection = $this->conectar();
 
-                $sql = "SELECT produtos.*, categorias.*, tamanho_produto.*, personagem_produto.*, tamanhos.tamanho, 
+                $sql = "SELECT produtos.id_produto, produtos.nome_produto, produtos.preco_produto, 
+                        categorias.*, tamanho_produto.id_tamanho_produto, tamanho_produto.quatidade_disponivel, 
+                        personagem_produto.id_personagem_produto, tamanhos.id_tamanho, tamanhos.tamanho, 
+                        personagens.id_personagem, personagens.personagem, 
                         (SELECT imagens_produto.id_imagem_produto 
-                        FROM imagens_produto WHERE imagens_produto.id_produto_fk = produtos.id_produto 
-                        ORDER BY imagens_produto.id_imagem_produto ASC LIMIT 1) 
-                        AS id_imagem_produto, 
-                        (SELECT imagens_produto.imagem_produto FROM imagens_produto 
+                        FROM imagens_produto 
                         WHERE imagens_produto.id_produto_fk = produtos.id_produto 
-                        ORDER BY imagens_produto.id_imagem_produto ASC LIMIT 1)  
+                        ORDER BY imagens_produto.id_imagem_produto 
+                        ASC LIMIT 1) 
+                        AS id_imagem_produto, 
+                        (SELECT imagens_produto.imagem_produto 
+                        FROM imagens_produto 
+                        WHERE imagens_produto.id_produto_fk = produtos.id_produto 
+                        ORDER BY imagens_produto.id_imagem_produto 
+                        ASC LIMIT 1)  
                         AS imagem_produto 
-                        FROM produtos INNER JOIN categorias ON produtos.id_categoria_fk = categorias.id_categoria 
-                        INNER JOIN tamanho_produto ON produtos.id_produto = tamanho_produto.id_produto_fk 
-                        INNER JOIN personagem_produto ON produtos.id_produto = tamanho_produto.id_produto_fk 
-                        INNER JOIN tamanhos ON tamanhos.id_tamanho = tamanho_produto.id_tamanho_fk 
+                        FROM produtos INNER JOIN categorias 
+                        ON produtos.id_categoria_fk = categorias.id_categoria 
+                        INNER JOIN tamanho_produto 
+                        ON produtos.id_produto = tamanho_produto.id_produto_fk 
+                        INNER JOIN personagem_produto 
+                        ON produtos.id_produto = tamanho_produto.id_produto_fk 
+                        INNER JOIN tamanhos 
+                        ON tamanhos.id_tamanho = tamanho_produto.id_tamanho_fk 
+                        INNER JOIN personagens 
+                        ON personagens.id_personagem = personagem_produto.id_personagem_fk
                         WHERE id_produto = :id_produto";
 
                 $consulta = $connection->prepare($sql);
@@ -234,7 +253,7 @@
             try {
                 $connection = $this->conectar();
 
-                $sql = "SELECT * FROM produtos WHERE produtos.id_produto = :id_produto";
+                $sql = "SELECT *, (SELECT imagens_produto.imagem_produto FROM imagens_produto WHERE imagens_produto.id_produto_fk = produtos.id_produto ORDER BY imagens_produto.id_imagem_produto ASC LIMIT 1) AS imagem_produto FROM produtos WHERE produtos.id_produto = :id_produto";
                 $consulta = $connection->prepare($sql);
                 $consulta->bindValue(":id_produto", $id_produto);
                 
@@ -267,15 +286,14 @@
             }
         }
         
-        public function cadastrarPersonagemProduto($id_produto, $id_personagem, $personagem){
+        public function cadastrarPersonagemProduto($id_produto, $id_personagem){
             try {
                 $connection = $this->conectar();
     
-                $sql = "INSERT INTO personagem_produto VALUES (NULL, :id_produto, :id_personagem, :personagem)";
+                $sql = "INSERT INTO personagem_produto VALUES (NULL, :id_produto, :id_personagem)";
                 $cadastrar = $connection->prepare($sql);
                 $cadastrar->bindValue(":id_produto", $id_produto);
                 $cadastrar->bindValue(":id_personagem", $id_personagem);
-                $cadastrar->bindValue(":personagem", $personagem);
                 
                 return (($cadastrar->execute()) ? true : false);
 
