@@ -28,9 +28,10 @@
 								<table class="cart-table" id="table_dinamic_js">
 									<thead class="cart-table-head">
 										<tr class="table-head-row">
-											<th class="product-image"><h6>Id</h6></th>
+											<th class="product-image"><h6>Cód</h6></th>
 											<th class="product-name"><h6>Quantidade</h6></th>
 											<th class="product-price"><h6>Data da encomenda</h6></th>
+											<th class="product-price"><h6>Status</h6></th>
 											<th class="product-remove"><h6></h6></th>
 										</tr>
 									</thead>
@@ -70,7 +71,7 @@
 	<!-- End Small modal -->
 	
 	<!-- Large modal -->
-	<div class="modal fade modal_system_delete" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	<div class="modal fade modal_system_status" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-sm">
 			<div class="modal-content">
 				<div class="conteudo_delete">
@@ -85,10 +86,10 @@
 						<div class="card-body">
 							<div class="form-group row mt-2 ml-3 mr-3">`;
 								<div class="col text-center">
-									<h4>Voçê tem certeza da sua escolha?</h4>
+									<h4 id="msg_status_defined">Você tem certeza da sua escolha?</h4>
 									<div class="form-group row">
 										<div class="col">
-											<button class="btn btn-login text-uppercase fw-bold" id="id_opc_delete" type="submit">
+											<button class="btn btn-login text-uppercase fw-bold" id="id_opc_status" type="submit">
 												Confirmar
 											</button>
 										</div>

@@ -159,14 +159,35 @@ $(function() {
                     }
                     
                 });
-            }else if (btn_clicked === "btn_nm_remove") {
-                $('#id_opc_delete').val(identificador);
-                $('.modal_system_delete').modal('show');
+            }else if (btn_clicked === "btn_nm_accept") {
+                $('#id_opc_status').removeClass("id_opc_decline");
+                $('#id_opc_status').removeClass("id_opc_done");
+                $('#id_opc_status').addClass("id_opc_accept");
+                $('#id_opc_status').val(identificador);
+                $('#msg_status_defined').html(`Você tem certeza que deseja aprovar o pedido?`);
+                $('.modal_system_status').modal('show');
+
+            }else if (btn_clicked === "btn_nm_decline") {
+                $('#id_opc_status').removeClass("id_opc_accept");
+                $('#id_opc_status').removeClass("id_opc_done");
+                $('#id_opc_status').addClass("id_opc_decline");
+                $('#id_opc_status').val(identificador);
+                $('#msg_status_defined').html(`Você tem certeza que deseja recusar o pedido?`);
+                $('.modal_system_status').modal('show');
+
+            }else if (btn_clicked === "btn_nm_done") {
+                $('#id_opc_status').removeClass("id_opc_accept");
+                $('#id_opc_status').removeClass("id_opc_decline");
+                $('#id_opc_status').addClass("id_opc_done");
+                $('#id_opc_status').val(identificador);
+                $('#msg_status_defined').html(`Você tem certeza que deseja finalizar o pedido?`);
+                $('.modal_system_status').modal('show');
+
             }
         }
     });
 
-    $(document).on('click', '#id_opc_delete', function() {
+    $(document).on('click', '.id_opc_delete', function() {
         identificador = ($(this).val());
         
         if (identificador) {
@@ -179,7 +200,7 @@ $(function() {
                 var tipo = retorno.indexOf("alert_notification_error");
                 retorno = retorno.split("-|-");
 
-                if($('.modal_system_delete').modal('hide')){
+                if($('.modal_system_status').modal('hide')){
                     if (tipo === -1) {
                         exibirModal(retorno[0], true, true);
                     } else if (tipo > -1) {
@@ -190,20 +211,21 @@ $(function() {
         }
     });
     
-    $(document).on('click', '#id_opc_decline', function() {
+    $(document).on('click', '.id_opc_decline', function() {
         identificador = ($(this).val());
         
         if (identificador) {
             var dados = {
-                btn_recusar     : true,
-                id_encomenda    : identificador
+                alterarStatusEncomenda      : true,
+                id_encomenda                : identificador,
+                status                      : "recusado"
             }
 
             $.post('commandscontrol/Encomendas.php', dados, function(retorno) {
                 var tipo = retorno.indexOf("alert_notification_error");
                 retorno = retorno.split("-|-");
 
-                if($('.modal_system_delete').modal('hide')){
+                if($('.modal_system_status').modal('hide')){
                     if (tipo === -1) {
                         exibirModal(retorno[0], true, true);
                     } else if (tipo > -1) {
@@ -214,20 +236,22 @@ $(function() {
         }
     });
 
-    $(document).on('click', '#id_opc_accept', function() {
+    $(document).on('click', '.id_opc_accept', function() {
         identificador = ($(this).val());
         
         if (identificador) {
             var dados = {
-                btn_aceitar     : true,
-                id_encomenda    : identificador
+                alterarStatusEncomenda      : true,
+                id_encomenda                : identificador,
+                status                      : "aprovado"
             }
 
             $.post('commandscontrol/Encomendas.php', dados, function(retorno) {
                 var tipo = retorno.indexOf("alert_notification_error");
+                console.log(retorno);
                 retorno = retorno.split("-|-");
 
-                if($('.modal_system_delete').modal('hide')){
+                if($('.modal_system_status').modal('hide')){
                     if (tipo === -1) {
                         exibirModal(retorno[0], true, true);
                     } else if (tipo > -1) {
@@ -238,20 +262,21 @@ $(function() {
         }
     });
 
-    $(document).on('click', '#id_opc_done', function() {
+    $(document).on('click', '.id_opc_done', function() {
         identificador = ($(this).val());
         
         if (identificador) {
             var dados = {
-                btn_finalizar   : true,
-                id_encomenda    : identificador
+                alterarStatusEncomenda      : true,
+                id_encomenda                : identificador,
+                status                      : "finalizado"
             }
 
             $.post('commandscontrol/Encomendas.php', dados, function(retorno) {
                 var tipo = retorno.indexOf("alert_notification_error");
                 retorno = retorno.split("-|-");
 
-                if($('.modal_system_delete').modal('hide')){
+                if($('.modal_system_status').modal('hide')){
                     if (tipo === -1) {
                         exibirModal(retorno[0], true, true);
                     } else if (tipo > -1) {

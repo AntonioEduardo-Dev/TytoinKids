@@ -2975,8 +2975,8 @@ table.order-details tbody tr {
 }
 
 /* Next & previous buttons */
-.prev,
-.next {
+.prev_image,
+.next_image {
   cursor: pointer;
   position: absolute;
   top: 40%;
@@ -2993,14 +2993,14 @@ table.order-details tbody tr {
 }
 
 /* Position the "next button" to the right */
-.next {
+.next_image {
   right: 15px;
   border-radius: 3px 0 0 3px;
 }
 
 /* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
+.prev_image:hover,
+.next_image:hover {
   background-color: #FF5882;
 }
 

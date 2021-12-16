@@ -193,6 +193,26 @@
             echo "alert_notification_error!-|-alert-danger";
         }
     }
+
+    if (isset($_POST['alterarStatusEncomenda'])) {
+        $id_encomenda = intval($_POST['id_encomenda']);
+        $status = $_POST['status'];
+        $status_valido = ["pendente", "aprovado", "recusado", "finalizado"];
+        
+        if (in_array($status, $status_valido)) { 
+            if(is_int($id_encomenda)){
+                if ($objEncomenda->atualizarStatusEncomenda($id_encomenda, $status)){
+                    echo ucfirst($status)."!";
+                }else{
+                    echo "alert_notification_error!-|-alert-danger";
+                };
+            }else{
+                echo "alert_notification_error_data_bite!-|-alert-danger";
+            };
+        }else{
+            echo "alert_notification_error_data_bite!-|-alert-danger";
+        };
+    }
     
     if (isset($_POST['btn_apagar'])) {
         $id_encomenda = intval($_POST['id_encomenda']);
@@ -200,51 +220,6 @@
         if(is_int($id_encomenda)){
             if ($objEncomenda->apagarEncomendas($id_encomenda)){
                 echo "Apagado!";
-            }else{
-                echo "alert_notification_error!-|-alert-danger";
-            };
-        }else{
-            echo "alert_notification_error_data_bite!-|-alert-danger";
-        };
-    }
-    
-    if (isset($_POST['btn_aceitar'])) {
-        $id_encomenda = intval($_POST['id_encomenda']);
-        $status = "aprovado";
-
-        if(is_int($id_encomenda)){
-            if ($objEncomenda->atualizarStatusEncomenda($id_encomenda, $status)){
-                echo "Aprovado!";
-            }else{
-                echo "alert_notification_error!-|-alert-danger";
-            };
-        }else{
-            echo "alert_notification_error_data_bite!-|-alert-danger";
-        };
-    }
-
-    if (isset($_POST['btn_recusar'])) {
-        $id_encomenda = intval($_POST['id_encomenda']);
-        $status = "recusado";
-
-        if(is_int($id_encomenda)){
-            if ($objEncomenda->atualizarStatusEncomenda($id_encomenda, $status)){
-                echo "Recusado!";
-            }else{
-                echo "alert_notification_error!-|-alert-danger";
-            };
-        }else{
-            echo "alert_notification_error_data_bite!-|-alert-danger";
-        };
-    }
-
-    if (isset($_POST['btn_finalizar'])) {
-        $id_encomenda = intval($_POST['id_encomenda']);
-        $status = "finalizado";
-
-        if(is_int($id_encomenda)){
-            if ($objEncomenda->atualizarStatusEncomenda($id_encomenda, $status)){
-                echo "Finalizado!";
             }else{
                 echo "alert_notification_error!-|-alert-danger";
             };
