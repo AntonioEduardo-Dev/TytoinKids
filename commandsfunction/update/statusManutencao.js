@@ -30,9 +30,9 @@ $(function() {
             
             setTimeout(function(){
                 if (tipo === -1) {
-                    exibirModal("Status alterado com sucesso!",true);
+                    exibirModal("Status alterado com sucesso!", true, true);
                 } else if (tipo > -1) {
-                    exibirModal(values[0],false);
+                    exibirModal(values[0], false, true);
                 }
             }, 800);
         });

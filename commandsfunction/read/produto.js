@@ -33,13 +33,53 @@ $(function () {
 
                 if (dados_produto.type == "success") {
                     var produto = dados_produto.data["0"];
+                    var produto_imagens = dados_produto.data["0"].imagens;
+                    var content_imagens = ``;
+                    console.log(dados_produto);
 
-                    $("#id_produto_inp").val(produto.id_produto ? produto.id_produto : 0);
-                    $("#id_nome_produto").html(produto.nome_produto ? produto.nome_produto : 'Nome do produto');
-                    $("#id_preco_produto").html(produto.preco_produto ? produto.preco_produto : 'Indisponível');
-                    $("#id_qtd_produto").html((produto.quatidade_disponivel ? "-" : 'Sem estoque' ));
-                    $("#imagem_produto").attr('src', (produto.imagem_produto == "" || produto.imagem_produto == null || produto.imagem_produto == "productind.jpg" ? 'commandsview/assets/img/images/productind.jpg' : 'commandsview/assets/img/images/' + produto.imagem_produto));
-                    $("#id_categoria_produto").html((produto.nome_categoria ?  (produto.nome_categoria).replace("_", " ") : 'Sem categoria'));
+                    produto_imagens.forEach( (element, index) => {
+                        content_imagens += `
+                            <div class="imagens_view">
+                                <div class="numbertext">${index+1} / ${produto_imagens.length}</div>
+                                <img src="commandsview/assets/img/images/${element.imagem_produto}" style="height: 525px; width: 470px; border-radius: 10px 10px 10px 10px;">
+                            </div>
+                        `;
+                    });
+
+                    $(".single_product_img").html(``);
+                    
+                    if ($(".single_product_img").html(content_imagens)) {
+                        if(produto_imagens.length > 1) {
+                            $(".single_product_img").append(`
+                                <!-- Next and previous buttons -->
+                                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                                <!-- Image text -->
+                                <div class="caption-container">
+                                    <p id="caption_get"></p>
+                                </div>
+                            `);
+                        }
+                    }
+
+
+                    $("#id_produto_inp").val(
+                        (produto.id_produto ? produto.id_produto : 0)
+                    );
+                    $("#id_nome_produto").html(
+                        (produto.nome_produto ? produto.nome_produto : 'Nome do produto')
+                    );
+                    $("#id_preco_produto").html(
+                        (produto.preco_produto ? produto.preco_produto : 'Indisponível')
+                    );
+                    $("#id_qtd_produto").html(
+                        (produto.quatidade_disponivel ? "-" : 'Sem estoque' )
+                    );
+                    
+                    $("#id_categoria_produto").html(
+                        (produto.nome_categoria ?  (produto.nome_categoria).replace("_", " ") : 'Sem categoria')
+                    );
 
                     // Exibir tamanhos
                     var content_tam = [];
@@ -107,9 +147,9 @@ $(function () {
                 var values = retorna.split("-|-")
 
                 if (tipo === -1) {
-                    exibirModal("Produto adicionado ao carrinho!", true);
+                    exibirModal("Produto adicionado ao carrinho!", true, true);
                 } else if (tipo > -1) {
-                    exibirModal(values[0], false);
+                    exibirModal(values[0], false, false);
                 }
             });
         }

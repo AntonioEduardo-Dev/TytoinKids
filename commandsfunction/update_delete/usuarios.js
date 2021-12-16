@@ -100,7 +100,7 @@ $(function() {
                         }
                         
                     } else if (objCliente.type != "success") {
-                        exibirModal(objCliente.data, false);
+                        exibirModal(objCliente.data, false, true);
                     }
                 });
             }else if (btn_clicked === "btn_nm_remove") {

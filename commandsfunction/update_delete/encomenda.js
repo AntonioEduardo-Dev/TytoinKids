@@ -181,9 +181,9 @@ $(function() {
 
                 if($('.modal_system_delete').modal('hide')){
                     if (tipo === -1) {
-                        exibirModal(retorno[0],true);
+                        exibirModal(retorno[0], true, true);
                     } else if (tipo > -1) {
-                        exibirModal(retorno[0],false);
+                        exibirModal(retorno[0], false, true);
                     }
                 }
             });
@@ -205,9 +205,9 @@ $(function() {
 
                 if($('.modal_system_delete').modal('hide')){
                     if (tipo === -1) {
-                        exibirModal(retorno[0],true);
+                        exibirModal(retorno[0], true, true);
                     } else if (tipo > -1) {
-                        exibirModal(retorno[0],false);
+                        exibirModal(retorno[0], false, true);
                     }
                 }
             });
@@ -229,9 +229,9 @@ $(function() {
 
                 if($('.modal_system_delete').modal('hide')){
                     if (tipo === -1) {
-                        exibirModal(retorno[0],true);
+                        exibirModal(retorno[0], true, true);
                     } else if (tipo > -1) {
-                        exibirModal(retorno[0],false);
+                        exibirModal(retorno[0], false, true);
                     }
                 }
             });
@@ -253,9 +253,9 @@ $(function() {
 
                 if($('.modal_system_delete').modal('hide')){
                     if (tipo === -1) {
-                        exibirModal(retorno[0],true);
+                        exibirModal(retorno[0], true, true);
                     } else if (tipo > -1) {
-                        exibirModal(retorno[0],false);
+                        exibirModal(retorno[0], false, true);
                     }
                 }
             });

@@ -80,7 +80,7 @@ $(function() {
                         }
                         
                     } else if (objCategoria.type != "success") {
-                        exibirModal(objCategoria.data, false);
+                        exibirModal(objCategoria.data, false, true);
                     }
                 });
             }else if (btn_clicked === "btn_nm_remove") {
@@ -105,9 +105,9 @@ $(function() {
 
                 if($('.modal_system_delete').modal('hide')){
                     if (tipo === -1) {
-                        exibirModal(retorno[0],true);
+                        exibirModal(retorno[0], true, true);
                     } else if (tipo > -1) {
-                        exibirModal(retorno[0],false);
+                        exibirModal(retorno[0], false, true);
                     }
                 }
             });
@@ -131,9 +131,9 @@ $(function() {
 
                 if($('.modal_system_open_class').modal('hide')){
                     if (tipo === -1) {
-                        exibirModal(retorno[0],true);
+                        exibirModal(retorno[0], true, true);
                     } else if (tipo > -1) {
-                        exibirModal(retorno[0],false);
+                        exibirModal(retorno[0], false, true);
                     }
                 }
             });

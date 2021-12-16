@@ -31,7 +31,7 @@ function viewMsgs() {
 /* FIM CONTENT MSGS */
 
 /* CONTENT MODAL */
-function exibirModal(msgModal, tipoModal) {
+function exibirModal(msgModal, tipoModal, reload_page) {
     if (tipoModal) {
         $(".conteudo_modal_sm").html('');
 
@@ -77,7 +77,10 @@ function exibirModal(msgModal, tipoModal) {
         
         setTimeout(function(){
             $(".modal_system_success_class").modal("hide");
-            location.reload();
+
+            if (reload_page) {
+                location.reload();
+            }
         }, 2500);
     }
 }

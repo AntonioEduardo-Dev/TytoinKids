@@ -148,6 +148,25 @@
             }
         }
 
+        public function listarImagensProduto($id_produto){
+            try {
+                $connection = $this->conectar();
+
+                $sql = "SELECT * FROM imagens_produto WHERE imagens_produto.id_produto_fk = :id_produto";
+
+                $consulta = $connection->prepare($sql);
+                $consulta->bindValue(":id_produto", $id_produto);
+                
+                return (($consulta->execute() && $consulta->rowCount() > 0) 
+                        ? $consulta->fetchAll($connection::FETCH_ASSOC) : "");
+
+            } catch (PDOException $e) {
+                echo "Erro ao listar: " . $e->getMessage();
+            } catch (Exception $e) {
+                echo "Erro: " . $e->getMessage();
+            }
+        }
+
         public function listarTamanhos(){
             try {
                 $connection = $this->conectar();

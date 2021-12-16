@@ -218,7 +218,7 @@ $(function() {
                             });
                         }
                     } else if (objProdutos.type != "success") {
-                        exibirModal(objProdutos.data, false);
+                        exibirModal(objProdutos.data, false, true);
                     }
                 });
             }else if (btn_clicked === "btn_nm_remove") {
@@ -247,9 +247,9 @@ $(function() {
                 
                 if($('.modal_system_delete').modal('hide')){
                     if (tipo === -1) {
-                        exibirModal(retorno[0],true);
+                        exibirModal(retorno[0], true, true);
                     } else if (tipo > -1) {
-                        exibirModal(retorno[0],false);
+                        exibirModal(retorno[0], false, true);
                     }
                 }
             });

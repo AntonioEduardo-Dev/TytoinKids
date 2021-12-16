@@ -11,9 +11,9 @@ $(function() {
             retorna = retorna.split("-|-");
             
             if (tipo === -1) {
-                exibirModal(retorna[0],true);
+                exibirModal(retorna[0], true, true);
             } else if (tipo > -1) {
-                exibirModal(retorna[0],false);
+                exibirModal(retorna[0], false, false);
             }
         });
     });

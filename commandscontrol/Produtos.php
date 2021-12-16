@@ -117,11 +117,48 @@
     }
 
     if (isset($_GET['listarProduto'])) {        
-        if ($dados = $objProduto->listarProduto(intval($_GET['id_produto']))) {
-            $retorno = [
-                "type" => "success", 
-                "data" => $dados,
-            ];
+        if ($dados_produto = $objProduto->listarProduto(intval($_GET['id_produto']))) {
+            if ($imagens_produto = $objProduto->listarImagensProduto(intval($_GET['id_produto']))) {
+                $dados      = array();
+                $imagens    = array();
+
+                foreach ($imagens_produto as $key_imagem => $imagem) {
+                    $imagens[$key_imagem] = [
+                        "id_imagem_produto"     => $imagem["id_imagem_produto"],
+                        "imagem_produto"        => $imagem["imagem_produto"]
+                    ];
+                }
+
+                foreach ($dados_produto as $key_produto => $produto) {
+                    $novos_dados = [
+                        "id_produto"                => $produto["id_produto"], 
+                        "nome_produto"              => $produto["nome_produto"], 
+                        "preco_produto"             => $produto["preco_produto"], 
+                        "id_categoria"              => $produto["id_categoria"], 
+                        "nome_categoria"            => $produto["nome_categoria"], 
+                        "id_tamanho_produto"        => $produto["id_tamanho_produto"], 
+                        "quatidade_disponivel"      => $produto["quatidade_disponivel"], 
+                        "id_personagem_produto"     => $produto["id_personagem_produto"], 
+                        "id_tamanho"                => $produto["id_tamanho"], 
+                        "tamanho"                   => $produto["tamanho"],
+                        "id_personagem"             => $produto["id_personagem"],
+                        "personagem"                => $produto["personagem"],
+                        "imagens"                   => $imagens
+                    ];
+
+                    $dados[$key_produto] = $novos_dados;
+                }
+
+                $retorno = [
+                    "type" => "success", 
+                    "data" => $dados,
+                ];
+            } else {
+                $retorno = [
+                    "type" => "error",
+                    "data" => "Nenhuma imagem cadastrada",
+                ];
+            }
         } else {
             $retorno = [
                 "type" => "error",
