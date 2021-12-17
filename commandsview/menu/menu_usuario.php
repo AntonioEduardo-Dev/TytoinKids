@@ -14,16 +14,40 @@
 	</div>
 	<!-- end breadcrumb section -->
 
-	<!-- products -->
+	<!-- options -->
 	<div class="product-section mt-5 mb-5">
 		<div class="container">
 			<div class="row menu-list">
-				<div class="container mt-5 mb-5 content-menu-custom">
+				<div class="row mt-5 mb-5">
+					<div class="col-lg-4 col-md-6 text-center">
+						<div class="">
+							<div class="product-image">
+								<a href="listar/encomendas_usuario"><img src="commandsview/assets/img/images/product-01-view.JPG" alt=""  style="width: 300px; height: 300px;"></a>
+							</div>
+                            <a href="listar/encomendas_usuario" name=""><h4>Encomendas</h4></a>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 text-center">
+						<div class="">
+							<div class="product-image">
+								<a href="#" onclick="return false;"><img src="commandsview/assets/img/images/product-02-view.JPG" alt=""  style="width: 300px; height: 300px;"></a>
+							</div>
+                            <a href="#" name=""><h4>""</h4></a>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
+						<div class="">
+							<div class="product-image">
+								<a href="#" onclick="return false;"><img src="commandsview/assets/img/images/product-03-view.JPG" alt=""  style="width: 300px; height: 300px;"></a>
+							</div>
+                            <a href="#" name=""><h4>""</h4></a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- end products -->
+	<!-- end options -->
 
 	<!-- Large modal -->
 	<div class="modal fade modal_system_open_class" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
