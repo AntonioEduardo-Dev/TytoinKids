@@ -22,7 +22,7 @@
 					<div class="col-lg-4 col-md-6 text-center">
 						<div class="">
 							<div class="product-image">
-								<a href="listar/encomendas_usuario"><img src="commandsview/assets/img/images/product-01-view.JPG" alt=""  style="width: 300px; height: 300px;"></a>
+								<a href="listar/encomendas_usuario"><img src="commandsview/assets/img/menu/image_menu_encomenda.png" alt="" style="width: 300px; height: 300px;"></a>
 							</div>
                             <a href="listar/encomendas_usuario" name=""><h4>Encomendas</h4></a>
 						</div>
@@ -30,7 +30,7 @@
 					<div class="col-lg-4 col-md-6 text-center">
 						<div class="">
 							<div class="product-image">
-								<a href="#" onclick="return false;"><img src="commandsview/assets/img/images/product-02-view.JPG" alt=""  style="width: 300px; height: 300px;"></a>
+								<a href="#" onclick="return false;"><img src="commandsview/assets/img/menu/image_menu_encomenda.png" alt="" style="width: 300px; height: 300px;"></a>
 							</div>
                             <a href="#" name=""><h4>""</h4></a>
 						</div>
@@ -38,9 +38,9 @@
 					<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
 						<div class="">
 							<div class="product-image">
-								<a href="#" onclick="return false;"><img src="commandsview/assets/img/images/product-03-view.JPG" alt=""  style="width: 300px; height: 300px;"></a>
+								<a href="sair"><img src="commandsview/assets/img/menu/image_menu_encomenda.png" alt="" style="width: 300px; height: 300px;"></a>
 							</div>
-                            <a href="#" name=""><h4>""</h4></a>
+                            <a href="sair" name=""><h4>Sair</h4></a>
 						</div>
 					</div>
 				</div>
@@ -54,7 +54,6 @@
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 				<div class="conteudo">
-					
 				</div>
 			</div>
 		</div>

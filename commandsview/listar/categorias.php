@@ -68,7 +68,7 @@
 
 	<!-- Small modal -->
 	<div class="modal fade modal_system_success_class" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-sm modal-dialog-centered">
+		<div class="modal-dialog modal-dialog-centered">
 			<div class="modal-content">
 				<div class="conteudo_modal_sm">
 				</div>

@@ -37,7 +37,7 @@ $(function() {
                         <td>${dados_encomenda.quantidade}</td>
                         ${status}
                         <td>
-                            <button class="btn" name="btn_nm_view" alt="Visualizar" value="${dados_encomenda.id_encomenda}" id="btn_view_order">
+                            <button class="btn btn-lg" name="btn_nm_view" alt="Visualizar" value="${dados_encomenda.id_encomenda}" id="btn_view_order">
                                 <i class="fas fa-eye"></i>
                             </button>
                         </td>

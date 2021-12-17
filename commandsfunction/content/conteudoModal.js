@@ -5,7 +5,7 @@ function viewMsgs() {
         "alert_notification_error_error_login!"     : "Email do usuário ou senha incorretos. Tente novamente!",
         "alert_notification_error_data_bite!"       : "Verifique dados digitados incorretamente!",
         "alert_notification_error_null!"            : "Verifique possíveis campos nulos!",
-        "alert_notification_error_empty!"           : "Preencha todos os campos!",
+        "alert_notification_error_empty!"           : "Preencha todos os campos obrigatórios!",
         "alert_notification_error_categoria_null!"  : "Verifique a categoria selecionada!",
         "alert_notification_error_id!"              : "Ocorreu um erro na consulta do id do produto!",
         "alert_notification_error_tam_person!"      : "Ocorreu um erro no modulo de personagens e tamanhos, se o erro persistir entre em contato com o suporte!",

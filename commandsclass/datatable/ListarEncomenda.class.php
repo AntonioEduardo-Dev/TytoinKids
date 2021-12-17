@@ -62,30 +62,30 @@ class ListarEncomenda extends Connection{
 
                     if ($row[7] === "pendente") {
                         $buttons = '<h4 class="product-status">
-                                        <a class="modal_system_open" name="btn_nm_edit-|-'.$row[0].'" alt="Visualizar">
+                                        <button class="modal_system_open btn btn-lg" name="btn_nm_edit-|-'.$row[0].'" alt="Visualizar">
                                             <i class="fas fa-eye"></i>
-                                        </a>
-                                        <a class="modal_system_open" name="btn_nm_accept-|-'.$row[0].'" alt="Aprovar">
+                                        </button>
+                                        <button class="modal_system_open btn btn-lg" name="btn_nm_accept-|-'.$row[0].'" alt="Aprovar">
                                             <i class="far fa-check-square"></i>
-                                        </a>
-                                        <a class="modal_system_open" name="btn_nm_decline-|-'.$row[0].'" alt="Recusar">
+                                        </button>
+                                        <button class="modal_system_open btn btn-lg" name="btn_nm_decline-|-'.$row[0].'" alt="Recusar">
                                             <i class="far fa-window-close"></i>
-                                        </a>
+                                        </button>
                                     </h4>';
                     }elseif($row[7] === "finalizado"){
                         $buttons = '<h4 class="product-status">
-                                        <a class="modal_system_open" name="btn_nm_edit-|-'.$row[0].'" alt="Visualizar">
+                                        <button class="modal_system_open btn btn-lg" name="btn_nm_edit-|-'.$row[0].'" alt="Visualizar">
                                             <i class="fas fa-eye"></i>
-                                        </a>
+                                        </button>
                                     </h4>';
                     }else{
                         $buttons = '<h4 class="product-status">
-                                        <a class="modal_system_open" name="btn_nm_edit-|-'.$row[0].'" alt="Visualizar">
+                                        <button class="modal_system_open btn btn-lg" name="btn_nm_edit-|-'.$row[0].'" alt="Visualizar">
                                             <i class="fas fa-eye"></i>
-                                        </a>
-                                        <a class="modal_system_open" name="btn_nm_done-|-'.$row[0].'" alt="Finalizar">
+                                        </button>
+                                        <button class="modal_system_open btn btn-lg" name="btn_nm_done-|-'.$row[0].'" alt="Finalizar">
                                             <i class="fas fa-check-double"></i>
-                                        </a>
+                                        </button>
                                     </h4>';
                     }
 

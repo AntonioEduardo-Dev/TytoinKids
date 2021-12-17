@@ -35,12 +35,17 @@
 		$URL = explode("/", $REQUEST_PAGINA);
 		$URL[2] = (($URL[2] != "" && $URL[2] != "index" && $URL[2] != "index.php") ? $URL[2] : "home");
 		
-		if($URL[2] == "login" || $URL[2] == "cadastro")
+		if($URL[2] == "login" || $URL[2] == "cadastro" || $URL[2] == "sair")
 		{
-			if(isset($_SESSION["user"]) && $_SESSION["user"]["tipo_user"] != "convidado")
-			{
+			if ($URL[2] == "sair") {
+				unset($_SESSION["user"]);
 				$URL[2] = "home";
-			};
+			}else{
+				if(isset($_SESSION["user"]) && $_SESSION["user"]["tipo_user"] != "convidado")
+				{
+					$URL[2] = "home";
+				};
+			}
 		};
 		
 		if (file_exists("commandsview/pages/" . $URL[2] . ".php"))
