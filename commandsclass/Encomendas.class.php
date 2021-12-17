@@ -37,6 +37,38 @@
             }
         }
 
+        public function listarEncomendasIdUsuario($id){
+            try {
+                $connection = $this->conectar();
+
+                $sql = "SELECT encomendas.id_encomenda, encomendas.quantidade, encomendas.data_hora, encomendas.status, personagens.personagem, 
+                tamanhos.tamanho, produtos.id_produto, produtos.nome_produto, produtos.preco_produto 
+                        FROM encomendas 
+                        INNER JOIN produtos 
+                        ON encomendas.id_produto_fk = produtos.id_produto
+                        INNER JOIN personagem_produto 
+                        ON encomendas.id_personagem_produto_fk = personagem_produto.id_personagem_produto
+                        INNER JOIN personagens 
+                        ON personagem_produto.id_personagem_fk = personagens.id_personagem
+                        INNER JOIN tamanho_produto 
+                        ON encomendas.id_tamanho_produto_fk = tamanho_produto.id_tamanho_produto
+                        INNER JOIN tamanhos 
+                        ON tamanho_produto.id_tamanho_fk = tamanhos.id_tamanho
+                        WHERE encomendas.id_usuario_fk = :id ORDER BY encomendas.data_hora DESC";
+            
+                $consulta = $connection->prepare($sql);
+                $consulta->bindValue(":id", $id);
+                
+                return (($consulta->execute() && $consulta->rowCount() > 0) 
+                        ? $consulta->fetchAll($connection::FETCH_ASSOC) : "" );
+                
+            } catch (PDOException $e) {
+                echo "Erro ao listar quantidade: " . $e->getMessage();
+            } catch (Exception $e) {
+                echo "Erro: " . $e->getMessage();
+            }
+        }
+
         public function listarEncomendasId($id_encomenda){
             try {
                 $connection = $this->conectar();

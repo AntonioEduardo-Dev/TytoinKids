@@ -10,13 +10,13 @@
 
     // Execução de métodos
     if (isset($_GET["cart"])){
-        $id_produto = $_GET["id_produto"];
-        $qtd_produto = intval($_GET["qtd_produto"]);
-        $id_tamanho_selecionado = intval($_GET["id_tamanho_selecionado"]);
-        $id_personagem_selecionado = intval($_GET["id_personagem_selecionado"]);
-        $tamanho_selecionado = ($_GET["tamanho_selecionado"]);
-        $personagem_selecionado = ($_GET["personagem_selecionado"]);
-        $id_existente = 0;
+        $id_produto                 = (isset($_GET["id_produto"])                   ? $_GET["id_produto"]                           : "");
+        $qtd_produto                = (isset($_GET["qtd_produto"])                  ? intval($_GET["qtd_produto"])                  : "");
+        $id_tamanho_selecionado     = (isset($_GET["id_tamanho_selecionado"])       ? intval($_GET["id_tamanho_selecionado"])       : "");
+        $id_personagem_selecionado  = (isset($_GET["id_personagem_selecionado"])    ? intval($_GET["id_personagem_selecionado"])    : "");
+        $tamanho_selecionado        = (isset($_GET["tamanho_selecionado"])          ? $_GET["tamanho_selecionado"]                  : "");
+        $personagem_selecionado     = (isset($_GET["personagem_selecionado"])       ? $_GET["personagem_selecionado"]               : "");
+        $id_existente               = 0;
 
         if (isset($_SESSION["cart"]) && count($_SESSION["cart"]) > 0) {
             if (in_array($id_produto, array_column($_SESSION["cart"], 'id_produto')) 
@@ -93,7 +93,8 @@
     };
 
     if(isset($_GET["btn_unset"])){
-        $linha = $_GET["linha"];
+        $linha = (isset($_GET["linha"]) ? $_GET["linha"] : "");
+
         if(isset($_SESSION["cart"])){
             unset($_SESSION["cart"][$linha]);
             if(empty($_SESSION["cart"])){
@@ -164,7 +165,27 @@
     }
 
     if (isset($_GET['btn_listar_encomenda'])) {
-        if ($dados = $objEncomenda->listarEncomendasId($_GET['id_encomenda'])) {
+        $id_encomenda = (isset($_GET['id_encomenda']) ? $_GET['id_encomenda'] : "");
+
+        if ($dados = $objEncomenda->listarEncomendasId($id_encomenda)) {
+            $retorno = [
+                "type" => "success", 
+                "data" => $dados,
+            ];
+        } else {
+            $retorno = [
+                "type" => "error",
+                "data" => "Nenhuma encomenda cadastrada",
+            ];
+        }
+
+        echo json_encode($retorno);
+    }
+
+    if (isset($_GET['btn_listar_encomendas'])) {
+        $id_usuario = (isset($_GET['id_usuario']) ? $_GET['id_usuario'] : "");
+
+        if ($dados = $objEncomenda->listarEncomendasIdUsuario($id_usuario)) {
             $retorno = [
                 "type" => "success", 
                 "data" => $dados,
@@ -215,7 +236,7 @@
     }
     
     if (isset($_POST['btn_apagar'])) {
-        $id_encomenda = intval($_POST['id_encomenda']);
+        $id_encomenda = (isset($_POST['id_encomenda']) ? intval($_POST['id_encomenda']) : "");
 
         if(is_int($id_encomenda)){
             if ($objEncomenda->apagarEncomendas($id_encomenda)){

@@ -81,6 +81,12 @@
 									<div class="header-icons">
 										<a class="shopping-cart cool-hover" href="carrinho"><i class="fas fa-shopping-cart"></i></a>
                                         <a class="mobile-hide search-bar-icon cool-hover" href="login"><i class="fas fa-user"></i></a>
+										<?php if (isset($_SESSION["user"]) && $_SESSION["user"]["tipo_user"] !== "convidado") { ?>
+											<ul class="sub-menu">
+												<li><a href="carrinho">Carrinho</a></li>
+												<li><a href="menu/menu_usuario">Usuário</a></li>
+											</ul>
+										<?php } ?>
 									</div>
 								</li>
 							</ul>
