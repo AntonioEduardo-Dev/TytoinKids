@@ -368,30 +368,39 @@
             }
         }
 
-        public function editar($id_produto, $nome, $preco, $imagens){
+        public function editar($id_produto, $nome, $preco, $categoria){
             try {
                 $connection = $this->conectar();
     
-                $sql = "UPDATE produtos SET nome_produto = :nome, preco_produto = :preco";
-
-                foreach ($imagens as $chave => $imagem) {
-                    $sql .= ", imagem_produto = :imagem".$chave;
-                }
-
-                $sql .= " WHERE produtos.id_produto = :id_produto";
+                $sql = "UPDATE produtos SET id_categoria_fk = :categoria, nome_produto = :nome, preco_produto = :preco WHERE produtos.id_produto = :id_produto";
 
                 $atualizar = $connection->prepare($sql);
                 $atualizar->bindValue(":id_produto", $id_produto);
+                $atualizar->bindValue(":categoria", $categoria);
                 $atualizar->bindValue(":nome", $nome);
                 $atualizar->bindValue(":preco", $preco);
-
-                foreach ($imagens as $chave => $imagem) {
-                    $atualizar->bindValue(":imagem".$chave, $imagem);
-                }
                 
                 return (($atualizar->execute()) ? true : false);
             } catch (PDOException $e) {
                 echo "Erro ao editar: " . $e->getMessage();
+            } catch (Exception $e) {
+                echo "Erro: " . $e->getMessage();
+            }
+        }
+        
+        public function editarPersonagemProduto($id_produto, $id_personagem){
+            try {
+                $connection = $this->conectar();
+    
+                $sql = "UPDATE personagem_produto SET personagem_produto.id_personagem_fk = :id_personagem WHERE personagem_produto.id_produto_fk = :id_produto";
+                $cadastrar = $connection->prepare($sql);
+                $cadastrar->bindValue(":id_produto", $id_produto);
+                $cadastrar->bindValue(":id_personagem", $id_personagem);
+                
+                return (($cadastrar->execute()) ? true : false);
+
+            } catch (PDOException $e) {
+                echo "Erro ao cadastrar: " . $e->getMessage();
             } catch (Exception $e) {
                 echo "Erro: " . $e->getMessage();
             }
@@ -402,6 +411,40 @@
                 $connection = $this->conectar();
     
                 $sql = "DELETE FROM produtos WHERE produtos.id_produto = :id_produto";
+                $apagar = $connection->prepare($sql);
+                $apagar->bindValue(":id_produto", $id_produto);
+
+                return (($apagar->execute()) ? true : false);
+                
+            } catch (PDOException $e) {
+                echo "Erro ao apagar: " . $e->getMessage();
+            } catch (Exception $e) {
+                echo "Erro: " . $e->getMessage();
+            }
+        }
+        
+        public function apagarImagensProduto($id_produto){
+            try {
+                $connection = $this->conectar();
+    
+                $sql = "DELETE FROM imagem_produto WHERE imagem_produto.id_produto_fk = :id_produto";
+                $apagar = $connection->prepare($sql);
+                $apagar->bindValue(":id_produto", $id_produto);
+
+                return (($apagar->execute()) ? true : false);
+                
+            } catch (PDOException $e) {
+                echo "Erro ao apagar: " . $e->getMessage();
+            } catch (Exception $e) {
+                echo "Erro: " . $e->getMessage();
+            }
+        }
+
+        public function apagarTamanhosProduto($id_produto){
+            try {
+                $connection = $this->conectar();
+    
+                $sql = "DELETE FROM tamanho_produto WHERE tamanho_produto.id_produto_fk = :id_produto";
                 $apagar = $connection->prepare($sql);
                 $apagar->bindValue(":id_produto", $id_produto);
 

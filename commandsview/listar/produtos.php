@@ -129,3 +129,5 @@
 <script src="commandsfunction/content/conteudoModal.js"></script>
 <!-- editar/apagar Produtos js -->
 <script src="commandsfunction/update_delete/produto.js"></script>
+<!-- função Modal js -->
+<script src="commandsfunction/content/conteudoAlerta.js"></script>

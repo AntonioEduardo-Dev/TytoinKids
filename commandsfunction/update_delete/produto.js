@@ -23,7 +23,6 @@ $(function() {
                         var personagens_disp    = objProdutos.data.personagens_disponiveis;
                         var tamanhos_disp       = objProdutos.data.tamanhos_disponiveis;
 
-                        console.log(tamanhos);
                         id_produto              = produto[0].id_produto;
                         nome_produto            = produto[0].nome_produto;
                         preco_produto           = produto[0].preco_produto;
@@ -79,7 +78,7 @@ $(function() {
                                                         <h4 class="mt-3 pl-5">${elemento.tamanho} : </h4>
                                                     </div>
                                                     <div class="col-lg-9">
-                                                        <input type="text" placeholder="Quantidade disponível*" id="btn_id_qtd_tam_${elemento.id_tamanho}">
+                                                        <input type="text" placeholder="Quantidade disponível*" id="btn_id_qtd_tam_${elemento.tamanho}">
                                                     </div>
                                                 </div>
                                             `;
@@ -92,7 +91,7 @@ $(function() {
                                                         <h4 class="mt-3 pl-5">${elemento.tamanho} : </h4>
                                                     </div>
                                                     <div class="col-lg-9">
-                                                        <input type="text" placeholder="Quantidade disponível*" id="btn_id_qtd_tam_${elemento.id_tamanho}" value="${qtd_tam_produto}">
+                                                        <input type="text" placeholder="Quantidade disponível*" id="btn_id_qtd_tam_${elemento.tamanho}" value="${qtd_tam_produto}">
                                                     </div>
                                                 </div>
                                             `;
@@ -125,6 +124,7 @@ $(function() {
                                                             </div>
                                                             <div class="row mt-2">
                                                                 <div class="col-lg-8">
+                                                                    <input type="text" placeholder="id" id="id_produto" value="${id_produto}" hidden disabled>
                                                                     <input type="text" placeholder="Nome do produto*" id="id_nome" value="${nome_produto}" required>
                                                                 </div>
                                                                 <div class="col-lg-4">
@@ -229,7 +229,100 @@ $(function() {
     });
     
     $(document).on('click', '#id_editar_produto', function() {
-        value = ($(this).attr('name')).split("-|-");
+        var id_value = ($(this).attr('name')).split("-|-");
+        
+        if(($('#id_imageUpload')[0].files).length != 0) {
+            var data = new FormData();
+            var prod_imagens = undefined;
+
+            $.each($("#id_imageUpload")[0].files, function(i, file) {
+                data.append('nm_cadastro_imagens[]', file);
+            });
+
+            $.ajax({
+                url: 'commandscontrol/Produtos.php',
+                async: false,
+                data: data,
+                processData: false,
+                contentType: false,
+                type: 'POST',
+                success: function(data) 
+                {
+                    $("#id_mensagem_image").html(data);
+
+                    var resultado = data.split('-|-');
+    
+                    if (resultado[0] != false) {
+                        prod_imagens = (jQuery.parseJSON(data));
+                    }else {
+                        exibirModalAlerta(resultado[1],false,"alert-danger");
+                    }
+                }
+            });
+        }else{
+            prod_imagens = "productind.jpg";
+        }
+        
+        setTimeout(function() {
+            if(typeof prod_imagens != 'undefined'){
+
+                var prod_categ  = $("#id_categ").val();
+                var prod_nome  = $("#id_nome").val();
+                var prod_preco  = $("#id_preco").val();
+                var id_produto  = $("#id_produto").val();
+                var id_personagem  = $("#id_personagem").val();
+
+                var tamanhos = [
+                    {
+                        id_tamanho      : "1",
+                        qtd_tamanho     : $('#btn_id_qtd_tam_1').val()  > 0 ? $('#btn_id_qtd_tam_1').val() : 0
+                    },
+                    {
+                        id_tamanho      : "2",
+                        qtd_tamanho     : $('#btn_id_qtd_tam_2').val()  > 0 ? $('#btn_id_qtd_tam_2').val() : 0
+                    },
+                    {
+                        id_tamanho      : "3",
+                        qtd_tamanho     : $('#btn_id_qtd_tam_4').val()  > 0 ? $('#btn_id_qtd_tam_4').val() : 0
+                    },
+                    {
+                        id_tamanho      : "4",
+                        qtd_tamanho     : $('#btn_id_qtd_tam_6').val()  > 0 ? $('#btn_id_qtd_tam_6').val() : 0
+                    },
+                    {
+                        id_tamanho      : "5",
+                        qtd_tamanho     : $('#btn_id_qtd_tam_8').val()  > 0 ? $('#btn_id_qtd_tam_8').val() : 0
+                    },
+                    {
+                        id_tamanho      : "6",
+                        qtd_tamanho     : $('#btn_id_qtd_tam_10').val()  > 0 ? $('#btn_id_qtd_tam_10').val() : 0
+                    }
+                ];
+
+                var dados = {
+                    btn_editar_produto : true,
+                    prod_categ,
+                    prod_nome,
+                    prod_preco,
+                    prod_imagens : prod_imagens,
+                    id_produto,
+                    id_personagem,
+                    tamanhos
+                }
+
+                $.post('commandscontrol/Produtos.php', dados, function(retorno) {
+                    console.log(retorno);
+                    var tipo = retorno.indexOf("alert_notification_error");
+                    retorno = retorno.split("-|-");
+                    
+                    if (tipo === -1) {
+                        exibirModalAlerta(retorno[0], true, "alert-success");
+                    } else if (tipo > -1) {
+                        exibirModalAlerta(retorno[0], false, retorno[1]);
+                    }
+                });
+            }
+        }, 100);
     });
     
     $(document).on('click', '#id_opc_delete', function() {
