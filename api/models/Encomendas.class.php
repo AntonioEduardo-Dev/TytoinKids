@@ -76,7 +76,7 @@
                 $sql = "SELECT encomendas.id_encomenda, encomendas.quantidade, encomendas.data_hora, usuarios.nome, 
                         usuarios.email, usuarios.tipo_usuario, produtos.id_produto, produtos.nome_produto, 
                         produtos.preco_produto, imagens_produto.imagem_produto, 
-                        personagem_produto.id_personagem_produto, personagens.personagem, tamanho_produto.id_tamanho_produto, tamanho_produto.id_tamanho_fk, tamanhos.tamanho 
+                        personagem_produto.id_personagem_produto, personagens.personagem, tamanho_produto.id_tamanho_produto, tamanho_produto.id_tamanho_fk, tamanhos.tamanho, usuario_contato.fone, usuario_contato.whatsapp 
                         FROM encomendas 
                         INNER JOIN usuarios 
                         ON encomendas.id_usuario_fk = usuarios.id_usuario 
@@ -92,6 +92,8 @@
                         ON imagens_produto.id_produto_fk = produtos.id_produto 
                         INNER JOIN personagens 
                         ON personagem_produto.id_personagem_fk = personagens.id_personagem 
+                        INNER JOIN usuario_contato 
+                        ON usuario_contato.id_usuario_fk = usuarios.id_usuario 
                         WHERE id_encomenda = :id_encomenda";
             
                 $consulta = $connection->prepare($sql);

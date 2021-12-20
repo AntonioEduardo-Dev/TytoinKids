@@ -48,6 +48,18 @@
 		</div>
 	</div>
 	<!-- end content page -->
+	
+	<!-- Large modal -->
+	<div class="modal fade modal_system_open_class" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="conteudo">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Large modal -->
 
 <?php include_once "client/views/includes/footer.php";?>
 

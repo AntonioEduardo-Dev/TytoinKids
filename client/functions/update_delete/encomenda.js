@@ -24,6 +24,8 @@ $(function() {
                         var nome_autor = encomenda.nome;
                         var email_autor = encomenda.email;
                         var tipo_usuario = encomenda.tipo_usuario;
+                        var fone_autor = encomenda.fone;
+                        var whats_autor = encomenda.whatsapp;
                         /* FIM DADOS USUÁRIO */
 
                         /* DADOS ENCOMENDA */
@@ -33,7 +35,7 @@ $(function() {
                         var personagem_produto = encomenda.personagem;
                         var tamanho_produto = encomenda.tamanho;
                         var quantidade = encomenda.quantidade;
-                        var quatidade_disponivel = encomenda.quatidade_disponivel;
+                        // var quatidade_disponivel = encomenda.quatidade_disponivel;
                         var data_hora = encomenda.data_hora;
                         /* FIM DADOS ENCOMENDA */
                         
@@ -82,10 +84,10 @@ $(function() {
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-lg-4">
-                                                        <input type="text" placeholder="Telefone: " id="telefone_autor" value="Telefone: ${email_autor}" required disabled>
+                                                        <input type="text" placeholder="Telefone: " id="telefone_autor" value="Telefone: ${fone_autor}" required disabled>
                                                     </div>
                                                     <div class="col-lg-4">
-                                                        <input type="text" placeholder="Whatsapp: " id="whatsapp_autor" value="Whatsapp: ${email_autor}" required disabled>
+                                                        <input type="text" placeholder="Whatsapp: " id="whatsapp_autor" value="Whatsapp: ${whats_autor}" required disabled>
                                                     </div>
                                                     <div class="col-lg-4">
                                                         <input type="text" placeholder="Status: " id="status_autor" value="Status: ${tipo_usuario}" required disabled>
@@ -105,16 +107,13 @@ $(function() {
                                                     </div>
                                                 </div>
                                                 <div class="row">
-                                                    <div class="col-lg-3">
+                                                    <div class="col-lg-4">
                                                         <input type="text" placeholder="Solicitado: " id="id_qtd_solicitado" value="Solicitado: ${quantidade}" required disabled>
                                                     </div>
-                                                    <div class="col-lg-3">
-                                                        <input type="text" placeholder="Disponível: " id="id_qtd_disp" value="Disponível: ${quatidade_disponivel}" required disabled>
-                                                    </div>
-                                                    <div class="col-lg-3">
+                                                    <div class="col-lg-4">
                                                         <input type="text" placeholder="Pedido: " id="id_data_pedido" value="Pedido: ${data_hora}" required disabled>
                                                     </div>
-                                                    <div class="col-lg-3">
+                                                    <div class="col-lg-4">
                                                         <input type="text" placeholder="Prazo: " id="id_prazo_pedido" value="Prazo: ${data_hora}" required disabled>
                                                     </div>
                                                 </div>
