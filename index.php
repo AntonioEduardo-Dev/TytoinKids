@@ -1,6 +1,6 @@
 <?php
 	session_start();
-    require_once "commandscontrol/Manutencao.php";
+    require_once "api/controllers/Manutencao.php";
 	$validManutencao = getStatus();
 	
 	if((empty($_SESSION["user"])))
@@ -19,7 +19,7 @@
 	/* INDEX REDIRECIONAMENTO DE PÁGINAS */
 	if ($validManutencao && $_SESSION["user"]["tipo_user"] != "admin")
 	{
-		require_once("commandsview/pages/manutencao.php");
+		require_once("client/views/pages/manutencao.php");
 	}
 	else
 	{
@@ -48,31 +48,31 @@
 			}
 		};
 		
-		if (file_exists("commandsview/pages/" . $URL[2] . ".php"))
+		if (file_exists("client/views/pages/" . $URL[2] . ".php"))
 		{
 			if(isset($URL[3]))
 			{
-				require_once("commandsview/pages/404.php");
+				require_once("client/views/pages/404.php");
 			}
 			else
 			{
-				require_once("commandsview/pages/" . $URL[2] . ".php");
+				require_once("client/views/pages/" . $URL[2] . ".php");
 			};
 		}
-		elseif(is_dir("commandsview/" . $URL[2]))
+		elseif(is_dir("client/views/" . $URL[2]))
 		{
-			if (isset($URL[2]) && isset($URL[3]) && file_exists("commandsview/" . $URL[2] . "/" . $URL[3] . ".php") && $_SESSION["user"]["tipo_user"] == "admin")
+			if (isset($URL[2]) && isset($URL[3]) && file_exists("client/views/" . $URL[2] . "/" . $URL[3] . ".php") && $_SESSION["user"]["tipo_user"] == "admin")
 			{
-				require_once("commandsview/" . $URL[2] . "/" . $URL[3] . ".php");
+				require_once("client/views/" . $URL[2] . "/" . $URL[3] . ".php");
 			}
 			else
 			{
-				require_once("commandsview/pages/404.php");
+				require_once("client/views/pages/404.php");
 			};
 		}
 		else
 		{
-			require_once("commandsview/pages/404.php");
+			require_once("client/views/pages/404.php");
 		};
 	};
 	/* FIM INDEX REDIRECIONAMENTO DE PÁGINAS */
