@@ -114,8 +114,8 @@
 										</div>
 									</div>
 									<div class="form-group">
-										<div class="col-md-4 offset-md-4">
-											<input type="submit" name="cadastrar" value="Cadastrar" id="id_cad">
+										<div class="col-md-4 offset-md-4 text-center">
+											<button class="btn btn-login text-uppercase fw-bold" id="id_cad" type="submit" value="Cadastrar">Cadastrar</button>
 										</div>
 									</div>
 								</div>

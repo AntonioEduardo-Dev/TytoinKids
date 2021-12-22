@@ -82,7 +82,7 @@
 	
 	<!-- Large modal -->
 	<div class="modal fade modal_system_delete" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-sm">
+		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="conteudo_delete">
 					<div class="card">
