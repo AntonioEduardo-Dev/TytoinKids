@@ -19,45 +19,46 @@
 	<div class="content-page">
 		<!-- products -->
 		<div class="product-section mt-90 mb-5">
-			<div class="container">
+			<div class="ml-5 mr-5">
 				<div class="row">
-					<div class="col-xl-3 mt-3 mb-5">
-						<div class="card">
-							<h4 class="card-header">Filtros</h4>
-							<div class="card-body">
-								<div class="list-group product-filter-button" id="list-tab" role="tablist">
-								</div>
-								<div class="list-group mt-3">
-									<select class="form-control" name="" id="id_personagem_select">
-										<option value="vermelho" hidden selected>Personagens:</option>
-									</select>
-								</div>
-								<div class="list-group mt-3">
-									<select class="form-control" name="nm_tamanho_select" id="id_tamanho_select">
-										<option hidden selected>Tamanho:</option>
-										<option value="1">1</option>
-										<option value="2">2</option>
-										<option value="4">4</option>
-										<option value="6">6</option>
-										<option value="8">8</option>
-									</select>
-								</div>
+					<div class="col-xl-3 mb-5">
+						<div class="ml-3 mr-3">
+							<div class="list-group product-filter-button" id="list-tab" role="tablist">
+							</div>
+							<div class="list-group mt-3">
+								<select class="form-control" name="" id="id_personagem_select">
+									<option value="vermelho" hidden selected>Personagens:</option>
+								</select>
+							</div>
+							<div class="list-group mt-3">
+								<select class="form-control" name="nm_tamanho_select" id="id_tamanho_select">
+									<option hidden selected>Tamanho:</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="4">4</option>
+									<option value="6">6</option>
+									<option value="8">8</option>
+								</select>
 							</div>
 						</div>
 					</div>
-					<div class="col-xl-9 mt-3">
+					<div class="col-xl-9">
 						<div class="card">
 							<h4 class="card-header">Nossos produtos</h4>
 							<div class="card-body">
 								<div class="row mb-4">
-									<div class="col-md-3">
-										<input type="text" value="Pesquisar:" disabled>
-									</div>
-									<div class="col-md-9">
-										<input type="text" value="" placeholder="Digite aqui" id="btn_de_busca" disabled>
+									<div class="col ml-4 mr-4">
+										<div class="input-group">
+											<input type="text" value="" class="form-control" placeholder="Digite aqui" id="btn_de_busca">
+											<div class="input-group-append">
+												<span class="input-group-text">
+													<i class="fas fa-search"></i>
+												</span>
+											</div>
+										</div>
 									</div>
 								</div>
-								<div class="row product-lists">
+								<div class="row product-lists ml-4 mr-4">
 								</div>
 								<div class="row mb-5">
 									<div class="col text-center">

@@ -105,7 +105,7 @@
 										?>
 									</tbody>
 								</table>
-								<div class="cart-buttons">
+								<div class="cart-buttons ml-4">
 									<a class="boxed-btn black add_item_cart">Encomendar</a>
 								</div>
 							</div>

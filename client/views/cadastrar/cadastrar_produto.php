@@ -17,8 +17,10 @@
 
 	<!-- link section -->
 	<div class="row mt-5 ">
-		<div class="col-md-2 offset-md-5">
-			<a href="listar/produtos"><input type="submit" value="Listar"></a>
+		<div class="col-md-2 offset-md-5 text-center">
+			<a href="listar/produtos">
+				<button class="btn btn-login text-uppercase fw-bold" id="id_cad_duvida" type="submit" value="Enviar">Listar</button>
+			</a>
 		</div>
 	</div>
 	<!-- end link section -->

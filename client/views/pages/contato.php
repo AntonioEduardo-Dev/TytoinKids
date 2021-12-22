@@ -50,7 +50,7 @@
 						</div>	
 						<div class="row mt-3">
 							<div class="col-sm-3">
-								<input type="submit" id="id_cad_duvida" value="Enviar">
+								<button class="btn btn-login text-uppercase fw-bold" id="id_cad_duvida" type="submit" value="Enviar">Enviar</button>
 							</div>
 						</div>
 					</div>

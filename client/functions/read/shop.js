@@ -39,11 +39,12 @@ $(function () {
                 content += `<div class="col-lg-4 col-md-6 text-center ${dados_produto.nome_categoria} ${dados_produto.personagens} ${dados_produto.tamanhos}">
                                 <div class="single-product-item">
                                     <div class="product-image">
-                                        <a href="produto?id=${dados_produto.id_produto}" id="single-product-item" data-id="${dados_produto.id_produto}"><img src="client/views/assets/img/images/${dados_produto.imagem_produto}" style="width: 200px; height: 200px;" alt="${dados_produto.nome_produto}"></a>
+                                        <a href="produto?id=${dados_produto.id_produto}" id="single-product-item" data-id="${dados_produto.id_produto}"><img src="client/views/assets/img/images/${dados_produto.imagem_produto}" style="width: 180px; height: 200px;" alt="${dados_produto.nome_produto}"></a>
                                     </div>
-                                    <h3>${dados_produto.nome_produto}</h3>
-                                    <p class="product-price"><span>P/Quantidade</span> R$${dados_produto.preco_produto} </p>
-                                    <a href="produto?id=${dados_produto.id_produto}" data-id="${dados_produto.id_produto}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Adicionar ao carrinho</a>
+                                    <a href="produto?id=${dados_produto.id_produto}" id="single-product-item" data-id="${dados_produto.id_produto}">
+                                        <h3>${dados_produto.nome_produto}</h3>
+                                        <p class="product-price"><span>P/Quantidade</span> R$${dados_produto.preco_produto} </p>
+                                    </a>
                                 </div>
                             </div>
                 `;
