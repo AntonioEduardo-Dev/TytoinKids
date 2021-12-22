@@ -1,5 +1,5 @@
 <?php
-	require_once __DIR__ . '..\..\..\client\views\config\config.php';
+	require_once __DIR__ . '../../../client/views/config/config.php';
 
     class Connection{
 		protected function conectar(){
