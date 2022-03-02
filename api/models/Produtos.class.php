@@ -280,7 +280,10 @@
             try {
                 $connection = $this->conectar();
 
-                $sql = "SELECT *, (SELECT imagens_produto.imagem_produto FROM imagens_produto WHERE imagens_produto.id_produto_fk = produtos.id_produto ORDER BY imagens_produto.id_imagem_produto ASC LIMIT 1) AS imagem_produto FROM produtos WHERE produtos.id_produto = :id_produto";
+                $sql = "SELECT *, 
+                        (SELECT imagens_produto.imagem_produto FROM imagens_produto WHERE imagens_produto.id_produto_fk = produtos.id_produto ORDER BY imagens_produto.id_imagem_produto ASC LIMIT 1) AS imagem_produto 
+                        FROM produtos 
+                        WHERE produtos.id_produto = :id_produto";
                 $consulta = $connection->prepare($sql);
                 $consulta->bindValue(":id_produto", $id_produto);
                 

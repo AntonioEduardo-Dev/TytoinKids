@@ -19,4 +19,4 @@
 	</div>
 	<!-- end error section -->
 
-	<?php include_once "client/views/includes/footer.php";?>
+<?php include_once "client/views/includes/footer.php";?>

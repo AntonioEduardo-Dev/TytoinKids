@@ -46,7 +46,7 @@
 						<div class="card">
 							<h4 class="card-header">Nossos produtos</h4>
 							<div class="card-body">
-								<div class="row mb-4">
+								<div class="row">
 									<div class="col ml-4 mr-4">
 										<div class="input-group">
 											<input type="text" value="" class="form-control" placeholder="Digite aqui" id="btn_de_busca">
@@ -58,18 +58,18 @@
 										</div>
 									</div>
 								</div>
-								<div class="row product-lists ml-4 mr-4">
-								</div>
-								<div class="row mb-5">
+								<div class="row mb-4 mt-3">
 									<div class="col text-center">
 										<div class="pagination-wrap">
-											<!-- <ul>
-												<li><a href="javascript:void(0)">Anterior</a></li>
-												<li><a class="active" href="javascript:void(0)">1</a></li>
-												<li><a href="javascript:void(0)">Próximo</a></li>
-											</ul> -->
+											<ul>
+												<li><button class="btn btn-login" href="javascript:void(0)" id="anterior">Anterior</button></li>
+												<li><button class="active btn btn-login" disabled href="javascript:void(0)" id="numeracao">-</button></li>
+												<li><button class="btn btn-login" href="javascript:void(0)" id="proximo">Próximo</button></li>
+											</ul>
 										</div>
 									</div>
+								</div>
+								<div class="row product-lists ml-4 mr-4" id="products-content-system">
 								</div>
 							</div>
 						</div>
@@ -100,6 +100,9 @@
 <script src="client/functions/content/conteudoModal.js"></script>
 <!-- pagina js -->
  
+<!-- paginação Produtos js -->
+<script src="client/functions/read/pagination_search.js"></script>
+
 <!-- script pesquisa e paginação js -->
 <!-- <script src="client/functions/content/conteudoLoja.js"></script>	 -->
 <!-- script pesquisa e paginação js -->
