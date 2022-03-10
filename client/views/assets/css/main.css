@@ -958,7 +958,7 @@ a.mobile-show {
 }
 
 .footer-area {
-  background-color: #402b65;
+  background-image: linear-gradient(to right, #402b65, #783171);
   color: #ffffff;
   padding: 165px 0;
 }

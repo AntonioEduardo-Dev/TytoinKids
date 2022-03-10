@@ -33,7 +33,7 @@
 	<link rel="stylesheet" href="client/views/assets/css/responsive.css">
 
 </head>
-<body>
+<body id="body_header">
 	
 	<!--PreLoader-->
     <div class="loader">

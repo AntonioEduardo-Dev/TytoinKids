@@ -220,6 +220,8 @@
                             foreach ($imagens as $key => $imagem) {
                                 $objProduto->cadastrarImagemProduto($id_produto, $imagem["nome_imagem"]);
                             }
+                        } else {
+                            $objProduto->cadastrarImagemProduto($id_produto, "productind.jpg");
                         }
 
                         echo intval($id_produto);
@@ -255,7 +257,7 @@
                 
                 if ($erro_ext_imagens > 0) {
                     $novoNome = $key.md5(microtime()).$ext; // definir novo nome
-                    $dir = "../views/assets/img/images/"; // definir diretório para upload da imagem
+                    $dir = "../../client/views/assets/img/images/"; // definir diretório para upload da imagem
         
                     // upload imagem
                     move_uploaded_file($imagens['tmp_name'][$key], $dir.$novoNome);
