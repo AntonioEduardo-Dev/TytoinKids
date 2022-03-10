@@ -41,7 +41,11 @@
             try {
                 $connection = $this->conectar();
 
-                $sql = "SELECT * FROM categorias LIMIT 10";
+                $sql = "SELECT DISTINCT(categorias.id_categoria), categorias.nome_categoria 
+                        FROM categorias 
+                        INNER JOIN produtos ON categorias.id_categoria = produtos.id_categoria_fk 
+                        ORDER BY categorias.id_categoria 
+                        DESC LIMIT 10";
             
                 $consulta = $connection->prepare($sql);
                 

@@ -36,7 +36,7 @@ $(function () {
             var content = ``;
             
             $.each(objProdutos.data, function (indice, dados_produto) {
-                content += `<div class="col-lg-4 col-md-6 text-center ${dados_produto.nome_categoria} ${dados_produto.personagens} ${dados_produto.tamanhos}">
+                content += `<div class="col-lg-4 col-md-6 text-center content-product ${dados_produto.nome_categoria} ${dados_produto.personagens} ${dados_produto.tamanhos}">
                                 <div class="single-product-item">
                                     <div class="product-image">
                                         <a href="produto?id=${dados_produto.id_produto}" id="single-product-item" data-id="${dados_produto.id_produto}"><img src="client/views/assets/img/images/${dados_produto.imagem_produto}" style="width: 180px; height: 200px;" alt="${dados_produto.nome_produto}"></a>

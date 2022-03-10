@@ -30,9 +30,9 @@
 					<div class="col-lg-4 col-md-6 text-center">
 						<div class="">
 							<div class="product-image">
-								<a href="#" onclick="return false;"><img src="client/views/assets/img/menu/image_menu_encomenda.png" alt="" style="width: 300px; height: 300px;"></a>
+								<a href="listar/mensagens"><img src="client/views/assets/img/menu/image_menu_encomenda.png" alt="" style="width: 300px; height: 300px;"></a>
 							</div>
-                            <a href="listar/encomendas_usuario" name=""><h4>Encomendas personalizadas</h4></a>
+                            <a href="listar/mensagens" name=""><h4>Encomendas personalizadas</h4></a>
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">

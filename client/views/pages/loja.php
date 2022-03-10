@@ -60,11 +60,11 @@
 								</div>
 								<div class="row mb-4 mt-3">
 									<div class="col text-center">
-										<div class="pagination-wrap">
+										<div class="pagination-wrap col_pagination d-none">
 											<ul>
-												<li><button class="btn btn-login" href="javascript:void(0)" id="anterior">Anterior</button></li>
-												<li><button class="active btn btn-login" disabled href="javascript:void(0)" id="numeracao">-</button></li>
-												<li><button class="btn btn-login" href="javascript:void(0)" id="proximo">Próximo</button></li>
+												<li><button class="btn btn-login anterior" href="javascript:void(0)" id="anterior">Anterior</button></li>
+												<li><button class="active btn btn-login numeracao" disabled href="javascript:void(0)" id="numeracao">-</button></li>
+												<li><button class="btn btn-login proximo" href="javascript:void(0)" id="proximo">Próximo</button></li>
 											</ul>
 										</div>
 									</div>
@@ -101,7 +101,7 @@
 <!-- pagina js -->
  
 <!-- paginação Produtos js -->
-<script src="client/functions/read/pagination_search.js"></script>
+<script src="client/functions/read/pagination_search.js" defer></script>
 
 <!-- script pesquisa e paginação js -->
 <!-- <script src="client/functions/content/conteudoLoja.js"></script>	 -->

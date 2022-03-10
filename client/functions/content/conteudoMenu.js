@@ -116,7 +116,7 @@ $(function() {
                 var titulo      = "Encomendas";
                 var qtdblocks   = 2;
                 var imagens     = ['image_menu_listar.png', 'image_menu_listar.png'];
-                var links       = ['listar/encomendas','listar/encomendas'];
+                var links       = ['listar/encomendas','listar/mensagens'];
                 var subTitulos  = ['Listar', 'Listar personalizadas'];
 
                 var conteudo = bodyModalContent(qtdblocks, imagens, links, subTitulos);

@@ -68,7 +68,12 @@
             try {
                 $connection = $this->conectar();
 
-                $sql = "SELECT DISTINCT(personagens.personagem), id_personagem FROM personagens";
+                $sql = "SELECT DISTINCT(personagens.personagem), id_personagem 
+                        FROM personagens INNER JOIN personagem_produto 
+                        ON personagens.id_personagem = personagem_produto.id_personagem_fk 
+                        ORDER BY personagem_produto.id_personagem_fk 
+                        DESC";
+
                 $consulta = $connection->prepare($sql);
                 
                 return (($consulta->execute() && $consulta->rowCount() > 0) 
@@ -172,7 +177,12 @@
                 $connection = $this->conectar();
                 $status = 1;
 
-                $sql = "SELECT * FROM tamanhos WHERE status = :status";
+                $sql = "SELECT DISTINCT(tamanhos.id_tamanho), tamanhos.* 
+                        FROM tamanhos 
+                        INNER JOIN tamanho_produto 
+                        ON tamanhos.id_tamanho = tamanho_produto.id_tamanho_fk 
+                        WHERE status = :status";
+                        
                 $consulta = $connection->prepare($sql);
                 $consulta->bindValue(":status", $status);
                 

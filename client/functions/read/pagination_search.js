@@ -1,106 +1,19 @@
-var dados = [
-            [
-                `<div class="col-lg-4 col-md-6 text-center Super_Luxo Moranguinho 1">
-                    <div class="single-product-item">
-                        <div class="product-image">
-                            <a href="produto?id=1" id="single-product-item" data-id="1"><img src="client/views/assets/img/images/07b563d455de30f9d62c7f3be83ced926.png" style="width: 180px; height: 200px;" alt="Luxinho"></a>
-                        </div>
-                        <hr>
-                        <a href="produto?id=1" id="single-product-item" data-id="1">
-                            <h3>Luxinho</h3>
-                            <p class="product-price"><span>P/Quantidade</span> R$20.00 </p>
-                        </a>
-                    </div>
-                </div>`
-            ],
-            [
-                `<div class="col-lg-4 col-md-6 text-center Super_Luxo Moranguinho 1">
-                    <div class="single-product-item">
-                        <div class="product-image">
-                            <a href="produto?id=1" id="single-product-item" data-id="1"><img src="client/views/assets/img/images/07b563d455de30f9d62c7f3be83ced926.png" style="width: 180px; height: 200px;" alt="Luxinho"></a>
-                        </div>
-                        <hr>
-                        <a href="produto?id=1" id="single-product-item" data-id="1">
-                            <h3>Luxinho</h3>
-                            <p class="product-price"><span>P/Quantidade</span> R$20.00 </p>
-                        </a>
-                    </div>
-                </div>`
-            ],
-            [
-                `<div class="col-lg-4 col-md-6 text-center Super_Luxo Moranguinho 1">
-                    <div class="single-product-item">
-                        <div class="product-image">
-                            <a href="produto?id=1" id="single-product-item" data-id="1"><img src="client/views/assets/img/images/07b563d455de30f9d62c7f3be83ced926.png" style="width: 180px; height: 200px;" alt="Luxinho"></a>
-                        </div>
-                        <hr>
-                        <a href="produto?id=1" id="single-product-item" data-id="1">
-                            <h3>Luxinho</h3>
-                            <p class="product-price"><span>P/Quantidade</span> R$20.00 </p>
-                        </a>
-                    </div>
-                </div>`
-            ],
-            [
-                `<div class="col-lg-4 col-md-6 text-center Super_Luxo Moranguinho 1">
-                    <div class="single-product-item">
-                        <div class="product-image">
-                            <a href="produto?id=1" id="single-product-item" data-id="1"><img src="client/views/assets/img/images/07b563d455de30f9d62c7f3be83ced926.png" style="width: 180px; height: 200px;" alt="Luxinho"></a>
-                        </div>
-                        <hr>
-                        <a href="produto?id=1" id="single-product-item" data-id="1">
-                            <h3>Luxinho</h3>
-                            <p class="product-price"><span>P/Quantidade</span> R$20.00 </p>
-                        </a>
-                    </div>
-                </div>`
-            ],
-            [
-                `<div class="col-lg-4 col-md-6 text-center Super_Luxo Moranguinho 1">
-                    <div class="single-product-item">
-                        <div class="product-image">
-                            <a href="produto?id=1" id="single-product-item" data-id="1"><img src="client/views/assets/img/images/07b563d455de30f9d62c7f3be83ced926.png" style="width: 180px; height: 200px;" alt="Luxinho"></a>
-                        </div>
-                        <hr>
-                        <a href="produto?id=1" id="single-product-item" data-id="1">
-                            <h3>Luxinho</h3>
-                            <p class="product-price"><span>P/Quantidade</span> R$20.00 </p>
-                        </a>
-                    </div>
-                </div>`
-            ],
-            [
-                `<div class="col-lg-4 col-md-6 text-center Super_Luxo Moranguinho 1">
-                    <div class="single-product-item">
-                        <div class="product-image">
-                            <a href="produto?id=1" id="single-product-item" data-id="1"><img src="client/views/assets/img/images/07b563d455de30f9d62c7f3be83ced926.png" style="width: 180px; height: 200px;" alt="Luxinho"></a>
-                        </div>
-                        <hr>
-                        <a href="produto?id=1" id="single-product-item" data-id="1">
-                            <h3>Luxinho</h3>
-                            <p class="product-price"><span>P/Quantidade</span> R$20.00 </p>
-                        </a>
-                    </div>
-                </div>`
-            ],
-            [
-                `<div class="col-lg-4 col-md-6 text-center Super_Luxo Moranguinho 1">
-                    <div class="single-product-item">
-                        <div class="product-image">
-                            <a href="produto?id=1" id="single-product-item" data-id="1"><img src="client/views/assets/img/images/07b563d455de30f9d62c7f3be83ced926.png" style="width: 180px; height: 200px;" alt="Luxinho"></a>
-                        </div>
-                        <hr>
-                        <a href="produto?id=1" id="single-product-item" data-id="1">
-                            <h3>Luxinho</h3>
-                            <p class="product-price"><span>P/Quantidade</span> R$20.00 </p>
-                        </a>
-                    </div>
-                </div>`
-            ]
-        ];
+var dados = [];
 
 var tamanhoPagina = 6;
 var pagina = 0;
+
+function retornarDados() {
+    dados = [];
+
+    var content_elements = document.getElementsByClassName("content-product");
+
+    Array.prototype.forEach.call(content_elements, function(element) {
+        dados.push([element]);
+    });
+
+    return dados;
+}
 
 function paginar_content() {
     var page_content = $('#products-content-system').html("");
@@ -108,15 +21,17 @@ function paginar_content() {
     for (var i = pagina * tamanhoPagina; i < dados.length && i < (pagina + 1) *  tamanhoPagina; i++) {
         page_content.append(dados[i][0]);
     }
-    $('#numeracao').text('Página ' + (pagina + 1) + ' de ' + Math.ceil(dados.length / tamanhoPagina));
+    $('.numeracao').html('Página ' + (pagina + 1) + ' de ' + Math.ceil(dados.length / tamanhoPagina));
 }
 
 function ajustarButtons() {
-    $('#proximo').prop('disabled', dados.length <= tamanhoPagina || pagina >= Math.ceil(dados.length / tamanhoPagina) - 1);
-    $('#anterior').prop('disabled', dados.length <= tamanhoPagina || pagina == 0);
+    $('.proximo').prop('disabled', dados.length <= tamanhoPagina || pagina >= Math.ceil(dados.length / tamanhoPagina) - 1);
+    $('.anterior').prop('disabled', dados.length <= tamanhoPagina || pagina == 0);
 }
 
 $(function() {
+    dados = retornarDados();
+
     $('#proximo').click(function() {
         if (pagina < dados.length / tamanhoPagina - 1) {
             pagina++;
@@ -135,8 +50,15 @@ $(function() {
         if (dados.length > tamanhoPagina) {
             paginar_content();
             ajustarButtons();
+            $('.col_pagination').removeClass("d-none");
+        } else {
+            $('.col_pagination').removeClass("d-none").addClass("d-none");
         }
-    }, 1000);
+    }, 200);
+    
+    setTimeout(() => {
+        dados = retornarDados();
+    }, 100);
     
     $('#btn_de_busca').keyup(function(event) {
         var data = "";

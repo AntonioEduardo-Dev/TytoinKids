@@ -22,7 +22,7 @@
 				<div class="col-lg-8 mt-5 mb-5 mb-lg-0">
 					<div class="form-title">
 						<h2>Você tem alguma sugestão?</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, ratione! Laboriosam est, assumenda. Perferendis, quo alias quaerat aliquid. Corporis ipsum minus voluptate? Dolore, esse natus!</p>
+						<p>Se possuir alguma sugestão ou pedido personalizado nos informe, e entraremos em contato!</p>
 					</div>
 				 	<div id="form_status"></div>
 					<div class="contact-form">
