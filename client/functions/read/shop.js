@@ -36,11 +36,11 @@ $(function () {
             var content = ``;
             
             $.each(objProdutos.data, function (indice, dados_produto) {
-                content += `<div class="col-lg-3 col-md-4 col-sm-6 text-center content-product ${dados_produto.nome_categoria} ${dados_produto.personagens} ${dados_produto.tamanhos}">
-                                <div class="single-product-item border border-light">
-                                    <a href="produto?id=${dados_produto.id_produto}" id="single-product-item" data-id="${dados_produto.id_produto}"><img src="client/views/assets/img/images/${dados_produto.imagem_produto}" style="width: 100%; height: 260px;" alt="${dados_produto.nome_produto}"></a>
+                content += `<div class="col col-lg col-md-3 col-sm-6 text-center content-product ${dados_produto.nome_categoria} ${dados_produto.personagens} ${dados_produto.tamanhos}">
+                                <div class="single-product-item border shadow">
+                                    <a href="produto?id=${dados_produto.id_produto}" id="single-product-item" data-id="${dados_produto.id_produto}"><img src="client/views/assets/img/images/${dados_produto.imagem_produto}" style="width: 100%; height: 190px;" alt="${dados_produto.nome_produto}"></a>
                                     <a href="produto?id=${dados_produto.id_produto}" id="single-product-item" data-id="${dados_produto.id_produto}">
-                                        <h3 class="pt-5">${dados_produto.nome_produto}</h3>
+                                        <h3 class="mt-5">${dados_produto.nome_produto}</h3>
                                         <p class="product-price"><span>P/Quantidade</span> R$${dados_produto.preco_produto} </p>
                                     </a>
                                 </div>

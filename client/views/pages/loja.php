@@ -10,7 +10,7 @@
 			}
 		}
 	</style>
-	<section class="hero pt-150 pb-5">
+	<section class="pt-150 pb-5">
 		<div class="container pl-5 pr-4">
 			<div class="row">
 				<div class="col-lg-3 mb-3">
@@ -64,48 +64,41 @@
 					</section>
 				</div>
 			</div>
-		</div>
-	</section>
-
-	<div class="container">
-		<!-- products -->
-		<div class="col-xl">
-				<div class="">
-					<div class="row">
-						<div class="col ml-4 mr-4">
-							<div class="input-group">
-								<input type="text" value="" class="form-group shadow" placeholder="Digite aqui" id="btn_de_busca">
-							</div>
-						</div>
-					</div>
-					<div class="row product-lists ml-2 mr-2 pt-4" id="products-content-system">
-					</div>
-					<div class="row mb-4 pt-3 pagination_div">
-						<div class="col text-center">
-							<div class="pagination-wrap col_pagination d-none">
-								<ul>
-									<li>
-										<button class="btn btn-login anterior form-group" href="javascript:void(0)" id="anterior">
-											<i class="fas fa-angle-left"></i>
-										</button></li>
-									<li>
-										<button class="active btn btn-login numeracao form-group" disabled href="javascript:void(0)" id="numeracao">
-											-
-										</button>
-									</li>
-									<li>
-										<button class="btn btn-login proximo form-group" href="javascript:void(0)" id="proximo">
-											<i class="fas fa-angle-right"></i>
-										</button>
-									</li>
-								</ul>
-							</div>
-						</div>
+			
+			<!-- products -->
+			<div class="row pt-5">
+				<div class="col">
+					<div class="input-group">
+						<input type="text" value="" class="form-group shadow" placeholder="Pesquise aqui..." id="btn_de_busca">
 					</div>
 				</div>
+			</div>
+			<div class="row row-cols-lg-5 product-lists pt-4" id="products-content-system">
+			</div>
+			<div class="row mb-4 pt-3 pagination_div">
+				<div class="col text-center">
+					<div class="pagination-wrap col_pagination d-none">
+						<ul>
+							<li>
+								<button class="btn btn-login anterior form-group" href="javascript:void(0)" id="anterior">
+									<i class="fas fa-angle-left"></i>
+								</button></li>
+							<li>
+								<button class="active btn btn-login numeracao form-group" disabled href="javascript:void(0)" id="numeracao">
+									-
+								</button>
+							</li>
+							<li>
+								<button class="btn btn-login proximo form-group" href="javascript:void(0)" id="proximo">
+									<i class="fas fa-angle-right"></i>
+								</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
 		</div>
-	</div>
-
+	</section>
 	<!-- Small modal -->
 	<div class="modal fade modal_system_success_class" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-sm modal-dialog-centered">

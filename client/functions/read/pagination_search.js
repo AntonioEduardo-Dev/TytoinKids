@@ -1,6 +1,6 @@
 var dados = [];
 
-var tamanhoPagina = 8;
+var tamanhoPagina = 10;
 var pagina = 0;
 
 function retornarDados() {
