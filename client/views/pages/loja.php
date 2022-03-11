@@ -78,7 +78,9 @@
 							</div>
 						</div>
 					</div>
-					<div class="row mb-4 mt-2 pagination_div">
+					<div class="row product-lists ml-2 mr-2 pt-4" id="products-content-system">
+					</div>
+					<div class="row mb-4 pt-3 pagination_div">
 						<div class="col text-center">
 							<div class="pagination-wrap col_pagination d-none">
 								<ul>
@@ -99,8 +101,6 @@
 								</ul>
 							</div>
 						</div>
-					</div>
-					<div class="row product-lists ml-2 mr-2" id="products-content-system">
 					</div>
 				</div>
 		</div>
