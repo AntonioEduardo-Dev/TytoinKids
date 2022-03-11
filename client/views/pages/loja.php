@@ -10,7 +10,7 @@
 			}
 		}
 	</style>
-	<section class="hero pt-150 pb-100">
+	<section class="hero pt-150 pb-5">
 		<div class="container pl-5 pr-4">
 			<div class="row">
 				<div class="col-lg-3 mb-3">
@@ -36,7 +36,7 @@
 				</div>
 				<div class="col-lg-9">
 					<section class="cart-banner rounded">
-						<div class="container pt-5 pb-5 pl-5 pr-5">
+						<div class="container pt-5 pb-3 pl-5 pr-5">
 							<div class="row clearfix">
 								<!--Image Column-->
 								<div class="image-column col-lg-6">

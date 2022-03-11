@@ -35,11 +35,10 @@ $(function () {
                     var produto = dados_produto.data["0"];
                     var produto_imagens = dados_produto.data["0"].imagens;
                     var content_imagens = ``;
-                    console.log(dados_produto);
 
                     produto_imagens.forEach( (element, index) => {
                         content_imagens += `
-                            <div class="imagens_view">
+                            <div class="imagens_view" style="${(index == 0) ? 'display: block;' : 'display: none;'}">
                                 <div class="numbertext">${index+1} / ${produto_imagens.length}</div>
                                 <img src="client/views/assets/img/images/${element.imagem_produto}" style="height: 525px; width: 470px; border-radius: 10px 10px 10px 10px;">
                             </div>
