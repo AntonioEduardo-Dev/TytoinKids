@@ -5,6 +5,16 @@
     // Instanciando classes
     $objProduto = new Produtos();
 
+    define('MASK_SUM_ID_U', 16926);
+
+    function mascararId($id_sem_mask) {
+        return (MASK_SUM_ID_U * $id_sem_mask) / (14);
+    }
+
+    function desmascararId($id_com_mask) {
+        return (($id_com_mask) / MASK_SUM_ID_U) * (14);
+    }
+
     // Execução de métodos
     
     if(isset($_POST['listarProdutosTable'])){
@@ -67,6 +77,23 @@
 
     if (isset($_GET['listarProdutos'])) {
         if ($dados = $objProduto->listar()) {
+            
+            foreach ($dados as $key_produto => $produto) {
+                $novos_dados = [
+                    "id_categoria"              => mascararId($produto["id_categoria"]),
+                    "id_produto"                => mascararId($produto["id_produto"]),
+                    "id_imagem_produto"         => mascararId($produto["id_imagem_produto"]),
+                    "imagem_produto"            => $produto["imagem_produto"],
+                    "nome_categoria"            => $produto["nome_categoria"],
+                    "nome_produto"              => $produto["nome_produto"],
+                    "personagens"               => $produto["personagens"],
+                    "preco_produto"             => $produto["preco_produto"],
+                    "tamanhos"                  => $produto["tamanhos"],
+                ];
+
+                $dados[$key_produto] = $novos_dados;
+            }
+
             $retorno = [
                 "type" => "success", 
                 "data" => $dados,
@@ -117,7 +144,7 @@
     }
 
     if (isset($_GET['listarProduto'])) {        
-        $id_produto = ((isset($_GET['id_produto']))? intval($_GET['id_produto']) : "");
+        $id_produto = ((isset($_GET['id_produto'])) ? intval(desmascararId($_GET['id_produto'])) : "");
 
         if ($dados_produto = $objProduto->listarProduto($id_produto)) {
             if ($imagens_produto = $objProduto->listarImagensProduto($id_produto)) {
