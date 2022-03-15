@@ -32,7 +32,8 @@
                         AS tamanhos
                         FROM produtos 
                         INNER JOIN categorias 
-                        ON produtos.id_categoria_fk = categorias.id_categoria";
+                        ON produtos.id_categoria_fk = categorias.id_categoria
+                        ORDER BY RAND()";
                 $consulta = $connection->prepare($sql);
                 
                 return (($consulta->execute() && $consulta->rowCount() > 0) 

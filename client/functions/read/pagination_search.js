@@ -16,11 +16,11 @@ function retornarDados() {
 }
 
 function pesquisar_content() {
-    query = $.trim($('#btn_de_busca').val()); //remove espaços em branco
+    query = "."+$.trim($('#btn_de_busca').val()); //remove espaços em branco
 
     // Itera sobre cada linha de sua tabela
     $('.content-product').each(function() {
-        ($(this).text().search(new RegExp(query, "i")) < 0) ? $(this).hide().removeClass('visible'): $(this).show().addClass('visible');
+        ($(this).text().search(new RegExp(query, "i")) < 0) ? ($(this).hide()).removeClass('visible') : ($(this).show()).addClass('visible');
     });
 }
 
@@ -80,12 +80,13 @@ $(function() {
     
     $('#btn_de_busca').keyup(function(event) {
         var data = "";
+
         if (event.keyCode == 27 || $(this).val() == '') {
             data = $(this).val('');
             $('#products-content-system').removeClass('visible').show().addClass('visible');
             location.reload();
         } else {
-            paginar_content_full();
+            // paginar_content_full();
             pesquisar_content();
         }
     });

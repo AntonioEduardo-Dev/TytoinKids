@@ -32,6 +32,18 @@
 	<!-- responsive -->
 	<link rel="stylesheet" href="client/views/assets/css/responsive.css">
 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+	<style>
+		.dropdown-menu {
+			background-image: linear-gradient(to right, #783171, #783171, #402b65);
+		}
+		.dropdown-item:hover {
+			background-color: #252525;
+			color: red;
+		}
+	</style>
+
 </head>
 <body id="body_header">
 	
@@ -83,6 +95,27 @@
                                         <a class="mobile-hide search-bar-icon cool-hover" href="
 											<?php echo ((isset($_SESSION["user"]) && $_SESSION["user"]["tipo_user"] !== "convidado") ? "menu/menu_usuario" : "login"); ?>
 										"><i class="fas fa-user"></i></a>
+										<spam type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											<a class="mobile-hide search-bar-icon cool-hover"><i class="fas fa-user"></i></a>
+										</spam>
+										<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+											<?php if((isset($_SESSION["user"]) && $_SESSION["user"]["tipo_user"] !== "convidado")){
+											?>
+												<a class="dropdown-item" href="
+												<?php echo ((isset($_SESSION["user"]) && $_SESSION["user"]["tipo_user"] !== "convidado") ? "menu/menu" : "login"); ?>">
+													<i class="fas fa-user"></i> Dashboard
+												</a>
+												<div class="dropdown-divider"></div>
+												<a class="mobile-hide search-bar-icon cool-hover dropdown-item" href="
+												<?php echo ((isset($_SESSION["user"]) && $_SESSION["user"]["tipo_user"] !== "convidado") ? "listar/encomendas" : "login"); ?>">
+													<i class="fas fa-user"></i> Encomendas
+												</a>
+												<div class="dropdown-divider"></div>
+											<?php }
+											?>
+											<a class="dropdown-item" href="
+											<?php echo ((isset($_SESSION["user"]) && $_SESSION["user"]["tipo_user"] !== "convidado") ? "sair" : "login"); ?>"><i class="fas fa-user"></i> <?php echo ((isset($_SESSION["user"]) && $_SESSION["user"]["tipo_user"] !== "convidado") ? "Sair" : "Login"); ?></a>
+										</div>
 									</div>
 								</li>
 							</ul>
@@ -95,4 +128,3 @@
 			</div>
 		</div>
 	</div>
-	<!-- end header -->

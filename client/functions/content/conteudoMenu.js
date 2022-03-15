@@ -32,41 +32,63 @@ $(function() {
         {
             "nome"      : "btn_nm_categoria",
             "imagem"    : "image_menu_categoria.png",
-            "titulo"    : "Categorias"
+            "titulo"    : "Categorias",
+            "link"      : "menu/menu"
         },
         {
             "nome"      : "btn_nm_produto",
             "imagem"    : "image_menu_categoria.png",
-            "titulo"    : "Produtos"
+            "titulo"    : "Produtos",
+            "link"      : "menu/menu"
         },
         {
             "nome"      : "btn_nm_encomenda",
             "imagem"    : "image_menu_encomenda.png",
-            "titulo"    : "Encomendas"
+            "titulo"    : "Encomendas",
+            "link"      : "menu/menu"
         },
         {
             "nome"      : "btn_nm_usuario",
             "imagem"    : "image_menu_categoria.png",
-            "titulo"    : "Usuários"
+            "titulo"    : "Usuários",
+            "link"      : "menu/menu"
         },
         {
             "nome"      : "btn_nm_mensagem",
             "imagem"    : "image_menu_categoria.png",
-            "titulo"    : "Sugestões"
+            "titulo"    : "Sugestões",
+            "link"      : "menu/menu"
         },
         {
             "nome"      : "btn_nm_tamanho_personagem",
             "imagem"    : "image_menu_categoria.png",
-            "titulo"    : "Tamanho e Personagem"
+            "titulo"    : "Tamanho e Personagem",
+            "link"      : "menu/menu"
         }
     ];
 
     var menu = ``;
+    var side_bar = ``;
     
     $(".content-menu-custom").html("");
+    $(".ul_itens_menu").html("");
 
     elementos_menu.forEach((elemento_menu, indice) => {
-        // console.log("O elemento com nome: " + elemento_menu.nome + " corresponde ao índice: " + indice);
+        
+        if (indice === 0) {
+            side_bar += `<li class="nav-item teste">
+                                <h4>John's Blog</h4>
+                        </li>
+                        `;
+        }
+
+        side_bar += `<li class="nav-item">
+                        <a class="nav-link modal_system_open" name="${elemento_menu.nome}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
+                        ${elemento_menu.titulo}
+                        </a>
+                    </li>
+                    `;
         
         if (indice === 0 || (indice)+1 % 3 === 0) {
             menu += `<div class="row">`;
@@ -87,6 +109,7 @@ $(function() {
     });
 
     $(".content-menu-custom").append(menu);
+    $(".ul_itens_menu").append(side_bar);
 
     $(document).on('click', '.modal_system_open', function() {
         var tipo = $(this).attr('name');
