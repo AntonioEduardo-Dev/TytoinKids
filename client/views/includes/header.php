@@ -96,7 +96,7 @@
 											<a class="mobile-hide search-bar-icon cool-hover"><i class="fas fa-user"></i></a>
 										</spam>
 										<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-											<?php if((isset($_SESSION["user"]) && $_SESSION["user"]["tipo_user"] !== "convidado")){
+											<?php if((isset($_SESSION["user"]) && $_SESSION["user"]["tipo_user"] !== "convidado" && $_SESSION["user"]["tipo_user"] === "admin")){
 											?>
 												<a class="dropdown-item" href="
 												<?php echo ((isset($_SESSION["user"]) && $_SESSION["user"]["tipo_user"] !== "convidado") ? "menu/menu" : "login"); ?>">
@@ -106,6 +106,19 @@
 												<a class="mobile-hide search-bar-icon cool-hover dropdown-item" href="
 												<?php echo ((isset($_SESSION["user"]) && $_SESSION["user"]["tipo_user"] !== "convidado") ? "listar/encomendas" : "login"); ?>">
 													<i class="fas fa-user"></i> Encomendas
+												</a>
+												<div class="dropdown-divider"></div>
+											<?php }
+											elseif ((isset($_SESSION["user"]) && $_SESSION["user"]["tipo_user"] === "user")){
+											?>
+												<a class="mobile-hide search-bar-icon cool-hover dropdown-item" href="
+												<?php echo ((isset($_SESSION["user"]) && $_SESSION["user"]["tipo_user"] !== "convidado") ? "listar/encomendas_usuario" : "login"); ?>">
+													<i class="fas fa-user"></i> Encomendas
+												</a>
+												<div class="dropdown-divider"></div>
+												<a class="mobile-hide search-bar-icon cool-hover dropdown-item" href="
+												<?php echo ((isset($_SESSION["user"]) && $_SESSION["user"]["tipo_user"] !== "convidado") ? "listar/mensagens_usuario" : "login"); ?>">
+													<i class="fas fa-user"></i> Sugestões
 												</a>
 												<div class="dropdown-divider"></div>
 											<?php }

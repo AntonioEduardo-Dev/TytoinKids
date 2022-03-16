@@ -60,15 +60,19 @@
 			};
 		}
 		elseif(is_dir("client/views/" . $URL[2]))
-		{
-			if (isset($URL[2]) && isset($URL[3]) && file_exists("client/views/" . $URL[2] . "/" . $URL[3] . ".php") && $_SESSION["user"]["tipo_user"] == "admin")
-			{
+		{	
+			if (isset($URL[2]) && isset($URL[3]) && file_exists("client/views/" . $URL[2] . "/" . $URL[3] . ".php") && $_SESSION["user"]["tipo_user"] === "user" && ($URL[3] === "encomendas_usuario" || $URL[3] === "mensagens_usuario")) {
 				require_once("client/views/" . $URL[2] . "/" . $URL[3] . ".php");
+			}else{
+				if (isset($URL[2]) && isset($URL[3]) && file_exists("client/views/" . $URL[2] . "/" . $URL[3] . ".php") && $_SESSION["user"]["tipo_user"] == "admin")
+				{
+					require_once("client/views/" . $URL[2] . "/" . $URL[3] . ".php");
+				}
+				else
+				{
+					require_once("client/views/pages/404.php");
+				};
 			}
-			else
-			{
-				require_once("client/views/pages/404.php");
-			};
 		}
 		else
 		{
