@@ -94,12 +94,10 @@ $(function() {
             menu += `<div class="row">`;
         }
         menu += `
-                    <div class="col-lg-4 col-md-6 text-center">
-                        <div class="single-product-item">
-                            <div class="product-image">
-                                <a href="#" onclick="return false;" class="modal_system_open" name="${elemento_menu.nome}"><img src="client/views/assets/img/menu/${elemento_menu.imagem}" alt="" style="width: 200px; height: 200px;"></a>
-                            </div>
-                            <a href="#" onclick="return false;" class="modal_system_open" name="btn_nm_categoria"><h3>${elemento_menu.titulo}</h3></a>
+                    <div class="col-lg-3 col-md-4 col-sm-6 text-center p-3 mb-1">
+                        <div class="">
+                                <a href="#" onclick="return false;" class="modal_system_open" name="${elemento_menu.nome}"><img src="client/views/assets/img/menu/${elemento_menu.imagem}" alt="" style="width: 100%; height: 200px;"></a>
+                                <a href="#" onclick="return false;" class="modal_system_open" name="btn_nm_categoria"><h6>${elemento_menu.titulo}</h6></a>
                         </div>
                     </div>
         `;

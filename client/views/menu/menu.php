@@ -16,7 +16,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<nav class="col-md-2 d-none d-md-block bg-light sidebar pt-100 pb-5">
-					<div class="sidebar-sticky pt-3 pb-3">
+					<div class="sidebar-sticky pt-5 pb-3">
 						<ul class="nav flex-column table-responsive ul_itens_menu">
 							<li class="nav-item teste">
 									<h4>John's Blog</h4>
@@ -56,9 +56,6 @@
 				</nav>
 
 				<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-100 px-4">
-					<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-2 pb-2 mb-3 border-bottom">
-						<h1 class="h2">Dashboard</h1>
-					</div>
 					<div class="row menu-list pl-5 pr-5">
 						<div class="container mt-5 mb-5 content-menu-custom">
 						</div>

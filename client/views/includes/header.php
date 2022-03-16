@@ -92,9 +92,6 @@
 								<li>
 									<div class="header-icons">
 										<a class="shopping-cart cool-hover" href="carrinho"><i class="fas fa-shopping-cart"></i></a>
-                                        <a class="mobile-hide search-bar-icon cool-hover" href="
-											<?php echo ((isset($_SESSION["user"]) && $_SESSION["user"]["tipo_user"] !== "convidado") ? "menu/menu_usuario" : "login"); ?>
-										"><i class="fas fa-user"></i></a>
 										<spam type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 											<a class="mobile-hide search-bar-icon cool-hover"><i class="fas fa-user"></i></a>
 										</spam>
