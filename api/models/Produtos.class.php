@@ -45,6 +45,93 @@
                 echo "Erro: " . $e->getMessage();
             }
         }
+
+        public function listar_filtrados($categoria, $personagem, $tamanho, $pesquisa){
+            try {
+                $connection = $this->conectar();
+
+                $sql = "SELECT *, 
+                        (SELECT imagens_produto.id_imagem_produto 
+                        FROM imagens_produto 
+                        WHERE imagens_produto.id_produto_fk = produtos.id_produto 
+                        ORDER BY imagens_produto.id_imagem_produto 
+                        ASC LIMIT 1) 
+                        AS id_imagem_produto, 
+                        (SELECT imagens_produto.imagem_produto FROM imagens_produto 
+                        WHERE imagens_produto.id_produto_fk = produtos.id_produto 
+                        ORDER BY imagens_produto.id_imagem_produto 
+                        ASC LIMIT 1) 
+                        AS imagem_produto,
+                        (SELECT GROUP_CONCAT(personagens.personagem SEPARATOR ' ') 
+                        FROM personagens 
+                        INNER JOIN personagem_produto 
+                        ON personagens.id_personagem = personagem_produto.id_personagem_fk
+                        WHERE personagem_produto.id_produto_fk = produtos.id_produto) 
+                        AS personagens,
+                        (SELECT GROUP_CONCAT(tamanhos.tamanho SEPARATOR ' ') 
+                        FROM tamanhos 
+                        INNER JOIN tamanho_produto 
+                        ON tamanhos.id_tamanho = tamanho_produto.id_tamanho_fk 
+                        WHERE tamanho_produto.id_produto_fk = produtos.id_produto) 
+                        AS tamanhos
+                        FROM produtos 
+                        INNER JOIN categorias 
+                        ON produtos.id_categoria_fk = categorias.id_categoria
+                        INNER JOIN tamanho_produto 
+                        ON produtos.id_produto = tamanho_produto.id_produto_fk
+                        INNER JOIN tamanhos 
+                        ON tamanho_produto.id_tamanho_fk = tamanhos.id_tamanho
+                        INNER JOIN personagem_produto 
+                        ON personagem_produto.id_produto_fk = produtos.id_produto
+                        INNER JOIN personagens 
+                        ON personagens.id_personagem = personagem_produto.id_personagem_fk 
+                        WHERE 1 ";
+                
+                if (isset($pesquisa) && $pesquisa !== "") {
+                    $sql .= "AND produtos.nome_produto LIKE :pesquisa ";
+                }
+
+                if (isset($categoria) && $categoria !== "") {
+                    $sql .= "AND categorias.nome_categoria LIKE :categoria ";
+                }
+
+                if (isset($personagem) && $personagem !== "") {
+                    $sql .= "AND personagens.personagem LIKE :personagem ";
+                }
+
+                if (isset($tamanho) && $tamanho !== "") {
+                    $sql .= "AND tamanhos.tamanho LIKE :tamanho ";
+                }
+
+                $sql .= "GROUP BY produtos.id_produto ORDER BY RAND()";
+
+                $consulta = $connection->prepare($sql);
+                
+                if (isset($pesquisa) && $pesquisa !== "") {
+                    $consulta->bindValue(":pesquisa", $pesquisa."%");
+                }
+
+                if (isset($categoria) && $categoria !== "") {
+                    $consulta->bindValue(":categoria", $categoria."%");
+                }
+
+                if (isset($personagem) && $personagem !== "") {
+                    $consulta->bindValue(":personagem", $personagem."%");
+                }
+
+                if (isset($tamanho) && $tamanho !== "") {
+                    $consulta->bindValue(":tamanho", $tamanho."%");
+                }
+                
+                return (($consulta->execute() && $consulta->rowCount() > 0) 
+                        ? $consulta->fetchAll($connection::FETCH_ASSOC) : "" );
+                        
+            } catch (PDOException $e) {
+                echo "Erro ao listar: " . $e->getMessage();
+            } catch (Exception $e) {
+                echo "Erro: " . $e->getMessage();
+            }
+        }
         
         public function listarCategorias(){
             try {

@@ -1,6 +1,6 @@
 $(function(){
     setTimeout(() => {
-        var conteudo_loja = $(".product-lists").html();
+        var conteudo_loja = $(".product-lists_custom").html();
     }, 300);
 });
 

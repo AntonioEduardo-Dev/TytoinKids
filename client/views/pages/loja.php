@@ -15,16 +15,16 @@
 			<div class="row">
 				<div class="col-lg-3 mb-3">
 					<div class="hero__categories">
-						<div class="list-group product-filter-button overflow-auto" id="list-tab" role="tablist" style="max-height: 350px;">
+						<div class="list-group product-filter-button filter_products_all_act overflow-auto" id="list-tab" role="tablist" style="max-height: 350px;">
 						</div>
 						<div class="list-group mt-3">
-							<select class="form-control" name="" id="id_personagem_select">
-								<option value="vermelho" hidden selected>Personagens:</option>
+							<select class="form-control filter_products_all" name="" id="id_personagem_select">
+								<option value="" hidden selected>Personagens:</option>
 							</select>
 						</div>
 						<div class="list-group mt-3">
-							<select class="form-control" name="nm_tamanho_select" id="id_tamanho_select">
-								<option hidden selected>Tamanho:</option>
+							<select class="form-control filter_products_all" name="nm_tamanho_select" id="id_tamanho_select">
+								<option value="" hidden selected>Tamanho:</option>
 								<option value="1">1</option>
 								<option value="2">2</option>
 								<option value="4">4</option>
@@ -69,11 +69,11 @@
 			<div class="row pt-5">
 				<div class="col">
 					<div class="input-group">
-						<input type="text" value="" class="form-group shadow" placeholder="Pesquise aqui..." id="btn_de_busca">
+						<input type="text" value="" class="form-group filter_products_all shadow" placeholder="Pesquise aqui..." id="btn_de_busca">
 					</div>
 				</div>
 			</div>
-			<div class="row row-cols-lg-5 product-lists pt-4" id="products-content-system">
+			<div class="row row-cols-lg-5 product-lists_custom pt-4" id="products-content-system">
 			</div>
 			<div class="row mb-4 pt-3 pagination_div">
 				<div class="col text-center">
@@ -120,7 +120,7 @@
 <!-- pagina js -->
  
 <!-- paginação Produtos js -->
-<script src="client/functions/read/pagination_search.js" defer></script>
+<!-- <script src="client/functions/read/pagination_search.js" defer></script> -->
 
 <!-- script pesquisa e paginação js -->
 <!-- <script src="client/functions/content/conteudoLoja.js"></script>	 -->

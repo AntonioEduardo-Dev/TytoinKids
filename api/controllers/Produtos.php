@@ -108,6 +108,46 @@
         echo json_encode($retorno);
     }
 
+    if (isset($_GET['listar_produtos'])) {
+        
+        // filtros
+        $categoria  = (isset($_GET['categoria'])    && $_GET['categoria']   != "" ? $_GET['categoria']  : "");
+        $personagem = (isset($_GET['personagem'])   && $_GET['personagem']  != "" ? $_GET['personagem'] : "");
+        $tamanho    = (isset($_GET['tamanho'])      && $_GET['tamanho']     != "" ? $_GET['tamanho']    : "");
+        $pesquisa   = (isset($_GET['pesquisa'])     && $_GET['pesquisa']    != "" ? $_GET['pesquisa']   : "");
+        // end filtros
+
+        if ($dados = $objProduto->listar_filtrados($categoria, $personagem, $tamanho, $pesquisa)) {
+            
+            foreach ($dados as $key_produto => $produto) {
+                $novos_dados = [
+                    "id_categoria"              => mascararId($produto["id_categoria"]),
+                    "id_produto"                => mascararId($produto["id_produto"]),
+                    "id_imagem_produto"         => mascararId($produto["id_imagem_produto"]),
+                    "imagem_produto"            => $produto["imagem_produto"],
+                    "nome_categoria"            => $produto["nome_categoria"],
+                    "nome_produto"              => $produto["nome_produto"],
+                    "personagens"               => $produto["personagens"],
+                    "preco_produto"             => $produto["preco_produto"],
+                    "tamanhos"                  => $produto["tamanhos"],
+                ];
+
+                $dados[$key_produto] = $novos_dados;
+            }
+
+            $retorno = [
+                "type" => "success", 
+                "data" => $dados,
+            ];
+        } else {
+            $retorno = [
+                "type" => "error",
+                "data" => "Nenhum produto cadastrado",
+            ];
+        }
+        echo json_encode($retorno);
+    }
+
     if (isset($_GET['listar_quantidade'])) {
         $id_produto = ((isset($_GET['id_produto']))? intval($_GET['id_produto']) : "");
         $id_tamanho = ((isset($_GET['id_tamanho']))? intval($_GET['id_tamanho']) : "");
