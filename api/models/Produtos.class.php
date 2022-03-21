@@ -103,7 +103,7 @@
                     $sql .= "AND tamanhos.tamanho LIKE :tamanho ";
                 }
 
-                $sql .= "GROUP BY produtos.id_produto ORDER BY RAND()";
+                $sql .= "GROUP BY produtos.id_produto ORDER BY produtos.id_produto DESC";
 
                 $consulta = $connection->prepare($sql);
                 

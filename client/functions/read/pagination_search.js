@@ -39,8 +39,6 @@ function ajustarButtons() {
 }
 
 $(function() {
-    dados = retornarDados();
-
     $('#proximo').click(function() {
         if (pagina < dados.length / tamanhoPagina - 1) {
             pagina++;
@@ -55,17 +53,4 @@ $(function() {
             ajustarButtons();
         }
     });
-    setTimeout(() => {
-        if (dados.length > tamanhoPagina) {
-            paginar_content();
-            ajustarButtons();
-            $('.col_pagination').removeClass("d-none");
-        } else {
-            $('.col_pagination').removeClass("d-none").addClass("d-none");
-        }
-    }, 200);
-    
-    setTimeout(() => {
-        dados = retornarDados();
-    }, 100);
 });

@@ -96,7 +96,7 @@ $(function() {
         menu += `
                     <div class="col-lg-3 col-md-4 col-sm-6 text-center p-3 mb-1">
                         <div class="">
-                                <a href="#" onclick="return false;" class="modal_system_open" name="${elemento_menu.nome}"><img src="client/views/assets/img/menu/${elemento_menu.imagem}" alt="" style="width: 100%; height: 200px;"></a>
+                                <a href="#" onclick="return false;" class="modal_system_open" name="${elemento_menu.nome}"><img src="client/views/assets/img/menu/${elemento_menu.imagem}" alt="" style="width: 100%; height: 220px;"></a>
                                 <a href="#" onclick="return false;" class="modal_system_open" name="btn_nm_categoria"><h6>${elemento_menu.titulo}</h6></a>
                         </div>
                     </div>

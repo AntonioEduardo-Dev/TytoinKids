@@ -120,7 +120,7 @@
 <!-- pagina js -->
  
 <!-- paginação Produtos js -->
-<!-- <script src="client/functions/read/pagination_search.js" defer></script> -->
+<script src="client/functions/read/pagination_search.js" defer></script>
 
 <!-- script pesquisa e paginação js -->
 <!-- <script src="client/functions/content/conteudoLoja.js"></script>	 -->

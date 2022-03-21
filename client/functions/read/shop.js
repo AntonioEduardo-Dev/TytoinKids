@@ -27,45 +27,6 @@ $(function () {
         $(".product-filter-button").html(content);
     });
 
-    listarProdutos = { listarProdutos : true }
-
-    $.get('api/controllers/Produtos.php', listarProdutos, function (retorna) {
-        var objProdutos = jQuery.parseJSON(retorna);
-        if (objProdutos.type == "success") {
-            var content = ``;
-            
-            $.each(objProdutos.data, function (indice, dados_produto) {
-                content += `<div class="col col-lg col-md-3 col-sm-6 text-center content-product ${dados_produto.nome_categoria} ${dados_produto.personagens} ${dados_produto.tamanhos}">
-                                <div class="single-product-item border shadow">
-                                    <a href="produto?id=${dados_produto.id_produto}" id="single-product-item" data-id="${dados_produto.id_produto}"><img src="client/views/assets/img/images/${dados_produto.imagem_produto}" style="width: 100%; height: 190px;" alt="${dados_produto.nome_produto}"></a>
-                                    <a href="produto?id=${dados_produto.id_produto}" id="single-product-item" data-id="${dados_produto.id_produto}">
-                                        <h3 class="mt-5">${dados_produto.nome_produto}</h3>
-                                        <p class="product-price"><span>P/Quantidade</span> R$${dados_produto.preco_produto} </p>
-                                    </a>
-                                </div>
-                            </div>
-                `;
-            })
-        } else {
-            content = `
-                    <div class="col-lg-4 col-md-6 text-center indisponível"></div>
-                    <div class="col-lg-4 col-md-6 text-center indisponível">
-                        <div class="single-product-item">
-                            <div class="product-image">
-                                <a><img src="client/views/assets/img/images/productind.jpg" alt="Produtos Indisponíveis"></a>
-                            </div>
-                            <hr>
-                            <h3>Produtos Indisponíveis</h3>
-                            <p class="product-price"><span>P/Quantidade</span> R$00.00 </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 text-center indisponível"></div>
-            `;
-        }
-
-        $(".product-lists_custom").html(content);
-    });
-
     /*================ Listagem de personagens ================*/
     
     listarPersonagens = { listarPersonagens : true }
@@ -109,7 +70,9 @@ $('.filter_products_all').on('change keyup', function () {
 });
 
 $('.filter_products_all_act').on('click', function () {
-    listar_produtos_filtrados();
+    setTimeout(() => {
+        listar_produtos_filtrados();
+    }, 300);
 });
 
 function listar_produtos_filtrados() {
@@ -130,7 +93,6 @@ function listar_produtos_filtrados() {
             tamanho,
             pesquisa
         }
-        console.log(listar_produtos);
 
     $.get('api/controllers/Produtos.php', listar_produtos, function (retorna) {
         var objProdutos = jQuery.parseJSON(retorna);
@@ -139,9 +101,9 @@ function listar_produtos_filtrados() {
             var content = ``;
             
             $.each(objProdutos.data, function (indice, dados_produto) {
-                content += `<div class="col col-lg col-md-3 col-sm-6 text-center content-product ${dados_produto.nome_categoria} ${dados_produto.personagens} ${dados_produto.tamanhos}">
-                                <div class="single-product-item border shadow">
-                                    <a href="produto?id=${dados_produto.id_produto}" id="single-product-item" data-id="${dados_produto.id_produto}"><img src="client/views/assets/img/images/${dados_produto.imagem_produto}" style="width: 100%; height: 190px;" alt="${dados_produto.nome_produto}"></a>
+                content += `<div class="col-lg col-md-3 col-sm-6 text-center content-product ${dados_produto.nome_categoria} ${dados_produto.personagens} ${dados_produto.tamanhos}">
+                                <div class="single-product-item border shadow" style="max-height: 450px">
+                                    <a href="produto?id=${dados_produto.id_produto}" id="single-product-item" data-id="${dados_produto.id_produto}"><img src="client/views/assets/img/images/${dados_produto.imagem_produto}" style="width: 100%; height: 220px;" alt="${dados_produto.nome_produto}"></a>
                                     <a href="produto?id=${dados_produto.id_produto}" id="single-product-item" data-id="${dados_produto.id_produto}">
                                         <h3 class="mt-5">${dados_produto.nome_produto}</h3>
                                         <p class="product-price"><span>P/Quantidade</span> R$${dados_produto.preco_produto} </p>
@@ -168,5 +130,17 @@ function listar_produtos_filtrados() {
         }
 
         $(".product-lists_custom").html(content);
+        
+        setTimeout(() => {
+            dados = retornarDados();
+
+            if (dados.length > tamanhoPagina) {
+                paginar_content();
+                ajustarButtons();
+                $('.col_pagination').removeClass("d-none");
+            } else {
+                $('.col_pagination').removeClass("d-none").addClass("d-none");
+            }
+        }, 200);
     });
 }
