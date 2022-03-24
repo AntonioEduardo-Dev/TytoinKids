@@ -83,19 +83,12 @@
 								</li>
 								<?php if (isset($_SESSION["user"]) && $_SESSION["user"]["tipo_user"] === "admin") { ?>
 									<li>
-										<a class="cool-hover" href="menu/menu">Menu</a>
-										<ul class="sub-menu">
-											<li><a href="menu/menu">Menu</a></li>
-											<li><a href="menu/menu_status">Manutenção</a></li>
-										</ul>
-									</li>
-								<?php } ?>
-								<?php if (isset($_SESSION["user"]) && $_SESSION["user"]["tipo_user"] === "admin") { ?>
-									<li>
 										<a class="cool-hover" href="menu/menu"><i class="fas fa-user"></i> Usuário</a>
 										<ul class="sub-menu">
+											<li><a href="menu/menu">Menu</a></li>
 											<li><a href="listar/encomendas">Encomendas</a></li>
-											<li><a href="sair">Sair</a></li>
+											<li><a href="menu/menu_status">Manutenção</a></li>
+											<li><a href="sair"><i class="fas fa-power-off"></i> Sair</a></li>
 										</ul>
 									</li>
 								<?php } ?>
@@ -105,7 +98,7 @@
 										<ul class="sub-menu">
 											<li><a href="listar/encomendas_usuario">Minhas encomendas</a></li>
 											<li><a href="listar/mensagens_usuario">Minhas sugestões</a></li>
-											<li><a href="sair">Sair</a></li>
+											<li><a href="sair"><i class="fas fa-power-off"></i> Sair</a></li>
 										</ul>
 									</li>
 								<?php } ?>
