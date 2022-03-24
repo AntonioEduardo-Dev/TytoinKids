@@ -44,7 +44,9 @@
     }
 
     if (isset($_GET['listarPersonagens'])) {
-        if ($dados = $objProduto->listarPersonagens()) {
+        $status = (isset($_GET['status']) ? $_GET['status'] : 0);
+
+        if ($dados = $objProduto->listarPersonagens($status)) {
             $retorno = [
                 "type" => "success", 
                 "data" => $dados,
@@ -168,7 +170,9 @@
     }
 
     if (isset($_GET['listarTamanhos'])) {
-        if ($dados = $objProduto->listarTamanhos()) {
+        $status = (isset($_GET['status']) ? $_GET['status'] : 0);
+        
+        if ($dados = $objProduto->listarTamanhos($status)) {
             $retorno = [
                 "type" => "success", 
                 "data" => $dados,

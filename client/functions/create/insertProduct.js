@@ -1,7 +1,7 @@
 /* INSERIR PRODUTO */
 $(function() {
 
-    listarCategorias = {listarCategorias : true}
+    listarCategorias = {listarCategorias : true, status: 1}
 
     $.get('api/controllers/Categorias.php', listarCategorias, function(retorna) {
         var objCateg = jQuery.parseJSON(retorna);
@@ -20,7 +20,7 @@ $(function() {
         $("#id_categ").html(content);
     }); 
 
-    listarPersonagens = {listarPersonagens : true}
+    listarPersonagens = {listarPersonagens : true, status: 1}
 
     $.get('api/controllers/Produtos.php', listarPersonagens, function(retorna) {
         var objCateg = jQuery.parseJSON(retorna);
@@ -34,13 +34,13 @@ $(function() {
                 content += `<option value="${dados_categoria.id_personagem}">${dados_categoria.personagem}</option>`;
             })
         }else{
-            content = `<option selected style="display: none;">Cadastre uma categoria no sistema!</option>`;
+            content = `<option selected style="display: none;">Cadastre um personagem no sistema!</option>`;
         }
 
         $("#id_personagem").html(content);
     }); 
 
-    listarTamanhos = {listarTamanhos : true}
+    listarTamanhos = {listarTamanhos : true, status: 1}
 
     $.get('api/controllers/Produtos.php', listarTamanhos, function(retorna) {
         var objTamanho = jQuery.parseJSON(retorna);

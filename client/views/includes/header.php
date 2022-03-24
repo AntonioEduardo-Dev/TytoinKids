@@ -82,50 +82,41 @@
 									</ul>
 								</li>
 								<?php if (isset($_SESSION["user"]) && $_SESSION["user"]["tipo_user"] === "admin") { ?>
-									<li><a class="cool-hover" href="menu/menu">Menu</a>
+									<li>
+										<a class="cool-hover" href="menu/menu">Menu</a>
 										<ul class="sub-menu">
 											<li><a href="menu/menu">Menu</a></li>
 											<li><a href="menu/menu_status">Manutenção</a></li>
 										</ul>
 									</li>
 								<?php } ?>
+								<?php if (isset($_SESSION["user"]) && $_SESSION["user"]["tipo_user"] === "admin") { ?>
+									<li>
+										<a class="cool-hover" href="menu/menu"><i class="fas fa-user"></i> Usuário</a>
+										<ul class="sub-menu">
+											<li><a href="listar/encomendas">Encomendas</a></li>
+											<li><a href="sair">Sair</a></li>
+										</ul>
+									</li>
+								<?php } ?>
+								<?php if (isset($_SESSION["user"]) && $_SESSION["user"]["tipo_user"] === "user") { ?>
+									<li>
+										<a class="cool-hover" href="#"><i class="fas fa-user"></i> Usuário</a>
+										<ul class="sub-menu">
+											<li><a href="listar/encomendas_usuario">Minhas encomendas</a></li>
+											<li><a href="listar/mensagens_usuario">Minhas sugestões</a></li>
+											<li><a href="sair">Sair</a></li>
+										</ul>
+									</li>
+								<?php } ?>
+								<?php if (!(isset($_SESSION["user"])) || ($_SESSION["user"]["tipo_user"] !== "admin" && $_SESSION["user"]["tipo_user"] !== "user")) { ?>
+									<li>
+										<a class="cool-hover" href="login"><i class="fas fa-user"></i> Login</a>
+									</li>
+								<?php } ?>
 								<li>
 									<div class="header-icons">
 										<a class="shopping-cart cool-hover" href="carrinho"><i class="fas fa-shopping-cart"></i></a>
-										<spam type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-											<a class="mobile-hide search-bar-icon cool-hover"><i class="fas fa-user"></i></a>
-										</spam>
-										<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-											<?php if((isset($_SESSION["user"]) && $_SESSION["user"]["tipo_user"] !== "convidado" && $_SESSION["user"]["tipo_user"] === "admin")){
-											?>
-												<a class="dropdown-item" href="
-												<?php echo ((isset($_SESSION["user"]) && $_SESSION["user"]["tipo_user"] !== "convidado") ? "menu/menu" : "login"); ?>">
-													<i class="fas fa-user"></i> Dashboard
-												</a>
-												<div class="dropdown-divider"></div>
-												<a class="mobile-hide search-bar-icon cool-hover dropdown-item" href="
-												<?php echo ((isset($_SESSION["user"]) && $_SESSION["user"]["tipo_user"] !== "convidado") ? "listar/encomendas" : "login"); ?>">
-													<i class="fas fa-user"></i> Encomendas
-												</a>
-												<div class="dropdown-divider"></div>
-											<?php }
-											elseif ((isset($_SESSION["user"]) && $_SESSION["user"]["tipo_user"] === "user")){
-											?>
-												<a class="mobile-hide search-bar-icon cool-hover dropdown-item" href="
-												<?php echo ((isset($_SESSION["user"]) && $_SESSION["user"]["tipo_user"] !== "convidado") ? "listar/encomendas_usuario" : "login"); ?>">
-													<i class="fas fa-user"></i> Encomendas
-												</a>
-												<div class="dropdown-divider"></div>
-												<a class="mobile-hide search-bar-icon cool-hover dropdown-item" href="
-												<?php echo ((isset($_SESSION["user"]) && $_SESSION["user"]["tipo_user"] !== "convidado") ? "listar/mensagens_usuario" : "login"); ?>">
-													<i class="fas fa-user"></i> Sugestões
-												</a>
-												<div class="dropdown-divider"></div>
-											<?php }
-											?>
-											<a class="dropdown-item" href="
-											<?php echo ((isset($_SESSION["user"]) && $_SESSION["user"]["tipo_user"] !== "convidado") ? "sair" : "login"); ?>"><i class="fas fa-user"></i> <?php echo ((isset($_SESSION["user"]) && $_SESSION["user"]["tipo_user"] !== "convidado") ? "Sair" : "Login"); ?></a>
-										</div>
 									</div>
 								</li>
 							</ul>

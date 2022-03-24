@@ -29,7 +29,7 @@ $(function () {
 
     /*================ Listagem de personagens ================*/
     
-    listarPersonagens = { listarPersonagens : true }
+    listarPersonagens = { listarPersonagens : true, status: 0}
 
     $.get('api/controllers/Produtos.php', listarPersonagens, function (retorna) {
         var objPersonagens = jQuery.parseJSON(retorna);
@@ -46,7 +46,7 @@ $(function () {
 
     /*================ Listagem de tamanhos ================*/
 
-    listarTamanhos = { listarTamanhos : true }
+    listarTamanhos = { listarTamanhos : true, status: 0 }
 
     $.get('api/controllers/Produtos.php', listarTamanhos, function (retorna) {
         var objTamanhos = jQuery.parseJSON(retorna);

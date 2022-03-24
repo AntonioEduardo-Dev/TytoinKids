@@ -37,16 +37,19 @@
             }
         }
         
-        public function listarSelectCategorias(){
+        public function listarSelectCategorias($status){
             try {
                 $connection = $this->conectar();
 
                 $sql = "SELECT DISTINCT(categorias.id_categoria), categorias.nome_categoria 
-                        FROM categorias 
-                        INNER JOIN produtos ON categorias.id_categoria = produtos.id_categoria_fk 
-                        ORDER BY categorias.id_categoria 
-                        DESC LIMIT 10";
-            
+                        FROM categorias ";
+                        
+                if (isset($status) && $status != 1) {
+                    $sql .= "INNER JOIN produtos ON categorias.id_categoria = produtos.id_categoria_fk ";    
+                }
+
+                $sql .= "ORDER BY categorias.id_categoria";
+
                 $consulta = $connection->prepare($sql);
                 
                 return (($consulta->execute() && $consulta->rowCount() > 0)? $consulta->fetchAll($connection::FETCH_ASSOC) : "" );
