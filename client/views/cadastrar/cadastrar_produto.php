@@ -49,7 +49,6 @@
 												<div class="col-lg">
 													<select name="nm_categ" id="id_categ">
 														<option value="1" selected style="display: none;">Categoria do produto*</option>
-														<option value="1">Infantil</option>
 													</select>
 												</div>
 											</div>

@@ -265,7 +265,7 @@
             }
         }
 
-        public function listarTamanhos($status){
+        public function listarTamanhos($status_inner){
             try {
                 $connection = $this->conectar();
                 $status = 1;
@@ -273,7 +273,7 @@
                 $sql = "SELECT DISTINCT(tamanhos.id_tamanho), tamanhos.* 
                         FROM tamanhos ";
                         
-                if (isset($status) && $status != 1) {
+                if (isset($status_inner) && $status_inner != 1) {
                     $sql .= "INNER JOIN tamanho_produto ON tamanhos.id_tamanho = tamanho_produto.id_tamanho_fk ";    
                 }
                 

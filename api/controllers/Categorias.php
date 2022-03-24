@@ -64,7 +64,7 @@
     if(isset($_GET['listarCategorias'])){
         $status = (isset($_GET['status']) ? $_GET['status'] : 0);
         
-        if ($dados = $objCategoria->listarSelectCategorias()) {
+        if ($dados = $objCategoria->listarSelectCategorias($status)) {
             $retorno = [
                 "type" => "success", 
                 "data" => $dados,
