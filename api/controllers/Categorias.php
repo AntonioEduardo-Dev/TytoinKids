@@ -24,19 +24,29 @@
     
     //execução de métodos
     if (isset($_GET['btn_listar_categoria'])) {
-        if ($dados = $objCategoria->listarCategoriaId($_GET['id_categoria'])) {
-            $retorno = [
-                "type" => "success", 
-                "data" => $dados,
-            ];
-        } else {
+
+        if (($_GET['id_categoria'] == "")) {
             $retorno = [
                 "type" => "error",
-                "data" => "Nenhuma encomenda cadastrada",
+                "data" => "Nenhuma categoria informada",
             ];
-        }
 
-        echo json_encode($retorno);
+            echo json_encode($retorno);
+        }else{
+            if ($dados = $objCategoria->listarCategoriaId($_GET['id_categoria'])) {
+                $retorno = [
+                    "type" => "success", 
+                    "data" => $dados,
+                ];
+            } else {
+                $retorno = [
+                    "type" => "error",
+                    "data" => "Nenhuma encomenda cadastrada",
+                ];
+            }
+    
+            echo json_encode($retorno);
+        }
     }
 
     //execução de métodos
@@ -69,12 +79,14 @@
 
     if (isset($_POST['btn_cadastrar'])){
         // alocando post nas variáveis
-        $nome_categorias = $_POST['categ_nome'];
+        $nome_categorias = (isset($_POST['categ_nome']) ? $_POST['categ_nome'] : "");
 
         if($nome_categorias == ""){
             echo "alert_notification_error_empty!-|-alert-warning";
+
         }elseif($nome_categorias == null){
             echo "alert_notification_error_null!-|-alert-warning";
+            
         }else{
             if (is_string($nome_categorias)){
                 strtolower($nome_categorias);
@@ -95,7 +107,7 @@
     };
 
     if(isset($_POST['btn_apagar'])){
-        $id_categoria = intval($_POST['id_categoria']);
+        $id_categoria = ( isset($_POST['id_categoria']) ? intval($_POST['id_categoria']) : "");
 
         if(is_int($id_categoria)){
             if($objCategoria->apagarCategorias($id_categoria)){
@@ -109,8 +121,8 @@
     };
 
     if(isset($_POST['btn_editar'])){
-        $id_categoria   = intval($_POST['id_categoria']);
-        $categoria      = ($_POST['categoria_desc']);
+        $id_categoria   = ( isset($_POST['id_categoria']) ? intval($_POST['id_categoria']) : "");
+        $categoria      = ( isset($_POST['categoria_desc']) ? ($_POST['categoria_desc']) : "");
 
         if(is_int($id_categoria)){
             if($objCategoria->editarCategoria($id_categoria, $categoria)){

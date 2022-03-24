@@ -377,16 +377,20 @@
                     $objProduto->apagarImagensProduto($id_produto);
                     $objProduto->apagar($id_produto);
                     echo "alert_notification_error_tam_person!-|-alert-danger";
+
                 }elseif($erro_personagens > 0){
                     $objProduto->apagarImagensProduto($id_produto);
                     $objProduto->apagar($id_produto);
                     echo "alert_notification_error_person!-|-alert-danger";
+
                 }elseif($erro_tamanho > 0){
                     $objProduto->apagarImagensProduto($id_produto);
                     $objProduto->apagar($id_produto);
                     echo "alert_notification_error_tamanho!-|-alert-danger";
+
                 }else{
                     echo "Produto cadastrado com sucesso!";
+
                 }
             }else{
                 echo "alert_notification_error_person_insert!-|-alert-danger";
@@ -469,14 +473,17 @@
                                     $objProduto->apagarImagensProduto($id_produto);
                                     $objProduto->apagar($id_produto);
                                     echo "alert_notification_error_tam_person!-|-alert-danger";
+
                                 }elseif($erro_personagens > 0){
                                     $objProduto->apagarImagensProduto($id_produto);
                                     $objProduto->apagar($id_produto);
                                     echo "alert_notification_error_person!-|-alert-danger";
+
                                 }elseif($erro_tamanho > 0){
                                     $objProduto->apagarImagensProduto($id_produto);
                                     $objProduto->apagar($id_produto);
                                     echo "alert_notification_error_tamanho!-|-alert-danger";
+
                                 }else{
                                     echo "Produto editado com sucesso!";
                                 }
@@ -485,11 +492,13 @@
                                 $objProduto->apagarImagensProduto($id_produto);
                                 $objProduto->apagar($id_produto);
                                 echo "alert_notification_error_person_insert!-|-alert-danger";
+
                             }
                         }else {
                             $objProduto->apagarImagensProduto($id_produto);
                             $objProduto->apagar($id_produto);
                             echo "alert_notification_error!-|-alert-danger";
+                            
                         }
                     } else {
                         echo "alert_notification_error_id!-|-alert-warning";

@@ -5,10 +5,10 @@
     if(isset($_POST["form_cadastrar_duvida"])){
 
         // alocando posts nas variáveis
-        $nome       = $_POST['nome'];
-        $email      = $_POST['email'];
-        $fone       = $_POST['fone'];
-        $mensagem   = $_POST['mensagem'];
+        $nome       = (isset($_POST['nome']) ? $_POST['nome'] : "");
+        $email      = (isset($_POST['email']) ? $_POST['email'] : "");
+        $fone       = (isset($_POST['fone']) ? $_POST['fone'] : "");
+        $mensagem   = (isset($_POST['mensagem']) ? $_POST['mensagem'] : "");
         
         if($email == "" || $nome == "" || $fone == "" || $mensagem == ""){
             echo "alert_notification_error_empty!-|-alert-warning";

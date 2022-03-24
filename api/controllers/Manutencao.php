@@ -3,19 +3,15 @@
         require_once "api/models/Manutencao.class.php";
 
         //instanciando classe
-        $userStat = new Manutencao();
-        return $userStat->validar();
+        $userStatus = new Manutencao();
+        return $userStatus->validar();
     }
 
-    if (isset($_POST["verificarStatus"])){
+    if (isset($_POST["verificarStatus"]) && $_POST["verificarStatus"] != ""){
         require_once "../models/Manutencao.class.php";
         
         //instanciando classe
-        $userStat = new Manutencao();
-        if($userStat->validar()){
-            echo "true";
-        } else {
-            echo "false";
-        }
+        $userStatus = new Manutencao();
+        echo (($userStatus->validar()) ? "true" : "false");
     }
 ?>

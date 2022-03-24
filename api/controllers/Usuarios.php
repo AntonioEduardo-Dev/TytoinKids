@@ -16,7 +16,7 @@
     };
 
     if(isset($_GET['btn_listar_usuario'])){
-        $id_usuario = $_GET["id_usuario"];
+        $id_usuario = ( isset($_GET["id_usuario"]) ? $_GET["id_usuario"] : "");
 
         if ($dados = $objUsuario->listarDadosId($id_usuario)) {
             $retorno = [
@@ -36,23 +36,23 @@
     if(isset($_POST["form_cadastrar_usuario"])){
         
         // alocando posts nas variáveis
-        $email      = $_POST['email'];
-        $nome       = $_POST['nome'];
-        $senha      = $_POST['senha'];
-        $cpf        = $_POST['cpf'];
+        $email      = (isset($_POST['email']) ? $_POST['email'] : "");
+        $nome       = (isset($_POST['nome']) ? $_POST['nome'] : "");
+        $senha      = (isset($_POST['senha']) ? $_POST['senha'] : "");
+        $cpf        = (isset($_POST['cpf']) ? $_POST['cpf'] : "");
 
         //
-        $fone       = $_POST['fone'];
-        $whatsapp   = $_POST['whatsapp'];
-        $insta      = $_POST['insta'];
+        $fone       = (isset($_POST['fone']) ? $_POST['fone'] : "");
+        $whatsapp   = (isset($_POST['whatsapp']) ? $_POST['whatsapp'] : "");
+        $insta      = (isset($_POST['insta']) ? $_POST['insta'] : "");
 
         //
-        $id_cidade_fk   = $_POST['id_cidade_fk'];
-        $cep            = $_POST['cep'];
-        $endereco       = $_POST['endereco'];
-        $bairro         = $_POST['bairro'];
-        $complemento    = $_POST['complemento'];
-        $numero         = $_POST['numero'];
+        $id_cidade_fk   = (isset($_POST['id_cidade_fk']) ? $_POST['id_cidade_fk'] : "");
+        $cep            = (isset($_POST['cep']) ? $_POST['cep'] : "");
+        $endereco       = (isset($_POST['endereco']) ? $_POST['endereco'] : "");
+        $bairro         = (isset($_POST['bairro']) ? $_POST['bairro'] : "");
+        $complemento    = (isset($_POST['complemento']) ? $_POST['complemento'] : "");
+        $numero         = (isset($_POST['numero']) ? $_POST['numero'] : "");
 
         //
         $pode_vazio = [ "form_cadastrar_usuario" , "id_cidade_fk", "complemento", "insta" ];
